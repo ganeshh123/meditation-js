@@ -1,0 +1,38 @@
+html,
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.video-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.video-container video {
+    z-index: -2;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main {
+    color: #ffffff;
+    padding: 1px;
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+header h1 {
+    font-size: 72pt !important;
+}
