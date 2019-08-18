@@ -9,21 +9,36 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
+    <script src="main.js"></script>
 </head>
 
 <body>
+    <audio autoplay loop volume="0.5" id="audio">
+        <source src=""  >
+    </audio>
     <div class="video-container">
-        <video autoplay loop muted>
-            <source src="./video/4.mp4" type="video/mp4" />
+        <video autoplay loop muted id="video">
+            <source src="" type="video/mp4" >
         </video>
-        <audio autoplay loop volume="0.5">
-            <source src="./audio/forest.mp3" type="audio/mp3">
-        </audio>
-        <div class="main">
-            <header>
-                <h1 class="w3-animate-opacity"></h1>
-            </header>
+
+        <div id="infoPanel" class="w3-animate-opacity">
+            <div id="infoText">
+                <h1>Headphones Recommended</h1>
+                <i class="fas fa-headphones"></i>
+                <hr />
+                <h1>SELECT A SCENE BELOW</h1>
+            </div>
         </div>
+        <div class="controls">
+            <div class="sceneSelect">
+                <button onClick="changeScene('rain')"><i class="fas fa-cloud-rain"></i></button>
+                <button onClick="changeScene('forest')"><i class="fas fa-tree"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="https://ganeshh123.github.io">&copy;&nbsp;Ganesh H</a>
     </div>
 </body>
 
