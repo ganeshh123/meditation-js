@@ -1,7 +1,10 @@
+* {
+    font-family: 'Heebo', sans-serif;
+}
+
 html,
 body {
     margin: 0;
-    font-family: 'Raleway', sans-serif;
 }
 
 #main {
@@ -71,6 +74,7 @@ body {
     width: 100%;
     text-align: center;
     font-size: 45px;
+    font-family: 'Heebo', sans-serif;
 }
 
 #infoPanel i {
