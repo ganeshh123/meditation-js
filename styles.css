@@ -40,7 +40,7 @@ body {
     min-height: 50px;
 }
 
-.sceneSelect button {
+.sceneSelect button, .timerButton {
     font-size: 24pt;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.3);
@@ -110,9 +110,9 @@ body {
 
 #container{
     height: 85%;
-    display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 #app{
@@ -127,6 +127,7 @@ body {
     justify-content: center;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
 }
 
 #first{

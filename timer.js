@@ -15,12 +15,12 @@ class Adjuster extends React.Component{
             <div class='adjuster'>
                 <a 
                     id={this.props.type+'-decrement'}
-                    class="large waves-effect btn-floating"
+                    class="timerButton"
                     onClick={() => {
                         this.props.adjust(this.props.type+'_length', -1)
                     }}
                 >
-                    <i class="material-icons left">keyboard_arrow_down</i>
+                   <i class="fas fa-chevron-left"></i>
                 </a>
                 <div class='adjuster-info'>
                     <h6 id={this.props.type+'-label'}>{this.props.type} length</h6>
@@ -28,12 +28,12 @@ class Adjuster extends React.Component{
                 </div>
                 <a 
                     id={this.props.type+'-increment'}
-                    class="large waves-effect btn-floating"
+                    class="timerButton"
                     onClick={() => {
                         this.props.adjust(this.props.type+'_length', 1)
                     }}
                 >
-                    <i class="material-icons left">keyboard_arrow_up</i>
+                    <i class="fas fa-chevron-right"></i>
                 </a>
             </div>
         )
@@ -201,20 +201,20 @@ class App extends React.Component{
                     <Display mode={this.state.mode} mins={this.state.minutes} secs={this.state.seconds}/>
                 </div>
                 <div id='second'>
-                    <a 
+                    <button 
                         id='start_stop'
-                        class="large waves-effect btn-floating"
+                        class="timerButton"
                         onClick={() => {
                             this.startStop()
                         }}
-                    ><i class="material-icons left">play_arrow</i></a>
-                    <a 
+                    ><i class="fas fa-play"></i></button>
+                    <button 
                         id='reset'
-                        class="large waves-effect btn-floating"
+                        class="timerButton"
                         onClick={() => {
                             this.reset()
                         }}
-                    ><i class="material-icons left">restore</i></a>
+                    ><i class="fas fa-sync-alt"></i></button>
                 </div>
                 <div id='third'>
                     <Adjuster type='session' length={this.state.session_length} adjust={this.adjust}/>
