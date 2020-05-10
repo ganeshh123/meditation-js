@@ -8,21 +8,38 @@ const {
     Icon
 } = MaterialUI
 
+let primary = '#ffffff'
 
 let styles = {
 
     app: {
         height: '100%',
         width: '100%',
-        margin: 0
+        margin: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    VolumeControls: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        width: '100%',
+        paddingHorizontal: 5
     },
 
     VolumeControl: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignItems: 'center',
-        color: 'white'
+        color: 'white',
+        width: '40%',
+        minWidth: 100,
+        marginHorizontal: 10
     }
 }
 
@@ -57,7 +74,10 @@ class VolumeControl extends React.Component{
         return(
             <div style={styles.VolumeControl}>
                 <Icon>{icon}</Icon>
-                <Slider value={this.state.volume} onChange={this.changeVol} />
+                <Slider
+                    color = {primary}
+                    value={this.state.volume}
+                    onChange={this.changeVol} />
             </div>
         )
     }
@@ -84,7 +104,7 @@ class App extends React.Component{
                <div id='sceneSwitch'>
 
                </div>
-               <div id='volControl'>
+               <div id='volControls' style={styles.VolumeControls}>
                <VolumeControl type='music'/>
                <VolumeControl type='sfx' />'
                 
