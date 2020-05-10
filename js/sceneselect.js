@@ -2,8 +2,11 @@
 let scenes = [
     {
         "scene": 'rain_on_leaves',
+        "name": 'Rain on Leaves',
         "video": 'rain_on_leaves',
-        "sfx": 'rain_on_leaves'
+        "sfx": 'rain_on_leaves',
+        "sfxSource": 'https://www.youtube.com/watch?v=eHPvfDUX8Ds',
+        "videoSource": 'https://www.pexels.com/video/water-droplets-on-a-leaf-of-plant-2876754/'
     }
 ]
 
@@ -11,8 +14,6 @@ let scenes = [
 
 
 function changeScene(input) {
-
-    document.getElementById("infoPanel").style.display = "none";
 
     let scene = scenes.filter((item) => {
         return item["scene"] === input
