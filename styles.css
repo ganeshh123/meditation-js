@@ -14,7 +14,7 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -34,10 +34,8 @@ body {
 
 .footer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
     text-decoration: none;
-    position: fixed;
-    bottom: 5px;
     width: 100%;
     color: #ffffff;
 }
@@ -47,56 +45,89 @@ body {
 }
 
 
-#player {
-    width: 350px;
-    height: 50px;
-    position: relative;
-    margin: 0 auto;
-    top: 70px;
-    background-color: rgba(255, 255, 255, 0.3);;
+/* Info panel and buttons */
+.controls {
+    color: #ffffff;
+    padding: 1px;
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 10px;
+    min-height: 50px;
 }
-#player i {
-    position: absolute;
-    margin-top: -6px;
-    color: #666;
-    top: 20px;
+
+.sceneSelect{
+    display: flex;
 }
-#player i.fa-volume-down {
-    margin-left: -8px;
-}
-#player i.fa-volume-up {
-    margin-right: -8px;
-    right: 0;
-}
-#musicvolume {
-    position: absolute;
-    left: 24px;
-    margin: 0 auto;
-    height: 5px;
-    width: 300px;
-    background: #555;
-    border-radius: 15px;
-    top: 20px
-}
-#musicvolume .ui-slider-range-min {
-    height: 5px;
-    width: 300px;
-    position: absolute;
-    background: #2ecc71;
+
+.sceneSelect button, .timerButton {
+    font-size: 24pt;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
     border: none;
-    border-radius: 10px;
     outline: none;
-}
-#musicvolume .ui-slider-handle {
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    background: #fff;
-    position: absolute;
-    margin-left: -8px;
-    margin-top: -8px;
+    padding: 5px;
+    margin: auto;
+    height: 70px;
+    width: 70px;
     cursor: pointer;
-    outline: none;
+    margin: 0 2px 0 2px;
+    color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sceneSelect button:hover, .timerButton:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#infoPanel {
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+#infoPanel h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Heebo', sans-serif;
+}
+
+#infoPanel i {
+    font-size: 55px;
+    display: block;
+    text-align: center;
+    margin: 10px auto 30px auto;
+}
+
+#infoPanel hr {
+    border-color: #9e9e9e!important;
+    border-top: 1px solid #eee;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin: auto !important;
+    width: 70%;
 }
 
 
+#container {
+    height: auto;
+    min-height: 100px;
+    width: 100vw;
+    max-width: 700px;
+    max-height: 80vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 0px;
+}
