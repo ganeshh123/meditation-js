@@ -200,7 +200,7 @@ class App extends React.Component{
                 <div id='first'>
                     <Display mode={this.state.mode} mins={this.state.minutes} secs={this.state.seconds}/>
                 </div>
-                <div id='second'>
+                <div id='second' class='sceneSelect'>
                     <button 
                         id='start_stop'
                         class="timerButton"
