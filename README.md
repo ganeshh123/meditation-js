@@ -1,2 +1,2 @@
-# meditiation-JS
-A simple Meditation PWA written in JavaScript!
+# Meditation Web App
+A javascript app to help you relax!
