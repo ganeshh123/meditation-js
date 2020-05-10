@@ -10,46 +10,32 @@
     <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
-    <script crossorigin src='https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js'></script>
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script defer src='./timer.js' type='text/babel'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script defer src='./volcontrol.js'></script>
 </head>
 
 <body>
-    <audio autoplay loop volume="0.5" id="audio">
-        <source src=""  >
+    <audio autoplay loop volume="0.5" id="sfx">
+        <source src="./sfx/rain_on_leaves.mp3"  >
+    </audio>
+    <audio autoplay loop volume="0.1" id="music">
+        <source src="./music/still.mp3"  >
     </audio>
     <div id="main">
         <video autoplay loop muted id="video">
-            <source src="" type="video/mp4" >
+            <source src="./video/rain_on_leaves.mp4" type="video/mp4" >
         </video>
+        <div id="player">
+            <i class="fa fa-volume-down"></i>
+            <div id="musicvolume"></div>
+            <i class="fa fa-volume-up"></i>
+        </div>
 
-        <div id="infoPanel" class="w3-animate-opacity">
-            <div id="infoText">
-                <h1>Headphones Recommended</h1>
-                <i class="fas fa-headphones"></i>
-                <hr />
-                <h1>SELECT A SCENE BELOW</h1>
-            </div>
-            
-        </div>
-        <div id='container'>
 
+        <div class="footer">
+            <a href="https://ganeshh123.github.io">Ganesh H</a>
         </div>
-        <div class="controls">
-            <div class="sceneSelect">
-                <button onClick="changeScene('rain')"><i class="fas fa-cloud-rain"></i></button>
-                <button onClick="changeScene('forest')"><i class="fas fa-tree"></i></button>
-                <button onClick="changeScene('airplane')"><i class="fas fa-plane"></i></button>
-                <button onClick="changeScene('city')"><i class="fas fa-city"></i></button>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <a href="https://ganeshh123.github.io">Ganesh H</a>
     </div>
 </body>
 
