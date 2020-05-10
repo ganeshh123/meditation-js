@@ -11,24 +11,36 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script defer src='./volcontrol.js'></script>
+    <script defer src='./js/sceneselect.js'></script>
+    <script defer src='./js/volcontrol.js'></script>
 </head>
 
 <body>
-    <audio autoplay loop volume="0.5" id="sfx">
-        <source src="./sfx/rain_on_leaves.mp3"  >
+    <audio loop volume="0.5" id="sfx">
+        <source src=""  >
     </audio>
-    <audio autoplay loop volume="0.1" id="music">
+    <audio loop volume="0.2" id="music">
         <source src="./music/still.mp3"  >
     </audio>
     <div id="main">
         <video autoplay onloadeddata="this.play();" loop muted id="video">
-            <source src="./video/rain_on_leaves.mp4" type="video/mp4" >
+            <source src="" type="video/mp4" >
         </video>
-        <div id="player">
-            <i class="fa fa-volume-down"></i>
-            <div id="musicvolume"></div>
-            <i class="fa fa-volume-up"></i>
+        
+        <div id="infoPanel">
+            <div id="infoText">
+                <h1>Headphones Recommended</h1>
+                <i class="fas fa-headphones"></i>
+                <hr />
+                <h1>SELECT A SCENE BELOW</h1>
+            </div>
+            
+        </div>
+
+        <div class="controls">
+            <div class="sceneSelect">
+                <button onClick="changeScene('rain_on_leaves')"><i class="fas fa-cloud-rain"></i></button>
+            </div>
         </div>
 
 
