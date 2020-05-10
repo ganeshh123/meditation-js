@@ -18,3 +18,4 @@ $("#musicvolume").slider({
 
   setVolume(0.0)
   document.getElementById('sfx').play()
+  document.getElementById('video').play()
