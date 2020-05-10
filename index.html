@@ -22,7 +22,7 @@
         <source src="./music/still.mp3"  >
     </audio>
     <div id="main">
-        <video autoplay loop muted id="video">
+        <video autoplay onloadeddata="this.play();" loop muted id="video">
             <source src="./video/rain_on_leaves.mp4" type="video/mp4" >
         </video>
         <div id="player">
