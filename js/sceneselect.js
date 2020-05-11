@@ -22,6 +22,7 @@ function changeScene(input) {
     document.getElementById("sfx").src = "./sfx/" + scene["sfx"] + ".mp3";
     document.getElementById("music").play()
     document.getElementById("sfx").play()
+    document.getElementById("video").style.backgroundImage = "url('./img/rain_on_leaves.png')";
     document.getElementById("video").src = "./video/" + scene["video"] + ".mp4";
     document.getElementById("video").play()
 }
