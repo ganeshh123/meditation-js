@@ -5,7 +5,12 @@ const {
     Button,
     color,
     Slider,
-    Icon
+    Icon,
+    FormControl,
+    InputLabel,
+    Select,
+    MenuItem,
+    FormHelperText
 } = MaterialUI
 
 let primary = '#ffffff'
@@ -83,6 +88,38 @@ class VolumeControl extends React.Component{
     }
 }
 
+class SceneSelect extends React.Component{
+    constructor(props){
+        super(props)
+    }
+
+    state = {
+        currentScene : scenes[0]
+    }
+
+    selectScene = (event) => {
+        changeScene(event.target.value)
+    }
+
+    render(){
+        return(
+            <div>
+                <FormControl>
+                    <Select
+                    labelId="demo-simple-select-helper-label"
+                    id="demo-simple-select-helper"
+                    value={this.state.currentScene.scene}
+                    onChange={this.selectScene}
+                    >
+                    <MenuItem value={'rain_on_leaves'}>Rain falling on leaves</MenuItem>
+                    </Select>
+                    <FormHelperText>{this.state.currentScene.description}</FormHelperText>
+                </FormControl>
+            </div>
+        )
+    }
+}
+
 
 
 
@@ -102,7 +139,7 @@ class App extends React.Component{
         return(
             <div id='app' style={styles.app}>
                <div id='sceneSwitch'>
-
+                    <SceneSelect />
                </div>
                <div id='volControls' style={styles.VolumeControls}>
                <VolumeControl type='music'/>

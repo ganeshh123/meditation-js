@@ -6,7 +6,9 @@ let scenes = [
         "video": 'rain_on_leaves',
         "sfx": 'rain_on_leaves',
         "sfxSource": 'https://www.youtube.com/watch?v=eHPvfDUX8Ds',
-        "videoSource": 'https://www.pexels.com/video/water-droplets-on-a-leaf-of-plant-2876754/'
+        "videoSource": 'https://www.pexels.com/video/water-droplets-on-a-leaf-of-plant-2876754/',
+        "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
+        "description" : 'Light rain falling on leaves accompanied by calm piano music'
     }
 ]
 
