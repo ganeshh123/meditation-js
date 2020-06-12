@@ -99,6 +99,12 @@ class SceneSelect extends React.Component{
 
     selectScene = (event) => {
         changeScene(event.target.value)
+        let scene = scenes.filter((item) => {
+            return item["scene"] === event.target.value
+        })[0]
+        this.setState({
+            currentScene : scene
+        })
     }
 
     render(){
@@ -112,6 +118,7 @@ class SceneSelect extends React.Component{
                     onChange={this.selectScene}
                     >
                     <MenuItem value={'rain_on_leaves'}>Rain falling on leaves</MenuItem>
+                    <MenuItem value={'forest_1'}>Calm Forest</MenuItem>
                     </Select>
                     <FormHelperText>{this.state.currentScene.description}</FormHelperText>
                 </FormControl>

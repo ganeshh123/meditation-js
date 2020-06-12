@@ -9,6 +9,16 @@ let scenes = [
         "videoSource": 'https://www.pexels.com/video/water-droplets-on-a-leaf-of-plant-2876754/',
         "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
         "description" : 'Light rain falling on leaves accompanied by calm piano music'
+    },
+    {
+        "scene": 'forest_1',
+        "name": 'Calm Forest',
+        "video": 'forest',
+        "sfx": 'forest',
+        "sfxSource": '',
+        "videoSource": 'https://www.pexels.com/video/plants-clinging-by-the-tree-branches-in-a-forest-2882118/',
+        "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
+        "description" : 'A calm forest with a gentle breeze'
     }
 ]
 

@@ -149,3 +149,14 @@ body {
 .MuiPaper-root, .MuiMenu-paper, .MuiPopover-paper, .MuiPaper-elevation8, .MuiPaper-rounded{
     background-color: black;
 }
+
+.MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover{
+    background-color: black !important;
+}
+.MuiMenuItem-root{
+    background-color: black !important;
+}
+
+.MuiList-root{
+    background-color: black !important;
+}
