@@ -1,5 +1,6 @@
 * {
     font-family: 'Heebo', sans-serif;
+    color: white
 }
 
 html,
@@ -130,4 +131,40 @@ body {
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     margin-bottom: 0px;
+}
+
+
+/* Material UI Tweakes */
+/* This should be cleaner than this, but I haven't figured out how
+    to use colors yet */
+
+.MuiFormHelperText-root, .MuiFormHelperText-filled{
+    color: white !important
+}
+
+.MuiSelect-root, .MuiSelect-select, .MuiSelect-selectMenu, .MuiInputBase-input, .MuiInput-input{
+    color: white !important;
+}
+
+.MuiButtonBase-root .MuiListItem-root .MuiMenuItem-root .Mui-selected .MuiMenuItem-gutters .MuiListItem-gutters .MuiListItem-button .Mui-selected{
+    background-color: transparent;
+}
+
+.MuiIconButton-root, .Mui-disabled{
+    color: grey
+}
+
+.MuiPaper-root, .MuiMenu-paper, .MuiPopover-paper, .MuiPaper-elevation8, .MuiPaper-rounded{
+    background-color: black;
+}
+
+.MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover{
+    background-color: black !important;
+}
+.MuiMenuItem-root{
+    background-color: black !important;
+}
+
+.MuiList-root{
+    background-color: black !important;
 }

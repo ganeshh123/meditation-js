@@ -5,7 +5,13 @@ const {
     Button,
     color,
     Slider,
-    Icon
+    Icon,
+    FormControl,
+    InputLabel,
+    Select,
+    MenuItem,
+    FormHelperText,
+    IconButton
 } = MaterialUI
 
 let primary = '#ffffff'
@@ -40,6 +46,13 @@ let styles = {
         width: '40%',
         minWidth: 100,
         marginHorizontal: 10
+    },
+
+    sceneSwitch: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '100%'
     }
 }
 
@@ -83,6 +96,45 @@ class VolumeControl extends React.Component{
     }
 }
 
+class SceneSelect extends React.Component{
+    constructor(props){
+        super(props)
+    }
+
+    state = {
+        currentScene : scenes[0]
+    }
+
+    selectScene = (event) => {
+        changeScene(event.target.value)
+        let scene = scenes.filter((item) => {
+            return item["scene"] === event.target.value
+        })[0]
+        this.setState({
+            currentScene : scene
+        })
+    }
+
+    render(){
+        return(
+            <div>
+                <FormControl>
+                    <Select
+                    labelId="demo-simple-select-helper-label"
+                    id="demo-simple-select-helper"
+                    value={this.state.currentScene.scene}
+                    onChange={this.selectScene}
+                    >
+                    <MenuItem value={'rain_on_leaves'}>Rain falling on leaves</MenuItem>
+                    <MenuItem value={'forest_1'}>Calm Forest</MenuItem>
+                    </Select>
+                    <FormHelperText>{this.state.currentScene.description}</FormHelperText>
+                </FormControl>
+            </div>
+        )
+    }
+}
+
 
 
 
@@ -94,15 +146,37 @@ class App extends React.Component{
 
 
     state={
+        videoMode: 'videocam'
+    }
 
+    switchVideo = (e) => {
+        toggleVideo()
+        if(this.state.videoMode === 'videocam'){
+            this.setState({
+                videoMode: 'videocam_off'
+            })
+        }else{
+            this.setState({
+                videoMode: 'videocam'
+            })
+        }
     }
 
     
     render(){
         return(
             <div id='app' style={styles.app}>
-               <div id='sceneSwitch'>
-
+               <div id='sceneSwitch' style={styles.sceneSwitch}>
+               <IconButton aria-label="switch_video" onClick={this.switchVideo}>
+                    <Icon>{this.state.videoMode}</Icon>
+                </IconButton>
+                <IconButton disabled>
+                    <Icon></Icon>
+                </IconButton>
+                <IconButton disabled>
+                    <Icon></Icon>
+                </IconButton>
+                    <SceneSelect />
                </div>
                <div id='volControls' style={styles.VolumeControls}>
                <VolumeControl type='music'/>
