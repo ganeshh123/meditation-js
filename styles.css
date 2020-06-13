@@ -134,6 +134,10 @@ body {
 }
 
 
+/* Material UI Tweakes */
+/* This should be cleaner than this, but I haven't figured out how
+    to use colors yet */
+
 .MuiFormHelperText-root, .MuiFormHelperText-filled{
     color: white !important
 }
@@ -144,6 +148,10 @@ body {
 
 .MuiButtonBase-root .MuiListItem-root .MuiMenuItem-root .Mui-selected .MuiMenuItem-gutters .MuiListItem-gutters .MuiListItem-button .Mui-selected{
     background-color: transparent;
+}
+
+.MuiIconButton-root, .Mui-disabled{
+    color: grey
 }
 
 .MuiPaper-root, .MuiMenu-paper, .MuiPopover-paper, .MuiPaper-elevation8, .MuiPaper-rounded{
