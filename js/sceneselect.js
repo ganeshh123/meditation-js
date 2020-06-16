@@ -21,6 +21,17 @@ let scenes = [
         "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
         "description" : 'A calm forest with a gentle breeze',
         "background" : 'forest1'
+    },
+    {
+        "scene": 'campfire',
+        "name": 'Campfire',
+        "video": 'campfire',
+        "sfx": 'campfire',
+        "sfxSource": 'https://www.youtube.com/watch?v=O_LJWYzdD4o',
+        "videoSource": 'https://www.pexels.com/video/bonfire-in-the-woods-2060826/',
+        "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
+        "description" : 'Waking up to a campfire in the woods.',
+        "background" : 'forest1'
     }
 ]
 

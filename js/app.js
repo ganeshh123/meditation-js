@@ -127,6 +127,7 @@ class SceneSelect extends React.Component{
                     >
                     <MenuItem value={'rain_on_leaves'}>Rain falling on leaves</MenuItem>
                     <MenuItem value={'forest_1'}>Calm Forest</MenuItem>
+                    <MenuItem value={'campfire'}>Campfire</MenuItem>
                     </Select>
                     <FormHelperText>{this.state.currentScene.description}</FormHelperText>
                 </FormControl>
