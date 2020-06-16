@@ -181,7 +181,7 @@ class App extends React.Component{
                </div>
                <div id='volControls' style={styles.VolumeControls}>
                <VolumeControl type='music'/>
-               <VolumeControl type='sfx' />'
+               <VolumeControl type='sfx' />
                 
                </div>
             </div>
