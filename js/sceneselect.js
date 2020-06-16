@@ -31,7 +31,7 @@ let scenes = [
         "videoSource": 'https://www.pexels.com/video/bonfire-in-the-woods-2060826/',
         "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
         "description" : 'Waking up to a campfire in the woods.',
-        "background" : 'forest1'
+        "background" : 'campfire'
     }
 ]
 
