@@ -163,16 +163,26 @@ class App extends React.Component{
         }
     }
 
+    toggleTimer = (e) => {
+        let timer = document.querySelector('#appTimer')
+        if(!timer.style.display || timer.style.display === 'none'){
+            timer.style.display = 'flex'
+        }else{
+            timer.style.display ='none'
+        }
+    }
+
     
     render(){
         return(
             <div id='app' style={styles.app}>
+                <MainTimer />
                <div id='sceneSwitch' style={styles.sceneSwitch}>
                <IconButton aria-label="switch_video" onClick={this.switchVideo}>
                     <Icon>{this.state.videoMode}</Icon>
                 </IconButton>
-                <IconButton disabled>
-                    <Icon></Icon>
+                <IconButton onClick={this.toggleTimer}>
+                    <Icon>timer</Icon>
                 </IconButton>
                 <IconButton disabled>
                     <Icon></Icon>
