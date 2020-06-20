@@ -52,7 +52,9 @@ let styles = {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        width: '100%'
+        width: '100%',
+        marginTop: 10,
+        marginBottom: 10
     }
 }
 

@@ -10,9 +10,13 @@ class Adjuster extends React.Component{
         super(props)
     }
 
+    labelText = this.props.type + ' length'
+
     render(){
         return(
             <div class='adjuster'>
+            <h6 id={this.props.type+'-label'}>{this.labelText}</h6>
+            <div class='adjuster_module'>
                 <a 
                     id={this.props.type+'-decrement'}
                     class="large waves-effect btn-floating"
@@ -20,10 +24,9 @@ class Adjuster extends React.Component{
                         this.props.adjust(this.props.type+'_length', -1)
                     }}
                 >
-                    <i class="material-icons left">keyboard_arrow_down</i>
+                    <Icon id='adjuster_button_up'>keyboard_arrow_down</Icon>
                 </a>
                 <div class='adjuster-info'>
-                    <h6 id={this.props.type+'-label'}>{this.props.type} length</h6>
                     <h5 id={this.props.type+'-length'}>{this.props.length}</h5>
                 </div>
                 <a 
@@ -33,8 +36,10 @@ class Adjuster extends React.Component{
                         this.props.adjust(this.props.type+'_length', 1)
                     }}
                 >
-                    <i class="material-icons left">keyboard_arrow_up</i>
+                    <Icon id='adjuster_button_down'>keyboard_arrow_up</Icon>
                 </a>
+            </div>
+                
             </div>
         )
     }
