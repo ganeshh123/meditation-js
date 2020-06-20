@@ -52,7 +52,9 @@ let styles = {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        width: '100%'
+        width: '100%',
+        marginTop: 10,
+        marginBottom: 10
     }
 }
 
@@ -127,6 +129,7 @@ class SceneSelect extends React.Component{
                     >
                     <MenuItem value={'rain_on_leaves'}>Rain falling on leaves</MenuItem>
                     <MenuItem value={'forest_1'}>Calm Forest</MenuItem>
+                    <MenuItem value={'campfire'}>Campfire</MenuItem>
                     </Select>
                     <FormHelperText>{this.state.currentScene.description}</FormHelperText>
                 </FormControl>
@@ -162,16 +165,26 @@ class App extends React.Component{
         }
     }
 
+    toggleTimer = (e) => {
+        let timerElement = document.querySelector('#appTimer')
+        if(!timerElement.style.display || timerElement.style.display === 'none'){
+            timerElement.style.display = 'flex'
+        }else{
+            timerElement.style.display ='none'
+        }
+    }
+
     
     render(){
         return(
             <div id='app' style={styles.app}>
+                <MainTimer />
                <div id='sceneSwitch' style={styles.sceneSwitch}>
                <IconButton aria-label="switch_video" onClick={this.switchVideo}>
                     <Icon>{this.state.videoMode}</Icon>
                 </IconButton>
-                <IconButton disabled>
-                    <Icon></Icon>
+                <IconButton onClick={this.toggleTimer}>
+                    <Icon>timer</Icon>
                 </IconButton>
                 <IconButton disabled>
                     <Icon></Icon>
@@ -180,7 +193,7 @@ class App extends React.Component{
                </div>
                <div id='volControls' style={styles.VolumeControls}>
                <VolumeControl type='music'/>
-               <VolumeControl type='sfx' />'
+               <VolumeControl type='sfx' />
                 
                </div>
             </div>

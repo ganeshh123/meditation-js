@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+h1,h2,h3,h4,h5,h6{
+    margin-top: none !important;
+}
+
 #main {
     position: relative;
     height: 100vh;
@@ -123,7 +127,7 @@ body {
     min-height: 100px;
     width: 100vw;
     max-width: 700px;
-    max-height: 80vh;
+    max-height: 90vh;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -133,6 +137,99 @@ body {
     margin-bottom: 0px;
 }
 
+
+
+/* Timer CSS */
+#appTimer{
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    display: none;
+    width: 90%
+}
+
+#first{
+    max-height: 150px;
+}
+
+#display{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+#timer-label{
+    font-size: 18pt;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+#time-left{
+    font-size: 32pt;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+#second{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 150px
+}
+
+#timer_button_start, #timer_button_reset{
+   font-size: 40px;
+   cursor: pointer;
+}
+
+#third{
+    max-height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.adjuster{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adjuster_module{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.adjuster-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#session-label, #break-label{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14pt;
+    text-transform: capitalize;
+}
+
+#session-length, #break-length{
+    font-size: 18pt;
+}
+
+#adjuster_button_up, #adjuster_button_down{
+    font-size: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
 
 /* Material UI Tweakes */
 /* This should be cleaner than this, but I haven't figured out how
