@@ -166,11 +166,11 @@ class App extends React.Component{
     }
 
     toggleTimer = (e) => {
-        let timer = document.querySelector('#appTimer')
-        if(!timer.style.display || timer.style.display === 'none'){
-            timer.style.display = 'flex'
+        let timerElement = document.querySelector('#appTimer')
+        if(!timerElement.style.display || timerElement.style.display === 'none'){
+            timerElement.style.display = 'flex'
         }else{
-            timer.style.display ='none'
+            timerElement.style.display ='none'
         }
     }
 

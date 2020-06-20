@@ -115,6 +115,10 @@ class MainTimer extends React.Component{
             if (timer === 0) {
                 document.getElementById('beep').play()
                 clearInterval(this.interval)
+                let timerElement = document.querySelector('#appTimer')
+                if(!timerElement.style.display || timerElement.style.display === 'none'){
+                    timerElement.style.display = 'flex'
+                }
                 setTimeout(() => {
                     if(this.state.mode === 'Session'){
                         this.startBreak()
@@ -201,7 +205,7 @@ class MainTimer extends React.Component{
     render(){
         return(
             <div id='appTimer'>
-                <audio id='beep' ref="audio_tag" src="https://goo.gl/65cBl1"/>
+                <audio id='beep' ref="audio_tag" src="../sfx/beep.wav"/>
                 <div id='first'>
                     <Display mode={this.state.mode} mins={this.state.minutes} secs={this.state.seconds}/>
                 </div>
