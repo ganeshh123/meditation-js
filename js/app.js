@@ -61,12 +61,17 @@ let styles = {
 
 class VolumeControl extends React.Component{
 
+    defaultMusicVol = 0.1
+    defaultSfxVol = 0.4
+
     constructor(props){
         super(props)
+        document.querySelector('#music').volume = this.defaultMusicVol
+        document.querySelector('#sfx').volume = this.defaultSfxVol
     }
 
     state = {
-        volume: document.getElementById(this.props.type).volume * 100
+        volume: (this.props.type == 'sfx') ? (this.defaultSfxVol * 100) : (this.defaultMusicVol * 100)
     }
 
     changeVol = (event, value) => {
@@ -92,7 +97,8 @@ class VolumeControl extends React.Component{
                 <Slider
                     color = {primary}
                     value={this.state.volume}
-                    onChange={this.changeVol} />
+                    onChange={this.changeVol}
+                />
             </div>
         )
     }
@@ -130,6 +136,7 @@ class SceneSelect extends React.Component{
                     <MenuItem value={'rain_on_leaves'}>Rain falling on leaves</MenuItem>
                     <MenuItem value={'forest_1'}>Calm Forest</MenuItem>
                     <MenuItem value={'campfire'}>Campfire</MenuItem>
+                    <MenuItem value={'stars'}>Among the Stars</MenuItem>
                     </Select>
                     <FormHelperText>{this.state.currentScene.description}</FormHelperText>
                 </FormControl>
@@ -137,10 +144,6 @@ class SceneSelect extends React.Component{
         )
     }
 }
-
-
-
-
 
 class App extends React.Component{
     constructor(props){
