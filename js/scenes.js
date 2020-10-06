@@ -37,10 +37,10 @@ let scenes = [
         "name": 'Among the Stars',
         "video": 'stars',
         "sfx": 'stars',
-        "sfxSource": 'https://www.youtube.com/watch?v=O_LJWYzdD4o',
-        "videoSource": 'https://www.pexels.com/video/bonfire-in-the-woods-2060826/',
+        "sfxSource": 'https://www.youtube.com/watch?v=OylMXBNSTXY',
+        "videoSource": 'https://www.youtube.com/watch?v=X6dJEAs0-Gk',
         "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
-        "description" : '',
+        "description" : 'Flashing Stars on a dark background.',
         "background" : 'stars'
     },
     {
