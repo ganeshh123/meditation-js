@@ -61,7 +61,7 @@ let styles = {
 
 class VolumeControl extends React.Component{
 
-    defaultMusicVol = 0.1
+    defaultMusicVol = 0.0
     defaultSfxVol = 0.4
 
     constructor(props){
@@ -135,7 +135,7 @@ class SceneSelect extends React.Component{
                     >
                     <MenuItem value={'rain_on_leaves'}>Rain falling on leaves</MenuItem>
                     <MenuItem value={'forest_1'}>Calm Forest</MenuItem>
-                    <MenuItem value={'campfire'}>Campfire</MenuItem>
+                    <MenuItem value={'campfire'}>Morning Campfire</MenuItem>
                     <MenuItem value={'stars'}>Among the Stars</MenuItem>
                     </Select>
                     <FormHelperText>{this.state.currentScene.description}</FormHelperText>
