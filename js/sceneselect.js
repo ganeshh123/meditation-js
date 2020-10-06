@@ -9,6 +9,15 @@ let changeScene = (input)  => {
     document.getElementById("sfx").play()
     document.getElementById("video").style.backgroundImage = "url('./img/" + scene["background"] + ".png')";
     document.getElementById("video").src = "./video/" + scene["video"] + ".mp4";
+
+    /* Load Video from External Sources */
+    if(scene['externalVideo'] && scene['externalVideo'] === true){
+        document.getElementById("video").src = ''
+        document.getElementById("video").src = scene["video"]
+    }
+
+    /*Load Audio from Video */
+    
     document.getElementById("video").play()
 }
 

@@ -42,5 +42,17 @@ let scenes = [
         "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
         "description" : '',
         "background" : 'stars'
-    }
+    },
+    {
+        "scene": 'sunset',
+        "name": 'Sunset',
+        "video": 'https://drive.google.com/uc?id=14MAc4MNfHyf4xlYOlutz4aEZ4tkPPqlQ&export=download',
+        "sfx": 'sunset',
+        "sfxSource": 'https://www.youtube.com/watch?v=UaCRAJLvLFk',
+        "videoSource": 'https://www.youtube.com/watch?v=UaCRAJLvLFk',
+        "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
+        "description" : 'Watch the sun descend over an island from the seaside, bringing the day to an end.',
+        "background" : 'sunset',
+        "externalVideo" : true
+    },
 ]
