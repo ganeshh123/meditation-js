@@ -34,6 +34,9 @@ h1,h2,h3,h4,h5,h6{
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #3a3a3a;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 
