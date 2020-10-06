@@ -1,3 +1,5 @@
+let unloadedVideoSrc
+
 let changeScene = (input)  => {
 
     let scene = scenes.filter((item) => {
@@ -8,27 +10,34 @@ let changeScene = (input)  => {
     document.getElementById("music").play()
     document.getElementById("sfx").play()
     document.getElementById("video").style.backgroundImage = "url('./img/" + scene["background"] + ".png')";
-    document.getElementById("video").src = "./video/" + scene["video"] + ".mp4";
 
+
+    document.getElementById("video").src = ''
+    if(!unloadedVideoSrc){
+        document.getElementById("video").src = "./video/" + scene["video"] + ".mp4";
+    }else{
+        unloadedVideoSrc = "./video/" + scene["video"] + ".mp4";
+    }
     /* Load Video from External Sources */
     if(scene['externalVideo'] && scene['externalVideo'] === true){
-        document.getElementById("video").src = ''
-        document.getElementById("video").src = scene["video"]
+        if(!unloadedVideoSrc){
+            document.getElementById("video").src = scene["video"]
+        }else{
+            unloadedVideoSrc = scene["video"]
+        }
     }
 
     /*Load Audio from Video */
-    
+
     document.getElementById("video").play()
 }
 
-let videosrc
-
 let toggleVideo = () => {
-    if(!videosrc){
-        videosrc = document.getElementById("video").src
+    if(!unloadedVideoSrc){
+        unloadedVideoSrc = document.getElementById("video").src
         document.getElementById("video").src = ''
     }else{
-        document.getElementById("video").src = videosrc
-        videosrc = undefined
+        document.getElementById("video").src = unloadedVideoSrc
+        unloadedVideoSrc = undefined
     }
 }
