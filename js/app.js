@@ -85,16 +85,22 @@ class VolumeControl extends React.Component{
     render(){
 
         let icon = ''
+        let tooltipText = ''
         if(this.props.type === 'music'){
             icon = 'audiotrack'
+            tooltipText = 'Change Music Volume'
         }else if(this.props.type === 'sfx'){
             icon = 'volume_down'
+            tooltipText = 'Change Sound Effect Volume'
         }
+
+        
 
         return(
             <div style={styles.VolumeControl}>
                 <Icon>{icon}</Icon>
                 <Slider
+                    title= {tooltipText}
                     color = {primary}
                     value={this.state.volume}
                     onChange={this.changeVol}
@@ -126,7 +132,7 @@ class SceneSelect extends React.Component{
     render(){
         return(
             <div>
-                <FormControl>
+                <FormControl title='Chnage Scene'>
                     <Select
                     labelId="demo-simple-select-helper-label"
                     id="demo-simple-select-helper"
@@ -159,9 +165,9 @@ class MediaInfo extends React.Component{
     render(){
         return(
             <div id='mediaInfo'>
-                <a id='videoSource' target="_blank"><Icon>play_arrow</Icon></a>
-                <a id='sfxSource' target="_blank"><Icon>graphic_eq</Icon></a>
-                <a id='musicSource' target="_blank"><Icon>music_video</Icon></a>
+                <a id='videoSource' title='Video Source' target="_blank"><Icon>play_arrow</Icon></a>
+                <a id='sfxSource' title='Sound Source' target="_blank"><Icon>graphic_eq</Icon></a>
+                <a id='musicSource' title='Music Source' target="_blank"><Icon>music_video</Icon></a>
             </div>
         )
     }
@@ -215,13 +221,13 @@ class App extends React.Component{
                 <MainTimer />
                 <MediaInfo/>
                <div id='sceneSwitch' style={styles.sceneSwitch}>
-               <IconButton aria-label="switch_video" onClick={this.switchVideo}>
+               <IconButton title='Toggle Video On/Off' aria-label="switch_video" onClick={this.switchVideo}>
                     <Icon>{this.state.videoMode}</Icon>
                 </IconButton>
-                <IconButton onClick={this.toggleTimer}>
+                <IconButton title='Show/Hide Timer' onClick={this.toggleTimer}>
                     <Icon>timer</Icon>
                 </IconButton>
-                <IconButton onClick={this.toggleMediaInfo} >
+                <IconButton title='Show/Hide Media Sources' onClick={this.toggleMediaInfo} >
                     <Icon>info</Icon>
                 </IconButton>
                     <SceneSelect />
