@@ -67,4 +67,16 @@ let scenes = [
         "background" : 'cloud_watching',
         "externalVideo" : true
     },
+    {
+        "scene": 'jungle_after_rainfall',
+        "name": 'Jungle After Rainfall',
+        "video": 'https://drive.google.com/u/0/uc?id=19Ngfw7CfG7HY4JTuuur_2bLl3hAZvWwZ&export=download',
+        "sfx": 'jungle_after_rainfall',
+        "sfxSource": 'https://www.youtube.com/watch?v=RD4pnw71ANo',
+        "videoSource": 'https://www.youtube.com/watch?v=yupuohj6d8Y',
+        "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
+        "description" : 'A viewpoint over a tropical jungle, just after rainfall.',
+        "background" : 'jungle_after_rainfall',
+        "externalVideo" : true
+    }
 ]
