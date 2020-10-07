@@ -18,7 +18,7 @@ let scenes = [
         "sfxSource": '',
         "videoSource": 'https://www.pexels.com/video/plants-clinging-by-the-tree-branches-in-a-forest-2882118/',
         "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
-        "description" : 'A calm forest with a gentle breeze',
+        "description" : 'A calm forest with a gentle breeze.',
         "background" : 'forest1'
     },
     {
@@ -53,6 +53,18 @@ let scenes = [
         "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
         "description" : 'Watch the sun descend over an island from the seaside, bringing the day to an end.',
         "background" : 'sunset',
+        "externalVideo" : true
+    },
+    {
+        "scene": 'cloud_watching',
+        "name": 'Cloud Watching',
+        "video": 'https://drive.google.com/u/0/uc?id=1noXV2e7BR5dc8oSuY6NHLYbj2JwlKsKP&export=download',
+        "sfx": 'cloud_watching',
+        "sfxSource": 'https://www.youtube.com/watch?v=RD4pnw71ANo',
+        "videoSource": 'https://www.youtube.com/watch?v=yupuohj6d8Y',
+        "musicSource": 'https://www.youtube.com/watch?v=962VmrIh9vQ',
+        "description" : 'Lying on warm summer grass with a nice breeze, watching the clouds go by.',
+        "background" : 'cloud_watching',
         "externalVideo" : true
     },
 ]

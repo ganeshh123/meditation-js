@@ -138,6 +138,7 @@ class SceneSelect extends React.Component{
                     <MenuItem value={'campfire'}>Morning Campfire</MenuItem>
                     <MenuItem value={'stars'}>Among the Stars</MenuItem>
                     <MenuItem value={'sunset'}>Seaside Sunset</MenuItem>
+                    <MenuItem value={'cloud_watching'}>Cloud Watching</MenuItem>
                     </Select>
                     <FormHelperText>{this.state.currentScene.description}</FormHelperText>
                 </FormControl>
@@ -190,8 +191,8 @@ class App extends React.Component{
                 <IconButton onClick={this.toggleTimer}>
                     <Icon>timer</Icon>
                 </IconButton>
-                <IconButton disabled>
-                    <Icon></Icon>
+                <IconButton >
+                    <Icon>info</Icon>
                 </IconButton>
                     <SceneSelect />
                </div>
