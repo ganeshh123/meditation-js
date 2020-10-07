@@ -5,4 +5,5 @@ let goButton = () => {
     document.getElementById('container').style.display = "flex";
 
     changeScene('rain_on_leaves')
+    setupUiHide()
 }
