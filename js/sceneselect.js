@@ -10,6 +10,7 @@ let changeScene = (input)  => {
     /* Change SFX */
     document.getElementById("sfx").src = "./sfx/" + scene["sfx"] + ".mp3";
     document.getElementById("sfx").play()
+    document.getElementById("music").play()
 
     /* Change Background */
     document.getElementById("video").style.backgroundImage = "url('./img/" + scene["background"] + ".png')";
