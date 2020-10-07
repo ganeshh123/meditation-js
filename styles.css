@@ -234,6 +234,28 @@ h1,h2,h3,h4,h5,h6{
     cursor: pointer;
 }
 
+
+/* Media Info CSS */
+#mediaInfo{
+    max-height: 500px;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    display: none;
+    width: 90%;
+    padding: 20px;
+}
+
+#mediaInfo a{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+
+
 /* Material UI Tweakes */
 /* This should be cleaner than this, but I haven't figured out how
     to use colors yet */

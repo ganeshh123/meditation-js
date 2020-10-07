@@ -147,6 +147,26 @@ class SceneSelect extends React.Component{
     }
 }
 
+class MediaInfo extends React.Component{
+    constructor(props){
+        super(props)
+    }
+
+    state={
+        
+    }
+
+    render(){
+        return(
+            <div id='mediaInfo'>
+                <a id='videoSource' target="_blank"><Icon>play_arrow</Icon></a>
+                <a id='sfxSource' target="_blank"><Icon>graphic_eq</Icon></a>
+                <a id='musicSource' target="_blank"><Icon>music_video</Icon></a>
+            </div>
+        )
+    }
+}
+
 class App extends React.Component{
     constructor(props){
         super(props)
@@ -179,11 +199,21 @@ class App extends React.Component{
         }
     }
 
+    toggleMediaInfo = (e) => {
+        let mediaInfoElement = document.querySelector('#mediaInfo')
+        if(!mediaInfoElement.style.display || mediaInfoElement.style.display === 'none'){
+            mediaInfoElement.style.display = 'flex'
+        }else{
+           mediaInfoElement.style.display ='none'
+        }
+    }
+
     
     render(){
         return(
             <div id='app' style={styles.app}>
                 <MainTimer />
+                <MediaInfo/>
                <div id='sceneSwitch' style={styles.sceneSwitch}>
                <IconButton aria-label="switch_video" onClick={this.switchVideo}>
                     <Icon>{this.state.videoMode}</Icon>
@@ -191,7 +221,7 @@ class App extends React.Component{
                 <IconButton onClick={this.toggleTimer}>
                     <Icon>timer</Icon>
                 </IconButton>
-                <IconButton >
+                <IconButton onClick={this.toggleMediaInfo} >
                     <Icon>info</Icon>
                 </IconButton>
                     <SceneSelect />
