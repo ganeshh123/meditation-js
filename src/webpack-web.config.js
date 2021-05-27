@@ -1,3 +1,4 @@
+let webpack = require('webpack')
 let path = require('path')
 
 module.exports = {
@@ -7,20 +8,22 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.(js)$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: ['babel-loader']
         }
       ]
     },
     resolve: {
-      extensions: ['*', '.js']
+      extensions: ['*', '.js', '.jsx'],
     },
     // Output to dist/web folder
     output: {
       path: path.resolve(__dirname, 'dist/web'),
       filename: 'webapp.js'
     },
+    // Enable React Hot Loading
+    plugins: [new webpack.HotModuleReplacementPlugin()],
     // Load static assets from dist/web folder
     devServer: {
       contentBase: path.resolve(__dirname, '../dist/web'),
