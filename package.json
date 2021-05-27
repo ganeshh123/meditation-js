@@ -1,0 +1,49 @@
+{
+  "name": "meditation-js",
+  "version": "1.4.0",
+  "description": "A simple web-app for meditation and focus!",
+  "main": "src/App.js",
+  "scripts": {
+    "start": "webpack serve --progress --history-api-fallback --config ./src/webpack-web.config.js --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganeshh123/meditiation-JS.git"
+  },
+  "keywords": [
+    "meditaiton",
+    "javascript",
+    "react",
+    "web",
+    "app",
+    "focus",
+    "timer",
+    "pomodoro",
+    "sound",
+    "ambient",
+    "relax"
+  ],
+  "author": "Ganesh H",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ganeshh123/meditiation-JS/issues"
+  },
+  "homepage": "https://github.com/ganeshh123/meditiation-JS#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
