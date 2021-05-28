@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /* Local Imports */
-import Footer from './Footer'
+import Footer from './footer/Footer'
 
 class App extends React.Component {
   render() {

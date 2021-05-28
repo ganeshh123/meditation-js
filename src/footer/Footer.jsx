@@ -1,6 +1,8 @@
 /* Global Imports */
 import React from 'react';
 
+import './footer.scss'
+
 let Footer = (props) => {
     return(
         <div class="footer">
