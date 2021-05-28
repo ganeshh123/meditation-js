@@ -4,7 +4,7 @@
   "description": "A simple web-app for meditation and focus!",
   "main": "src/App.js",
   "scripts": {
-    "start": "webpack serve --progress --history-api-fallback --config ./src/webpack-web.config.js --mode development",
+    "start": "webpack serve --progress --config ./src/webpack-web.config.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
