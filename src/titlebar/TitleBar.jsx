@@ -1,7 +1,7 @@
 /* Global Imports */
 import React from 'react';
 
-import Theme from '../theme/Theme'
+import Theme from '../utils/theme/Theme'
 import './titleBarStyle.scss'
 
 class TitleBar extends React.Component {

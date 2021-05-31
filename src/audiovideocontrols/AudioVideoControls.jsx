@@ -2,7 +2,7 @@
 import React from 'react';
 
 /* Local Imports */
-import Theme from '../theme/Theme'
+import Theme from '../utils/theme/Theme'
 
 
 class AudioVideoControls extends React.Component{

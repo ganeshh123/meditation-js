@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /* Local Imports */
-import Theme from './theme/Theme'
+import Theme from './utils/theme/Theme'
 import './mainStyle.scss'
 
 import TitleBar from './titlebar/TitleBar'
