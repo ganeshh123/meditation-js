@@ -3,14 +3,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /* Local Imports */
-import Footer from './footer/Footer'
+import Theme from './theme/Theme'
+import './mainStyle.scss'
+
+import TitleBar from './titlebar/TitleBar'
 
 class App extends React.Component {
-  render() {
-    return(
-      <div id="app">
 
-          <Footer url='https://ganeshh123.github.io' text='Ganesh H' />
+  state = {
+    
+  }
+
+  appStyle = {
+    backgroundColor: Theme.current.backgroundColor
+  }
+
+  render = () => {
+    return(
+      <div id="app" style={this.appStyle}>
+        <div id="appTop">
+          <TitleBar appTitleText="Bonseki" />
+        </div>
+        <div id="appMiddle"></div>
+        <div id="appBottom"></div>
       </div>
     );
   }
