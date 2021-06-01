@@ -5,6 +5,7 @@
   "main": "src/App.js",
   "scripts": {
     "start": "webpack serve --progress --config ./src/webpack-web.config.js --mode development",
+    "build-web" : "webpack --config ./src/webpack-web.config.js -o ./dist/web/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

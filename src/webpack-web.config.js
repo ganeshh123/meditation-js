@@ -18,7 +18,7 @@ module.exports = {
         {
           test: /\.(scss|css)$/,
           use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-        },
+        }
       ]
     },
     resolve: {
@@ -36,6 +36,6 @@ module.exports = {
     ],
     // Load static assets from dist/web folder
     devServer: {
-      contentBase: path.resolve(__dirname, '../dist/web'),
+      contentBase: path.resolve(__dirname, '../assets'),
     }
   };
