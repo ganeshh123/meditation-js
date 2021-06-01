@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 /* Local Imports */
 import Theme from './utils/theme/Theme'
 import './mainStyle.scss'
+import MediaSources from './utils/mediasources/MediaSources'
 
 import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './scenecontrols/SceneControlPanel'
@@ -12,12 +13,25 @@ import SceneControlPanel from './scenecontrols/SceneControlPanel'
 class App extends React.Component {
 
   state = {
-    
+    currentScene: 'rain_on_leaves',
+    currentMusicTrack: 'track1'
   }
 
   appStyle = {
     backgroundImage: `url('./assets/img/rain_on_leaves.png')`,
     backgroundSize: 'cover'
+  }
+
+  changeSource = (sourceType, sourceId) => {
+    if(sourceType == 'scene'){
+      this.setState({
+        currentScene: sourceId
+      })
+    }else if(sourceType == 'musicTrack'){
+      this.setState({
+        currentMusicTrack: sourceId
+      })
+    }
   }
 
   render = () => {
@@ -28,7 +42,11 @@ class App extends React.Component {
         </div>
         <div id="appMiddle"></div>
         <div id="appBottom">
-          <SceneControlPanel />
+          <SceneControlPanel 
+            currentScene={this.state.currentScene}
+            currentMusicTrack={this.state.currentMusicTrack}
+            changeSourceFunction={this.changeSource}
+          />
         </div>
       </div>
     );

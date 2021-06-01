@@ -1,6 +1,6 @@
 [
     {
-      "scene":"rain_on_leaves",
+      "id":"rain_on_leaves",
       "name":"Rain on Leaves",
       "video":"rain_on_leaves",
       "sfx":"rain_on_leaves",
@@ -10,7 +10,7 @@
       "background":"rain_on_leaves"
     },
     {
-      "scene":"forest_1",
+      "id":"forest_1",
       "name":"Calm Forest",
       "video":"forest",
       "sfx":"forest",
@@ -20,7 +20,7 @@
       "background":"forest1"
     },
     {
-      "scene":"campfire",
+      "id":"campfire",
       "name":"Morning Campfire",
       "video":"campfire",
       "sfx":"campfire",
@@ -30,7 +30,7 @@
       "background":"campfire"
     },
     {
-      "scene":"stars",
+      "id":"stars",
       "name":"Among the Stars",
       "video":"stars",
       "sfx":"stars",
@@ -40,7 +40,7 @@
       "background":"stars"
     },
     {
-      "scene":"sunset",
+      "id":"sunset",
       "name":"Sunset",
       "video":"https://drive.google.com/uc?id=14MAc4MNfHyf4xlYOlutz4aEZ4tkPPqlQ&export=download",
       "sfx":"sunset",
@@ -51,7 +51,7 @@
       "externalVideo":true
     },
     {
-      "scene":"cloud_watching",
+      "id":"cloud_watching",
       "name":"Cloud Watching",
       "video":"https://drive.google.com/u/0/uc?id=1noXV2e7BR5dc8oSuY6NHLYbj2JwlKsKP&export=download",
       "sfx":"cloud_watching",
@@ -62,7 +62,7 @@
       "externalVideo":true
     },
     {
-      "scene":"jungle_after_rainfall",
+      "id":"jungle_after_rainfall",
       "name":"Jungle After Rainfall",
       "video":"https://drive.google.com/u/0/uc?id=19Ngfw7CfG7HY4JTuuur_2bLl3hAZvWwZ&export=download",
       "sfx":"jungle_after_rainfall",

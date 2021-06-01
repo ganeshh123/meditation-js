@@ -19,8 +19,8 @@ export default class TitleBar extends React.Component {
         <div id="titleBar" style={this.titleBarStyle}>
           <h1 id="appTitleText">{this.props.appTitleText}</h1>
           <div id="titleBarButtons" >
-              <button id="appInfoButton" class="titleBarButton" >info</button>
-              <button id="appSettingsButton" class="titleBarButton" >settings</button>
+              <button id="appInfoButton" className="titleBarButton" >info</button>
+              <button id="appSettingsButton" className="titleBarButton" >settings</button>
           </div>
         </div>
       );
