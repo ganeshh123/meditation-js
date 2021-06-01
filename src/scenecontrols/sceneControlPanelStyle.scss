@@ -1,0 +1,13 @@
+#sceneControlPanel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+    max-width: 600px;
+    width: 80%;
+    min-height: 150px;
+    max-height: 250px;
+    height: 80%;;
+    margin: 10px 20px 20px 20px;
+}

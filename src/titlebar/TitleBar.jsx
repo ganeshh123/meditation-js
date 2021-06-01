@@ -4,7 +4,7 @@ import React from 'react';
 import Theme from '../utils/theme/Theme'
 import './titleBarStyle.scss'
 
-class TitleBar extends React.Component {
+export default class TitleBar extends React.Component {
 
     state = {
       
@@ -27,5 +27,3 @@ class TitleBar extends React.Component {
     }
 
 }
-
-export default TitleBar

@@ -7,6 +7,7 @@ import Theme from './utils/theme/Theme'
 import './mainStyle.scss'
 
 import TitleBar from './titlebar/TitleBar'
+import SceneControlPanel from './scenecontrols/SceneControlPanel'
 
 class App extends React.Component {
 
@@ -15,7 +16,8 @@ class App extends React.Component {
   }
 
   appStyle = {
-    backgroundColor: Theme.current.backgroundColor
+    backgroundImage: `url('./assets/img/rain_on_leaves.png')`,
+    backgroundSize: 'cover'
   }
 
   render = () => {
@@ -25,7 +27,9 @@ class App extends React.Component {
           <TitleBar appTitleText="Bonseki" />
         </div>
         <div id="appMiddle"></div>
-        <div id="appBottom"></div>
+        <div id="appBottom">
+          <SceneControlPanel />
+        </div>
       </div>
     );
   }

@@ -1,7 +1,8 @@
 let webpack = require('webpack')
 let path = require('path')
 
-let MiniCssExtractPlugin = require('mini-css-extract-plugin');
+let MiniCssExtractPlugin = require('mini-css-extract-plugin')
+let CopyPlugin = require("copy-webpack-plugin")
 
 
 module.exports = {
@@ -26,16 +27,23 @@ module.exports = {
     },
     // Output to dist/web folder
     output: {
-      path: path.resolve(__dirname, 'dist/web'),
+      path: path.resolve(__dirname, '../dist/web'),
       filename: 'webapp.js'
     },
     // Enable React Hot Loading
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
-      new MiniCssExtractPlugin()
+      new MiniCssExtractPlugin(),
+      new CopyPlugin({
+        patterns: [
+          { from: path.resolve(__dirname, '../assets'), to: path.resolve(__dirname, '../dist/web/assets/') },
+          { from: path.resolve(__dirname, './web/index.html'), to: path.resolve(__dirname, '../dist/web/index.html') }
+        ],
+      })
     ],
     // Load static assets from dist/web folder
     devServer: {
-      contentBase: path.resolve(__dirname, '../assets'),
+      writeToDisk: true,
+      contentBase: path.resolve(__dirname, '..', 'dist', 'web')
     }
   };
