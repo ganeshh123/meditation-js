@@ -23,21 +23,24 @@ export default class SceneControlPanel extends React.Component{
     }
 
     render(){
+
+        let appState = this.props.appState
+
         return(
             <div id="sceneControlPanel" style={this.sceneControlStyle}>
                 <SelectionVolumeControl
-                    changeSourceFunction={this.props.changeSourceFunction}
-                    sourcesArray={MediaSources.musicTracksArray}
-                    sources={MediaSources.musicTracks}
-                    selected={this.props.currentMusicTrack}
-                    sourceType='musicTrack' 
+                    sourcesArray={appState.mediaSources.musicTracksArray}
+                    sources={appState.mediaSources.musicTracks}
+                    selected={appState.currentMusicTrack}
+                    sourceType='musicTrack'
+                    appState={appState}
                 />
                 <SelectionVolumeControl
-                    changeSourceFunction={this.props.changeSourceFunction}
-                    sourcesArray={MediaSources.scenesArray} 
-                    sources={MediaSources.scenes}
-                    selected={this.props.currentScene}
+                    sourcesArray={appState.mediaSources.scenesArray} 
+                    sources={appState.mediaSources.scenes}
+                    selected={appState.currentScene}
                     sourceType='scene'
+                    appState={appState}
                 />
             </div>
         )

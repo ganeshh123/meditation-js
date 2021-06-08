@@ -12,11 +12,6 @@ import SceneControlPanel from './scenecontrols/SceneControlPanel'
 
 class App extends React.Component {
 
-  state = {
-    currentScene: 'rain_on_leaves',
-    currentMusicTrack: 'track1'
-  }
-
   appStyle = {
     backgroundImage: `url('./assets/img/rain_on_leaves.png')`,
     backgroundSize: 'cover'
@@ -34,6 +29,13 @@ class App extends React.Component {
     }
   }
 
+  state = {
+    currentScene: 'rain_on_leaves',
+    currentMusicTrack: 'track1',
+    changeSourceFunction: this.changeSource,
+    mediaSources: MediaSources
+  }
+
   render = () => {
     return(
       <div id="app" style={this.appStyle}>
@@ -46,6 +48,7 @@ class App extends React.Component {
             currentScene={this.state.currentScene}
             currentMusicTrack={this.state.currentMusicTrack}
             changeSourceFunction={this.changeSource}
+            appState={this.state}
           />
         </div>
       </div>

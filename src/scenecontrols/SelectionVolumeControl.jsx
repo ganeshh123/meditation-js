@@ -24,7 +24,7 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     sourceSelectionChanged = (event) => {
-        this.props.changeSourceFunction(this.props.sourceType, event.target.value)
+        this.props.appState.changeSourceFunction(this.props.sourceType, event.target.value)
     }
 
     getIconPath = () => {
@@ -39,6 +39,7 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     render(){
+        console.log(this.props.appState)
         console.log(this.props.sourcesArray)
         console.log(this.props.sources)
         return(
