@@ -19,7 +19,7 @@ export default class SceneControlPanel extends React.Component{
     }
 
     sceneControlStyle = {
-        backgroundColor: Theme.current.backgroundColor
+        backgroundColor: this.props.appState.currentTheme.backgroundColor
     }
 
     render(){

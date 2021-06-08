@@ -30,9 +30,13 @@ class App extends React.Component {
   }
 
   state = {
+    /* Variables */
     currentScene: 'rain_on_leaves',
     currentMusicTrack: 'track1',
+    currentTheme: Theme.staticThemes['dark'],
+    /* Functions */
     changeSourceFunction: this.changeSource,
+    /* Static Data */
     mediaSources: MediaSources
   }
 
@@ -40,7 +44,7 @@ class App extends React.Component {
     return(
       <div id="app" style={this.appStyle}>
         <div id="appTop">
-          <TitleBar appTitleText="Bonseki" />
+          <TitleBar appTitleText="Bonseki" appState={this.state} />
         </div>
         <div id="appMiddle"></div>
         <div id="appBottom">

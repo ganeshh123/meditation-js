@@ -16,11 +16,11 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     selectionVolumeControlStyle = {
-        backgroundColor: Theme.current.backgroundColor
+        backgroundColor: this.props.appState.currentTheme.backgroundColor
     }
 
     volumeIconStyle = {
-        filter: Theme.current.iconColor
+        filter: this.props.appState.currentTheme.iconColor
     }
 
     sourceSelectionChanged = (event) => {

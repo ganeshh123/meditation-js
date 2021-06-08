@@ -2,13 +2,14 @@ let staticThemes = require('./StaticThemes')
 
 class Theme {
 
-    static current = staticThemes['dark'];
+    static staticThemes = staticThemes
 
-    static switchTheme = (themeName) => {
+    static switchTheme = (themeName, appState) => {
         if(staticThemes[themeName]){
-            current = staticThemes[themeName]
+            appState.currentTheme = staticThemes[themeName]
+            console.log('Theme switched to ' + themeName)
         }else{
-            current = staticThemes['dark']
+            appState.currentTheme = staticThemes['dark']
         }
     }
 

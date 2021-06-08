@@ -11,7 +11,7 @@ export default class TitleBar extends React.Component {
     }
   
     titleBarStyle = {
-      backgroundColor: Theme.current.backgroundColor
+      backgroundColor: this.props.appState.currentTheme.backgroundColor
     }
   
     render = () => {
