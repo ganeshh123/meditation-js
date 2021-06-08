@@ -13,7 +13,7 @@ export default class SceneControlPanel extends React.Component{
     constructor(props){
         super(props)
 
-        this.sceneControlStyle = {
+        this.sceneControlColors = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor
         }
 
@@ -28,7 +28,7 @@ export default class SceneControlPanel extends React.Component{
         let appState = this.props.appState
 
         return(
-            <div id="sceneControlPanel" style={this.sceneControlStyle}>
+            <div id="sceneControlPanel" style={this.sceneControlColors}>
                 <SelectionVolumeControl
                     sourcesArray={appState.mediaSources.musicTracksArray}
                     sources={appState.mediaSources.musicTracks}

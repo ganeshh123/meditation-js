@@ -9,7 +9,7 @@ export default class TitleBar extends React.Component {
     constructor(props){
         super(props)
 
-        this.titleBarStyle = {
+        this.titleBarColors = {
           backgroundColor: this.props.appState.currentTheme.backgroundColor
         }
         
@@ -21,7 +21,7 @@ export default class TitleBar extends React.Component {
   
     render = () => {
       return(
-        <div id="titleBar" style={this.titleBarStyle}>
+        <div id="titleBar" style={this.titleBarColors}>
           <h1 id="appTitleText">{this.props.appTitleText}</h1>
           <div id="titleBarButtons" >
               <button id="appInfoButton" className="titleBarButton" >info</button>

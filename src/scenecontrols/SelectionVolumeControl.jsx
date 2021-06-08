@@ -10,11 +10,11 @@ export default class SelectionVolumeControl extends React.Component{
     constructor(props){
         super(props)
 
-        this.selectionVolumeControlStyle = {
+        this.selectionVolumeControlColors = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor
         }
     
-        this.volumeIconStyle = {
+        this.volumeIconColors = {
             filter: this.props.appState.currentTheme.iconColor
         }
     
@@ -41,7 +41,7 @@ export default class SelectionVolumeControl extends React.Component{
 
     render(){
         return(
-            <div className="selectionVolumeControl" style={this.selectionVolumeControlStyle}>
+            <div className="selectionVolumeControl" style={this.selectionVolumeControlColors}>
                 <select className="sourceSelector" onChange={this.sourceSelectionChanged} value={this.props.selected}>
                     {this.props.sourcesArray.map((source) => {
                         return(
@@ -54,7 +54,7 @@ export default class SelectionVolumeControl extends React.Component{
                     <img 
                         className='volumeIcon' 
                         src={this.getIconPath()} 
-                        style={this.volumeIconStyle}
+                        style={this.volumeIconColors}
                     />
                     <input className="volumeSlider" type="range" min="1" max="100"></input>
                 </div>
