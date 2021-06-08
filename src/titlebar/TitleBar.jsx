@@ -6,12 +6,17 @@ import './titleBarStyle.scss'
 
 export default class TitleBar extends React.Component {
 
+    constructor(props){
+        super(props)
+
+        this.titleBarStyle = {
+          backgroundColor: this.props.appState.currentTheme.backgroundColor
+        }
+        
+    }
+
     state = {
       
-    }
-  
-    titleBarStyle = {
-      backgroundColor: this.props.appState.currentTheme.backgroundColor
     }
   
     render = () => {

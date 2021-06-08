@@ -9,20 +9,21 @@ import './selectionVolumeControlStyle.scss'
 export default class SelectionVolumeControl extends React.Component{
     constructor(props){
         super(props)
+
+        this.selectionVolumeControlStyle = {
+            backgroundColor: this.props.appState.currentTheme.backgroundColor
+        }
+    
+        this.volumeIconStyle = {
+            filter: this.props.appState.currentTheme.iconColor
+        }
+    
     }
 
     state = {
 
     }
-
-    selectionVolumeControlStyle = {
-        backgroundColor: this.props.appState.currentTheme.backgroundColor
-    }
-
-    volumeIconStyle = {
-        filter: this.props.appState.currentTheme.iconColor
-    }
-
+    
     sourceSelectionChanged = (event) => {
         this.props.appState.changeSourceFunction(this.props.sourceType, event.target.value)
     }
@@ -39,9 +40,6 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     render(){
-        console.log(this.props.appState)
-        console.log(this.props.sourcesArray)
-        console.log(this.props.sources)
         return(
             <div className="selectionVolumeControl" style={this.selectionVolumeControlStyle}>
                 <select className="sourceSelector" onChange={this.sourceSelectionChanged} value={this.props.selected}>

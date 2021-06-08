@@ -49,9 +49,6 @@ class App extends React.Component {
         <div id="appMiddle"></div>
         <div id="appBottom">
           <SceneControlPanel 
-            currentScene={this.state.currentScene}
-            currentMusicTrack={this.state.currentMusicTrack}
-            changeSourceFunction={this.changeSource}
             appState={this.state}
           />
         </div>

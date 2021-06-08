@@ -12,14 +12,15 @@ import MediaSources from '../utils/mediasources/MediaSources'
 export default class SceneControlPanel extends React.Component{
     constructor(props){
         super(props)
+
+        this.sceneControlStyle = {
+            backgroundColor: this.props.appState.currentTheme.backgroundColor
+        }
+
     }
 
     state = {
 
-    }
-
-    sceneControlStyle = {
-        backgroundColor: this.props.appState.currentTheme.backgroundColor
     }
 
     render(){
