@@ -16,12 +16,13 @@ export default class SceneVideo extends React.Component{
     }
 
     state = {
-        videoFileName: this.props.appState.mediaSources.scenes[this.props.appState.currentScene]['videoFile']
+
     }
 
     render(){
 
-        let videoPath = './assets/video/' + this.state.videoFileName + '.mp4'
+        let videoFileName= this.props.appState.mediaSources.scenes[this.props.appState.currentScene]['videoFile']
+        let videoPath = './assets/video/' + videoFileName + '.mp4'
 
         return(
             <video 
