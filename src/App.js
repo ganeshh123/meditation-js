@@ -9,11 +9,12 @@ import MediaSources from './utils/mediasources/MediaSources'
 
 import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './scenecontrols/SceneControlPanel'
+import SceneVideo from './scenemedia/SceneVideo'
 
 class App extends React.Component {
 
   appStyle = {
-    backgroundImage: `url('./assets/img/rain_on_leaves.png')`,
+    //backgroundImage: `url('./assets/img/rain_on_leaves.png')`,
     backgroundSize: 'cover'
   }
 
@@ -35,6 +36,7 @@ class App extends React.Component {
     currentMusicTrack: 'track1',
     currentTheme: Theme.staticThemes['dark'],
     /* Functions */
+    setStateFunction: this.setState,
     changeSourceFunction: this.changeSource,
     /* Static Data */
     mediaSources: MediaSources
@@ -43,6 +45,7 @@ class App extends React.Component {
   render = () => {
     return(
       <div id="app" style={this.appStyle}>
+        <SceneVideo appState={this.state} />
         <div id="appTop">
           <TitleBar appTitleText="Bonseki" appState={this.state} />
         </div>
