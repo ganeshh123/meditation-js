@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34.828" height="30.54" viewBox="0 0 34.828 30.54">
+  <g id="speaker_icon" transform="translate(-81.013 -450.528)">
+    <g id="speaker" transform="translate(82.013 451.928)">
+      <line id="Line_145" data-name="Line 145" y2="9.033" transform="translate(0 9.354)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line id="Line_146" data-name="Line 146" x1="4.542" transform="translate(0 9.354)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line id="Line_147" data-name="Line 147" x1="4.542" transform="translate(0 18.386)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line id="Line_148" data-name="Line 148" y2="27.74" transform="translate(17.016)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line id="Line_149" data-name="Line 149" x1="12.474" y2="9.354" transform="translate(4.542)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line id="Line_150" data-name="Line 150" x1="12.474" y1="9.354" transform="translate(4.542 18.386)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+    <path id="line_1" d="M91.468,456.144a8.784,8.784,0,0,1,0,9.036" transform="translate(11.515 5.135)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="line_2" d="M93.2,454.19a17.21,17.21,0,0,1,0,17.7" transform="translate(13.621 2.755)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="line_3" d="M95.227,452.452a24.7,24.7,0,0,1,0,25.415" transform="translate(16.093 0.639)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

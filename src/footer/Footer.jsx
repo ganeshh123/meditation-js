@@ -5,7 +5,7 @@ import './footerStyle.scss'
 
 let Footer = (props) => {
     return(
-        <div class="footer">
+        <div classname="footer">
             <a href={props.url}>{props.text}</a>
         </div>
     )

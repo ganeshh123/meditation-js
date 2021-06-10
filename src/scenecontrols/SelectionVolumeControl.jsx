@@ -9,10 +9,6 @@ import './selectionVolumeControlStyle.scss'
 export default class SelectionVolumeControl extends React.Component{
     constructor(props){
         super(props)
-
-        this.selectionVolumeControlColors = {
-            backgroundColor: this.props.appState.currentTheme.backgroundColor
-        }
     
         this.volumeIconColors = {
             filter: this.props.appState.currentTheme.iconColor
@@ -29,11 +25,11 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     getIconPath = () => {
-        let iconPath = './assets/icons/icon_volume_'
+        let iconPath = './assets/icons/'
         if(this.props.sourceType == 'musicTrack'){
-            iconPath = iconPath + 'music.svg'
+            iconPath = iconPath + 'note_icon.svg'
         }else{
-            iconPath = iconPath +'scene.svg'
+            iconPath = iconPath +'speaker_icon.svg'
         }
 
         return iconPath
@@ -52,9 +48,10 @@ export default class SelectionVolumeControl extends React.Component{
                 <p className="sourceDescription">{this.props.sources[this.props.selected]['description']}</p>
                 <div className="volumeSliderContainer">
                     <img 
-                        className='volumeIcon' 
+                        className="volumeIcon" 
                         src={this.getIconPath()} 
                         style={this.volumeIconColors}
+                        height="20"
                     />
                     <input className="volumeSlider" type="range" min="1" max="100"></input>
                 </div>

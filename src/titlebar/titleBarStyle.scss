@@ -1,31 +1,36 @@
-#titleBar{
-    height: 100%;
-    min-width: 300px;
-    max-width: 1500px;
-    width: 80%;
+#titleBar {
+    height: 12vh;
+    width: 100%;
+    margin-bottom: 2vh; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    align-items: center;    
+    border-radius: 1000px;
 }
 
-#appTitleText{
-    margin-left: 20px;
+#appTitleText {
+    margin-left: 3vw;
+    padding-bottom: 0.2vh;
+    font-size: 6vh;
+    font-weight: normal;
 }
 
-#titleBarButtons{
+#buttonsHolder {
+    height: 100%;
+    margin-right: 0.7vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-right: 20px;
+    align-items: center;   
 }
 
-.titleBarButton{
-    margin-left: 5px;
-    margin-right: 5px;
+.titleBarButton {
+    margin-left: 1vw;
+    margin-right: 1vw;
     background: none;
+}
+
+.titleBarButton img {
+    height: 5vh;
 }

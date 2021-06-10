@@ -151,14 +151,14 @@ class Timer extends React.Component{
                 <div id='second'>
                     <a 
                         id='start_stop'
-                        class="large waves-effect btn-floating"
+                        className="large waves-effect btn-floating"
                         onClick={() => {
                             this.startStop()
                         }}
                     ><Icon id='timer_button_start'>play_arrow</Icon></a>
                     <a 
                         id='reset'
-                        class="large waves-effect btn-floating"
+                        className="large waves-effect btn-floating"
                         onClick={() => {
                             this.reset()
                         }}
