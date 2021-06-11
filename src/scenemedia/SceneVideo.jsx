@@ -16,11 +16,17 @@ export default class SceneVideo extends React.Component{
     }
 
     state = {
-
     }
 
     getVideoPath = (sceneId) => {
         
+    }
+
+    videoFinishedLoading = (event) => {
+        console.log('Video loaded')
+        this.props.appState.setStateFunction({
+            videoLoaded: true
+        })
     }
 
     render(){
@@ -31,11 +37,12 @@ export default class SceneVideo extends React.Component{
         return(
             <video 
                 id="sceneVideo"
-                style={this.sceneVideoColors} 
+                style={(this.props.appState['videoLoaded'] === false) ?  {visibility: 'hidden'} : {visibility: 'visible'} } 
                 src={videoPath}
                 autoPlay={true}
                 loop={true}
                 muted={true}
+                onPlaying={this.videoFinishedLoading}
             />
         )
     }

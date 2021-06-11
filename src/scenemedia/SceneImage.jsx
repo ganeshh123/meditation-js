@@ -5,7 +5,7 @@ import React from 'react';
 import './sceneImageStyle.scss'
 
 
-export default class SceneVideo extends React.Component{
+export default class SceneImage extends React.Component{
     constructor(props){
         super(props)
 
@@ -19,23 +19,23 @@ export default class SceneVideo extends React.Component{
 
     }
 
-    getVideoPath = (sceneId) => {
-        
+    getImagePath = () => {
+        let appState = this.props.appState
+        let currentScene = appState['currentScene']
+        if(appState['videoLoaded'] == true){
+            return undefined
+        }else{
+            let blurImagePath = './assets/img/' + this.props.appState.mediaSources.scenes[currentScene].blur + '.jpg'
+            return blurImagePath
+        }
     }
 
     render(){
-
-        let videoFileName= this.props.appState.mediaSources.scenes[this.props.appState.currentScene]['videoFile']
-        let videoPath = './assets/video/' + videoFileName + '.mp4'
-
         return(
-            <video 
-                id="sceneVideo"
-                style={this.sceneVideoColors} 
-                src={videoPath}
-                autoPlay={true}
-                loop={true}
-                muted={true}
+            <img
+                id="sceneImage"
+                style={this.sceneImageColors} 
+                src={this.getImagePath()}
             />
         )
     }

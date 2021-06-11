@@ -10,6 +10,7 @@ import MediaSources from './utils/mediasources/MediaSources'
 import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './scenecontrols/SceneControlPanel'
 import SceneVideo from './scenemedia/SceneVideo'
+import SceneImage from './scenemedia/SceneImage'
 
 class App extends React.Component {
 
@@ -20,6 +21,8 @@ class App extends React.Component {
 
   changeSource = (sourceType, sourceId) => {
     if(sourceType == 'scene'){
+      let blurImage = "url(./assets/img/" + this.state.mediaSources.scenes[sourceId].blur + ".jpg)"
+      //document.querySelector('#app').style.backgroundImage = blurImage
       this.setState({
         currentScene: sourceId
       })
@@ -30,21 +33,28 @@ class App extends React.Component {
     }
   }
 
+  updateState = (newState) => {
+    this.setState(newState)
+  }
+
   state = {
     /* Variables */
     currentScene: 'rain_on_leaves',
     currentMusicTrack: 'track1',
     currentTheme: Theme.staticThemes['dark'],
     /* Functions */
-    setStateFunction: this.setState,
+    setStateFunction: this.updateState,
     changeSourceFunction: this.changeSource,
     /* Static Data */
-    mediaSources: MediaSources
+    mediaSources: MediaSources,
+    /* Flags */
+    videoLoaded: false
   }
 
   render = () => {
     return(
       <div id="app" style={this.appStyle}>
+        <SceneImage appState={this.state} />
         <SceneVideo appState={this.state} />
         <div id="appTop">
           <TitleBar appTitleText="Bonseki" appState={this.state} />

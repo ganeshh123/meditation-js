@@ -17,11 +17,22 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     state = {
-
+        
     }
     
     sourceSelectionChanged = (event) => {
-        this.props.appState.changeSourceFunction(this.props.sourceType, event.target.value)
+        let sourceId = event.target.value
+        if(this.props.sourceType == 'scene'){
+            this.props.appState.setStateFunction({
+                currentScene: sourceId,
+                videoLoaded: false
+            })
+        }else if(this.props.sourceType == 'musicTrack'){
+            this.props.appState.setStateFunction({
+                currentMusicTrack: sourceId,
+                videoLoaded: false
+            })
+        }
     }
 
     getIconPath = () => {

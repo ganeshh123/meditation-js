@@ -7,7 +7,8 @@
       "sfxSource":"https://www.youtube.com/watch?v=eHPvfDUX8Ds",
       "videoSource":"https://www.pexels.com/video/water-droplets-on-a-leaf-of-plant-2876754/",
       "description":"Light rain falling on leaves.",
-      "background":"rain_on_leaves"
+      "background":"rain_on_leaves",
+      "blur": "rain_on_leaves_blur"
     },
     {
       "id":"forest_1",
@@ -17,7 +18,8 @@
       "sfxSource":"#",
       "videoSource":"https://www.pexels.com/video/plants-clinging-by-the-tree-branches-in-a-forest-2882118/",
       "description":"A calm forest with a gentle breeze.",
-      "background":"forest1"
+      "background":"forest1",
+      "blur": "forest1_blur"
     },
     {
       "id":"campfire",
@@ -27,7 +29,8 @@
       "sfxSource":"https://www.youtube.com/watch?v=O_LJWYzdD4o",
       "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
       "description":"Waking up to a campfire in the woods.",
-      "background":"campfire"
+      "background":"campfire",
+      "blur": "campfire_blur"
     },
     {
       "id":"stars",
@@ -37,7 +40,8 @@
       "sfxSource":"https://www.youtube.com/watch?v=OylMXBNSTXY",
       "videoSource":"https://www.youtube.com/watch?v=X6dJEAs0-Gk",
       "description":"Flashing Stars on a dark background.",
-      "background":"stars"
+      "background":"stars",
+      "blur": "stars_blur"
     },
     {
       "id":"sunset",
@@ -48,7 +52,8 @@
       "videoSource":"https://www.youtube.com/watch?v=UaCRAJLvLFk",
       "description":"Watch the sun descend over an island from the seaside, bringing the day to an end.",
       "background":"sunset",
-      "externalVideo":true
+      "externalVideo":true,
+      "blur": "rain_on_leaves_blur"
     },
     {
       "id":"cloud_watching",
@@ -59,7 +64,8 @@
       "videoSource":"https://www.youtube.com/watch?v=yupuohj6d8Y",
       "description":"Lying on warm summer grass with a nice breeze, watching the clouds go by.",
       "background":"cloud_watching",
-      "externalVideo":true
+      "externalVideo":true,
+      "blur": "rain_on_leaves_blur"
     },
     {
       "id":"jungle_after_rainfall",
@@ -70,6 +76,7 @@
       "videoSource":"https://www.youtube.com/watch?v=yupuohj6d8Y",
       "description":"A viewpoint over a tropical jungle, just after rainfall.",
       "background":"jungle_after_rainfall",
-      "externalVideo":true
+      "externalVideo":true,
+      "blur": "rain_on_leaves_blur"
     }
   ]
