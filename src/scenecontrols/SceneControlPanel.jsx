@@ -28,7 +28,7 @@ export default class SceneControlPanel extends React.Component{
         let appState = this.props.appState
 
         return(
-            <div id="sceneControlPanel" style={this.sceneControlColors}>
+            <div id="sceneControlPanel" className="glassBlock" style={this.sceneControlColors}>
                 <SelectionVolumeControl
                     sourcesArray={appState.mediaSources.musicTracksArray}
                     sources={appState.mediaSources.musicTracks}
