@@ -1,6 +1,6 @@
 let darkTheme = {
     'name' : 'dark',
-    'backgroundColor': 'rgb(0, 0, 0, 0.6)',
+    'backgroundColor': 'rgb(10, 10, 10, 0.6)',
     'accentColor':'#ffffff',
     'iconColor': 'invert(100%)'
 }

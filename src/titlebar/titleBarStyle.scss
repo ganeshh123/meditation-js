@@ -10,7 +10,7 @@
 }
 
 #appTitleText {
-    margin-left: 3vw;
+    margin-left: 5vh;
     padding-bottom: 0.2vh;
     font-size: 6vh;
     font-weight: normal;
@@ -18,19 +18,23 @@
 
 #buttonsHolder {
     height: 100%;
-    margin-right: 0.7vw;
+    margin-right: 1.5vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
 }
 
-.titleBarButton {
-    margin-left: 1vw;
-    margin-right: 1vw;
+#buttonsHolder img { 
+    margin: 0 2vh;
+    padding: 0;
     background: none;
+    height: 5vh;
+    width: 5vh;
+    opacity: 0.7;
+
+    &:hover {
+        opacity: 1;
+    }
 }
 
-.titleBarButton img {
-    height: 5vh;
-}

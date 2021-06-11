@@ -17,6 +17,10 @@ export default class SceneControlPanel extends React.Component{
             backgroundColor: this.props.appState.currentTheme.backgroundColor
         }
 
+        this.dividerColors = {
+            backgroundColor: this.props.appState.currentTheme.accentColor
+        }
+
     }
 
     state = {
@@ -24,25 +28,29 @@ export default class SceneControlPanel extends React.Component{
     }
 
     render(){
-
         let appState = this.props.appState
 
         return(
             <div id="sceneControlPanel" className="glassBlock" style={this.sceneControlColors}>
-                <SelectionVolumeControl
-                    sourcesArray={appState.mediaSources.musicTracksArray}
-                    sources={appState.mediaSources.musicTracks}
-                    selected={appState.currentMusicTrack}
-                    sourceType='musicTrack'
-                    appState={appState}
-                />
-                <SelectionVolumeControl
-                    sourcesArray={appState.mediaSources.scenesArray} 
-                    sources={appState.mediaSources.scenes}
-                    selected={appState.currentScene}
-                    sourceType='scene'
-                    appState={appState}
-                />
+                <div className="controlHolder">
+                    <SelectionVolumeControl
+                        sourcesArray={appState.mediaSources.musicTracksArray}
+                        sources={appState.mediaSources.musicTracks}
+                        selected={appState.currentMusicTrack}
+                        sourceType='musicTrack'
+                        appState={appState}
+                    />
+                </div>
+                <div id="divider" style={this.dividerColors}></div>
+                <div className="controlHolder">
+                    <SelectionVolumeControl
+                        sourcesArray={appState.mediaSources.scenesArray} 
+                        sources={appState.mediaSources.scenes}
+                        selected={appState.currentScene}
+                        sourceType='scene'
+                        appState={appState}
+                    />
+                </div>
             </div>
         )
     }

@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap');
 
-* {
-    font-family: 'Bubbler One', sans-serif;
-    color: white;
-}
-
 *, *:before, :after {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
 html, body, #app {
@@ -16,15 +14,10 @@ html, body, #app {
     padding: 0;
 }
 
-body {
+body {  
+    color: white;
+    font-family: 'Bubbler One', sans-serif;
     font-size: 62.5%;
-}
-
-button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: none;
 }
 
 svg {
@@ -78,7 +71,8 @@ svg {
 }
 
 .glassBlock {
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(1vh);
+    -webkit-backdrop-filter: blur(1vh);
     box-shadow: 0.1vh 0.1vh 0 0.1vh rgba(0, 0, 0, 0.1), -0.1vh -0.1vh 0 0.1vh rgba(255, 255, 255, 0.1);
+    background-color: white;
 }
