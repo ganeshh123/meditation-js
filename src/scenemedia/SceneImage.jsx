@@ -9,7 +9,7 @@ export default class SceneVideo extends React.Component{
     constructor(props){
         super(props)
 
-        this.sceneVideoColors = {
+        this.sceneImageColors = {
 
         }
 
