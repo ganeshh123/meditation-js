@@ -2,7 +2,7 @@
 import React from 'react';
 
 /* Local Imports */
-import './sceneVideoStyle.scss'
+import './sceneImageStyle.scss'
 
 
 export default class SceneVideo extends React.Component{
