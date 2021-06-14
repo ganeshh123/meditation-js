@@ -65,6 +65,4 @@ ReactDOM.render(
   document.querySelector('body')
 );
 
-document.querySelector('#sceneAudio').play()
-
 module.hot.accept()

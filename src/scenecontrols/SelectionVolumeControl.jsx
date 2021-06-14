@@ -58,10 +58,9 @@ export default class SelectionVolumeControl extends React.Component{
         }
     }
 
-    setVolume = (event) => {
+    setVolume = (newVolume) => {
         let appState = this.props.appState
         let sourceType = this.props.sourceType
-        let newVolume = event.target.value
 
         let newVolumeState = {}
 
@@ -72,6 +71,38 @@ export default class SelectionVolumeControl extends React.Component{
         }
 
         appState.setStateFunction(newVolumeState)
+    }
+
+    setAudioMute = (muteAudio) => {
+        let sourceType = this.props.sourceType
+
+        if(sourceType == 'scene'){
+            document.querySelector('#sceneAudio').muted = muteAudio
+        }else if(sourceType == 'musicTrack'){
+            /* Todo mute for music track */
+        }
+    }
+
+    volumeSliderChanged = (event) => {
+        document.querySelector('#sceneAudio').muted = false
+        this.setVolume(event.target.value)
+    }
+
+    volumeIconPressed = (event) => {
+        let appState = this.props.appState
+        let sourceType = this.props.sourceType
+
+        if(sourceType == 'scene'){
+            if(document.querySelector('#sceneAudio').muted == true){
+                this.setAudioMute(false)
+                document.querySelector('#sceneVolumeSlider').value = appState['sceneAudioVolume']
+            }else{
+                this.setAudioMute(true)
+                document.querySelector('#sceneVolumeSlider').value = 0
+            }
+        }else if(sourceType == 'musicTrack'){
+            /* Todo mute for music track */
+        }
     }
 
     render(){
@@ -91,14 +122,16 @@ export default class SelectionVolumeControl extends React.Component{
                         src={this.getIconPath()} 
                         style={this.volumeIconColors}
                         height='20'
+                        onClick={this.volumeIconPressed}
                     />
                     <input 
                         className='volumeSlider'
+                        id={this.props.sourceType + 'VolumeSlider'}
                         type='range'
                         min='1'
                         max='100'
                         value={this.getVolume()}
-                        onChange={this.setVolume}
+                        onChange={this.volumeSliderChanged}
                     ></input>
                 </div>
             </div>
