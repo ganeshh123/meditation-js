@@ -29,8 +29,7 @@ export default class SelectionVolumeControl extends React.Component{
             })
         }else if(this.props.sourceType == 'musicTrack'){
             this.props.appState.setStateFunction({
-                currentMusicTrack: sourceId,
-                videoLoaded: false
+                currentMusicTrack: sourceId
             })
         }
     }
