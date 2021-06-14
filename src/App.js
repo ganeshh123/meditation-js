@@ -20,20 +20,6 @@ class App extends React.Component {
     backgroundSize: 'cover'
   }
 
-  changeSource = (sourceType, sourceId) => {
-    if(sourceType == 'scene'){
-      let blurImage = "url(./assets/img/" + this.state.mediaSources.scenes[sourceId].blur + ".jpg)"
-      //document.querySelector('#app').style.backgroundImage = blurImage
-      this.setState({
-        currentScene: sourceId
-      })
-    }else if(sourceType == 'musicTrack'){
-      this.setState({
-        currentMusicTrack: sourceId
-      })
-    }
-  }
-
   updateState = (newState) => {
     this.setState(newState)
   }
@@ -43,6 +29,8 @@ class App extends React.Component {
     currentScene: 'rain_on_leaves',
     currentMusicTrack: 'track1',
     currentTheme: Theme.staticThemes['dark'],
+    sceneAudioVolume: 50,
+    musicAudioVolume: 20,
     /* Functions */
     setStateFunction: this.updateState,
     changeSourceFunction: this.changeSource,

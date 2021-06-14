@@ -46,6 +46,34 @@ export default class SelectionVolumeControl extends React.Component{
         return iconPath
     }
 
+    getVolume = () => {
+
+        let appState = this.props.appState
+        let sourceType = this.props.sourceType
+
+        if(sourceType == 'scene'){
+            return appState['sceneAudioVolume']
+        }else if(sourceType == 'musicTrack'){
+            return appState['musicAudioVolume']
+        }
+    }
+
+    setVolume = (event) => {
+        let appState = this.props.appState
+        let sourceType = this.props.sourceType
+        let newVolume = event.target.value
+
+        let newVolumeState = {}
+
+        if(sourceType == 'scene'){
+            newVolumeState = {'sceneAudioVolume': newVolume}
+        }else if(sourceType == 'musicTrack'){
+            newVolumeState = {'musicAudioVolume': newVolume}
+        }
+
+        appState.setStateFunction(newVolumeState)
+    }
+
     render(){
         return(
             <div className="selectionVolumeControl" style={this.selectionVolumeControlColors}>
@@ -56,15 +84,22 @@ export default class SelectionVolumeControl extends React.Component{
                         )
                     })}
                 </select>
-                <p className="sourceDescription">{this.props.sources[this.props.selected]['description']}</p>
-                <div className="volumeSliderContainer">
+                <p className='sourceDescription'>{this.props.sources[this.props.selected]['description']}</p>
+                <div className='volumeSliderContainer'>
                     <img 
-                        className="volumeIcon" 
+                        className='volumeIcon' 
                         src={this.getIconPath()} 
                         style={this.volumeIconColors}
-                        height="20"
+                        height='20'
                     />
-                    <input className="volumeSlider" type="range" min="1" max="100"></input>
+                    <input 
+                        className='volumeSlider'
+                        type='range'
+                        min='1'
+                        max='100'
+                        value={this.getVolume()}
+                        onChange={this.setVolume}
+                    ></input>
                 </div>
             </div>
         )

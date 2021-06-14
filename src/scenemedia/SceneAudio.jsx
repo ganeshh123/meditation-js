@@ -18,7 +18,22 @@ export default class SceneAudio extends React.Component{
         return audioPath
     }
 
+    setSceneAudioVolume = () => {
+        let appState = this.props.appState
+        let volumePercentage = appState['sceneAudioVolume']
+
+        let volumeValue = volumePercentage / 100
+
+        document.querySelector('#sceneAudio').volume = volumeValue
+
+    }
+
+    componentDidUpdate = () => {
+        this.setSceneAudioVolume()
+    }
+
     render(){
+
         return(
             <audio
                 id='sceneAudio'
