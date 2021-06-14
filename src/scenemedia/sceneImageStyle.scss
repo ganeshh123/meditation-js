@@ -1,0 +1,15 @@
+#sceneImage{
+    z-index: -2;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3a3a3a;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
