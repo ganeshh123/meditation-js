@@ -11,7 +11,7 @@ import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './scenecontrols/SceneControlPanel'
 import SceneVideo from './scenemedia/SceneVideo'
 import SceneImage from './scenemedia/SceneImage'
-import SceneAudio from './scenemedia/SceneAudio'
+import AudioPlayer from './scenemedia/AudioPlayer'
 
 class App extends React.Component {
 
@@ -27,7 +27,7 @@ class App extends React.Component {
   state = {
     /* Variables */
     currentScene: 'rain_on_leaves',
-    currentMusicTrack: 'track1',
+    currentMusicTrack: 'still',
     currentTheme: Theme.staticThemes['dark'],
     sceneAudioVolume: 50,
     musicAudioVolume: 20,
@@ -41,10 +41,12 @@ class App extends React.Component {
   }
 
   render = () => {
+
     return(
       <div id="app" style={this.appStyle}>
         <SceneImage appState={this.state} />
-        <SceneAudio appState={this.state} />
+        <AudioPlayer appState={this.state} type='sfx' />
+        <AudioPlayer appState={this.state} type='music' />
         <SceneVideo appState={this.state} />
         <div id="appTop">
           <TitleBar appTitleText="Bonseki" appState={this.state} />

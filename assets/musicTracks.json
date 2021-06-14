@@ -1,12 +1,16 @@
 [
     {
-      "id":"track1",
+      "id":"still",
       "name":"Soothing Piano",
-      "description" : "Calm Piano Music"
+      "description" : "Calm Piano Music",
+      "audioFile" : "still",
+      "source": "https://www.youtube.com/watch?v=962VmrIh9vQ"
     },
     {
-      "id":"track2",
-      "name":"Beethoven's Latest Beat",
-      "description" : "He finally dropped that beat"
+      "id":"gymnopedie1",
+      "name":"Relaxing Guitar",
+      "description" : "Delicate guitar for watching time go by",
+      "audioFile": "gymnopedie1",
+      "source": "https://musopen.org/music/8010-3-gymnopedies/"
     }
 ]

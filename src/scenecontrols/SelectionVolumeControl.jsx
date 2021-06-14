@@ -76,14 +76,22 @@ export default class SelectionVolumeControl extends React.Component{
         let sourceType = this.props.sourceType
 
         if(sourceType == 'scene'){
-            document.querySelector('#sceneAudio').muted = muteAudio
+            document.querySelector('#sfxAudio').muted = muteAudio
         }else if(sourceType == 'musicTrack'){
-            /* Todo mute for music track */
+            document.querySelector('#musicAudio').muted = muteAudio
         }
     }
 
     volumeSliderChanged = (event) => {
-        document.querySelector('#sceneAudio').muted = false
+
+        let sourceType = this.props.sourceType
+
+        if(sourceType == 'scene'){
+            document.querySelector('#sfxAudio').muted = false
+        }else if(sourceType == 'musicTrack'){
+            document.querySelector('#musicAudio').muted = false
+        }
+
         this.setVolume(event.target.value)
     }
 
@@ -92,7 +100,7 @@ export default class SelectionVolumeControl extends React.Component{
         let sourceType = this.props.sourceType
 
         if(sourceType == 'scene'){
-            if(document.querySelector('#sceneAudio').muted == true){
+            if(document.querySelector('#sfxAudio').muted == true){
                 this.setAudioMute(false)
                 document.querySelector('#sceneVolumeSlider').value = appState['sceneAudioVolume']
             }else{
@@ -100,7 +108,13 @@ export default class SelectionVolumeControl extends React.Component{
                 document.querySelector('#sceneVolumeSlider').value = 0
             }
         }else if(sourceType == 'musicTrack'){
-            /* Todo mute for music track */
+            if(document.querySelector('#musicAudio').muted == true){
+                this.setAudioMute(false)
+                document.querySelector('#musicTrackVolumeSlider').value = appState['musicAudioVolume']
+            }else{
+                this.setAudioMute(true)
+                document.querySelector('#musicTrackVolumeSlider').value = 0
+            }
         }
     }
 
