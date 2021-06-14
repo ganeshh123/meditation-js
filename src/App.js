@@ -11,6 +11,7 @@ import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './scenecontrols/SceneControlPanel'
 import SceneVideo from './scenemedia/SceneVideo'
 import SceneImage from './scenemedia/SceneImage'
+import SceneAudio from './scenemedia/SceneAudio'
 
 class App extends React.Component {
 
@@ -55,6 +56,7 @@ class App extends React.Component {
     return(
       <div id="app" style={this.appStyle}>
         <SceneImage appState={this.state} />
+        <SceneAudio appState={this.state} />
         <SceneVideo appState={this.state} />
         <div id="appTop">
           <TitleBar appTitleText="Bonseki" appState={this.state} />
@@ -74,5 +76,7 @@ ReactDOM.render(
   <App />,
   document.querySelector('body')
 );
+
+document.querySelector('#sceneAudio').play()
 
 module.hot.accept()

@@ -23,9 +23,10 @@ export default class SceneImage extends React.Component{
         let appState = this.props.appState
         let currentScene = appState['currentScene']
         if(appState['videoLoaded'] == true){
-            return undefined
+            let imagePath = './assets/img/' + appState.mediaSources.scenes[currentScene]['background'] + '.png'
+            return imagePath
         }else{
-            let blurImagePath = './assets/img/' + this.props.appState.mediaSources.scenes[currentScene].blur + '.jpg'
+            let blurImagePath = './assets/img/' + appState.mediaSources.scenes[currentScene].blur + '.jpg'
             return blurImagePath
         }
     }

@@ -23,7 +23,6 @@ export default class SceneVideo extends React.Component{
     }
 
     videoFinishedLoading = (event) => {
-        console.log('Video loaded')
         this.props.appState.setStateFunction({
             videoLoaded: true
         })

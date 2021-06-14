@@ -7,7 +7,6 @@ class Theme {
     static switchTheme = (themeName, appState) => {
         if(staticThemes[themeName]){
             appState.currentTheme = staticThemes[themeName]
-            console.log('Theme switched to ' + themeName)
         }else{
             appState.currentTheme = staticThemes['dark']
         }
