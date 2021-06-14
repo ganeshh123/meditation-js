@@ -23,21 +23,21 @@ export default class TitleBar extends React.Component {
       return(
         <div id="titleBar" className="glassBlock" style={this.titleBarColors}>
           <h1 id="appTitleText">{this.props.appTitleText}</h1>
-          <div id="buttonsHolder" >
-              <button id="appInfoButton" className="titleBarButton">         
+          <div id="buttonsHolder">
                 <img 
                   src={"./assets/icons/about_icon.svg"} 
                   style={{filter: this.props.appState.currentTheme.iconColor}}
-                  height="30"
+                  id="aboutButton"
+                  tabIndex="0"
+                  accessKey="i"
                 />
-              </button>
-              <button id="appSettingsButton" className="titleBarButton">
                 <img 
                   src={"./assets/icons/settings_icon.svg"} 
                   style={{filter: this.props.appState.currentTheme.iconColor}}
-                  height="30"
+                  id="settingsButton"
+                  tabIndex="0"
+                  accessKey="s"
                 />
-              </button>
           </div>
         </div>
       );
