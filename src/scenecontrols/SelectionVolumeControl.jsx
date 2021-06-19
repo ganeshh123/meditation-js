@@ -35,11 +35,26 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     getIconPath = () => {
+
+        let appState = this.props.appState
+
         let iconPath = './assets/icons/'
         if(this.props.sourceType == 'musicTrack'){
-            iconPath = iconPath + 'note_icon.svg'
+
+            if(appState['musicMuted'] == false){
+                iconPath = iconPath + 'note_icon.svg'
+            }else{
+                iconPath = iconPath + 'note_off_icon.svg'
+            }
+
         }else{
-            iconPath = iconPath +'speaker_icon.svg'
+
+            if(appState['sfxMuted'] == false){
+                iconPath = iconPath +'speaker_icon.svg'
+            }else{
+                iconPath = iconPath +'speaker_off_icon.svg'
+            }
+            
         }
 
         return iconPath
@@ -73,26 +88,29 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     setAudioMute = (muteAudio) => {
+
+        let appState = this.props.appState
         let sourceType = this.props.sourceType
 
         if(sourceType == 'scene'){
             document.querySelector('#sfxAudio').muted = muteAudio
+            appState.setStateFunction({'sfxMuted': muteAudio})
         }else if(sourceType == 'musicTrack'){
             document.querySelector('#musicAudio').muted = muteAudio
+            appState.setStateFunction({'musicMuted': muteAudio})
         }
     }
 
     volumeSliderChanged = (event) => {
 
-        let sourceType = this.props.sourceType
-
-        if(sourceType == 'scene'){
-            document.querySelector('#sfxAudio').muted = false
-        }else if(sourceType == 'musicTrack'){
-            document.querySelector('#musicAudio').muted = false
+        if(event.target.value < 2){
+            this.setAudioMute(true)
+        }else{
+            this.setAudioMute(false)
         }
 
         this.setVolume(event.target.value)
+
     }
 
     volumeIconPressed = (event) => {
@@ -100,20 +118,26 @@ export default class SelectionVolumeControl extends React.Component{
         let sourceType = this.props.sourceType
 
         if(sourceType == 'scene'){
-            if(document.querySelector('#sfxAudio').muted == true){
+            if(appState['sfxMuted'] == true){
+
                 this.setAudioMute(false)
-                document.querySelector('#sceneVolumeSlider').value = appState['sceneAudioVolume']
+
             }else{
+
                 this.setAudioMute(true)
-                document.querySelector('#sceneVolumeSlider').value = 0
+                appState.setStateFunction({'sfxMuted': true})
+
             }
         }else if(sourceType == 'musicTrack'){
-            if(document.querySelector('#musicAudio').muted == true){
+            if(appState['musicMuted'] == true){
+
                 this.setAudioMute(false)
-                document.querySelector('#musicTrackVolumeSlider').value = appState['musicAudioVolume']
+
             }else{
+
                 this.setAudioMute(true)
-                document.querySelector('#musicTrackVolumeSlider').value = 0
+                appState.setStateFunction({'sfxMuted': true})
+
             }
         }
     }

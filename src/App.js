@@ -37,7 +37,9 @@ class App extends React.Component {
     /* Static Data */
     mediaSources: MediaSources,
     /* Flags */
-    videoLoaded: false
+    videoLoaded: false,
+    musicMuted: false,
+    sfxMuted: false
   }
 
   render = () => {
