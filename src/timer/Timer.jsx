@@ -15,8 +15,19 @@ export default class Timer extends React.Component{
             filter: this.props.appState.currentTheme.iconColor
         }
 
+        this.timerProgressBarRangeColors = {
+            backgroundColor: 'grey'
+        }
+
         this.timerProgressBarColors = {
-            backgroundColor: this.props.appState.currentTheme.accentColor
+            backgroundColor: this.props.appState.currentTheme.backgroundColor
+        }
+    }
+
+    state={
+        progressBarStyle: {
+            width: '30%',
+            backgroundColor: 'white'
         }
     }
 
@@ -44,8 +55,11 @@ export default class Timer extends React.Component{
                     Focus
                 </div>
                 <div id='timerProgressBarContainer'>
-                    <div id='timerProgressBar'  style={this.timerProgressBarColors}>
-
+                    <div id='timerProgressBarRange'  style={this.timerProgressBarRangeColors}>
+                        <div id='timerProgressBar' 
+                            style={this.state.progressBarStyle}
+                        >
+                        </div>
                     </div>
                 </div>
                 <div id='timerBottomBar'>

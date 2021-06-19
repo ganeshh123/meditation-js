@@ -56,11 +56,19 @@
     align-items: center;
 }
 
-#timerProgressBar{
+#timerProgressBarRange{
     width: 80%;
     height: 20%;
     min-height: 2px;
     max-height: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#timerProgressBar{
+    height: 120%;
 }
 
 #timerBottomBar{
