@@ -1,0 +1,101 @@
+#timer{
+    min-width: 600px;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#timerViewControls{
+    height: 10%;
+    min-height: 20px;
+    max-height: 40px;;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timerViewIcon{
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#timerTimeDisplay{
+    height: 20%;
+    min-height: 80px;
+    max-height: 160px;
+    width: 100%;
+    text-align: center;
+    font-size: 64px;
+}
+
+#timerCurrentPhaseDisplay{
+    height: 20%;
+    min-height: 60px;
+    max-height: 120px;
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+}
+
+#timerProgressBarContainer{
+    height: 3%;
+    min-height: 10px;
+    max-height: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerProgressBar{
+    width: 80%;
+    height: 20%;
+    min-height: 2px;
+    max-height: 4px;
+}
+
+#timerBottomBar{
+    height: 45%;
+    min-height: 30px;
+    max-height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#timerControls{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerNextPhaseDisplay{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerNextPhaseName{
+    text-align: center;
+    font-size: 28px;
+}
+
+#timerNextPhaseTimeLeft{
+    text-align: center;
+    font-size: 18px
+}

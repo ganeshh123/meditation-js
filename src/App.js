@@ -12,6 +12,7 @@ import SceneControlPanel from './scenecontrols/SceneControlPanel'
 import SceneVideo from './scenemedia/SceneVideo'
 import SceneImage from './scenemedia/SceneImage'
 import AudioPlayer from './scenemedia/AudioPlayer'
+import Timer from './timer/Timer'
 
 class App extends React.Component {
 
@@ -53,7 +54,9 @@ class App extends React.Component {
         <div id="appTop">
           <TitleBar appTitleText="Bonseki" appState={this.state} />
         </div>
-        <div id="appMiddle"></div>
+        <div id="appMiddle">
+          <Timer appState={this.state} />
+        </div>
         <div id="appBottom">
           <SceneControlPanel 
             appState={this.state}
