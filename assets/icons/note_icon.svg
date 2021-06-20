@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="23.478" height="32.887" viewBox="0 0 23.478 32.887">
   <g id="note_icon" transform="translate(-73.171 -450.808)">
     <circle id="Ellipse_17" data-name="Ellipse 17" cx="6.187" cy="6.187" r="6.187" transform="translate(74.171 470.32)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-    <line id="Line_129" data-name="Line 129" y2="22.706" transform="translate(86.546 452.197)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_129" data-name="Line 129" y2="24.5" transform="translate(86.546 452.197)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
     <line id="Line_130" data-name="Line 130" x2="8.714" y2="5.949" transform="translate(86.546 452.197)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
   </g>
 </svg>
