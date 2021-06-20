@@ -29,18 +29,32 @@ export default class SelectionVolumeControl extends React.Component{
             })
         }else if(this.props.sourceType == 'musicTrack'){
             this.props.appState.setStateFunction({
-                currentMusicTrack: sourceId,
-                videoLoaded: false
+                currentMusicTrack: sourceId
             })
         }
     }
 
     getIconPath = () => {
+
+        let appState = this.props.appState
+
         let iconPath = './assets/icons/'
         if(this.props.sourceType == 'musicTrack'){
-            iconPath = iconPath + 'note_icon.svg'
+
+            if(appState['musicMuted'] == false){
+                iconPath = iconPath + 'note_icon.svg'
+            }else{
+                iconPath = iconPath + 'note_off_icon.svg'
+            }
+
         }else{
-            iconPath = iconPath +'speaker_icon.svg'
+
+            if(appState['sfxMuted'] == false){
+                iconPath = iconPath +'speaker_icon.svg'
+            }else{
+                iconPath = iconPath +'speaker_off_icon.svg'
+            }
+            
         }
 
         return iconPath
@@ -74,18 +88,29 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     setAudioMute = (muteAudio) => {
+
+        let appState = this.props.appState
         let sourceType = this.props.sourceType
 
         if(sourceType == 'scene'){
-            document.querySelector('#sceneAudio').muted = muteAudio
+            document.querySelector('#sfxAudio').muted = muteAudio
+            appState.setStateFunction({'sfxMuted': muteAudio})
         }else if(sourceType == 'musicTrack'){
-            /* Todo mute for music track */
+            document.querySelector('#musicAudio').muted = muteAudio
+            appState.setStateFunction({'musicMuted': muteAudio})
         }
     }
 
     volumeSliderChanged = (event) => {
-        document.querySelector('#sceneAudio').muted = false
+
+        if(event.target.value < 2){
+            this.setAudioMute(true)
+        }else{
+            this.setAudioMute(false)
+        }
+
         this.setVolume(event.target.value)
+
     }
 
     volumeIconPressed = (event) => {
@@ -93,15 +118,27 @@ export default class SelectionVolumeControl extends React.Component{
         let sourceType = this.props.sourceType
 
         if(sourceType == 'scene'){
-            if(document.querySelector('#sceneAudio').muted == true){
+            if(appState['sfxMuted'] == true){
+
                 this.setAudioMute(false)
-                document.querySelector('#sceneVolumeSlider').value = appState['sceneAudioVolume']
+
             }else{
+
                 this.setAudioMute(true)
-                document.querySelector('#sceneVolumeSlider').value = 0
+                appState.setStateFunction({'sfxMuted': true})
+
             }
         }else if(sourceType == 'musicTrack'){
-            /* Todo mute for music track */
+            if(appState['musicMuted'] == true){
+
+                this.setAudioMute(false)
+
+            }else{
+
+                this.setAudioMute(true)
+                appState.setStateFunction({'sfxMuted': true})
+
+            }
         }
     }
 
