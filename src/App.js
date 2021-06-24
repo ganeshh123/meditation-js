@@ -13,6 +13,7 @@ import SceneVideo from './scenemedia/SceneVideo'
 import SceneImage from './scenemedia/SceneImage'
 import AudioPlayer from './scenemedia/AudioPlayer'
 import Timer from './timer/Timer'
+import SidePanel from './sidepanel/SidePanel'
 
 class App extends React.Component {
 
@@ -40,7 +41,9 @@ class App extends React.Component {
     /* Flags */
     videoLoaded: false,
     musicMuted: false,
-    sfxMuted: false
+    sfxMuted: false,
+    videoDisabled: false,
+    presetsMenuExpanded: false
   }
 
   render = () => {
@@ -55,7 +58,9 @@ class App extends React.Component {
           <TitleBar appTitleText="Bonseki" appState={this.state} />
         </div>
         <div id="appMiddle">
+          <SidePanel appState={this.state} type="timerPresets"/>
           <Timer appState={this.state} />
+          <SidePanel appState={this.state} type="toggles"/>
         </div>
         <div id="appBottom">
           <SceneControlPanel 

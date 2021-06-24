@@ -1,0 +1,13 @@
+.sidePanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sidePanelIcon{
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 5px 0px 5px;
+    cursor: pointer;
+}
