@@ -19,7 +19,6 @@ html {
 }
 
 body {
-    color: white;
     font-family: 'Bubbler One', sans-serif;
     font-size: 62.5%;
 }
@@ -79,8 +78,7 @@ svg {
 }
 
 .glassBlock {
-    backdrop-filter: blur(1vh);
-    -webkit-backdrop-filter: blur(1vh);
+    backdrop-filter: blur(1.5vh);
+    -webkit-backdrop-filter: blur(1.5vh);
     box-shadow: 0.1vh 0.1vh 0 0.1vh rgba(0, 0, 0, 0.1), -0.1vh -0.1vh 0 0.1vh rgba(255, 255, 255, 0.1);
-    background-color: white;
 }

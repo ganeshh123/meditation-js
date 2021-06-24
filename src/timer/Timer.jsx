@@ -8,15 +8,16 @@ export default class Timer extends React.Component{
         super(props)
 
         this.timerColors = {
-            backgroundColor: this.props.appState.currentTheme.backgroundColor
+            backgroundColor: this.props.appState.currentTheme.backgroundColor,
+            color: this.props.appState.currentTheme.accentColor
         }
 
         this.timerIconColors = {
             filter: this.props.appState.currentTheme.iconColor
         }
 
-        this.timerProgressBarRangeColors = {
-            backgroundColor: 'grey'
+        this.accentColor = {
+            backgroundColor: this.props.appState.currentTheme.accentColor
         }
 
         this.timerProgressBarColors = {
@@ -27,25 +28,23 @@ export default class Timer extends React.Component{
     state={
         progressBarStyle: {
             width: '30%',
-            backgroundColor: 'white'
+            backgroundColor: this.props.appState.currentTheme.accentColor
         }
     }
 
     render(){
         return(
-            <div id='timer' style={this.timerColors}>
+            <div id='timer' className='glassBlock' style={this.timerColors}>
                 <div id='timerViewControls'>
                     <img 
                         src={'./assets/icons/pin_icon.svg'} 
                         style={this.timerIconColors}
                         id='timerPinButton'
-                        className='timerViewIcon'
                     />
                     <img 
                         src={'./assets/icons/cross_icon.svg'} 
                         style={this.timerIconColors}
                         id='timerCloseButton'
-                        className='timerViewIcon'
                     />
                 </div>
                 <div id='timerTimeDisplay'>
@@ -55,17 +54,16 @@ export default class Timer extends React.Component{
                     Focus
                 </div>
                 <div id='timerProgressBarContainer'>
-                    <div id='timerProgressBarRange'  style={this.timerProgressBarRangeColors}>
-                        <div id='timerProgressBar' 
-                            style={this.state.progressBarStyle}
-                        >
-                        </div>
+                    <div id='timerProgressBarRange'>
+                        <div id="timerProgressBarBack" style={this.accentColor}></div>
+                        <div id='timerProgressBar' style={this.state.progressBarStyle}></div>
+                        
                     </div>
                 </div>
                 <div id='timerBottomBar'>
                     <div id='timerControls'>
                         <img 
-                            src={'./assets/icons/play_icon.svg'} 
+                            src={'./assets/icons/play_icon.svg'}
                             style={this.timerIconColors}
                             id='timerCloseButton'
                             className='timerViewIcon'
@@ -87,7 +85,7 @@ export default class Timer extends React.Component{
                         <div id='timerNextPhaseName'>
                             Break
                         </div>
-                        <div id='timerNextPhaseTimeLeft'>
+                        <div id='timerNextPhaseLength'>
                             5 min
                         </div>
                     </div>

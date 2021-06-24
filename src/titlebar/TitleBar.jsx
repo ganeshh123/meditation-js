@@ -10,7 +10,8 @@ export default class TitleBar extends React.Component {
         super(props)
 
         this.titleBarColors = {
-          backgroundColor: this.props.appState.currentTheme.backgroundColor
+          backgroundColor: this.props.appState.currentTheme.backgroundColor,
+          color: this.props.appState.currentTheme.accentColor
         }
         
     }
