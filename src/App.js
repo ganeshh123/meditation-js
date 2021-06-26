@@ -23,7 +23,9 @@ class App extends React.Component {
   }
 
   updateState = (newState) => {
-    this.setState(newState)
+    this.setState(newState, () => {
+      return
+    })
   }
 
   state = {
@@ -35,7 +37,6 @@ class App extends React.Component {
     musicAudioVolume: 20,
     /* Functions */
     setStateFunction: this.updateState,
-    changeSourceFunction: this.changeSource,
     /* Static Data */
     mediaSources: MediaSources,
     /* Flags */

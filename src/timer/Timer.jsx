@@ -6,9 +6,15 @@ import './timerStyle.scss'
 export default class Timer extends React.Component{
     constructor(props){
         super(props)
+    }
 
+    setColors = () => {
         this.timerColors = {
-            backgroundColor: this.props.appState.currentTheme.backgroundColor
+            backgroundColor: this.props.appState.currentTheme.backgroundColor,
+        }
+
+        this.timerTextColors = {
+            color: this.props.appState.currentTheme.accentColor
         }
 
         this.timerIconColors = {
@@ -27,11 +33,14 @@ export default class Timer extends React.Component{
     state={
         progressBarStyle: {
             width: '30%',
-            backgroundColor: 'white'
+            backgroundColor: this.props.appState.currentTheme.accentColor
         }
     }
 
     render(){
+
+        this.setColors()
+
         return(
             <div id='timer' style={this.timerColors}>
                 <div id='timerViewControls'>
@@ -48,10 +57,10 @@ export default class Timer extends React.Component{
                         className='timerViewIcon'
                     />
                 </div>
-                <div id='timerTimeDisplay'>
+                <div id='timerTimeDisplay' style={this.timerTextColors}>
                     25:00
                 </div>
-                <div id='timerCurrentPhaseDisplay'>
+                <div id='timerCurrentPhaseDisplay' style={this.timerTextColors}>
                     Focus
                 </div>
                 <div id='timerProgressBarContainer'>
@@ -84,10 +93,10 @@ export default class Timer extends React.Component{
                         />
                     </div>
                     <div id='timerNextPhaseDisplay'>
-                        <div id='timerNextPhaseName'>
+                        <div id='timerNextPhaseName' style={this.timerTextColors}>
                             Break
                         </div>
-                        <div id='timerNextPhaseTimeLeft'>
+                        <div id='timerNextPhaseTimeLeft' style={this.timerTextColors}>
                             5 min
                         </div>
                     </div>

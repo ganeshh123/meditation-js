@@ -12,7 +12,9 @@ import MediaSources from '../utils/mediasources/MediaSources'
 export default class SceneControlPanel extends React.Component{
     constructor(props){
         super(props)
+    }
 
+    setColors = () => {
         this.sceneControlColors = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor
         }
@@ -20,14 +22,12 @@ export default class SceneControlPanel extends React.Component{
         this.dividerColors = {
             backgroundColor: this.props.appState.currentTheme.accentColor
         }
-
-    }
-
-    state = {
-
     }
 
     render(){
+
+        this.setColors()
+
         let appState = this.props.appState
 
         return(

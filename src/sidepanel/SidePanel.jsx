@@ -1,6 +1,7 @@
 /* Global Imports */
 import React from 'react';
 
+import Theme from '../utils/theme/Theme'
 import PresetsMenu from '../presets/PresetsMenu'
 
 import './sidePanelStyle.scss'
@@ -8,19 +9,19 @@ import './sidePanelStyle.scss'
 export default class SidePanel extends React.Component{
     constructor(props){
         super(props)
+    }
 
-        this.sidePanelColors = {
+    setColors = () => {
 
+        this.sidePanelButtonColors = {
+            backgroundColor: this.props.appState['currentTheme']['backgroundColor']
         }
 
         this.sidePanelIconColors = {
-            backgroundColor: this.props.appState['currentTheme']['backgroundColor']
+            filter: this.props.appState['currentTheme']['iconColor']
         }
-    }
 
-    state={
     }
-
 
     presetsButtonPressed = () => {
         let appState = this.props.appState
@@ -37,6 +38,13 @@ export default class SidePanel extends React.Component{
     }
 
     lightDarkButtonPressed = () => {
+
+        let type = this.props.type
+        let appState = this.props.appState
+
+        if(type === 'toggles'){
+            Theme.switchTheme(appState)
+        }
 
     }
 
@@ -107,6 +115,8 @@ export default class SidePanel extends React.Component{
 
     render(){
 
+        this.setColors()
+
         let appState = this.props.appState
         let type = this.props.type
         let buttons = this.getButtons()
@@ -114,23 +124,31 @@ export default class SidePanel extends React.Component{
         return(
             <div className='sidePanel' id='s' style={this.sidePanelColors}>
 
-                <div className='sidePanelIcon' style={this.sidePanelIconColors}>
+                <div 
+                    className='sidePanelIcon' 
+                    style={this.sidePanelButtonColors}
+                    onClick={buttons[0]['clickHandler']}
+                >
                     <img 
                         src={buttons[0]['icon']} 
                         style={{filter: this.props.appState['currentTheme']['iconColor']}}
                         id={buttons[0]['name'] + 'Button'}
-                        onClick={buttons[0]['clickHandler']}
+                        style={this.sidePanelIconColors}
                     />
                 </div>
 
                 {type === 'timerPresets' && appState['presetsMenuExpanded'] == true && <PresetsMenu appState={appState} />}
 
-                <div className='sidePanelIcon' style={this.sidePanelIconColors}>
+                <div 
+                    className='sidePanelIcon' 
+                    style={this.sidePanelButtonColors}
+                    onClick={buttons[1]['clickHandler']}
+                >
                     <img 
                         src={buttons[1]['icon']} 
                         style={{filter: this.props.appState['currentTheme']['iconColor']}}
                         id={buttons[1]['name'] + 'Button'}
-                        onClick={buttons[1]['clickHandler']}
+                        style={this.sidePanelIconColors}
                     />
                 </div>
 

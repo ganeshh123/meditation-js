@@ -6,11 +6,17 @@ import './presetsMenuStyles.scss'
 export default class PresetsMenu extends React.Component{
     constructor(props){
         super(props)
+    }
 
+    setColors = () => {
         this.presetsMenuColors = {
-            backgroundColor: this.props.appState['currentTheme']['backgroundColor']
+            backgroundColor: this.props.appState['currentTheme']['backgroundColor'],
+            color: this.props.appState['currentTheme']['accentColor']
         }
 
+        this.presetsMenuIconColors = {
+            filter: this.props.appState['currentTheme']['iconColor']
+        }
     }
 
     state={
@@ -18,6 +24,8 @@ export default class PresetsMenu extends React.Component{
     }
 
     render(){
+
+        this.setColors()
 
         let appState = this.props.appState
         let presetsArray = appState['mediaSources']['presetsArray']
@@ -30,13 +38,14 @@ export default class PresetsMenu extends React.Component{
                         <div className='presetsMenuButton' key={preset['id']}>
                             <img 
                                 src={'./assets/icons/' + preset['icon']}
-                                style={{filter: this.props.appState['currentTheme']['iconColor']}}
+                                style={this.presetsMenuIconColors}
                                 id={preset['id'] + 'PresetMsenuButtonIcon'}
                                 className="presetsMenuButtonIcon"
                             />
                             <div 
                                 id={preset['id'] + 'PresetsMenuButtonText'}
                                 className="presetsMenuButtonText"
+                                style={{color: 'inherit'}}
                             >
                                 {preset['name']}
                             </div>
