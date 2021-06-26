@@ -41,6 +41,19 @@ export default class SidePanel extends React.Component{
     }
 
     videoToggleButtonPressed = () => {
+        let appState = this.props.appState
+        let videoLoaded = appState['videoLoaded']
+        let videoCurrentlyDisabled = appState['videoDisabled']
+
+        appState.setStateFunction({
+            videoDisabled: !videoCurrentlyDisabled
+        })
+
+        if(videoCurrentlyDisabled == false && videoLoaded == true){
+            document.querySelector('#sceneVideo').pause()
+        }else if(videoCurrentlyDisabled == true && videoLoaded == true){
+            document.querySelector('#sceneVideo').play()
+        }
 
     }
 

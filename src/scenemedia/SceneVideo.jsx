@@ -30,8 +30,18 @@ export default class SceneVideo extends React.Component{
 
     render(){
 
-        let videoFileName= this.props.appState.mediaSources.scenes[this.props.appState.currentScene]['videoFile']
-        let videoPath = './assets/video/' + videoFileName + '.mp4'
+        let appState = this.props.appState
+
+        let videoPath
+
+        if(appState['videoDisabled'] === true && appState['videoLoaded'] === false){
+            videoPath = undefined
+            return null
+        }
+        else{
+            let videoFileName= this.props.appState.mediaSources.scenes[this.props.appState.currentScene]['videoFile']
+            videoPath = './assets/video/' + videoFileName + '.mp4'
+        }
 
         return(
             <video 
