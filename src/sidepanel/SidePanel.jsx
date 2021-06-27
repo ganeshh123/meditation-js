@@ -100,9 +100,9 @@ export default class SidePanel extends React.Component{
             }
 
             if(appState['videoDisabled'] == false){
-                videoToggleButton['icon'] = './assets/icons/video_off_icon.svg'
-            }else{
                 videoToggleButton['icon'] = './assets/icons/video_on_icon.svg'
+            }else{
+                videoToggleButton['icon'] = './assets/icons/video_off_icon.svg'
             }
 
             buttons.push(videoToggleButton)
