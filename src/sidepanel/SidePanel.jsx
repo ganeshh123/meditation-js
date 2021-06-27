@@ -100,9 +100,9 @@ export default class SidePanel extends React.Component{
             }
 
             if(appState['videoDisabled'] == false){
-                videoToggleButton['icon'] = './assets/icons/video_off_icon.svg'
-            }else{
                 videoToggleButton['icon'] = './assets/icons/video_on_icon.svg'
+            }else{
+                videoToggleButton['icon'] = './assets/icons/video_off_icon.svg'
             }
 
             buttons.push(videoToggleButton)
@@ -125,7 +125,7 @@ export default class SidePanel extends React.Component{
             <div className='sidePanel' id='s' style={this.sidePanelColors}>
 
                 <div 
-                    className='sidePanelIcon' 
+                    className='sidePanelIcon glassBlock' 
                     style={this.sidePanelButtonColors}
                     onClick={buttons[0]['clickHandler']}
                 >
@@ -140,7 +140,7 @@ export default class SidePanel extends React.Component{
                 {type === 'timerPresets' && appState['presetsMenuExpanded'] == true && <PresetsMenu appState={appState} />}
 
                 <div 
-                    className='sidePanelIcon' 
+                    className='sidePanelIcon glassBlock' 
                     style={this.sidePanelButtonColors}
                     onClick={buttons[1]['clickHandler']}
                 >

@@ -78,7 +78,9 @@ svg {
 }
 
 .glassBlock {
+    background: linear-gradient(130deg, rgba(0,0,0,0) 10vh, rgba(255,255,255,0.1) 24vh, rgba(0,0,0,0) 38vh);
     backdrop-filter: blur(1.5vh);
     -webkit-backdrop-filter: blur(1.5vh);
-    box-shadow: 0.1vh 0.1vh 0 0.1vh rgba(0, 0, 0, 0.1), -0.1vh -0.1vh 0 0.1vh rgba(255, 255, 255, 0.1);
+    box-shadow: 0.1vh 0.1vh 0 0.1vh rgba(90, 90, 90, 0.12), -0.1vh -0.1vh 0 0.1vh rgba(255, 255, 255, 0.12);
+    border: 0.05vh solid rgba(240, 240, 240, 0.06);
 }
