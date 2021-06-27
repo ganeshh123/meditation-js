@@ -22,9 +22,12 @@ class App extends React.Component {
     backgroundSize: 'cover'
   }
 
-  updateState = (newState) => {
+  updateState = (newState, cbFunc) => {
     this.setState(newState, () => {
-      return
+      //console.log(this.state)
+      if(cbFunc){
+        cbFunc()
+      }
     })
   }
 
@@ -44,7 +47,14 @@ class App extends React.Component {
     musicMuted: false,
     sfxMuted: false,
     videoDisabled: false,
-    presetsMenuExpanded: false
+    presetsMenuExpanded: false,
+    /* Timer State */
+    timerMode: 'Session',
+    timerSessionLength: 1,
+    timerBreakLength: 2,
+    timerStatus: 'stopped',
+    timerDuration: 60,
+    timerInterval: undefined
   }
 
   render = () => {
