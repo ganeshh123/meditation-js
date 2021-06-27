@@ -16,7 +16,8 @@ export default class SceneControlPanel extends React.Component{
 
     setColors = () => {
         this.sceneControlColors = {
-            backgroundColor: this.props.appState.currentTheme.backgroundColor
+            backgroundColor: this.props.appState.currentTheme.backgroundColor,
+            color: this.props.appState.currentTheme.accentColor
         }
 
         this.dividerColors = {

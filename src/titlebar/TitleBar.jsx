@@ -8,7 +8,6 @@ export default class TitleBar extends React.Component {
 
     constructor(props){
         super(props)
-
     }
 
     setColors = () => {
