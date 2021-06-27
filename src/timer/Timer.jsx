@@ -33,7 +33,7 @@ export default class Timer extends React.Component{
     state={
         progressBarStyle: {
             width: '30%',
-            backgroundColor: this.props.appState.currentTheme.accentColor
+            backgroundColor: this.props.appState.currentTheme.backgroundColor
         }
     }
 
