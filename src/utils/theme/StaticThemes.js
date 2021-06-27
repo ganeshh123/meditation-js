@@ -7,9 +7,8 @@ let darkTheme = {
 
 let lightTheme = {
     'name' : 'light',
-    'backgroundColor': 'rgb(245, 245, 245, 0.8)',
-    'accentColor':'rgb(10, 10, 10, 0.6)',
-    'iconColor': 'invert(0%) sepia(85%) saturate(7500%) hue-rotate(289deg) brightness(90%) contrast(90%)'
+    'backgroundColor': 'rgb(245, 245, 245, 0.4)',
+    'accentColor':'#000000'
 }
 
 module.exports = {
