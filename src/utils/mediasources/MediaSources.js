@@ -20,12 +20,20 @@ class MediaSources {
         {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
     }).json()
 
+    static presetsArray = fetch('./assets/presets.json', 
+        {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
+    }).json()
+
     static scenes = buildSourcesObject(fetch('./assets/scenes.json', 
         {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
     }).json())
 
 
     static musicTracks = buildSourcesObject(fetch('./assets/musicTracks.json', 
+        {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
+    }).json())
+
+    static presets = buildSourcesObject(fetch('./assets/presets.json', 
         {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
     }).json())
 

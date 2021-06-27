@@ -1,0 +1,23 @@
+[
+    {
+      "id":"sleep",
+      "name":"Sleep",
+      "icon":"mini_sleep_icon.svg",
+      "sceneId": "rain_on_leaves",
+      "musicId": "gymnopedie1"
+    },
+    {
+      "id":"relax",
+      "name":"Relax",
+      "icon":"mini_relax_icon.svg",
+      "sceneId": "forest_1",
+      "musicId": "gymnopedie1"
+    },
+    {
+        "id":"focus",
+        "name":"Focus",
+        "icon":"mini_focus_icon.svg",
+        "sceneId": "stars",
+        "musicId": "still"
+    }
+]
