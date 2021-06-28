@@ -1,8 +1,8 @@
 let darkTheme = {
     'name' : 'dark',
-    'backgroundColor': 'rgb(10, 10, 10, 0.5)',
+    'backgroundColor': 'rgb(10, 10, 10, 0.6)',
     'accentColor':'#ffffff',
-    'iconColor': 'invert(100%) sepia(0%) saturate(0%) hue-rotate(27deg) brightness(104%) contrast(105%)'
+    'iconColor': 'invert(100%) sepia(0%) saturate(0%) hue-rotate(27deg) brightness(104%) contrast(105%)',
 }
 
 let lightTheme = {
