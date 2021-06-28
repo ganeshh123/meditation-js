@@ -190,6 +190,21 @@ export default class Timer extends React.Component{
         return nextPhaseLength
     }
 
+    getTimerPlayPauseButtonIcon = () => {
+
+        let appState = this.props.appState
+        let timerStatus = appState['timerStatus']
+
+        if(['paused', 'stopped'].includes(timerStatus)){
+            return './assets/icons/play_icon.svg'
+        }
+
+        if(timerStatus === 'running'){
+            return './assets/icons/pause_icon.svg'
+        }
+
+    }
+
     /* Button Listeners */
 
     timerPlayButtonPressed = (event) => {
@@ -265,7 +280,7 @@ export default class Timer extends React.Component{
                 <div id='timerBottomBar'>
                     <div id='timerControls'>
                         <img 
-                            src={'./assets/icons/play_icon.svg'}
+                            src={this.getTimerPlayPauseButtonIcon()}
                             style={this.timerIconColors}
                             id='timerPlayButton'
                             className='timerViewIcon'
