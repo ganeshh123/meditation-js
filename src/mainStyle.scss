@@ -67,6 +67,15 @@ svg {
     align-items: center;
 }
 
+#appCenter{
+    height: 100%;
+    Width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #appBottom {
     width: 100%;
     height: auto;

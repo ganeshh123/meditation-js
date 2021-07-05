@@ -13,6 +13,7 @@ import SceneVideo from './scenemedia/SceneVideo'
 import SceneImage from './scenemedia/SceneImage'
 import AudioPlayer from './scenemedia/AudioPlayer'
 import Timer from './timer/Timer'
+import TimerSetup from './timer/TimerSetup'
 import SidePanel from './sidepanel/SidePanel'
 
 class App extends React.Component {
@@ -70,7 +71,10 @@ class App extends React.Component {
         </div>
         <div id="appMiddle">
           <SidePanel appState={this.state} type="timerPresets"/>
-          <Timer appState={this.state} />
+          <div id="appCenter">
+            <Timer appState={this.state} />
+            <TimerSetup appState={this.state} />
+          </div>
           <SidePanel appState={this.state} type="toggles"/>
         </div>
         <div id="appBottom">

@@ -1,0 +1,18 @@
+.timerLengthAdjuster{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.timerLengthAdjusterValues{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timerLengthAdjusterType{
+    text-transform: capitalize;
+    font-size: 15pt;
+}
