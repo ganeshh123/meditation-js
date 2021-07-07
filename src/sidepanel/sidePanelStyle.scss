@@ -5,9 +5,17 @@
     align-items: flex-start;
 }
 
-.sidePanelIcon{
-    padding: 10px;
-    border-radius: 5px;
-    margin: 20px 5px 0px 5px;
+.sidePanelIcon { 
+    width: 10vh;
+    height: 10vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    border-radius: 2vh;
     cursor: pointer;
+}
+
+.sidePanel img {
+    width: 7vh;
+    height: 7vh;
 }
