@@ -120,6 +120,7 @@ export default class SidePanel extends React.Component{
         let appState = this.props.appState
         let type = this.props.type
         let buttons = this.getButtons()
+        let presetsMenuCurrentlyExpanded= appState['presetsMenuExpanded']
 
         return(
             <div className='sidePanel' id='s' style={this.sidePanelColors}>
@@ -132,7 +133,11 @@ export default class SidePanel extends React.Component{
                     <img 
                         src={buttons[0]['icon']} 
                         style={{filter: this.props.appState['currentTheme']['iconColor']}}
-                        id={buttons[0]['name'] + 'Button'}
+                        id={
+                            (type === 'timerPresets' && presetsMenuCurrentlyExpanded) ?
+                            buttons[0]['name'] + 'ButtonExpanded' :
+                            buttons[0]['name'] + 'Button'
+                        }
                         style={this.sidePanelIconColors}
                     />
                 </div>
