@@ -34,7 +34,12 @@ export default class SidePanel extends React.Component{
     }
 
     newTimerButtonPressed = () => {
+        let appState = this.props.appState
+        let timerSetupCurrentlyShowing = appState['timerSetupShowing']
 
+        appState.setStateFunction({
+            timerSetupShowing: !timerSetupCurrentlyShowing
+        })
     }
 
     lightDarkButtonPressed = () => {
@@ -120,6 +125,7 @@ export default class SidePanel extends React.Component{
         let appState = this.props.appState
         let type = this.props.type
         let buttons = this.getButtons()
+        let presetsMenuCurrentlyExpanded= appState['presetsMenuExpanded']
 
         return(
             <div className='sidePanel' id='s' style={this.sidePanelColors}>
@@ -128,11 +134,16 @@ export default class SidePanel extends React.Component{
                     className='sidePanelIcon glassBlock' 
                     style={this.sidePanelButtonColors}
                     onClick={buttons[0]['clickHandler']}
+                    id={(type === 'timerPresets' && presetsMenuCurrentlyExpanded) && 'sidePanelBlockExpanded'}
                 >
                     <img 
                         src={buttons[0]['icon']} 
                         style={{filter: this.props.appState['currentTheme']['iconColor']}}
-                        id={buttons[0]['name'] + 'Button'}
+                        id={
+                            (type === 'timerPresets' && presetsMenuCurrentlyExpanded) ?
+                            buttons[0]['name'] + 'ButtonExpanded' :
+                            buttons[0]['name'] + 'Button'
+                        }
                         style={this.sidePanelIconColors}
                     />
                 </div>

@@ -57,6 +57,20 @@ svg {
     background: none;
 }
 
+#appOverlay{
+    z-index: 2;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(10, 10, 10, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #appMiddle {
     width: 100%;
     height: 100%;
@@ -64,6 +78,15 @@ svg {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+
+#appCenter{
+    height: 100%;
+    Width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 

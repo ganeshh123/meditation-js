@@ -50,7 +50,7 @@ export default class SelectionVolumeControl extends React.Component{
                 iconPath = iconPath + 'note_off_icon.svg'
             }
 
-        }else{
+        }else if(this.props.sourceType == 'scene'){
 
             if(appState['sfxMuted'] == false){
                 iconPath = iconPath +'speaker_icon.svg'
@@ -139,7 +139,7 @@ export default class SelectionVolumeControl extends React.Component{
             }else{
 
                 this.setAudioMute(true)
-                appState.setStateFunction({'sfxMuted': true})
+                appState.setStateFunction({'musicMuted': true})
 
             }
         }

@@ -13,6 +13,7 @@ import SceneVideo from './scenemedia/SceneVideo'
 import SceneImage from './scenemedia/SceneImage'
 import AudioPlayer from './scenemedia/AudioPlayer'
 import Timer from './timer/Timer'
+import TimerSetup from './timer/TimerSetup'
 import SidePanel from './sidepanel/SidePanel'
 
 class App extends React.Component {
@@ -22,12 +23,14 @@ class App extends React.Component {
     backgroundSize: 'cover'
   }
 
-  updateState = (newState) => {
+  updateState = (newState, cbFunc) => {
     this.setState(newState, () => {
-      return
+      //console.log(this.state)
+      if(cbFunc){
+        cbFunc()
+      }
     })
   }
-
   state = {
     /* Variables */
     currentScene: 'rain_on_leaves',
@@ -44,8 +47,26 @@ class App extends React.Component {
     musicMuted: false,
     sfxMuted: false,
     videoDisabled: false,
-    presetsMenuExpanded: false
+    presetsMenuExpanded: false,
+    timerSetupShowing: false,
+    /* Timer State */
+    timerMode: 'Session',
+    timerSessionLength: 1,
+    timerBreakLength: 2,
+    timerStatus: 'stopped',
+    timerDuration: 60,
+    timerInterval: undefined
   }
+
+  showOverlay = () => {
+    
+    if(this.state.timerSetupShowing){
+      return true
+    }
+
+    return false
+  }
+
 
   render = () => {
 
@@ -58,9 +79,16 @@ class App extends React.Component {
         <div id="appTop">
           <TitleBar appTitleText="Bonseki" appState={this.state} />
         </div>
+        { this.showOverlay() &&
+          <div id='appOverlay'>
+            { this.state.timerSetupShowing && <TimerSetup appState={this.state} />}
+          </div>
+        }
         <div id="appMiddle">
           <SidePanel appState={this.state} type="timerPresets"/>
-          <Timer appState={this.state} />
+          <div id="appCenter">
+            {<Timer appState={this.state} />}
+          </div>
           <SidePanel appState={this.state} type="toggles"/>
         </div>
         <div id="appBottom">
