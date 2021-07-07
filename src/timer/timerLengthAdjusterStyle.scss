@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 0px 15px 0px 15px;
 }
 
 .timerLengthAdjusterValues{
@@ -12,7 +13,25 @@
     align-items: center;
 }
 
+.timerLengthAdjusterContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .timerLengthAdjusterType{
     text-transform: capitalize;
+    font-size: 20pt;
+    margin-top: 10px;
+}
+
+.timerLengthAdjusterInput{
+    font-size: 20px;
+    max-width: 50px;
+    margin: 0px 10px 0px 10px;
+}
+
+.timerLengthAdjusterUnit{
     font-size: 15pt;
 }

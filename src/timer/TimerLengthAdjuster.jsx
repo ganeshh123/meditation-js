@@ -85,21 +85,23 @@ export default class TimerLengthAdjuster extends React.Component{
 
                 </div>
                 <div className='timerLengthAdjusterValues'>
-                    <input 
-                        className="timerLengthAdjusterInput"
-                        id={this.props.type + 'TimerLengthAdjusterInput'}
-                        style={this.timerLengthAdjusterInvalidColors}
-                        type="number"
-                        name={this.props.type + 'TimerLengthInput'}
-                        value={this.getInputValue()}
-                        onChange={this.lengthInputChanged}
-                    />
+                    <div class='timerLengthAdjusterContainer'>
+                        <input 
+                            className="timerLengthAdjusterInput"
+                            id={this.props.type + 'TimerLengthAdjusterInput'}
+                            style={this.timerLengthAdjusterInvalidColors}
+                            type="number"
+                            name={this.props.type + 'TimerLengthInput'}
+                            value={this.getInputValue()}
+                            onChange={this.lengthInputChanged}
+                        />
+                        <div className='timerLengthAdjusterUnit' style={this.timerLengthAdjusterTextColors}>
+                            mins
+                        </div>
+                    </div>
                     <div className='timerLengthAdjusterType' style={this.timerLengthAdjusterTextColors}>
                         {this.props.type}
-                    </div>
                 </div>
-                <div className='timerLengthAdjusterUnit' style={this.timerLengthAdjusterTextColors}>
-                    mins
                 </div>
             </div>
         )

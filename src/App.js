@@ -31,7 +31,6 @@ class App extends React.Component {
       }
     })
   }
-
   state = {
     /* Variables */
     currentScene: 'rain_on_leaves',
@@ -49,6 +48,7 @@ class App extends React.Component {
     sfxMuted: false,
     videoDisabled: false,
     presetsMenuExpanded: false,
+    timerSetupShowing: false,
     /* Timer State */
     timerMode: 'Session',
     timerSessionLength: 1,
@@ -57,6 +57,16 @@ class App extends React.Component {
     timerDuration: 60,
     timerInterval: undefined
   }
+
+  showOverlay = () => {
+    
+    if(this.state.timerSetupShowing){
+      return true
+    }
+
+    return false
+  }
+
 
   render = () => {
 
@@ -69,11 +79,15 @@ class App extends React.Component {
         <div id="appTop">
           <TitleBar appTitleText="Bonseki" appState={this.state} />
         </div>
+        { this.showOverlay() &&
+          <div id='appOverlay'>
+            { this.state.timerSetupShowing && <TimerSetup appState={this.state} />}
+          </div>
+        }
         <div id="appMiddle">
           <SidePanel appState={this.state} type="timerPresets"/>
           <div id="appCenter">
-            <Timer appState={this.state} />
-            <TimerSetup appState={this.state} />
+            {<Timer appState={this.state} />}
           </div>
           <SidePanel appState={this.state} type="toggles"/>
         </div>

@@ -34,7 +34,7 @@ export default class TimerSetup extends React.Component{
     state = {
         selectedSessionLength: 25,
         selectedBreakLength: 5,
-        setSelectedLength: this.setSelectedLength,
+        setSelectedLength: this.setSelectedLength
     }
 
     setColors = () => {
@@ -53,7 +53,37 @@ export default class TimerSetup extends React.Component{
     }
 
     beginButtonPressed = () => {
+
+        console.log(this.state)
         
+        if(
+            isNaN(parseInt(this.state.selectedSessionLength)) 
+            || isNaN(parseInt(this.state.selectedBreakLength))
+            ){
+            return
+        }
+
+        let appState = this.props.appState
+        let timerSessionLength = this.state.selectedSessionLength * 60
+
+        clearInterval(appState['timerInterval'])
+
+        appState.setStateFunction({
+            timerMode: 'Session',
+            timerSessionLength: this.state.selectedSessionLength,
+            timerBreakLength: this.state.selectedBreakLength,
+            timerStatus: 'stopped',
+            timerDuration: timerSessionLength,
+            timerSetupShowing: false
+        })
+    }
+
+    closeButtonPressed = (event) => {
+        let appState = this.props.appState
+
+        appState.setStateFunction({
+            timerSetupShowing: false
+        })
     }
 
     render(){
@@ -63,11 +93,15 @@ export default class TimerSetup extends React.Component{
         return(
             <div id='timerSetup' className='glassBlock' style={this.timerSetupColors}>
                 <div id='timerSetupViewControls'>
-                     <img 
+                     {
+                         /*
+                    <img 
                         src={'./assets/icons/pin_icon.svg'} 
                         style={this.timerSetupIconColors}
                         id='timerPinButton'
                     />
+                    */
+                     }
                     <div id='timerSetupTitle' style={this.timerSetupTextColors}>
                         New Session
                     </div>
@@ -75,6 +109,7 @@ export default class TimerSetup extends React.Component{
                         src={'./assets/icons/cross_icon.svg'} 
                         style={this.timerSetupIconColors}
                         id='timerCloseButton'
+                        onClick={this.closeButtonPressed}
                     />
                 </div>
                 <div id='timerSetupMiddle'>
@@ -83,10 +118,24 @@ export default class TimerSetup extends React.Component{
                         timerSetupState={this.state}
                         type='session'
                     />
+                    <TimerLengthAdjuster
+                        appState={this.props.appState}
+                        timerSetupState={this.state}
+                        type='break'
+                    />
+                </div>
+                <div id='timerSetupWarning' style={this.timerSetupTextColors}>
+                    <img 
+                        src={'./assets/icons/about_icon.svg'} 
+                        style={this.timerSetupIconColors}
+                        id='timerSetupWarningIcon'
+                    />
+                    By starting a new session, your current timer will be reset.
                 </div>
                 <button 
                     id='timerSetupBeginButton'
                     onClick={this.beginButtonPressed}
+                    style={this.timerSetupTextColors}
                 >
                     Begin
                 </button>
