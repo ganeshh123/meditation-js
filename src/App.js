@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import Theme from './utils/theme/Theme'
 import './mainStyle.scss'
 import MediaSources from './utils/mediasources/MediaSources'
+import SettingsStore from './utils/settings/settingsStore'
 
 import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './scenecontrols/SceneControlPanel'
@@ -26,6 +27,7 @@ class App extends React.Component {
   updateState = (newState, cbFunc) => {
     this.setState(newState, () => {
       //console.log(this.state)
+      SettingsStore.updateSettings(this.state)
       if(cbFunc){
         cbFunc()
       }
@@ -67,6 +69,10 @@ class App extends React.Component {
     return false
   }
 
+  componentDidMount = () => {
+    SettingsStore.loadSettings(this.state)
+  }
+
 
   render = () => {
 
@@ -100,7 +106,8 @@ class App extends React.Component {
     );
   }
 }
- 
+
+/* Render App */
 ReactDOM.render(
   <App />,
   document.querySelector('body')

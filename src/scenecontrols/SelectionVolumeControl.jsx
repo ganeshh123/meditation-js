@@ -145,6 +145,20 @@ export default class SelectionVolumeControl extends React.Component{
         }
     }
 
+    componentDidMount = () => {
+
+        let appState = this.props.appState
+        let sourceType = this.props.sourceType
+
+        if(sourceType == 'scene' && appState['sfxMuted'] == true){
+            this.setAudioMute(true)
+        }
+
+        if(sourceType == 'musicTrack' && appState['musicMuted'] == true){
+            this.setAudioMute(true)
+        }
+    }
+
     render(){
 
         this.setColors()
