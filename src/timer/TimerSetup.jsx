@@ -39,7 +39,7 @@ export default class TimerSetup extends React.Component{
 
     setColors = () => {
         this.timerSetupColors = {
-            backgroundColor: this.props.appState.currentTheme.backgroundColor,
+            backgroundColor: this.props.appState.currentTheme.backgroundColor
         }
 
         this.timerSetupIconColors = {
@@ -50,6 +50,10 @@ export default class TimerSetup extends React.Component{
             color: this.props.appState.currentTheme.accentColor
         }
 
+        this.timerSetupButtonColours = {
+            backgroundColor: this.props.appState.currentTheme.backgroundColor,
+            color: this.props.appState.currentTheme.accentColor
+        }
     }
 
     beginButtonPressed = () => {
@@ -130,12 +134,13 @@ export default class TimerSetup extends React.Component{
                         style={this.timerSetupIconColors}
                         id='timerSetupWarningIcon'
                     />
-                    By starting a new session, your current timer will be reset.
+                    Your current timer will be reset
                 </div>
-                <button 
+                <button
                     id='timerSetupBeginButton'
+                    className='glassBlock'
                     onClick={this.beginButtonPressed}
-                    style={this.timerSetupTextColors}
+                    style={this.timerSetupButtonColours}
                 >
                     Begin
                 </button>

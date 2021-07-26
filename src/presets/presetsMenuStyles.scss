@@ -1,4 +1,4 @@
-#presetsMenu{
+#presetsMenu {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,15 +8,15 @@
     border-radius: 5px;
 }
 
-.presetsMenuButton{
+.presetsMenuButton {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10px 0px 10px 0px;
+    margin: 10px 0px;
 }
 
-.presetsMenuButtonIcon{
+.presetsMenuButtonIcon {
     margin-right: 20px;
 }
 

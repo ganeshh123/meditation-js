@@ -33,6 +33,7 @@ export default class TitleBar extends React.Component {
                   src={"./assets/icons/about_icon.svg"} 
                   style={this.titleBarIconColors}
                   id="aboutButton"
+                  className="iconButton"
                   tabIndex="0"
                   accessKey="i"
                 />
@@ -40,6 +41,7 @@ export default class TitleBar extends React.Component {
                   src={"./assets/icons/settings_icon.svg"} 
                   style={this.titleBarIconColors}
                   id="settingsButton"
+                  className="iconButton"
                   tabIndex="0"
                   accessKey="s"
                 />

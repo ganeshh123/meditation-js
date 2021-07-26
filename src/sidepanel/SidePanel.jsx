@@ -86,7 +86,7 @@ export default class SidePanel extends React.Component{
             })
 
             buttons.push({
-                name: 'new_timer',
+                name: 'newTimer',
                 icon: './assets/icons/new_timer_icon.svg',
                 clickHandler: this.newTimerButtonPressed
             })
@@ -94,13 +94,13 @@ export default class SidePanel extends React.Component{
         }else if(type === 'toggles'){
 
             buttons.push({
-                name: 'light_dark',
+                name: 'lightDark',
                 icon: './assets/icons/light_dark_icon.svg',
                 clickHandler: this.lightDarkButtonPressed
             })
 
             let videoToggleButton = {
-                name: 'video_toggle',
+                name: 'videoToggle',
                 clickHandler: this.videoToggleButtonPressed
             }
 
