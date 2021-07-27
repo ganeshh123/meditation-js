@@ -253,15 +253,18 @@ export default class Timer extends React.Component{
         return(
             <div id='timer' className='glassBlock' style={this.timerColors}>
                 <div id='timerViewControls'>
-                    <img 
-                        src={'./assets/icons/pin_icon.svg'} 
-                        style={this.timerIconColors}
-                        id='timerPinButton'
-                    />
+                    <div id='timerPinHolder'>
+                        <img 
+                            src={'./assets/icons/pin_icon.svg'} 
+                            style={this.timerIconColors}
+                            id='timerPinButton'
+                        />
+                    </div>
                     <img 
                         src={'./assets/icons/cross_icon.svg'} 
                         style={this.timerIconColors}
                         id='timerCloseButton'
+                        className="iconButton"
                     />
                 </div>
                 <div id='timerTimeDisplay' style={this.timerTextColors}>
@@ -274,42 +277,30 @@ export default class Timer extends React.Component{
                     <div id='timerProgressBarRange'>
                         <div id="timerProgressBarBack" style={this.accentColor}></div>
                         <div id='timerProgressBar' style={this.progressBarStyle}></div>
-                        
                     </div>
                 </div>
                 <div id='timerBottomBar'>
                     <div id='timerControls'>
                         <img 
+                            src={'./assets/icons/back_icon.svg'} 
+                            style={this.timerIconColors}
+                            id='timerBackButton'
+                            className='timerViewIcon iconButton'
+                        />
+                        <img 
                             src={this.getTimerPlayPauseButtonIcon()}
                             style={this.timerIconColors}
                             id='timerPlayButton'
-                            className='timerViewIcon'
+                            className='timerViewIcon iconButton'
                             onClick={this.timerPlayButtonPressed}
                         />
-                        {/*}
-                        <img 
-                            src={'./assets/icons/stop_icon.svg'} 
-                            style={this.timerIconColors}
-                            id='timerStopButton'
-                            className='timerViewIcon'
-                            onClick={this.timerStopButtonPressed}
-                        />
-                        {*/}
                         <img 
                             src={'./assets/icons/skip_icon.svg'} 
                             style={this.timerIconColors}
                             id='timerSkipButton'
-                            className='timerViewIcon'
+                            className='timerViewIcon iconButton'
                             onClick={this.timerSkipButtonPressed}
                         />
-                    </div>
-                    <div id='timerNextPhaseDisplay'>
-                        <div id='timerNextPhaseName' style={this.timerTextColors}>
-                            {this.getNextPhase()}
-                        </div>
-                        <div id='timerNextPhaseLength' style={this.timerTextColors}>
-                            {this.getNextPhaseLength()} min
-                        </div>
                     </div>
                 </div>
             </div>

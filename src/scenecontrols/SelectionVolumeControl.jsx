@@ -176,7 +176,7 @@ export default class SelectionVolumeControl extends React.Component{
                 <p className='sourceDescription'>{this.props.sources[this.props.selected]['description']}</p>
                 <div className='volumeSliderContainer'>
                     <img 
-                        className='volumeIcon' 
+                        className='volumeIcon iconButton' 
                         src={this.getIconPath()} 
                         style={this.volumeIconColors}
                         height='20'

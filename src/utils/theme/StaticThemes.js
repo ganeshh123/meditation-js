@@ -1,14 +1,14 @@
 let darkTheme = {
     'name' : 'dark',
-    'backgroundColor': 'rgb(10, 10, 10, 0.6)',
+    'backgroundColor': 'rgb(16, 16, 16, 0.45)',
     'accentColor':'#ffffff',
     'iconColor': 'invert(100%) sepia(0%) saturate(0%) hue-rotate(27deg) brightness(104%) contrast(105%)',
 }
 
 let lightTheme = {
     'name' : 'light',
-    'backgroundColor': 'rgb(245, 245, 245, 0.4)',
-    'accentColor':'#000000'
+    'backgroundColor': 'rgb(252, 255, 255, 0.28)',
+    'accentColor':'#080808'
 }
 
 module.exports = {
