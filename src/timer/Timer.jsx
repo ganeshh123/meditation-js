@@ -245,6 +245,14 @@ export default class Timer extends React.Component{
         this.nextPhase()
     }
 
+    componentDidMount = () => {
+        let appState = this.props.appState
+
+        appState.setStateFunction({
+            timerComponent: this
+        })
+    }
+
     render(){
 
         this.setColors()

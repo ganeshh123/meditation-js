@@ -73,12 +73,11 @@ export default class TimerSetup extends React.Component{
         clearInterval(appState['timerInterval'])
 
         appState.setStateFunction({
-            timerMode: 'Session',
             timerSessionLength: this.state.selectedSessionLength,
             timerBreakLength: this.state.selectedBreakLength,
-            timerStatus: 'stopped',
-            timerDuration: timerSessionLength,
             timerSetupShowing: false
+        }, () =>{
+            appState.timerComponent.startSession()
         })
     }
 

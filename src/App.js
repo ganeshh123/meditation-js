@@ -57,7 +57,8 @@ class App extends React.Component {
     timerBreakLength: 2,
     timerStatus: 'stopped',
     timerDuration: 60,
-    timerInterval: undefined
+    timerInterval: undefined,
+    timerComponent: undefined
   }
 
   showOverlay = () => {
