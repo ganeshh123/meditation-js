@@ -83,7 +83,7 @@ svg {
 
 #appCenter{
     height: 100%;
-    Width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,19 +111,12 @@ svg {
 
 .glassBlock {
     background: linear-gradient(130deg, rgba(0, 0, 0, 0) 10vh, rgba(255, 255, 255, 0.12) 24vh, rgba(0, 0, 0, 0) 38vh);
-    box-shadow: 0.1vh 0.1vh 0 0.1vh rgba(24, 24, 24, 0.2), -0.1vh -0.1vh 0 0.1vh rgba(255, 255, 255, 0.2);
-    border: 0.05vh solid rgba(230, 230, 230, 0.06);
 }
 
-@supports ((backdrop-filter: blur(2em))) or (-webkit-backdrop-filter: blur(2em)) {
+@supports ((backdrop-filter: blur(1.4vh))) or (-webkit-backdrop-filter: blur(1.4vh)) {
     #appOverlay{
         background-color: rgba(0, 0, 0, 0.08);
-        backdrop-filter: blur(1.3vh);
-        -webkit-backdrop-filter: blur(1.3vh);
-    }
-
-    .glassBlock {
-         backdrop-filter: blur(1.9vh) saturate(130%);
-        -webkit-backdrop-filter: blur(2h) saturate(130%);
+        backdrop-filter: blur(1.4vh);
+        -webkit-backdrop-filter: blur(1.4vh);
     }
 }
