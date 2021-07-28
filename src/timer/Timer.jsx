@@ -241,6 +241,23 @@ export default class Timer extends React.Component{
     }
     */
 
+    timerBackButtonPressed = (event) => {
+
+        let appState = this.props.appState
+        let timerMode = appState['timerMode']
+
+        clearInterval(appState['timerInterval'])
+
+        if(timerMode === 'Session'){
+            this.startSession()
+        }
+
+        if(timerMode === 'Break'){
+            this.startBreak()
+        }
+
+    }
+
     timerSkipButtonPressed = (event) => {
         this.nextPhase()
     }
@@ -294,6 +311,7 @@ export default class Timer extends React.Component{
                             style={this.timerIconColors}
                             id='timerBackButton'
                             className='timerViewIcon iconButton'
+                            onClick={this.timerBackButtonPressed}
                         />
                         <img 
                             src={this.getTimerPlayPauseButtonIcon()}
