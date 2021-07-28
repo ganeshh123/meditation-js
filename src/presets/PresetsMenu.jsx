@@ -10,8 +10,12 @@ export default class PresetsMenu extends React.Component{
 
     setColors = () => {
         this.presetsMenuColors = {
-            backgroundColor: this.props.appState['currentTheme']['backgroundColor'],
-            color: this.props.appState['currentTheme']['accentColor']
+            backgroundColor: this.props.appState.currentTheme.backgroundColor,
+            border: this.props.appState.currentTheme.border,
+            boxShadow: this.props.appState.currentTheme.boxShadow,
+            backdropFilter : this.props.appState.currentTheme.backdropFilter,
+            webkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+            color: this.props.appState.currentTheme.accentColor
         }
 
         this.presetsMenuIconColors = {
@@ -31,7 +35,7 @@ export default class PresetsMenu extends React.Component{
         let presetsArray = appState['mediaSources']['presetsArray']
 
         return(
-            <div id='presetsMenu' style={this.presetsMenuColors}>
+            <div id='presetsMenu' className='glassBlock' style={this.presetsMenuColors}>
                 
                 {presetsArray.map((preset, index) => {
                     return(
@@ -39,12 +43,12 @@ export default class PresetsMenu extends React.Component{
                             <img 
                                 src={'./assets/icons/' + preset['icon']}
                                 style={this.presetsMenuIconColors}
-                                id={preset['id'] + 'PresetMsenuButtonIcon'}
-                                className="presetsMenuButtonIcon"
+                                id={preset['id'] + 'PresetMenuButtonIcon'}
+                                className='presetsMenuButtonIcon'
                             />
                             <div 
                                 id={preset['id'] + 'PresetsMenuButtonText'}
-                                className="presetsMenuButtonText"
+                                className='presetsMenuButtonText'
                                 style={{color: 'inherit'}}
                             >
                                 {preset['name']}

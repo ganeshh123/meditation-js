@@ -1,25 +1,37 @@
 #presetsMenu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    padding-right: 50px;
-    border-radius: 5px;
+    justify-content: left;
+    align-items: left;
+    padding: 1vh 0 1.2vh 0;
+    margin-bottom: 2vh;
+    border-radius: 0 2vh 2vh 2vh;
+}
+
+#sleepPresetMenuButtonIcon, #relaxPresetMenuButtonIcon, #focusPresetMenuButtonIcon {
+    height: 9vh;
+    width: 9vh;
 }
 
 .presetsMenuButton {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    margin: 10px 0px;
+    padding-right: 5vh;
+    opacity: 0.7;
+}
+
+.presetsMenuButton:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .presetsMenuButtonIcon {
-    margin-right: 20px;
+    padding-right: 1.2vh;
+    padding-left: 1.8vh;
 }
 
-.presetsMenuButtonText{
-    font-size: 28px;
+.presetsMenuButtonText {
+    font-size: 4vh;
 }

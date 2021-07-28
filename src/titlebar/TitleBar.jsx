@@ -11,14 +11,18 @@ export default class TitleBar extends React.Component {
     }
 
     setColors = () => {
-      this.titleBarColors = {
-        backgroundColor: this.props.appState.currentTheme.backgroundColor,
-        color: this.props.appState.currentTheme.accentColor
-      }
+        this.titleBarColors = {
+          backgroundColor: this.props.appState.currentTheme.backgroundColor,
+          border: this.props.appState.currentTheme.border,
+          boxShadow: this.props.appState.currentTheme.boxShadow,
+          backdropFilter : this.props.appState.currentTheme.backdropFilter,
+          webkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+          color: this.props.appState.currentTheme.accentColor
+        }
 
-      this.titleBarIconColors = {
-        filter: this.props.appState.currentTheme.iconColor
-      }
+        this.titleBarIconColors = {
+            filter: this.props.appState.currentTheme.iconColor
+        }
     }
   
     render = () => {

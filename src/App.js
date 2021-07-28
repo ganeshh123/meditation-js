@@ -77,7 +77,7 @@ class App extends React.Component {
         <AudioPlayer appState={this.state} type='music' />
         <SceneVideo appState={this.state} />
         <div id="appTop">
-          <TitleBar appTitleText="Bonseki" appState={this.state} />
+          <TitleBar appTitleText="Press Relax" appState={this.state} />
         </div>
         { this.showOverlay() &&
           <div id='appOverlay'>

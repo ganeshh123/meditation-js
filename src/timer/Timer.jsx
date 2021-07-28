@@ -11,6 +11,11 @@ export default class Timer extends React.Component{
     setColors = () => {
         this.timerColors = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
+            border: this.props.appState.currentTheme.border,
+            boxShadow: this.props.appState.currentTheme.boxShadow,
+            backdropFilter : this.props.appState.currentTheme.backdropFilter,
+            webkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+            color: this.props.appState.currentTheme.accentColor
         }
 
         this.timerTextColors = {
