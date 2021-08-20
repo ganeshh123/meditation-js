@@ -16,6 +16,7 @@ import AudioPlayer from './scenemedia/AudioPlayer'
 import Timer from './timer/Timer'
 import TimerSetup from './timer/TimerSetup'
 import SidePanel from './sidepanel/SidePanel'
+import Settings from './settings/Settings'
 
 class App extends React.Component {
 
@@ -51,6 +52,7 @@ class App extends React.Component {
     videoDisabled: false,
     presetsMenuExpanded: false,
     timerSetupShowing: false,
+    settingsShowing: false,
     /* Timer State */
     timerMode: 'Session',
     timerSessionLength: 1,
@@ -64,6 +66,10 @@ class App extends React.Component {
   showOverlay = () => {
     
     if(this.state.timerSetupShowing){
+      return true
+    }
+
+    if(this.state.settingsShowing){
       return true
     }
 
@@ -84,11 +90,12 @@ class App extends React.Component {
         <AudioPlayer appState={this.state} type='music' />
         <SceneVideo appState={this.state} />
         <div id="appTop">
-          <TitleBar appTitleText="Press Relax" appState={this.state} />
+          <TitleBar appTitleText="Calmeo" appState={this.state} />
         </div>
         { this.showOverlay() &&
           <div id='appOverlay'>
             { this.state.timerSetupShowing && <TimerSetup appState={this.state} />}
+            { this.state.settingsShowing && <Settings appState={this.state} />}
           </div>
         }
         <div id="appMiddle">

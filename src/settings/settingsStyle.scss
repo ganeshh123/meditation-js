@@ -1,0 +1,49 @@
+
+#settings{
+    min-width: 400px;
+    min-height: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#settingsTitleBar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+#settingsTitleContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#settingsTitle{
+    margin-left: 20px;
+    font-size: 3.5vh;
+}
+
+#settingsCloseButton{
+    height: 2.7vh;
+    margin-left: 10px;
+}
+
+#settingsMenu{
+    min-height: 100%;
+    width: 100%;
+}
+
+#settingsReset{
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
