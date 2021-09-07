@@ -37,13 +37,56 @@
 }
 
 #settingsMenu{
-    min-height: 100%;
+    min-height: 350px;
+    max-height: 80%;
     width: 100%;
+    margin-top: 25px;
 }
 
 #settingsReset{
     padding: 10px;
     text-align: center;
     font-size: 20px;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.settingsMenuItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.settingsMenuItemLeftSide{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 90%;
+}
+
+.settingsItemIcon{
+    height: 3.7vh;
+    width: 3.7vh;
+}
+
+.settingsMenuItemLabel{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.settingsToggleSwitch{
+    text-align: center;
+    background-color: black;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    min-width: 50px;
     cursor: pointer;
 }

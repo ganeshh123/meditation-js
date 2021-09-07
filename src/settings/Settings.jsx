@@ -59,14 +59,31 @@ export default class Settings extends React.Component{
                     <div className='settingsMenuItem'>
                         <div className='settingsMenuItemLeftSide'>
                             <img 
-                                className='volumeIcon iconButton' 
+                                className='settingsItemIcon iconButton'
+                                src='./assets/icons/speaker_icon.svg'
+                                style={this.settingsIconColors}
                             />
                             <div className='settingsMenuItemLabel'>
-
+                                Notification Volume
                             </div>
                         </div>
                         <div className='settingsToggleSwitch'>
-
+                            Low
+                        </div>
+                    </div>
+                    <div className='settingsMenuItem'>
+                        <div className='settingsMenuItemLeftSide'>
+                            <img 
+                                className='settingsItemIcon iconButton'
+                                src='./assets/icons/solid_glass_icon.svg' 
+                                style={this.settingsIconColors}
+                            />
+                            <div className='settingsMenuItemLabel'>
+                                Solid Windows
+                            </div>
+                        </div>
+                        <div className='settingsToggleSwitch'>
+                            Off
                         </div>
                     </div>
                 </div>
