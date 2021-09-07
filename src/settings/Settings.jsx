@@ -1,9 +1,11 @@
 /* Global Imports */
 import React from 'react';
 
+import SettingsController from '../utils/settings/settingsController';
 import './settingsStyle.scss'
 
 export default class Settings extends React.Component{
+
     constructor(props){
         super(props)
     }
@@ -67,8 +69,11 @@ export default class Settings extends React.Component{
                                 Notification Volume
                             </div>
                         </div>
-                        <div className='settingsToggleSwitch'>
-                            Low
+                        <div 
+                            className='settingsToggleSwitch'
+                            onClick={SettingsController.toggleAlarmVolume(this.props.appState)}
+                        >
+                            {SettingsController.getAlarmVolumeString(this.props.appState)}
                         </div>
                     </div>
                     <div className='settingsMenuItem'>

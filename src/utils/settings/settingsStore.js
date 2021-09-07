@@ -9,6 +9,7 @@ export default class SettingsStore {
         currentTheme: Theme.staticThemes['dark'],
         sceneAudioVolume: 50,
         musicAudioVolume: 20,
+        alarmVolume: 70,
         //musicMuted: false,
         //sfxMuted: false,
         videoDisabled: false,

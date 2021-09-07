@@ -41,6 +41,7 @@ class App extends React.Component {
     currentTheme: Theme.staticThemes['dark'],
     sceneAudioVolume: 50,
     musicAudioVolume: 20,
+    alarmVolume: 70,
     /* Functions */
     setStateFunction: this.updateState,
     /* Static Data */
