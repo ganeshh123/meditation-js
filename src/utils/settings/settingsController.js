@@ -1,3 +1,6 @@
+
+let StaticThemes = require('../theme/StaticThemes')
+
 export default class SettingsController{
 
 
@@ -8,13 +11,13 @@ export default class SettingsController{
 
         switch(volumePreset){
             case 'low':
-                newVolumeLevel = 40
-                break
-            case 'medium':
                 newVolumeLevel = 70
                 break
-            case 'high':
+            case 'medium':
                 newVolumeLevel = 100
+                break
+            case 'high':
+                newVolumeLevel = 40
                 break
             default:
                 newVolumeLevel = 70
@@ -31,11 +34,49 @@ export default class SettingsController{
         let volumeLevelString = ''
 
         if(volumeLevel <= 40){
-            return 'Low'
+            return 'low'
         }else if(volumeLevel > 70){
-            return 'High'
+            return 'high'
         }else{
-            return 'Medium'
+            return 'medium'
+        }
+    }
+
+    static toggleSolidBg = (appState) => {
+
+        let currentThemeName = appState['currentTheme']['name']
+        let solidBg = this.getSolidBg(appState)
+        let newThemeObject
+
+        if(solidBg == 'Off'){
+            if(currentThemeName.includes('light')){
+                newThemeObject = StaticThemes['lightSolid']
+            }else{
+                newThemeObject = StaticThemes['darkSolid']
+            }
+        }else{
+            if(currentThemeName.includes('light')){
+                newThemeObject = StaticThemes['light']
+            }else{
+                newThemeObject = StaticThemes['dark']
+            }
+        }
+
+        appState.setStateFunction({
+            currentTheme: newThemeObject
+        })
+
+    }
+
+    static getSolidBg = (appState) => {
+
+        let currentThemeName = appState['currentTheme']['name']
+        
+
+        if(currentThemeName.indexOf('Solid') > -1){
+            return 'On'
+        }else{
+            return 'Off'
         }
     }
 

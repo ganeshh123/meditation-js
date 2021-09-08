@@ -27,7 +27,6 @@ class App extends React.Component {
 
   updateState = (newState, cbFunc) => {
     this.setState(newState, () => {
-      //console.log(this.state)
       SettingsStore.updateSettings(this.state)
       if(cbFunc){
         cbFunc()

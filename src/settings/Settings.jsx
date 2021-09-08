@@ -71,7 +71,9 @@ export default class Settings extends React.Component{
                         </div>
                         <div 
                             className='settingsToggleSwitch'
-                            onClick={SettingsController.toggleAlarmVolume(this.props.appState)}
+                            onClick = {() => {
+                                    SettingsController.toggleAlarmVolume(this.props.appState)
+                            }}
                         >
                             {SettingsController.getAlarmVolumeString(this.props.appState)}
                         </div>
@@ -87,8 +89,13 @@ export default class Settings extends React.Component{
                                 Solid Windows
                             </div>
                         </div>
-                        <div className='settingsToggleSwitch'>
-                            Off
+                        <div 
+                            className='settingsToggleSwitch'
+                            onClick={() => {
+                                SettingsController.toggleSolidBg(this.props.appState)
+                            }}
+                        >
+                            {SettingsController.getSolidBg(this.props.appState)}
                         </div>
                     </div>
                 </div>
