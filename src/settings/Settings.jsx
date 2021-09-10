@@ -18,10 +18,6 @@ export default class Settings extends React.Component{
         })
     }
 
-    settingsResetButtonPressed = () => {
-        console.log('Reset Settings Here')
-    }
-
     setColors = () => {
         this.settingsColors = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
@@ -101,7 +97,9 @@ export default class Settings extends React.Component{
                 </div>
                 <div 
                     id='settingsReset'
-                    onClick={this.settingsResetButtonPressed}
+                    onClick={() => {
+                        SettingsController.resetAppSettings(this.props.appState)
+                    }}
                 >
                     Reset Settings
                 </div>

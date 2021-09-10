@@ -80,4 +80,11 @@ export default class SettingsController{
         }
     }
 
+    static resetAppSettings = (appState) => {
+        appState.setStateFunction({
+            currentTheme: StaticThemes['dark'],
+            alarmVolume: 70
+        })
+    }
+
 }
