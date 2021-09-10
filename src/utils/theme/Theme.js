@@ -14,9 +14,20 @@ class Theme {
             newThemeObject = {
                 currentTheme: staticThemes['light']
             }
-        }else if(currentThemeName === 'light'){
+        }
+        else if(currentThemeName === 'light'){
             newThemeObject = {
                 currentTheme: staticThemes['dark']
+            }
+        }
+        else if(currentThemeName === 'darkSolid'){
+            newThemeObject = {
+                currentTheme: staticThemes['lightSolid']
+            }
+        }
+        else if(currentThemeName === 'lightSolid'){
+            newThemeObject = {
+                currentTheme: staticThemes['darkSolid']
             }
         }
 
