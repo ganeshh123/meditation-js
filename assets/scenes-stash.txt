@@ -1,0 +1,47 @@
+    {
+      "id":"stars",
+      "name":"Among the Stars",
+      "videoFile":"stars",
+      "sfx":"stars",
+      "sfxSource":"https://www.youtube.com/watch?v=OylMXBNSTXY",
+      "videoSource":"https://www.youtube.com/watch?v=X6dJEAs0-Gk",
+      "description":"Flashing Stars on a dark background.",
+      "background":"stars",
+      "blur": "stars_blur"
+    },
+    {
+      "id":"sunset",
+      "name":"Sunset",
+      "videoFile":"https://drive.google.com/uc?id=14MAc4MNfHyf4xlYOlutz4aEZ4tkPPqlQ&export=download",
+      "sfx":"sunset",
+      "sfxSource":"https://www.youtube.com/watch?v=UaCRAJLvLFk",
+      "videoSource":"https://www.youtube.com/watch?v=UaCRAJLvLFk",
+      "description":"Watch the sun descend over an island from the seaside, bringing the day to an end.",
+      "background":"sunset",
+      "externalVideo":true,
+      "blur": "rain_on_leaves_blur"
+    },
+    {
+      "id":"cloud_watching",
+      "name":"Cloud Watching",
+      "videoFile":"https://drive.google.com/u/0/uc?id=1noXV2e7BR5dc8oSuY6NHLYbj2JwlKsKP&export=download",
+      "sfx":"cloud_watching",
+      "sfxSource":"https://www.youtube.com/watch?v=RD4pnw71ANo",
+      "videoSource":"https://www.youtube.com/watch?v=yupuohj6d8Y",
+      "description":"Lying on warm summer grass with a nice breeze, watching the clouds go by.",
+      "background":"cloud_watching",
+      "externalVideo":true,
+      "blur": "rain_on_leaves_blur"
+    },
+    {
+      "id":"jungle_after_rainfall",
+      "name":"Jungle After Rainfall",
+      "videoFile":"https://drive.google.com/u/0/uc?id=19Ngfw7CfG7HY4JTuuur_2bLl3hAZvWwZ&export=download",
+      "sfx":"jungle_after_rainfall",
+      "sfxSource":"https://www.youtube.com/watch?v=RD4pnw71ANo",
+      "videoSource":"https://www.youtube.com/watch?v=yupuohj6d8Y",
+      "description":"A viewpoint over a tropical jungle, just after rainfall.",
+      "background":"jungle_after_rainfall",
+      "externalVideo":true,
+      "blur": "rain_on_leaves_blur"
+    }
