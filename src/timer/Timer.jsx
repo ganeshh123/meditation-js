@@ -92,6 +92,7 @@ export default class Timer extends React.Component{
         }
 
         if(currentTimerDuration == 0){
+            document.getElementById("alarm-audio").play();
             this.nextPhase()
         }
 
@@ -104,8 +105,6 @@ export default class Timer extends React.Component{
         let currentTimerMode = appState['timerMode']
 
         clearInterval(appState['timerInterval'])
-
-        /* TODO: Alarm Sound */
 
         if(currentTimerMode === 'Session'){
             this.startBreak()
@@ -246,8 +245,38 @@ export default class Timer extends React.Component{
     }
     */
 
+    timerBackButtonPressed = (event) => {
+
+        let appState = this.props.appState
+        let timerMode = appState['timerMode']
+
+        clearInterval(appState['timerInterval'])
+
+        if(timerMode === 'Session'){
+            this.startSession()
+        }
+
+        if(timerMode === 'Break'){
+            this.startBreak()
+        }
+
+    }
+
     timerSkipButtonPressed = (event) => {
         this.nextPhase()
+    }
+
+    componentDidMount = () => {
+        let appState = this.props.appState
+
+        appState.setStateFunction({
+            timerComponent: this
+        })
+    }
+
+    componentDidUpdate = () => {
+        let appState = this.props.appState
+        document.getElementById('alarm-audio').volume = (appState['alarmVolume']/ 100);
     }
 
     render(){
@@ -257,6 +286,7 @@ export default class Timer extends React.Component{
 
         return(
             <div id='timer' className='glassBlock' style={this.timerColors}>
+                <audio src="./assets/sfx/alarm.mp3" id="alarm-audio"/>
                 <div id='timerViewControls'>
                     <div id='timerPinHolder'>
                         <img 
@@ -291,6 +321,7 @@ export default class Timer extends React.Component{
                             style={this.timerIconColors}
                             id='timerBackButton'
                             className='timerViewIcon iconButton'
+                            onClick={this.timerBackButtonPressed}
                         />
                         <img 
                             src={this.getTimerPlayPauseButtonIcon()}

@@ -10,20 +10,37 @@ export default class TimerSetup extends React.Component{
         super(props)
     }
 
+    valueInvalid = (currentValue) => {
+        if(currentValue >= 1 
+            && currentValue <= 99
+            && !isNaN(currentValue)
+        ){
+            return false
+        }else{
+            return true
+        }
+    }
+
     setSelectedLength = (type, newValue) => {
 
         let newState = {}
-
-        if(newValue > 99){
-            return
-        }
         
         if(type === 'session'){
             newState['selectedSessionLength'] = newValue
+            if(this.valueInvalid(newValue)){
+                newState['selectedSessionLengthInvalid'] = true
+            }else{
+                newState['selectedSessionLengthInvalid'] = false
+            }
         }
 
         if(type === 'break'){
             newState['selectedBreakLength'] = newValue
+            if(this.valueInvalid(newValue)){
+                newState['selectedBreakLengthInvalid'] = true
+            }else{
+                newState['selectedBreakLengthInvalid'] = false
+            }
         }
 
         this.setState(newState, () => {
@@ -34,7 +51,9 @@ export default class TimerSetup extends React.Component{
     state = {
         selectedSessionLength: 25,
         selectedBreakLength: 5,
-        setSelectedLength: this.setSelectedLength
+        setSelectedLength: this.setSelectedLength,
+        selectedSessionLengthInvalid: false,
+        selectedBreakLengthInvalid: false
     }
 
     setColors = () => {
@@ -63,27 +82,20 @@ export default class TimerSetup extends React.Component{
 
     beginButtonPressed = () => {
 
-        console.log(this.state)
-        
-        if(
-            isNaN(parseInt(this.state.selectedSessionLength)) 
-            || isNaN(parseInt(this.state.selectedBreakLength))
-            ){
+        if(this.state['selectedSessionLengthInvalid'] || this.state['selectedBreakLengthInvalid']){
             return
         }
 
         let appState = this.props.appState
-        let timerSessionLength = this.state.selectedSessionLength * 60
 
         clearInterval(appState['timerInterval'])
 
         appState.setStateFunction({
-            timerMode: 'Session',
             timerSessionLength: this.state.selectedSessionLength,
             timerBreakLength: this.state.selectedBreakLength,
-            timerStatus: 'stopped',
-            timerDuration: timerSessionLength,
             timerSetupShowing: false
+        }, () =>{
+            appState.timerComponent.startSession()
         })
     }
 
@@ -92,6 +104,15 @@ export default class TimerSetup extends React.Component{
 
         appState.setStateFunction({
             timerSetupShowing: false
+        })
+    }
+
+    componentDidMount = () => {
+        let appState = this.props.appState
+
+        this.setState({
+            selectedSessionLength: appState['timerSessionLength'],
+            selectedBreakLength: appState['timerBreakLength'],
         })
     }
 
@@ -126,11 +147,13 @@ export default class TimerSetup extends React.Component{
                         appState={this.props.appState}
                         timerSetupState={this.state}
                         type='session'
+                        currentValueInvalid={this.state['selectedSessionLengthInvalid']}
                     />
                     <TimerLengthAdjuster
                         appState={this.props.appState}
                         timerSetupState={this.state}
                         type='break'
+                        currentValueInvalid={this.state['selectedBreakLengthInvalid']}
                     />
                 </div>
                 <div id='timerSetupWarning' style={this.timerSetupTextColors}>

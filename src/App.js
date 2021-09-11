@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import Theme from './utils/theme/Theme'
 import './mainStyle.scss'
 import MediaSources from './utils/mediasources/MediaSources'
+import SettingsStore from './utils/settings/settingsStore'
 
 import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './scenecontrols/SceneControlPanel'
@@ -15,6 +16,7 @@ import AudioPlayer from './scenemedia/AudioPlayer'
 import Timer from './timer/Timer'
 import TimerSetup from './timer/TimerSetup'
 import SidePanel from './sidepanel/SidePanel'
+import Settings from './settings/Settings'
 
 class App extends React.Component {
 
@@ -25,7 +27,7 @@ class App extends React.Component {
 
   updateState = (newState, cbFunc) => {
     this.setState(newState, () => {
-      //console.log(this.state)
+      SettingsStore.updateSettings(this.state)
       if(cbFunc){
         cbFunc()
       }
@@ -38,6 +40,7 @@ class App extends React.Component {
     currentTheme: Theme.staticThemes['dark'],
     sceneAudioVolume: 50,
     musicAudioVolume: 20,
+    alarmVolume: 70,
     /* Functions */
     setStateFunction: this.updateState,
     /* Static Data */
@@ -49,13 +52,15 @@ class App extends React.Component {
     videoDisabled: false,
     presetsMenuExpanded: false,
     timerSetupShowing: false,
+    settingsShowing: false,
     /* Timer State */
     timerMode: 'Session',
     timerSessionLength: 1,
     timerBreakLength: 2,
     timerStatus: 'stopped',
     timerDuration: 60,
-    timerInterval: undefined
+    timerInterval: undefined,
+    timerComponent: undefined
   }
 
   showOverlay = () => {
@@ -64,7 +69,15 @@ class App extends React.Component {
       return true
     }
 
+    if(this.state.settingsShowing){
+      return true
+    }
+
     return false
+  }
+
+  componentDidMount = () => {
+    SettingsStore.loadSettings(this.state)
   }
 
 
@@ -82,6 +95,7 @@ class App extends React.Component {
         { this.showOverlay() &&
           <div id='appOverlay'>
             { this.state.timerSetupShowing && <TimerSetup appState={this.state} />}
+            { this.state.settingsShowing && <Settings appState={this.state} />}
           </div>
         }
         <div id="appMiddle">
@@ -100,7 +114,8 @@ class App extends React.Component {
     );
   }
 }
- 
+
+/* Render App */
 ReactDOM.render(
   <App />,
   document.querySelector('body')

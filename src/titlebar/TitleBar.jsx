@@ -24,6 +24,14 @@ export default class TitleBar extends React.Component {
             filter: this.props.appState.currentTheme.iconColor
         }
     }
+
+    settingsButtonPressed = () => {
+        let appState = this.props.appState
+
+        appState.setStateFunction({
+          settingsShowing: true
+        })
+    }
   
     render = () => {
 
@@ -48,6 +56,7 @@ export default class TitleBar extends React.Component {
                   className="iconButton"
                   tabIndex="0"
                   accessKey="s"
+                  onClick={this.settingsButtonPressed}
                 />
           </div>
         </div>

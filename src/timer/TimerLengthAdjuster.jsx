@@ -8,30 +8,6 @@ export default class TimerLengthAdjuster extends React.Component{
         super(props)
     }
 
-    currentValueInvalid = () => {
-
-        let type = this.props.type
-        let timerSetupState = this.props.timerSetupState
-        let currentValue
-
-        if(type === 'session'){
-            currentValue =  timerSetupState['selectedSessionLength']
-        }
-
-        if(type === 'break'){
-            currentValue = timerSetupState['selectedBreakLength']
-        }
-
-        if(currentValue >= 1 
-            && currentValue <= 99
-            && !isNaN(currentValue)
-        ){
-            return false
-        }else{
-            return true
-        }
-    }
-
     setColors = () => {
         this.timerLengthAdjusterColors = {
         }
@@ -45,7 +21,7 @@ export default class TimerLengthAdjuster extends React.Component{
         }
 
         this.timerLengthAdjusterInvalidColors = {
-            borderWidth: this.currentValueInvalid()? '2px': '0px',
+            borderWidth: this.props.currentValueInvalid? '2px': '0px',
             borderColor: 'red',
             borderStyle: 'solid'
         }

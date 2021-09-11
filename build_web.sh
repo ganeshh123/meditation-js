@@ -1,4 +1,3 @@
-rm -r dist/web 
-mkdir -p dist/web
+npm install
 cp -r assets dist/web/assets/
 npm run build-web
