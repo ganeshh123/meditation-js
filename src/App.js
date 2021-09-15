@@ -98,12 +98,12 @@ class App extends React.Component {
             { this.state.settingsShowing && <Settings appState={this.state} />}
           </div>
         }
-        <div id="appMiddle">
-          <SidePanel appState={this.state} type="timerPresets"/>
+        <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
+        <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
+        <div id="appMiddle">          
           <div id="appCenter">
             {<Timer appState={this.state} />}
-          </div>
-          <SidePanel appState={this.state} type="toggles"/>
+          </div>          
         </div>
         <div id="appBottom">
           <SceneControlPanel 

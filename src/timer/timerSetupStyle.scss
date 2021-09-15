@@ -1,5 +1,5 @@
 #timerSetup {
-    min-width: 30%;
+    min-width: 34%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,6 +14,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-right: 4vh;
+    margin-left: 4vh;
+    margin-top: -0.5vh;
 }
 
 #timerSetupTitle {
@@ -29,16 +32,16 @@
 
 #timerSetupWarning {
     display: flex;
-    font-size: 20px;
+    font-size: 3vh;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 #timerSetupWarningIcon {
-    margin-right: 10px;
-    height: 30px;
+    margin-right: 1vh;
+    height: 4vh;
     width: auto;
 }
 

@@ -23,7 +23,17 @@
     clip-path: inset(-10% -10% 0.5vh -10%);
 }
 
-.sidePanel{
+#leftPanel {   
+    left: 3.4vh;
+}
+
+#rightPanel {
+    right: 3.4vh;
+}
+
+.sidePanel {
+    top: 15vh;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
