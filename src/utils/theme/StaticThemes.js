@@ -11,11 +11,11 @@ let darkTheme = {
 
 let lightTheme = {
     'name' : 'light',
-    'backgroundColor': 'rgba(255, 255, 255, 0.17)',
+    'backgroundColor': 'rgba(253, 253, 253, 0.28)',
     'border' : '0.05vh solid rgba(230, 230, 230, 0.06)',
     'boxShadow' : '0.1vh 0.1vh 0 0.1vh rgba(115, 115, 115, 0.42), -0.1vh -0.1vh 0 0.1vh rgba(255, 255, 255, 0.43)',
-    'backdropFilter' : 'blur(2.6vh) contrast(0.8) brightness(1.1)',
-    'webkitBackdropFilter' : 'blur(2.6h) contrast(0.8) brightness(1.1)',
+    'backdropFilter' : 'blur(2.6vh) saturate(1.1)',
+    'webkitBackdropFilter' : 'blur(2.6h) saturate(1.1)',
     'accentColor':'#000000'
 }
 

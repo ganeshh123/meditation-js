@@ -18,11 +18,22 @@
 
 #sidePanelBlockExpanded {
     padding-top: 1.2vh;
-    margin-bottom: 0;
+    margin-bottom: -1vh;
     border-radius: 2vh 2vh 0 0;
+    clip-path: inset(-10% -10% 0.5vh -10%);
 }
 
-.sidePanel{
+#leftPanel {   
+    left: 3.4vh;
+}
+
+#rightPanel {
+    right: 3.4vh;
+}
+
+.sidePanel {
+    top: 15vh;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
