@@ -133,7 +133,7 @@ export default class SidePanel extends React.Component{
         let presetsMenuCurrentlyExpanded= appState['presetsMenuExpanded']
 
         return(
-            <div className='sidePanel' id='s' style={this.sidePanelColors}>
+            <div className='sidePanel' id={this.props.id} style={this.sidePanelColors}>
 
                 <div 
                     className='sidePanelIcon glassBlock' 
