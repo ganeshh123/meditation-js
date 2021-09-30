@@ -14,7 +14,7 @@ export default class Timer extends React.Component{
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
             backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            webkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+            WebKitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
             color: this.props.appState.currentTheme.accentColor
         }
 

@@ -17,6 +17,7 @@ import Timer from './timer/Timer'
 import TimerSetup from './timer/TimerSetup'
 import SidePanel from './sidepanel/SidePanel'
 import Settings from './settings/Settings'
+import Launch from './launch/Launch'
 
 class App extends React.Component {
 
@@ -53,6 +54,7 @@ class App extends React.Component {
     presetsMenuExpanded: false,
     timerSetupShowing: false,
     settingsShowing: false,
+    launchShowing: true,
     /* Timer State */
     timerMode: 'Session',
     timerSessionLength: 1,
@@ -70,6 +72,10 @@ class App extends React.Component {
     }
 
     if(this.state.settingsShowing){
+      return true
+    }
+
+    if(this.state.launchShowing){
       return true
     }
 
@@ -96,6 +102,7 @@ class App extends React.Component {
           <div id='appOverlay'>
             { this.state.timerSetupShowing && <TimerSetup appState={this.state} />}
             { this.state.settingsShowing && <Settings appState={this.state} />}
+            { this.state.launchShowing && <Launch appState={this.state} />}
           </div>
         }
         <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
@@ -115,7 +122,6 @@ class App extends React.Component {
   }
 }
 
-/* Render App */
 ReactDOM.render(
   <App />,
   document.querySelector('body')

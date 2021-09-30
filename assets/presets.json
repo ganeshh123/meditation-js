@@ -4,7 +4,7 @@
       "name":"Sleep",
       "icon":"mini_sleep_icon.svg",
       "sceneId": "rain_on_leaves",
-      "musicId": "gymnopedie1"
+      "musicId": "still"
     },
     {
       "id":"relax",
