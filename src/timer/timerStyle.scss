@@ -43,17 +43,6 @@
     border-radius: 3vh;
     cursor: pointer;
     
-    #timerPinButton {
-        height: 4vh;
-        width: 4vh;
-        position: absolute;
-        transform: rotate(70deg);
-        top: 0.5vh;        
-        border-radius: 4vh;
-        opacity: 0.7;
-        transition: 0.3s;
-    }
-    
     &:hover { 
         #timerPinButton {
             transform: rotate(0deg);
@@ -62,6 +51,27 @@
             transition: 0.5s;
         }
     }
+}
+
+#timerPinButton {
+    height: 4vh;
+    width: 4vh;
+    position: absolute;
+}
+
+.pin-normal{
+    transform: rotate(70deg);
+    top: 0.5vh;        
+    border-radius: 4vh;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.pin-rotated{
+    transform: rotate(0deg);
+    top: 0.1vh;
+    opacity: 1;
+    transition: 0.5s;
 }
 
 #timerTimeDisplay{

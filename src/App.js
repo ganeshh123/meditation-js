@@ -7,6 +7,7 @@ import Theme from './utils/theme/Theme'
 import './mainStyle.scss'
 import MediaSources from './utils/mediasources/MediaSources'
 import SettingsStore from './utils/settings/settingsStore'
+import UIHide from './utils/uihide/UIHide';
 
 import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './scenecontrols/SceneControlPanel'
@@ -34,6 +35,9 @@ class App extends React.Component {
       }
     })
   }
+
+  
+
   state = {
     /* Variables */
     currentScene: 'rain_on_leaves',
@@ -55,6 +59,8 @@ class App extends React.Component {
     timerSetupShowing: false,
     settingsShowing: false,
     launchShowing: true,
+    uiShow: true,
+    timerPinned: false,
     /* Timer State */
     timerMode: 'Session',
     timerSessionLength: 1,
@@ -84,20 +90,29 @@ class App extends React.Component {
 
   componentDidMount = () => {
     SettingsStore.loadSettings(this.state)
+    UIHide.setup(this.state)
   }
 
 
   render = () => {
 
+    let uiShow = this.state.uiShow
+
     return(
       <div id="app" style={this.appStyle}>
+
         <SceneImage appState={this.state} />
         <AudioPlayer appState={this.state} type='sfx' />
         <AudioPlayer appState={this.state} type='music' />
         <SceneVideo appState={this.state} />
+
         <div id="appTop">
-          <TitleBar appTitleText="Calmeo" appState={this.state} />
+         {
+           uiShow && 
+           <TitleBar appTitleText="Calmeo" appState={this.state} />
+         }
         </div>
+
         { this.showOverlay() &&
           <div id='appOverlay'>
             { this.state.timerSetupShowing && <TimerSetup appState={this.state} />}
@@ -105,18 +120,30 @@ class App extends React.Component {
             { this.state.launchShowing && <Launch appState={this.state} />}
           </div>
         }
-        <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
-        <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
+
+        {uiShow &&
+          <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
+        }
+        {uiShow &&
+          <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
+        }
+
+       
         <div id="appMiddle">          
-          <div id="appCenter">
-            {<Timer appState={this.state} />}
-          </div>          
+            <div id="appCenter">
+              {(uiShow || this.state.timerPinned) &&
+                <Timer appState={this.state} />
+              }
+            </div>          
         </div>
+
+       {uiShow &&
         <div id="appBottom">
           <SceneControlPanel 
             appState={this.state}
           />
         </div>
+       }
       </div>
     );
   }
