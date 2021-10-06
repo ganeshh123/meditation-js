@@ -8,23 +8,8 @@ export default class TimerLengthAdjuster extends React.Component{
         super(props)
     }
 
-    setColors = () => {
-        this.timerLengthAdjusterColors = {
-        }
-
-        this.timerLengthAdjusterIconColors = {
-            filter: this.props.appState.currentTheme.iconColor
-        }
-
-        this.timerLengthAdjusterTextColors = {
-            color: this.props.appState.currentTheme.accentColor
-        }
-
-        this.timerLengthAdjusterInvalidColors = {
-            borderWidth: this.props.currentValueInvalid? '2px': '0px',
-            borderColor: 'red',
-            borderStyle: 'solid'
-        }
+    state = {
+        width: 1
     }
 
     getInputValue = () => {
@@ -41,13 +26,41 @@ export default class TimerLengthAdjuster extends React.Component{
         }
     }
 
+    setColors = () => {
+        this.timerLengthAdjusterColors = {
+        }
+
+        this.timerLengthAdjusterIconColors = {
+            filter: this.props.appState.currentTheme.iconColor
+        }
+
+        this.timerLengthAdjusterTextColors = {
+            color: this.props.appState.currentTheme.accentColor
+        }
+
+        this.timerLengthAdjusterInputColors = {
+            borderWidth: this.props.currentValueInvalid? '2px': '0px',
+            borderColor: 'red',
+            outlineColor: this.props.currentValueInvalid? 'red': '#72ce35',
+            borderStyle: 'solid',
+            backgroundColor: this.props.appState.currentTheme.backgroundColor,
+            color: this.props.appState.currentTheme.accentColor,
+            minWidth: this.state.width + 'ch'
+        }
+    }
+
     lengthInputChanged = (event) => {
 
         let timerSetupState = this.props.timerSetupState
         let type = this.props.type
         let newValue = event.target.value
 
-        timerSetupState.setSelectedLength(type, newValue)
+        this.setState({
+            width: event.target.value.length + 1
+        }, () => {
+            this.setColors()
+            timerSetupState.setSelectedLength(type, newValue)
+        })
 
     }
 
@@ -65,7 +78,7 @@ export default class TimerLengthAdjuster extends React.Component{
                         <input 
                             className="timerLengthAdjusterInput"
                             id={this.props.type + 'TimerLengthAdjusterInput'}
-                            style={this.timerLengthAdjusterInvalidColors}
+                            style={this.timerLengthAdjusterInputColors}
                             type="number"
                             name={this.props.type + 'TimerLengthInput'}
                             value={this.getInputValue()}

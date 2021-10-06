@@ -1,26 +1,38 @@
 #timerSetup {
-    min-width: 34%;
+    flex: 1;
+    width: 100%;
+    position: relative;
+    padding: 2vh;
+    border-radius: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#timerSetupCloseButton{
+    height: 4.5vh;
+    position: fixed;
+    top: 2.5vh;
+    right: 50px;
+    cursor: pointer;
+}
+
+#timerSetupTitle {
+    margin-left: 1vh;
+    font-size: 5vh;
+    text-align: center;
+}
+
+#timerSetupMain{
+    flex: 1;
+    max-width: 600px;
+    width: auto;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1vh;
-    border-radius: 2vh;
-}
-
-#timerSetupViewControls {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 4vh;
-    margin-left: 4vh;
-    margin-top: -0.5vh;
-}
-
-#timerSetupTitle {
-    font-size: 5vh;
 }
 
 #timerSetupMiddle {
@@ -28,6 +40,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 #timerSetupWarning {
@@ -36,19 +49,20 @@
     justify-content: center;
     align-items: center;
     margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-bottom: 5vh;
 }
 
 #timerSetupWarningIcon {
-    margin-right: 1vh;
+    margin-right: 2vh;
     height: 4vh;
     width: auto;
 }
 
 #timerSetupBeginButton {
     font-family: 'Bubbler One', sans-serif;
-    font-size: 3vh;
+    font-size: 5vh;
     padding: 0.2vh 1vh 0.5vh 1vh;
-    border-radius: 1vh;
     cursor: pointer;
+    border-radius: 1.5vh;
+    margin-bottom: 5vh;
 }

@@ -58,11 +58,11 @@ export default class TimerSetup extends React.Component{
 
     setColors = () => {
         this.timerSetupColors = {
-            backgroundColor: this.props.appState.currentTheme.backgroundColor,
-            border: this.props.appState.currentTheme.border,
-            boxShadow: this.props.appState.currentTheme.boxShadow,
-            backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            webkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+            //backgroundColor: this.props.appState.currentTheme.backgroundColor,
+            //border: this.props.appState.currentTheme.border,
+            //boxShadow: this.props.appState.currentTheme.boxShadow,
+            //backdropFilter : this.props.appState.currentTheme.backdropFilter,
+            //webkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
             color: this.props.appState.currentTheme.accentColor
         }
 
@@ -79,7 +79,7 @@ export default class TimerSetup extends React.Component{
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
             backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            webkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+            WebkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
             color: this.props.appState.currentTheme.accentColor
         }
     }
@@ -120,45 +120,56 @@ export default class TimerSetup extends React.Component{
         })
     }
 
+    setupKeys = () => {
+        let appState = this.props.appState
+        document.addEventListener('keydown', (event) => {
+            if(event.key == 'Escape'){
+                appState.setStateFunction({
+                    timerSetupShowing: false
+                })
+            }
+        })
+    }
+
     render(){
 
         this.setColors()
+        this.setupKeys()
 
         return(
-            <div id='timerSetup' className='glassBlock' style={this.timerSetupColors}>
-                <div id='timerSetupViewControls'>
-                     {
-                         /*
-                    <img 
-                        src={'./assets/icons/pin_icon.svg'} 
-                        style={this.timerSetupIconColors}
-                        id='timerPinButton'
-                    />
-                    */
-                     }
-                    <div id='timerSetupTitle' style={this.timerSetupTextColors}>
-                        New Session
-                    </div>
-                    <img 
+            <div id='timerSetup' style={this.timerSetupColors}>
+                <div id='timerSetupTitle' style={this.timerSetupTextColors}>
+                    Setup Timer
+                </div>
+                <img 
                         src={'./assets/icons/cross_icon.svg'} 
                         style={this.timerSetupIconColors}
-                        id='timerCloseButton'
+                        id='timerSetupCloseButton'
                         onClick={this.closeButtonPressed}
-                    />
-                </div>
-                <div id='timerSetupMiddle'>
-                    <TimerLengthAdjuster
-                        appState={this.props.appState}
-                        timerSetupState={this.state}
-                        type='session'
-                        currentValueInvalid={this.state['selectedSessionLengthInvalid']}
-                    />
-                    <TimerLengthAdjuster
-                        appState={this.props.appState}
-                        timerSetupState={this.state}
-                        type='break'
-                        currentValueInvalid={this.state['selectedBreakLengthInvalid']}
-                    />
+                />
+                <div id="timerSetupMain">
+                    <div id='timerSetupMiddle'>
+                        <TimerLengthAdjuster
+                            appState={this.props.appState}
+                            timerSetupState={this.state}
+                            type='session'
+                            currentValueInvalid={this.state['selectedSessionLengthInvalid']}
+                        />
+                        <TimerLengthAdjuster
+                            appState={this.props.appState}
+                            timerSetupState={this.state}
+                            type='break'
+                            currentValueInvalid={this.state['selectedBreakLengthInvalid']}
+                        />
+                    </div>
+                    <button
+                        id='timerSetupBeginButton'
+                        className='glassBlock'
+                        onClick={this.beginButtonPressed}
+                        style={this.timerSetupButtonColours}
+                    >
+                        Begin
+                    </button>
                 </div>
                 <div id='timerSetupWarning' style={this.timerSetupTextColors}>
                     <img 
@@ -168,14 +179,6 @@ export default class TimerSetup extends React.Component{
                     />
                     Your current timer will be reset
                 </div>
-                <button
-                    id='timerSetupBeginButton'
-                    className='glassBlock'
-                    onClick={this.beginButtonPressed}
-                    style={this.timerSetupButtonColours}
-                >
-                    Begin
-                </button>
             </div>
         )
     }
