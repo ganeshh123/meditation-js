@@ -17,8 +17,7 @@ export default class TitleBar extends React.Component {
           boxShadow: this.props.appState.currentTheme.boxShadow,
           backdropFilter : this.props.appState.currentTheme.backdropFilter,
           WebKitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
-          color: this.props.appState.currentTheme.accentColor,
-          visibility: this.props.appState.uiShow? 'visible' : 'hidden'
+          color: this.props.appState.currentTheme.accentColor
         }
 
         this.titleBarIconColors = {

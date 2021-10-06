@@ -94,29 +94,22 @@ class App extends React.Component {
 
         <Overlay appState={this.state} />
 
-        {uiShow &&
-          <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
-        }
-        {uiShow &&
-          <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
-        }
+        <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
+
+        <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
 
        
         <div id="appMiddle">          
             <div id="appCenter">
-              {(uiShow || this.state.timerPinned) &&
                 <Timer appState={this.state} />
-              }
             </div>          
         </div>
 
-       {uiShow &&
         <div id="appBottom">
           <SceneControlPanel 
             appState={this.state}
           />
         </div>
-       }
       </div>
     );
   }

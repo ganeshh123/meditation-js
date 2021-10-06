@@ -1,6 +1,7 @@
 /* Global Imports */
 import React from 'react';
 
+import UIHide from '../utils/uihide/UIHide';
 import './timerStyle.scss'
 
 export default class Timer extends React.Component {
@@ -33,6 +34,10 @@ export default class Timer extends React.Component {
         this.timerProgressBarColors = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor
         }
+    }
+
+    state = {
+        refresh: 0
     }
 
     setProgressBar = () => {        
@@ -261,7 +266,7 @@ export default class Timer extends React.Component {
 
     timerPinButtonPressed = () => {
         let appState = this.props.appState
-        let timerCurrentlyPinned = appState['timerPinned']
+        let timerCurrentlyPinned = UIHide.timerPinned
 
         let timerPinButton = document.querySelector('#timerPinButton')
 
@@ -273,6 +278,8 @@ export default class Timer extends React.Component {
             timerPinButton.classList.add('pin-normal')
         }
 
+        UIHide.timerPinned = !timerCurrentlyPinned
+        
         appState.setStateFunction({
             timerPinned: !timerCurrentlyPinned
         })
@@ -280,6 +287,7 @@ export default class Timer extends React.Component {
 
     componentDidMount = () => {
         let appState = this.props.appState
+        timerPinButton.classList.add('pin-normal')
 
         appState.setStateFunction({
             timerComponent: this
