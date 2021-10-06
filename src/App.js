@@ -15,10 +15,8 @@ import SceneVideo from './scenemedia/SceneVideo'
 import SceneImage from './scenemedia/SceneImage'
 import AudioPlayer from './scenemedia/AudioPlayer'
 import Timer from './timer/Timer'
-import TimerSetup from './timer/TimerSetup'
 import SidePanel from './sidepanel/SidePanel'
-import Settings from './settings/Settings'
-import Launch from './launch/Launch'
+import Overlay from './overlay/Overlay'
 
 class App extends React.Component {
 
@@ -71,23 +69,6 @@ class App extends React.Component {
     timerComponent: undefined
   }
 
-  showOverlay = () => {
-    
-    if(this.state.timerSetupShowing){
-      return true
-    }
-
-    if(this.state.settingsShowing){
-      return true
-    }
-
-    if(this.state.launchShowing){
-      return true
-    }
-
-    return false
-  }
-
   componentDidMount = () => {
     SettingsStore.loadSettings(this.state)
     UIHide.setup(this.state)
@@ -113,13 +94,7 @@ class App extends React.Component {
          }
         </div>
 
-        { this.showOverlay() &&
-          <div id='appOverlay'>
-            { this.state.timerSetupShowing && <TimerSetup appState={this.state} />}
-            { this.state.settingsShowing && <Settings appState={this.state} />}
-            { this.state.launchShowing && <Launch appState={this.state} />}
-          </div>
-        }
+        <Overlay appState={this.state} />
 
         {uiShow &&
           <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
@@ -151,7 +126,7 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.querySelector('body')
+  document.querySelector('#calmeo')
 );
 
 module.hot.accept()
