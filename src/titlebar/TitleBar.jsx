@@ -32,6 +32,15 @@ export default class TitleBar extends React.Component {
           settingsShowing: true
         })
     }
+
+    appTitlePressed = () => {
+      let appState = this.props.appState
+
+      appState.setStateFunction({
+        firstTime: true,
+        launchShowing: true
+      })
+    }
   
     render = () => {
 
@@ -39,7 +48,7 @@ export default class TitleBar extends React.Component {
 
       return(
         <div id="titleBar" className="glassBlock" style={this.titleBarColors}>
-          <h1 id="appTitleText">{this.props.appTitleText}</h1>
+          <h1 id="appTitleText" onClick={this.appTitlePressed}>{this.props.appTitleText}</h1>
           <div id="buttonsHolder">
                 <img 
                   src={"./assets/icons/about_icon.svg"} 

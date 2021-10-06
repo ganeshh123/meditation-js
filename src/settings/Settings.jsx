@@ -1,7 +1,7 @@
 /* Global Imports */
 import React from 'react';
 
-import SettingsController from '../utils/settings/settingsController';
+import SettingsController from '../utils/settings/settingsController'
 import './settingsStyle.scss'
 
 export default class Settings extends React.Component{
@@ -20,11 +20,11 @@ export default class Settings extends React.Component{
 
     setColors = () => {
         this.settingsColors = {
-            backgroundColor: this.props.appState.currentTheme.backgroundColor,
-            border: this.props.appState.currentTheme.border,
-            boxShadow: this.props.appState.currentTheme.boxShadow,
-            backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            WebkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+            //backgroundColor: this.props.appState.currentTheme.backgroundColor,
+            //border: this.props.appState.currentTheme.border,
+            //boxShadow: this.props.appState.currentTheme.boxShadow,
+            //backdropFilter : this.props.appState.currentTheme.backdropFilter,
+            //WebkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
             color: this.props.appState.currentTheme.accentColor
         }
 
@@ -42,26 +42,34 @@ export default class Settings extends React.Component{
         }
     }
 
+    setupKeys = () => {
+        let appState = this.props.appState
+        document.addEventListener('keydown', (event) => {
+            if(event.key == 'Escape'){
+                appState.setStateFunction({
+                    settingsShowing: false
+                })
+            }
+        })
+    }
+
     render(){
 
         this.setColors()
+        this.setupKeys()
 
         return(
-            <div id='settings' className='glassBlock' style={this.settingsColors}>
-                <div id='settingsTitleBar'>
-                    <div id='settingsTitleContainer'>
-                        <div id='settingsTitle'>
-                            Settings
-                        </div>
-                    </div>
-                    <img 
-                        id='settingsCloseButton'
-                        className='iconButton'
-                        src='./assets/icons/cross_icon.svg'
-                        onClick={this.settingsCloseButtonPressed}
-                        style={this.settingsIconColors}
-                    />
+            <div id='settings' style={this.settingsColors}>
+                <div id='settingsTitle'>
+                    Settings
                 </div>
+                <img 
+                    id='settingsCloseButton'
+                    className='iconButton'
+                    src='./assets/icons/cross_icon.svg'
+                    onClick={this.settingsCloseButtonPressed}
+                    style={this.settingsIconColors}
+                />
                 <div id='settingsMenu'>
                     <div className='settingsMenuItem'>
                         <div className='settingsMenuItemLeftSide'>
