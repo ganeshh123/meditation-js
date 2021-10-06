@@ -28,6 +28,15 @@ export default class Settings extends React.Component{
             color: this.props.appState.currentTheme.accentColor
         }
 
+        this.buttonColors = {
+            backgroundColor: this.props.appState.currentTheme.buttonBackgroundColor,
+            border: this.props.appState.currentTheme.border,
+            boxShadow: this.props.appState.currentTheme.boxShadow,
+            backdropFilter : this.props.appState.currentTheme.backdropFilter,
+            webkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+            color: this.props.appState.currentTheme.accentColor
+        }
+
         this.settingsIconColors = {
             filter: this.props.appState.currentTheme.iconColor
         }
@@ -57,7 +66,7 @@ export default class Settings extends React.Component{
                     <div className='settingsMenuItem'>
                         <div className='settingsMenuItemLeftSide'>
                             <img 
-                                className='settingsItemIcon iconButton'
+                                id='notificationIcon'
                                 src='./assets/icons/speaker_icon.svg'
                                 style={this.settingsIconColors}
                             />
@@ -66,10 +75,11 @@ export default class Settings extends React.Component{
                             </div>
                         </div>
                         <div 
-                            className='settingsToggleSwitch'
+                            className='settingsToggleSwitch glassBlock'
                             onClick = {() => {
-                                    SettingsController.toggleAlarmVolume(this.props.appState)
+                                SettingsController.toggleAlarmVolume(this.props.appState)
                             }}
+                            style={this.buttonColors}
                         >
                             {SettingsController.getAlarmVolumeString(this.props.appState)}
                         </div>
@@ -77,7 +87,7 @@ export default class Settings extends React.Component{
                     <div className='settingsMenuItem'>
                         <div className='settingsMenuItemLeftSide'>
                             <img 
-                                className='settingsItemIcon iconButton'
+                                id='solidGlassIcon'
                                 src='./assets/icons/solid_glass_icon.svg' 
                                 style={this.settingsIconColors}
                             />
@@ -86,10 +96,11 @@ export default class Settings extends React.Component{
                             </div>
                         </div>
                         <div 
-                            className='settingsToggleSwitch'
+                            className='settingsToggleSwitch glassBlock'
                             onClick={() => {
                                 SettingsController.toggleSolidBg(this.props.appState)
                             }}
+                            style={this.buttonColors}
                         >
                             {SettingsController.getSolidBg(this.props.appState)}
                         </div>
@@ -100,6 +111,7 @@ export default class Settings extends React.Component{
                     onClick={() => {
                         SettingsController.resetAppSettings(this.props.appState)
                     }}
+                    style={this.buttonColors}
                 >
                     Reset Settings
                 </div>
