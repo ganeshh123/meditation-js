@@ -1,8 +1,9 @@
 /* Global Imports */
 import React from 'react';
 
-import './presetsMenuStyles.scss'
+import './presetsStyles.scss'
 import SettingsStore from '../utils/settings/settingsStore'
+import PresetsController from '../utils/presets/PresetsController';
 
 export default class PresetsMenu extends React.Component{
     constructor(props){
@@ -34,42 +35,6 @@ export default class PresetsMenu extends React.Component{
         }
     }
 
-    getPreset = (presetId) => {
-        let appState = this.props.appState
-        let presetsArray = appState['mediaSources']['presetsArray']
-
-        for(let i = 0; i < presetsArray.length; i++){
-            let preset = presetsArray[i]
-            if(preset['id'] == presetId){
-                return preset
-            }
-        }
-    }
-
-    setPreset = (presetId) => {
-        let appState = this.props.appState
-        let preset = this.getPreset(presetId)
-
-        let update = {
-            launchShowing: false
-        }
-
-        if(presetId != 'resume'){
-            update['currentScene'] = preset['sceneId']
-            update['currentMusicTrack'] = preset['musicId']
-        }
-        
-        appState.setStateFunction(update, () => {
-            document.querySelector('#sfxAudio').play()
-            document.querySelector('#musicAudio').play()
-            SettingsStore.updateSettings(appState)
-        })
-    }
-
-    state={
-
-    }
-
     render(){
 
         this.setColors()
@@ -88,13 +53,13 @@ export default class PresetsMenu extends React.Component{
                                 style={this.presetsMenuIconColors}
                                 id={preset['id'] + 'PresetMenuButtonIcon'}
                                 className='presetsMenuButtonIcon'
-                                onClick={() => {this.setPreset(preset['id'])}}
+                                onClick={() => {PresetsController.setPreset(appState,preset['id'])}}
                             />
                             <div 
                                 id={preset['id'] + 'PresetsMenuButtonText'}
                                 className='presetsMenuButtonText'
                                 style={{color: 'inherit'}}
-                                onClick={() => {this.setPreset(preset['id'])}}
+                                onClick={() => {PresetsController.setPreset(appState,preset['id'])}}
                             >
                                 {preset['name']}
                             </div>

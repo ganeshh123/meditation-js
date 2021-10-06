@@ -59,6 +59,7 @@ class App extends React.Component {
     launchShowing: true,
     uiShow: true,
     timerPinned: false,
+    firstTime: true,
     /* Timer State */
     timerMode: 'Session',
     timerSessionLength: 1,
@@ -88,10 +89,7 @@ class App extends React.Component {
         <SceneVideo appState={this.state} />
 
         <div id="appTop">
-         {
-           uiShow && 
            <TitleBar appTitleText="Calmeo" appState={this.state} />
-         }
         </div>
 
         <Overlay appState={this.state} />

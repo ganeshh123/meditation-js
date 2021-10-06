@@ -14,7 +14,7 @@ export default class Overlay extends React.Component{
 
     setColors = () => {
         this.overlayColors = {
-
+            backgroundColor: this.props.appState['currentTheme']['overlayColor']
         }
     }
 

@@ -13,6 +13,7 @@ export default class SettingsStore {
         //musicMuted: false,
         //sfxMuted: false,
         videoDisabled: false,
+        firstTime: true
         //launchShowing: true
     }
 

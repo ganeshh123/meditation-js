@@ -19,14 +19,12 @@ export default class UIHide{
     }
   
     static hideUI = (appState) => {
-        document.querySelector('#appCenter').style.justifyContent = "flex-end"
         appState.setStateFunction({
             uiShow: false
         })
     }
 
     static showUI = (appState) => {
-        document.querySelector('#appCenter').style.justifyContent = "center"
         appState.setStateFunction({
             uiShow: true
         })

@@ -8,7 +8,7 @@ let darkTheme = {
     'webkitBackdropFilter' : 'blur(1.9vh) saturate(1.3)',
     'accentColor' : '#ffffff',
     'iconColor': 'invert(100%)',
-    'overlayColor': 'rgba(0, 0, 0, 0.74);'
+    'overlayColor': 'rgba(0, 0, 0, 0.74)'
 }
 
 let lightTheme = {
@@ -20,7 +20,7 @@ let lightTheme = {
     'backdropFilter' : 'blur(2.6vh) saturate(1.1)',
     'webkitBackdropFilter' : 'blur(2.6h) saturate(1.1)',
     'accentColor':'#000000',
-    'overlayColor': 'rgba(253, 253, 253, 0.74);'
+    'overlayColor': 'rgba(253, 253, 253, 0.74)'
 }
 
 let darkThemeSolid = {
@@ -31,7 +31,7 @@ let darkThemeSolid = {
     'boxShadow' : '0.1vh 0.1vh 0 0.1vh rgba(8, 8, 8, 0.21), -0.1vh -0.1vh 0 0.1vh rgba(250, 250, 250, 0.21)',
     'accentColor' : '#ffffff',
     'iconColor': 'invert(100%)',
-    'overlayColor': 'rgba(0, 0, 0, 0.74);'
+    'overlayColor': 'rgba(0, 0, 0, 0.74)'
 }
 
 let lightThemeSolid = {
@@ -41,7 +41,7 @@ let lightThemeSolid = {
     'border' : '0.05vh solid rgba(230, 230, 230, 0.06)',
     'boxShadow' : '0.1vh 0.1vh 0 0.1vh rgba(115, 115, 115, 0.42), -0.1vh -0.1vh 0 0.1vh rgba(255, 255, 255, 0.43)',
     'accentColor':'#000000',
-    'overlayColor': 'rgba(253, 253, 253, 0.74);'
+    'overlayColor': 'rgba(253, 253, 253, 0.74)'
 }
 
 module.exports = {

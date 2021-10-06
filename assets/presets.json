@@ -4,20 +4,23 @@
       "name":"Sleep",
       "icon":"mini_sleep_icon.svg",
       "sceneId": "rain_on_leaves",
-      "musicId": "still"
+      "musicId": "still",
+      "bigIcon": "sleep_icon_large.svg"
     },
     {
       "id":"relax",
       "name":"Relax",
       "icon":"mini_relax_icon.svg",
       "sceneId": "forest_1",
-      "musicId": "gymnopedie1"
+      "musicId": "gymnopedie1",
+      "bigIcon": "relax_icon_large.svg"
     },
     {
         "id":"focus",
         "name":"Focus",
         "icon":"mini_focus_icon.svg",
-        "sceneId": "stars",
-        "musicId": "still"
+        "sceneId": "waterfall1",
+        "musicId": "still",
+        "bigIcon": "focus_icon_large.svg"
     }
 ]
