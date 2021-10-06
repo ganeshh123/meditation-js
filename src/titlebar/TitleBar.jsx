@@ -46,6 +46,7 @@ export default class TitleBar extends React.Component {
                   style={this.titleBarIconColors}
                   id="aboutButton"
                   className="iconButton"
+                  title="About"
                   tabIndex="0"
                   accessKey="i"
                 />
@@ -54,6 +55,7 @@ export default class TitleBar extends React.Component {
                   style={this.titleBarIconColors}
                   id="settingsButton"
                   className="iconButton"
+                  title="Settings"
                   tabIndex="0"
                   accessKey="s"
                   onClick={this.settingsButtonPressed}

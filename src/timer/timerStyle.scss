@@ -21,15 +21,15 @@
 #timerViewControls {
     width: 100%;
     display: flex;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 1vh;
+    padding-right: 1vh;
     padding-top: 0.8vh;
     flex-direction: row;
     justify-content: space-between;
 }
 
 #timerCloseButton {
-    padding-right: 0.7%;
+    padding-right: 1vh;
     padding-top: 0.1vh;
     height: 2.7vh;
 }

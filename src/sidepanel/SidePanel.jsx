@@ -86,12 +86,14 @@ export default class SidePanel extends React.Component{
 
             buttons.push({
                 name: 'presets',
+                title: 'Presets',
                 icon: './assets/icons/presets_icon.svg',
                 clickHandler: this.presetsButtonPressed
             })
 
             buttons.push({
                 name: 'newTimer',
+                title: 'Create Session Timer',
                 icon: './assets/icons/new_timer_icon.svg',
                 clickHandler: this.newTimerButtonPressed
             })
@@ -100,12 +102,14 @@ export default class SidePanel extends React.Component{
 
             buttons.push({
                 name: 'lightDark',
-                icon: './assets/icons/light_dark_icon.svg',
+                title: 'Switch Light/Dark Mode',
+                icon: './assets/icons/light_dark_icon.svg',               
                 clickHandler: this.lightDarkButtonPressed
             })
 
             let videoToggleButton = {
                 name: 'videoToggle',
+                title: 'Pause/Play Background Video',
                 clickHandler: this.videoToggleButtonPressed
             }
 
@@ -149,6 +153,7 @@ export default class SidePanel extends React.Component{
                             buttons[0]['name'] + 'ButtonExpanded' :
                             buttons[0]['name'] + 'Button'
                         }
+                        title={buttons[0]['title']}
                         style={this.sidePanelIconColors}
                     />
                 </div>
@@ -164,6 +169,7 @@ export default class SidePanel extends React.Component{
                         src={buttons[1]['icon']} 
                         style={{filter: this.props.appState['currentTheme']['iconColor']}}
                         id={buttons[1]['name'] + 'Button'}
+                        title={buttons[1]['title']}
                         style={this.sidePanelIconColors}
                     />
                 </div>

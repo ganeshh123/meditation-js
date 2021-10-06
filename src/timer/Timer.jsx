@@ -35,8 +35,7 @@ export default class Timer extends React.Component {
         }
     }
 
-    setProgressBar = () => {
-
+    setProgressBar = () => {        
         let appState = this.props.appState
         let timerDuration = appState['timerDuration']
         let timerMode = appState['timerMode']
@@ -67,7 +66,6 @@ export default class Timer extends React.Component {
     /* Timer Functions */
 
     startTimer = () => {
-
         let appState = this.props.appState
 
         appState.setStateFunction({
@@ -81,7 +79,6 @@ export default class Timer extends React.Component {
     }
 
     updateTimer = () => {
-
         let appState = this.props.appState
         let currentTimerDuration = appState['timerDuration']
 
@@ -100,7 +97,6 @@ export default class Timer extends React.Component {
     }
 
     nextPhase = () => {
-
         let appState = this.props.appState
         let currentTimerMode = appState['timerMode']
 
@@ -117,7 +113,6 @@ export default class Timer extends React.Component {
     }
 
     startSession = () => {
-
         let appState = this.props.appState
         let timerSessionLength = appState['timerSessionLength'] * 60
 
@@ -128,7 +123,6 @@ export default class Timer extends React.Component {
     }
 
     startBreak = () => {
-
         let appState = this.props.appState
         let timerBreakLength = appState['timerBreakLength'] * 60
 
@@ -176,8 +170,7 @@ export default class Timer extends React.Component {
         }
     }
 
-    getNextPhaseLength = () => {
-
+    getNextPhaseLength = () => {        
         let appState = this.props.appState
         let nextPhase = this.getNextPhase()
 
@@ -313,17 +306,16 @@ export default class Timer extends React.Component {
                             src={'./assets/icons/pin_icon.svg'}
                             style={this.timerIconColors}
                             id='timerPinButton'
-                            className="pin-normal"
+                            title='Pin/Unpin Window'
                         />
                     </div>
-                    {uiShow && 
-                        <img
-                            src={'./assets/icons/cross_icon.svg'}
-                            style={this.timerIconColors}
-                            id='timerCloseButton'
-                            className="iconButton"
-                        />
-                    }
+                    <img 
+                        src={'./assets/icons/cross_icon.svg'} 
+                        style={this.timerIconColors}
+                        id='timerCloseButton'
+                        className='iconButton'
+                        title='Close Timer'
+                    />
                 </div>
                 <div id='timerTimeDisplay' style={this.timerTextColors}>
                     {this.getMinutes() + ':' + this.getSeconds()}
@@ -338,31 +330,42 @@ export default class Timer extends React.Component {
                     </div>
                 </div>
                 <div id='timerBottomBar'>
-                    {uiShow &&
-                        <div id='timerControls'>
-                            <img
-                                src={'./assets/icons/back_icon.svg'}
-                                style={this.timerIconColors}
-                                id='timerBackButton'
-                                className='timerViewIcon iconButton'
-                                onClick={this.timerBackButtonPressed}
-                            />
-                            <img
-                                src={this.getTimerPlayPauseButtonIcon()}
-                                style={this.timerIconColors}
-                                id='timerPlayButton'
-                                className='timerViewIcon iconButton'
-                                onClick={this.timerPlayButtonPressed}
-                            />
-                            <img
-                                src={'./assets/icons/skip_icon.svg'}
-                                style={this.timerIconColors}
-                                id='timerSkipButton'
-                                className='timerViewIcon iconButton'
-                                onClick={this.timerSkipButtonPressed}
-                            />
-                        </div>
-                    }
+                    <div id='timerControls'>
+                        <img 
+                            src={'./assets/icons/back_icon.svg'} 
+                            style={this.timerIconColors}
+                            id='timerBackButton'
+                            title={
+                                'Restart ' + this.props.appState['timerMode']
+                            }
+                            className='timerViewIcon iconButton'
+                            onClick={this.timerBackButtonPressed}
+                        />
+                        <img 
+                            src={this.getTimerPlayPauseButtonIcon()}
+                            style={this.timerIconColors}
+                            id='timerPlayButton'
+                            title={
+                                this.props.appState['timerStatus'] === 'running' ?
+                                'Pause' :
+                                'Play'
+                            }
+                            className='timerViewIcon iconButton'
+                            onClick={this.timerPlayButtonPressed}
+                        />
+                        <img 
+                            src={'./assets/icons/skip_icon.svg'} 
+                            style={this.timerIconColors}
+                            id='timerSkipButton'
+                            className='timerViewIcon iconButton'
+                            title={
+                                'Skip to ' + (this.props.appState['timerMode'] === 'Break' ?
+                                'Session' :
+                                'Break')         
+                            }
+                            onClick={this.timerSkipButtonPressed}
+                        />
+                    </div>
                 </div>
             </div>
         )

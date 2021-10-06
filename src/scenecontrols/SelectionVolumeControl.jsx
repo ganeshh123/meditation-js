@@ -2,7 +2,6 @@
 import React from 'react';
 
 /* Local Imports */
-import Theme from '../utils/theme/Theme'
 import './selectionVolumeControlStyle.scss'
 
 
@@ -12,7 +11,6 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     setColors = () => {
-
         this.selectionVolumeControlColors = {
             color: this.props.appState['currentTheme']['accentColor']
         }
@@ -20,7 +18,6 @@ export default class SelectionVolumeControl extends React.Component{
         this.volumeIconColors = {
             filter: this.props.appState.currentTheme.iconColor
         }
-
     }
     
     sourceSelectionChanged = (event) => {
@@ -36,9 +33,8 @@ export default class SelectionVolumeControl extends React.Component{
             })
         }
     }
-
+    
     getIconPath = () => {
-
         let appState = this.props.appState
 
         let iconPath = './assets/icons/'
@@ -56,15 +52,13 @@ export default class SelectionVolumeControl extends React.Component{
                 iconPath = iconPath +'speaker_icon.svg'
             }else{
                 iconPath = iconPath +'speaker_off_icon.svg'
-            }
-            
+            }            
         }
 
         return iconPath
     }
 
     getVolume = () => {
-
         let appState = this.props.appState
         let sourceType = this.props.sourceType
 
@@ -91,7 +85,6 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     setAudioMute = (muteAudio) => {
-
         let appState = this.props.appState
         let sourceType = this.props.sourceType
 
@@ -105,7 +98,6 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     volumeSliderChanged = (event) => {
-
         if(event.target.value < 2){
             this.setAudioMute(true)
         }else{
@@ -133,20 +125,15 @@ export default class SelectionVolumeControl extends React.Component{
             }
         }else if(sourceType == 'musicTrack'){
             if(appState['musicMuted'] == true){
-
                 this.setAudioMute(false)
-
             }else{
-
                 this.setAudioMute(true)
                 appState.setStateFunction({'musicMuted': true})
-
             }
         }
     }
 
     componentDidMount = () => {
-
         let appState = this.props.appState
         let sourceType = this.props.sourceType
 
@@ -160,9 +147,7 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     render(){
-
-        this.setColors()
-
+        this.setColors();
 
         return(
             <div className="selectionVolumeControl" style={this.selectionVolumeControlColors}>
