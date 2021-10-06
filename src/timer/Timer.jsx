@@ -3,8 +3,8 @@ import React from 'react';
 
 import './timerStyle.scss'
 
-export default class Timer extends React.Component{
-    constructor(props){
+export default class Timer extends React.Component {
+    constructor(props) {
         super(props)
     }
 
@@ -13,8 +13,8 @@ export default class Timer extends React.Component{
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
-            backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            WebKitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+            backdropFilter: this.props.appState.currentTheme.backdropFilter,
+            WebKitBackdropFilter: this.props.appState.currentTheme.webkitBackdropFilter,
             color: this.props.appState.currentTheme.accentColor
         }
 
@@ -43,16 +43,16 @@ export default class Timer extends React.Component{
         let timeElapsed = timerDuration
         let progressBarWidth = 0
 
-        if(timerMode === 'Session'){
+        if (timerMode === 'Session') {
             let timerSessionLength = appState['timerSessionLength'] * 60
             timeElapsed = timerSessionLength - timerDuration
             progressBarWidth = timeElapsed / timerSessionLength
         }
 
-        if(timerMode === 'Break'){
+        if (timerMode === 'Break') {
             let timerBreakLength = appState['timerBreakLength'] * 60
             timeElapsed = timerBreakLength - timerDuration
-            progressBarWidth = timeElapsed/timerBreakLength
+            progressBarWidth = timeElapsed / timerBreakLength
         }
 
         let progressBarWidthPercentage = parseInt(progressBarWidth * 100)
@@ -67,7 +67,7 @@ export default class Timer extends React.Component{
 
     startTimer = () => {
         let appState = this.props.appState
-        
+
         appState.setStateFunction({
             'timerInterval': setInterval(() => {
                 this.updateTimer()
@@ -84,11 +84,11 @@ export default class Timer extends React.Component{
 
         let newAppState = {}
 
-        if(currentTimerDuration > 0){
+        if (currentTimerDuration > 0) {
             newAppState['timerDuration'] = currentTimerDuration - 1
         }
 
-        if(currentTimerDuration == 0){
+        if (currentTimerDuration == 0) {
             document.getElementById("alarm-audio").play();
             this.nextPhase()
         }
@@ -102,14 +102,14 @@ export default class Timer extends React.Component{
 
         clearInterval(appState['timerInterval'])
 
-        if(currentTimerMode === 'Session'){
+        if (currentTimerMode === 'Session') {
             this.startBreak()
         }
 
-        if(currentTimerMode === 'Break'){
+        if (currentTimerMode === 'Break') {
             this.startSession()
         }
-        
+
     }
 
     startSession = () => {
@@ -136,9 +136,9 @@ export default class Timer extends React.Component{
         let duration = this.props.appState['timerDuration']
         let minutes = parseInt(duration / 60, 10)
 
-        if(minutes < 10){
+        if (minutes < 10) {
             return ('0' + minutes).toString()
-        }else{
+        } else {
             return minutes.toString()
         }
     }
@@ -147,9 +147,9 @@ export default class Timer extends React.Component{
         let duration = this.props.appState['timerDuration']
         let seconds = parseInt(duration % 60, 10)
 
-        if(seconds < 10){
+        if (seconds < 10) {
             return ('0' + seconds).toString()
-        }else{
+        } else {
             return seconds.toString()
         }
     }
@@ -161,11 +161,11 @@ export default class Timer extends React.Component{
     getNextPhase = () => {
         let currentPhase = this.getCurrentPhase()
 
-        if(currentPhase === 'Session'){
+        if (currentPhase === 'Session') {
             return 'Break'
         }
 
-        if(currentPhase === 'Break'){
+        if (currentPhase === 'Break') {
             return 'Session'
         }
     }
@@ -176,11 +176,11 @@ export default class Timer extends React.Component{
 
         let nextPhaseLength = 25
 
-        if(nextPhase === 'Break'){
+        if (nextPhase === 'Break') {
             nextPhaseLength = appState['timerBreakLength']
         }
 
-        if(nextPhase === 'Session'){
+        if (nextPhase === 'Session') {
             nextPhaseLength = appState['timerSessionLength']
         }
 
@@ -192,11 +192,11 @@ export default class Timer extends React.Component{
         let appState = this.props.appState
         let timerStatus = appState['timerStatus']
 
-        if(['paused', 'stopped'].includes(timerStatus)){
+        if (['paused', 'stopped'].includes(timerStatus)) {
             return './assets/icons/play_icon.svg'
         }
 
-        if(timerStatus === 'running'){
+        if (timerStatus === 'running') {
             return './assets/icons/pause_icon.svg'
         }
 
@@ -210,21 +210,21 @@ export default class Timer extends React.Component{
         let timerStatus = appState['timerStatus']
         let timerMode = appState['timerMode']
 
-        if(timerStatus === 'stopped'){
-            if(timerMode === 'Session'){
+        if (timerStatus === 'stopped') {
+            if (timerMode === 'Session') {
                 this.startSession()
             }
 
-            if(timerMode === 'Break'){
+            if (timerMode === 'Break') {
                 this.startBreak()
             }
         }
 
-        if(timerStatus === 'paused'){
+        if (timerStatus === 'paused') {
             this.startTimer()
         }
 
-        if(timerStatus === 'running'){
+        if (timerStatus === 'running') {
             clearInterval(appState['timerInterval'])
             appState.setStateFunction({
                 timerStatus: 'paused'
@@ -245,11 +245,11 @@ export default class Timer extends React.Component{
 
         clearInterval(appState['timerInterval'])
 
-        if(timerMode === 'Session'){
+        if (timerMode === 'Session') {
             this.startSession()
         }
 
-        if(timerMode === 'Break'){
+        if (timerMode === 'Break') {
             this.startBreak()
         }
 
@@ -257,6 +257,25 @@ export default class Timer extends React.Component{
 
     timerSkipButtonPressed = (event) => {
         this.nextPhase()
+    }
+
+    timerPinButtonPressed = () => {
+        let appState = this.props.appState
+        let timerCurrentlyPinned = appState['timerPinned']
+
+        let timerPinButton = document.querySelector('#timerPinButton')
+
+        if (timerCurrentlyPinned == false) {
+            timerPinButton.classList.remove('pin-normal')
+            timerPinButton.classList.add('pin-rotated')
+        } else {
+            timerPinButton.classList.remove('pin-rotated')
+            timerPinButton.classList.add('pin-normal')
+        }
+
+        appState.setStateFunction({
+            timerPinned: !timerCurrentlyPinned
+        })
     }
 
     componentDidMount = () => {
@@ -269,21 +288,22 @@ export default class Timer extends React.Component{
 
     componentDidUpdate = () => {
         let appState = this.props.appState
-        document.getElementById('alarm-audio').volume = (appState['alarmVolume']/ 100);
+        document.getElementById('alarm-audio').volume = (appState['alarmVolume'] / 100);
     }
 
-    render(){
+    render() {
 
         this.setColors()
         this.setProgressBar()
+        let uiShow = this.props.appState['uiShow']
 
-        return(
+        return (
             <div id='timer' className='glassBlock' style={this.timerColors}>
-                <audio src="./assets/sfx/alarm.mp3" id="alarm-audio"/>
+                <audio src="./assets/sfx/alarm.mp3" id="alarm-audio" />
                 <div id='timerViewControls'>
-                    <div id='timerPinHolder'>
-                        <img 
-                            src={'./assets/icons/pin_icon.svg'} 
+                    <div id='timerPinHolder' onClick={this.timerPinButtonPressed}>
+                        <img
+                            src={'./assets/icons/pin_icon.svg'}
                             style={this.timerIconColors}
                             id='timerPinButton'
                             title='Pin/Unpin Window'

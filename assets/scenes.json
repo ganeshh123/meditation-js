@@ -31,5 +31,16 @@
       "description":"Waking up to a campfire in the woods.",
       "background":"campfire",
       "blur": "campfire_blur"
+    },
+    {
+      "id":"waterfall1",
+      "name":"Waterfall",
+      "videoFile":"waterfall",
+      "sfx":"waterfall",
+      "sfxSource":"https://www.youtube.com/watch?v=_iEfr0Zxw_M",
+      "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
+      "description":"Sitting by a waterfall.",
+      "background":"waterfall",
+      "blur": "waterfall_blur"
     }
   ]
