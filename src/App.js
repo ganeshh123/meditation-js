@@ -61,6 +61,7 @@ class App extends React.Component {
     timerPinned: false,
     firstTime: true,
     /* Timer State */
+    timerEnabled: false,
     timerMode: 'Session',
     timerSessionLength: 1,
     timerBreakLength: 2,
@@ -101,7 +102,7 @@ class App extends React.Component {
        
         <div id="appMiddle">          
             <div id="appCenter">
-                <Timer appState={this.state} />
+              <Timer appState={this.state} />
             </div>          
         </div>
 

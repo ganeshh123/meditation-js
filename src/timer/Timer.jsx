@@ -10,13 +10,14 @@ export default class Timer extends React.Component {
     }
 
     setColors = () => {
-        this.timerColors = {
+        this.timerStyle = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
             backdropFilter: this.props.appState.currentTheme.backdropFilter,
             WebKitBackdropFilter: this.props.appState.currentTheme.webkitBackdropFilter,
-            color: this.props.appState.currentTheme.accentColor
+            color: this.props.appState.currentTheme.accentColor,
+            visibility: this.props.appState.timerEnabled ? 'visible' : 'hidden'
         }
 
         this.timerTextColors = {
@@ -306,7 +307,7 @@ export default class Timer extends React.Component {
         let uiShow = this.props.appState['uiShow']
 
         return (
-            <div id='timer' className='glassBlock' style={this.timerColors}>
+            <div id='timer' className='glassBlock' style={this.timerStyle}>
                 <audio src="./assets/sfx/alarm.mp3" id="alarm-audio" />
                 <div id='timerViewControls'>
                     <div id='timerPinHolder' onClick={this.timerPinButtonPressed}>
