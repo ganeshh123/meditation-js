@@ -56,6 +56,10 @@ export default class SettingsStore {
     static readSetting = (settingKey) => {
         let userSettings = this.fetchSettings()
 
+        if(!userSettings){
+            return
+        }
+
         return userSettings[settingKey]
     }
 

@@ -159,7 +159,7 @@ export default class Timer extends React.Component {
             timerDuration: timerSessionLength
         }, (newState) => {
             this.writeTimerData(newState)
-            if(newState['timerStatus'] == 'running'){
+            if(['stopped', 'running'].includes(newState['timerStatus'])){
                 this.startTimer()
             }
         })
@@ -174,7 +174,7 @@ export default class Timer extends React.Component {
             timerDuration: timerBreakLength
         }, (newState) => {
             this.writeTimerData(newState)
-            if(newState['timerStatus'] == 'running'){
+            if(['stopped', 'running'].includes(newState['timerStatus'])){
                 this.startTimer()
             }
         })
