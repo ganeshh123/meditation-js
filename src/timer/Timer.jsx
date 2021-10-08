@@ -100,6 +100,11 @@ export default class Timer extends React.Component {
 
     readTimerData = (appState) => {
         let timerData = SettingsStore.readData('timerState')
+
+        if(!timerData){
+            return
+        }
+        
         console.log(timerData)
 
         if(timerData['timerStatus'] == 'running'){
