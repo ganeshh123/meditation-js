@@ -60,7 +60,7 @@ class App extends React.Component {
     presetsMenuExpanded: false,
     timerSetupShowing: false,
     settingsShowing: false,
-    launchShowing: false,
+    launchShowing: true,
     confirmationShowing: false,
     confirmationConfig: {},
     uiShow: true,
