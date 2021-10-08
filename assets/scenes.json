@@ -35,12 +35,23 @@
     {
       "id":"waterfall1",
       "name":"Waterfall",
-      "videoFile":"waterfall",
-      "sfx":"waterfall",
+      "videoFile":"waterfall1",
+      "sfx":"waterfall1",
       "sfxSource":"https://www.youtube.com/watch?v=_iEfr0Zxw_M",
       "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
       "description":"Sitting by a waterfall.",
-      "background":"waterfall",
-      "blur": "waterfall_blur"
+      "background":"waterfall1",
+      "blur": "waterfall1_blur"
+    },
+    {
+      "id":"city1",
+      "name":"City",
+      "videoFile":"city1",
+      "sfx":"city1",
+      "sfxSource":"https://www.youtube.com/watch?v=_iEfr0Zxw_M",
+      "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
+      "description":"A busy day in the city",
+      "background":"city1",
+      "blur": "city1_blur"
     }
   ]
