@@ -109,7 +109,8 @@ export default class TimerSetup extends React.Component{
 
         appState.setStateFunction({
             timerSessionLength: this.state.selectedSessionLength,
-            timerBreakLength: this.state.selectedBreakLength
+            timerBreakLength: this.state.selectedBreakLength,
+            timerStatus: 'stopped'
         }, () =>{
             appState.timerComponent.startSession()
         })
