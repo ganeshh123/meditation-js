@@ -1,6 +1,8 @@
 /* Global Imports */
 import React from 'react';
 
+import SettingsStore from '../utils/settings/settingsStore';
+
 export default class AudioPlayer extends React.Component{
     constructor(props){
         super(props)
@@ -48,6 +50,28 @@ export default class AudioPlayer extends React.Component{
             document.querySelector('#musicAudio').volume = volumeValue
         }
 
+    }
+
+    componentDidMount = () => {
+        let appState = this.props.appState
+        
+        let updateState ={}
+
+        let sfxMuted = SettingsStore.readSetting('sfxMuted')
+        let musicMuted = SettingsStore.readSetting('musicMuted')
+
+        if(sfxMuted){
+            updateState['sfxMuted'] = true
+        }
+
+        if(musicMuted){
+            updateState['musicMuted'] = true
+        }
+
+        appState.setStateFunction(updateState, (newState) => {
+            document.querySelector('#sfxAudio').muted = newState['sfxMuted']
+            document.querySelector('#musicAudio').muted = newState['musicMuted']
+        })
     }
 
     componentDidUpdate = () => {
