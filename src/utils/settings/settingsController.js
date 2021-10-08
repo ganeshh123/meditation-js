@@ -10,6 +10,9 @@ export default class SettingsController{
         let newVolumeLevel;
 
         switch(volumePreset){
+            case 'off':
+                newVolumeLevel = 40
+                break
             case 'low':
                 newVolumeLevel = 70
                 break
@@ -17,7 +20,7 @@ export default class SettingsController{
                 newVolumeLevel = 100
                 break
             case 'high':
-                newVolumeLevel = 40
+                newVolumeLevel = 0
                 break
             default:
                 newVolumeLevel = 70
@@ -30,10 +33,16 @@ export default class SettingsController{
 
     static getAlarmVolumeString(appState){
 
-        let volumeLevel = appState['alarmVolume'] || 70
+        let volumeLevel = appState['alarmVolume']
         let volumeLevelString = ''
+        if(volumeLevel == undefined){
+            volumeLevel = 70
+        }
+        console.log(volumeLevel)
 
-        if(volumeLevel <= 40){
+        if(volumeLevel <= 0){
+            return 'off'
+        }else if(volumeLevel <= 40){
             return 'low'
         }else if(volumeLevel > 70){
             return 'high'
