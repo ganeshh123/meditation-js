@@ -38,7 +38,6 @@ export default class SettingsController{
         if(volumeLevel == undefined){
             volumeLevel = 70
         }
-        console.log(volumeLevel)
 
         if(volumeLevel <= 0){
             return 'off'

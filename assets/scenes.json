@@ -53,5 +53,16 @@
       "description":"A busy day in the city",
       "background":"city1",
       "blur": "city1_blur"
+    },
+    {
+      "id":"airplane1",
+      "name":"Airplane",
+      "videoFile":"airplane1",
+      "sfx":"airplane1",
+      "sfxSource":"https://www.youtube.com/watch?v=_iEfr0Zxw_M",
+      "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
+      "description":"Flying to somewhere exciting.",
+      "background":"airplane1",
+      "blur": "airplane1_blur"
     }
   ]
