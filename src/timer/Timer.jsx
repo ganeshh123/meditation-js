@@ -265,8 +265,7 @@ export default class Timer extends React.Component {
         this.nextPhase()
     }
 
-    timerPinButtonPressed = () => {
-        let appState = this.props.appState
+    setTimerPin = () => {
         let timerCurrentlyPinned = UIHide.timerPinned
 
         let timerPinButton = document.querySelector('#timerPinButton')
@@ -279,16 +278,24 @@ export default class Timer extends React.Component {
             timerPinButton.classList.add('pin-normal')
         }
 
+    }
+
+    timerPinButtonPressed = () => {
+        let appState = this.props.appState
+        let timerCurrentlyPinned = appState['timerPinned']
+
         UIHide.timerPinned = !timerCurrentlyPinned
         
         appState.setStateFunction({
             timerPinned: !timerCurrentlyPinned
+        }, (appState) => {
+            this.setTimerPin()
         })
     }
 
     componentDidMount = () => {
         let appState = this.props.appState
-        timerPinButton.classList.add('pin-normal')
+        this.setTimerPin()
 
         appState.setStateFunction({
             timerComponent: this

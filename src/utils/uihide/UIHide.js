@@ -55,7 +55,7 @@ export default class UIHide{
             document.querySelector(selector).style.opacity = '1'
         })
 
-        if(appState['timerPinned'] == false){
+        if(this.timerPinned == false){
             document.querySelector('#timer').classList.remove('hidden')
             document.querySelector('#timer').classList.add('showing')
         }

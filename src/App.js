@@ -29,7 +29,7 @@ class App extends React.Component {
     this.setState(newState, () => {
       SettingsStore.updateSettings(this.state)
       if(cbFunc){
-        cbFunc()
+        cbFunc(this.state)
       }
     })
   }
