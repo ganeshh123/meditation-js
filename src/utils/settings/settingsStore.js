@@ -59,4 +59,16 @@ export default class SettingsStore {
         return userSettings[settingKey]
     }
 
+    static storeData = (dataKey, dataValue) => {
+        window.localStorage.setItem(dataKey, JSON.stringify(dataValue))
+    }
+
+    static readData = (dataKey) => {
+        return JSON.parse(localStorage.getItem(dataKey))
+    }
+
+    static deleteData = (dataKey) => {
+        window.localStorage.removeItem(dataKey)
+    }
+
 }

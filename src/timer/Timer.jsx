@@ -82,18 +82,41 @@ export default class Timer extends React.Component {
             }, 1000),
             'timerDuration': appState['timerDuration'] - 1,
             'timerStatus': 'running'
+        }, (newState) => {
+            this.writeTimerData(newState)
         })
 
+    }
+
+    writeTimerData = (currentState) => {
+        SettingsStore.storeData('timerState', {
+            timerMode: currentState['timerMode'],
+            timerSessionLength: currentState['timerSessionLength'],
+            timerBreakLength: currentState['timerBreakLength'],
+            timerStatus: currentState['timerStatus'],
+            timerDuration: currentState['timerDuration']
+        })
+    }
+
+    readTimerData = (appState) => {
+        let timerData = SettingsStore.readData('timerState')
+        console.log(timerData)
+
+        if(timerData['timerStatus'] == 'running'){
+            timerData['timerStatus'] = 'paused'
+        }
+
+        appState.setStateFunction(timerData)
     }
 
     updateTimer = () => {
         let appState = this.props.appState
         let currentTimerDuration = appState['timerDuration']
 
-        let newAppState = {}
+        let updatedAppState = {}
 
         if (currentTimerDuration > 0) {
-            newAppState['timerDuration'] = currentTimerDuration - 1
+            updatedAppState['timerDuration'] = currentTimerDuration - 1
         }
 
         if (currentTimerDuration == 0) {
@@ -101,7 +124,9 @@ export default class Timer extends React.Component {
             this.nextPhase()
         }
 
-        appState.setStateFunction(newAppState)
+        appState.setStateFunction(updatedAppState, (newState) => {
+            this.writeTimerData(newState)
+        })
     }
 
     nextPhase = () => {
@@ -127,7 +152,10 @@ export default class Timer extends React.Component {
         appState.setStateFunction({
             timerMode: 'Session',
             timerDuration: timerSessionLength
-        }, this.startTimer)
+        }, (newState) => {
+            this.writeTimerData(newState)
+            this.startTimer()
+        })
     }
 
     startBreak = () => {
@@ -137,7 +165,10 @@ export default class Timer extends React.Component {
         appState.setStateFunction({
             timerMode: 'Break',
             timerDuration: timerBreakLength
-        }, this.startTimer)
+        }, (newState) => {
+            this.writeTimerData(newState)
+            this.startTimer()
+        })
     }
 
     getMinutes = () => {
@@ -236,6 +267,8 @@ export default class Timer extends React.Component {
             clearInterval(appState['timerInterval'])
             appState.setStateFunction({
                 timerStatus: 'paused'
+            }, (newState) => {
+                this.writeTimerData(newState)
             })
         }
     }
@@ -309,8 +342,9 @@ export default class Timer extends React.Component {
             updateState['timerPinned'] = timerPinSetting
         }
 
-        appState.setStateFunction(updateState, () => {
+        appState.setStateFunction(updateState, (newState) => {
             this.setTimerPin()
+            this.readTimerData(newState)
         })
     }
 
