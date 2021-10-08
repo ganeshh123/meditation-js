@@ -3,7 +3,8 @@ import React from 'react';
 
 import './timerSetupStyle.scss'
 
-import TimerLengthAdjuster from './TimerLengthAdjuster';
+import TimerLengthAdjuster from './TimerLengthAdjuster'
+import SettingsStore from '../utils/settings/settingsStore'
 
 export default class TimerSetup extends React.Component{
     constructor(props){
@@ -86,19 +87,29 @@ export default class TimerSetup extends React.Component{
 
     beginButtonPressed = () => {
 
+        let appState = this.props.appState
+
         if(this.state['selectedSessionLengthInvalid'] || this.state['selectedBreakLengthInvalid']){
             return
         }
 
+        appState.setStateFunction({
+            timerSetupShowing: false,
+            timerEnabled: true
+        }, (newAppState) => {
+            SettingsStore.updateSettings(newAppState)
+            this.startNewTimer()
+        })
+    }
+
+    startNewTimer = () => {
         let appState = this.props.appState
 
         clearInterval(appState['timerInterval'])
 
         appState.setStateFunction({
             timerSessionLength: this.state.selectedSessionLength,
-            timerBreakLength: this.state.selectedBreakLength,
-            timerSetupShowing: false,
-            timerEnabled: true
+            timerBreakLength: this.state.selectedBreakLength
         }, () =>{
             appState.timerComponent.startSession()
         })

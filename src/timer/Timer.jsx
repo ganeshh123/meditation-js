@@ -3,6 +3,8 @@ import React from 'react';
 
 import UIHide from '../utils/uihide/UIHide';
 import './timerStyle.scss'
+import SettingsStore from '../utils/settings/settingsStore';
+import Settings from '../settings/Settings';
 
 export default class Timer extends React.Component {
     constructor(props) {
@@ -288,13 +290,15 @@ export default class Timer extends React.Component {
         
         appState.setStateFunction({
             timerPinned: !timerCurrentlyPinned
-        }, (appState) => {
+        }, (newAppState) => {
+            SettingsStore.updateSettings(newAppState)
             this.setTimerPin()
         })
     }
 
     componentDidMount = () => {
         let appState = this.props.appState
+        UIHide.timerCurrentlyPinned = appState['timerPinned']
         this.setTimerPin()
 
         appState.setStateFunction({
@@ -312,6 +316,7 @@ export default class Timer extends React.Component {
         this.setColors()
         this.setProgressBar()
         let uiShow = this.props.appState['uiShow']
+        console.log(this.props.appState)
 
         return (
             <div id='timer' className='glassBlock' style={this.timerStyle}>
