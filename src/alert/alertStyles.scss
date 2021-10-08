@@ -1,0 +1,29 @@
+.confirmation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmationChoiceContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmationMessage{
+    font-size: 4vh;
+    margin-bottom: 20px;
+}
+
+.confirmationChoice{
+    font-size: 3vh;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 100px;
+    margin-left: 25px;
+    margin-right: 25px;
+}

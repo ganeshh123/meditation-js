@@ -1,10 +1,11 @@
 /* Global Imports */
 import React from 'react';
 
-import UIHide from '../utils/uihide/UIHide';
+import UIHide from '../utils/uihide/UIHide'
 import './timerStyle.scss'
-import SettingsStore from '../utils/settings/settingsStore';
-import Settings from '../settings/Settings';
+import SettingsStore from '../utils/settings/settingsStore'
+import Settings from '../settings/Settings'
+import Confirmation from '../alert/Confirmation'
 
 export default class Timer extends React.Component {
     constructor(props) {
@@ -104,8 +105,6 @@ export default class Timer extends React.Component {
         if(!timerData){
             return
         }
-        
-        console.log(timerData)
 
         if(timerData['timerStatus'] == 'running'){
             timerData['timerStatus'] = 'paused'
@@ -338,6 +337,42 @@ export default class Timer extends React.Component {
         })
     }
 
+    timerCloseButtonPressed = () => {
+
+        let appState = this.props.appState
+
+        let confirmationConfig = {
+            message: 'Are you sure you want to cancel the timer?',
+            negativeLabel: 'No',
+            negativeAction: () => {
+                appState.setStateFunction({
+                    confirmationShowing: false,
+                    confirmationConfig: {}
+                })
+            },
+            positiveLabel: 'Yes',
+            positiveAction: () => {
+                clearInterval(appState['timerInterval'])
+                appState.setStateFunction({
+                    timerEnabled: false,
+                    timerMode: 'Session',
+                    timerSessionLength: 1,
+                    timerBreakLength: 2,
+                    timerStatus: 'stopped',
+                    timerDuration: 60,
+                    timerInterval: undefined,
+                    confirmationShowing: false,
+                    confirmationConfig: {}
+                })
+            }
+        }
+
+        appState.setStateFunction({
+            confirmationShowing: true,
+            confirmationConfig: confirmationConfig
+        })
+    }
+
     componentDidMount = () => {
         let appState = this.props.appState
 
@@ -383,6 +418,7 @@ export default class Timer extends React.Component {
                     <img 
                         src={'./assets/icons/cross_icon.svg'} 
                         style={this.timerIconColors}
+                        onClick={this.timerCloseButtonPressed}
                         id='timerCloseButton'
                         className='iconButton'
                         title='Close Timer'
