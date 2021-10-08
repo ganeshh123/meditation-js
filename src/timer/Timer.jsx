@@ -298,11 +298,19 @@ export default class Timer extends React.Component {
 
     componentDidMount = () => {
         let appState = this.props.appState
-        UIHide.timerCurrentlyPinned = appState['timerPinned']
-        this.setTimerPin()
 
-        appState.setStateFunction({
+        let updateState = {
             timerComponent: this
+        }
+
+        if(SettingsStore.readSetting('timerPinned') != undefined){
+            let timerPinSetting = SettingsStore.readSetting('timerPinned')
+            UIHide.timerPinned = timerPinSetting
+            updateState['timerPinned'] = timerPinSetting
+        }
+
+        appState.setStateFunction(updateState, () => {
+            this.setTimerPin()
         })
     }
 
@@ -316,7 +324,6 @@ export default class Timer extends React.Component {
         this.setColors()
         this.setProgressBar()
         let uiShow = this.props.appState['uiShow']
-        console.log(this.props.appState)
 
         return (
             <div id='timer' className='glassBlock' style={this.timerStyle}>

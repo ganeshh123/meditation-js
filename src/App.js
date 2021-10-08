@@ -34,6 +34,9 @@ class App extends React.Component {
     })
   }
 
+  getCurrentState = () => {
+    return this.state
+  }
   
 
   state = {
@@ -46,6 +49,7 @@ class App extends React.Component {
     alarmVolume: 70,
     /* Functions */
     setStateFunction: this.updateState,
+    getStateFunction: this.getCurrentState,
     /* Static Data */
     mediaSources: MediaSources,
     /* Flags */

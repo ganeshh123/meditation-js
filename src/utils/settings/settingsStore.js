@@ -19,13 +19,23 @@ export default class SettingsStore {
         //launchShowing: true
     }
 
+    static fetchSettings = () => {
+        if(!window.localStorage.getItem('userSettings')){
+            return
+        }
+
+        let userSettings = JSON.parse(localStorage.getItem('userSettings'))
+
+        return userSettings
+    }
+
     static loadSettings = (appState) => {
 
         if(!window.localStorage.getItem('userSettings')){
             return
         }
 
-        let userSettings = JSON.parse(localStorage.getItem('userSettings'))
+        let userSettings = this.fetchSettings()
 
         appState.setStateFunction(userSettings)
     }
@@ -41,6 +51,12 @@ export default class SettingsStore {
         })
 
         this.storeSettings()
+    }
+
+    static readSetting = (settingKey) => {
+        let userSettings = this.fetchSettings()
+
+        return userSettings[settingKey]
     }
 
 }
