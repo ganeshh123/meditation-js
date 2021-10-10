@@ -51,9 +51,6 @@ export default class SettingsController{
     }
 
     static toggleSolidBg = (appState) => {
-
-        console.log('running')
-
         let currentThemeName = appState['currentTheme']['name']
         let solidBg = this.getSolidBg(appState)
         let newThemeObject
