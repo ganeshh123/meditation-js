@@ -52,6 +52,8 @@ export default class SettingsController{
 
     static toggleSolidBg = (appState) => {
 
+        console.log('running')
+
         let currentThemeName = appState['currentTheme']['name']
         let solidBg = this.getSolidBg(appState)
         let newThemeObject
@@ -60,9 +62,9 @@ export default class SettingsController{
 
         if(solidBg == 'Off'){
             if(currentThemeName.includes('light')){
-                newThemeObject = bdFilterSupport ? StaticThemes['lightSolid'] : StaticThemes['lightSolidNb']
+                StaticThemes['lightSolid']
             }else{
-                newThemeObject = bdFilterSupport ? StaticThemes['darkSolid'] : StaticThemes['darkSolidNb']
+                StaticThemes['darkSolid']
             }
         }else{
             if(currentThemeName.includes('light')){

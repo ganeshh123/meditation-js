@@ -24,12 +24,12 @@ class Theme {
         }
         else if(currentThemeName === 'darkSolid'){
             newThemeObject = {
-                currentTheme: bdFilterSupport ? staticThemes['lightSolid'] : staticThemes['lightSolidNb']
+                currentTheme: staticThemes['lightSolid']
             }
         }
         else if(currentThemeName === 'lightSolid'){
             newThemeObject = {
-                currentTheme: bdFilterSupport ? staticThemes['darkSolid'] : staticThemes['darkSolidNb']
+                currentTheme: staticThemes['darkSolid']
             }
         }
 

@@ -65,27 +65,6 @@ let lightThemeSolid = {
     'overlayColor': 'rgb(253, 253, 253)'
 }
 
-let darkThemeSolidNoBlur = {
-    'name' : 'darkSolid',
-    'backgroundColor' : 'rgb(10, 10, 10)',
-    'buttonBackgroundColor' : 'rgb(10, 10, 10)',
-    'border' : '0.05vh solid rgba(230, 230, 230, 0.06)',
-    'boxShadow' : '0.1vh 0.1vh 0 0.1vh rgba(8, 8, 8, 0.21), -0.1vh -0.1vh 0 0.1vh rgba(250, 250, 250, 0.21)',
-    'accentColor' : '#ffffff',
-    'iconColor': 'invert(100%)',
-    'overlayColor': 'rgb(0, 0, 0)'
-}
-
-let lightThemeSolidNoBlur = {
-    'name' : 'lightSolid',
-    'backgroundColor': 'rgb(230, 230, 230)',
-    'buttonBackgroundColor' : 'rgb(240, 240, 240)',
-    'border' : '0.05vh solid rgba(230, 230, 230, 0.06)',
-    'boxShadow' : '0.1vh 0.1vh 0 0.1vh rgba(115, 115, 115, 0.42), -0.1vh -0.1vh 0 0.1vh rgba(255, 255, 255, 0.43)',
-    'accentColor':'#000000',
-    'overlayColor': 'rgb(253, 253, 253)'
-}
-
 module.exports = {
     'dark' : darkTheme,
     'light' : lightTheme,
@@ -93,6 +72,4 @@ module.exports = {
     'lightSolid' : lightThemeSolid,
     'darkNb': darkThemeNoBlur,
     'lightNb': lightThemeNoBlur,
-    'darkSolidNb': darkThemeSolidNoBlur,
-    'lightSolidNb': lightThemeSolidNoBlur
 }
