@@ -88,7 +88,7 @@ export default class MediaSelect extends React.Component{
         let mediaArray = this.getMediaChoices()
 
         return(
-            <div className='mediaSelect' style={this.mediaSelectColors} onClick={this.mediaSelectCloseButtonPressed}>
+            <div className='mediaSelect' style={this.mediaSelectColors}>
                 <div className='mediaSelectTitle'>
                     {this.getMediaSelectTitle()}
                 </div>
