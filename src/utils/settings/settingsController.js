@@ -58,7 +58,7 @@ export default class SettingsController{
         let solidBg = this.getSolidBg(appState)
         let newThemeObject
 
-        let bdFilterSupport = CSS.supports('backdrop-filter')
+        let bdFilterSupport = CSS.supports('backdrop-filter', 'blur(2.6vh) saturate(1.1)')
 
         if(solidBg == 'Off'){
             if(currentThemeName.includes('light')){

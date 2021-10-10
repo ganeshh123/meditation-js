@@ -8,7 +8,7 @@ class Theme {
 
         let currentThemeName = appState['currentTheme']['name']
 
-        let bdFilterSupport = CSS.supports('backdrop-filter')
+        let bdFilterSupport = CSS.supports('backdrop-filter', 'blur(2.6vh) saturate(1.1)')
 
         let newThemeObject = {}
 
