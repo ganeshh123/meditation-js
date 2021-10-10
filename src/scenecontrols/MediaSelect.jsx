@@ -98,6 +98,7 @@ export default class MediaSelect extends React.Component{
                     onClick={this.mediaSelectCloseButtonPressed}
                     style={this.mediaSelectIconColors}
                 />
+                <div className="mediaSelectMenuContainer">
                 <div className='mediaSelectMenu'>
 
                     {mediaArray.map((media, index) => {
@@ -106,6 +107,7 @@ export default class MediaSelect extends React.Component{
                         )
                     } )}
 
+                </div>
                 </div>
             </div>
         )

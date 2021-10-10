@@ -1,5 +1,6 @@
 .mediaSelect {
-    flex: 1;
+    flex: 1 1 1px;
+    min-height: 0;
     width: 100%;
     position: relative;
     padding: 2vh;
@@ -23,16 +24,25 @@
     right: 50px;
 }
 
+.mediaSelectMenuContainer{
+    flex: 1 1 1px;
+    overflow-y: auto;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%
+}
+
 .mediaSelectMenu {
     max-width: 1000px;
     width: auto;
-    margin-top: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    overflow-y: auto;
 }
 
 .mediaBox{

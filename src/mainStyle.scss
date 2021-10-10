@@ -11,7 +11,8 @@ html, body, #app {
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 0;    
+    padding: 0;
+    max-height: 100vh;  
 }
 
 html {
@@ -41,6 +42,7 @@ svg {
     width: 100%;
     margin: 0;
     padding: 0;
+    max-height: 100vh;
 }
 
 #app {
@@ -136,6 +138,23 @@ svg {
 }
 
 /* */
+
+/* Scrollbars */
+
+::-webkit-scrollbar {     
+  background: transparent !important;
+  width: 1.0em;
+  cursor: default;
+}
+
+::-webkit-scrollbar-thumb:window-inactive,
+::-webkit-scrollbar-thumb {
+  background:  #797979;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/**/
 
 @supports ((backdrop-filter: blur(2.3vh))) or (-webkit-backdrop-filter: blur(2.3vh)) {
     #appOverlay{
