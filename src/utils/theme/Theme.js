@@ -8,26 +8,28 @@ class Theme {
 
         let currentThemeName = appState['currentTheme']['name']
 
+        let bdFilterSupport = CSS.supports('backdrop-filter')
+
         let newThemeObject = {}
 
         if(currentThemeName === 'dark'){
             newThemeObject = {
-                currentTheme: staticThemes['light']
+                currentTheme: bdFilterSupport ? staticThemes['light'] : staticThemes['lightNb']
             }
         }
         else if(currentThemeName === 'light'){
             newThemeObject = {
-                currentTheme: staticThemes['dark']
+                currentTheme: bdFilterSupport ? staticThemes['dark'] : staticThemes['darkNb']
             }
         }
         else if(currentThemeName === 'darkSolid'){
             newThemeObject = {
-                currentTheme: staticThemes['lightSolid']
+                currentTheme: bdFilterSupport ? staticThemes['lightSolid'] : staticThemes['lightSolidNb']
             }
         }
         else if(currentThemeName === 'lightSolid'){
             newThemeObject = {
-                currentTheme: staticThemes['darkSolid']
+                currentTheme: bdFilterSupport ? staticThemes['darkSolid'] : staticThemes['darkSolidNb']
             }
         }
 

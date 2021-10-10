@@ -90,5 +90,9 @@ module.exports = {
     'dark' : darkTheme,
     'light' : lightTheme,
     'darkSolid' : darkThemeSolid,
-    'lightSolid' : lightThemeSolid
+    'lightSolid' : lightThemeSolid,
+    'darkNb': darkThemeNoBlur,
+    'lightNb': lightThemeNoBlur,
+    'darkSolidNb': darkThemeSolidNoBlur,
+    'lightSolidNb': lightThemeSolidNoBlur
 }
