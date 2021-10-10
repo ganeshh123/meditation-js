@@ -2,15 +2,19 @@
     {
       "id":"still",
       "name":"Soothing Piano",
-      "description" : "Calm Piano Music",
+      "description" : "Calm Piano Music.",
       "audioFile" : "still",
-      "source": "https://www.youtube.com/watch?v=962VmrIh9vQ"
+      "source": "https://www.youtube.com/watch?v=962VmrIh9vQ",
+      "image": "still",
+      "imageSource": ""
     },
     {
       "id":"gymnopedie1",
       "name":"Relaxing Guitar",
-      "description" : "Delicate guitar for watching time go by",
+      "description" : "Delicate guitar for watching time go by.",
       "audioFile": "gymnopedie1",
-      "source": "https://musopen.org/music/8010-3-gymnopedies/"
+      "source": "https://musopen.org/music/8010-3-gymnopedies/",
+      "image": "gymnopedie1",
+      "imageSource": "https://unsplash.com/photos/6LFomHDAwGg"
     }
 ]

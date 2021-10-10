@@ -3,6 +3,7 @@ import React from 'react';
 
 /* Local Imports */
 import './selectionVolumeControlStyle.scss'
+import './mediaSelectStyles.scss'
 
 
 export default class SelectionVolumeControl extends React.Component{
@@ -15,26 +16,60 @@ export default class SelectionVolumeControl extends React.Component{
             color: this.props.appState['currentTheme']['accentColor']
         }
 
-        this.volumeIconColors = {
+        this.iconColors = {
             filter: this.props.appState.currentTheme.iconColor
         }
-    }
-    
-    sourceSelectionChanged = (event) => {
-        let sourceId = event.target.value
-        if(this.props.sourceType == 'scene'){
-            this.props.appState.setStateFunction({
-                currentScene: sourceId,
-                videoLoaded: false
-            })
-        }else if(this.props.sourceType == 'musicTrack'){
-            this.props.appState.setStateFunction({
-                currentMusicTrack: sourceId
-            })
+
+        this.mediaSelectOpenButtonStyle = {
+            backgroundColor: this.props.appState['currentTheme']['backgroundColor'],
+            color: this.props.appState['currentTheme']['accentColor']
         }
     }
+
+    getMediaSelectOpenButtonIcon = () => {
+        let appState = this.props.appState
+        let type = this.props.sourceType
+
+        if(type == 'scene'){
+            return './assets/icons/video_on_icon.svg'
+        }
+
+        if(type == 'musicTrack'){
+            return './assets/icons/note_icon.svg'
+        }
+    }
+
+    getMediaSelectOpenButtonText = () => {
+        let appState = this.props.appState
+        let type = this.props.sourceType
+
+        if(type == 'scene'){
+            let currentScene = appState['currentScene']
+            return appState['mediaSources']['scenes'][currentScene]['name']
+        }
+
+        if(type == 'musicTrack'){
+            let currentMusicTrack = appState['currentMusicTrack']
+            return appState['mediaSources']['musicTracks'][currentMusicTrack]['name']
+        }
+    }
+
+    mediaSelectOpenButtonPressed = () => {
+        let appState = this.props.appState
+        let type = this.props.sourceType
+
+        let updateState = {
+            mediaSelectShowing: true,
+            mediaSelectConfig: {type: type}
+        }
+        
+        appState.setStateFunction(updateState)
+    }
+
+
+    /* Volume Controls */
     
-    getIconPath = () => {
+    getVolumeIcon = () => {
         let appState = this.props.appState
 
         let iconPath = './assets/icons/'
@@ -151,20 +186,29 @@ export default class SelectionVolumeControl extends React.Component{
 
         return(
             <div className="selectionVolumeControl" style={this.selectionVolumeControlColors}>
-                <select className="sourceSelector" onChange={this.sourceSelectionChanged} value={this.props.selected}>
-                    {this.props.sourcesArray.map((source) => {
-                        return(
-                            <option key={source.id} value={source.id}>{source.name}</option>
-                        )
-                    })}
-                </select>
-                <p className='sourceDescription'>{this.props.sources[this.props.selected]['description']}</p>
+                <div 
+                    className="mediaSelectOpenButton"
+                    style={this.mediaSelectOpenButtonStyle}
+                    onClick={this.mediaSelectOpenButtonPressed}
+                >
+                    <img 
+                        className='mediaSelectOpenButtonIcon iconButton' 
+                        src={this.getMediaSelectOpenButtonIcon()} 
+                        style={this.iconColors}
+                        onClick={this.mediaSelectOpenButtonPressed}
+                    />
+                    <div
+                        className="mediaSelectOpenButtonText"
+                        onClick={this.mediaSelectOpenButtonPressed}
+                    >
+                        {this.getMediaSelectOpenButtonText()}
+                    </div>
+                </div>
                 <div className='volumeSliderContainer'>
                     <img 
                         className='volumeIcon iconButton' 
-                        src={this.getIconPath()} 
-                        style={this.volumeIconColors}
-                        height='20'
+                        src={this.getVolumeIcon()} 
+                        style={this.iconColors}
                         onClick={this.volumeIconPressed}
                     />
                     <input 

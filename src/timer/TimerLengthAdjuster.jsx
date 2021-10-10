@@ -9,7 +9,7 @@ export default class TimerLengthAdjuster extends React.Component{
     }
 
     state = {
-        width: 1
+        width: 3
     }
 
     getInputValue = () => {
@@ -54,6 +54,10 @@ export default class TimerLengthAdjuster extends React.Component{
         let timerSetupState = this.props.timerSetupState
         let type = this.props.type
         let newValue = event.target.value
+        let newWidth = event.target.value.length + 1
+        if(newWidth < 3){
+            newWidth = 3
+        }
 
         this.setState({
             width: event.target.value.length + 1
