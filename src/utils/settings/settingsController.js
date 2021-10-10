@@ -56,17 +56,19 @@ export default class SettingsController{
         let solidBg = this.getSolidBg(appState)
         let newThemeObject
 
+        let bdFilterSupport = CSS.supports('backdrop-filter')
+
         if(solidBg == 'Off'){
             if(currentThemeName.includes('light')){
-                newThemeObject = StaticThemes['lightSolid']
+                newThemeObject = bdFilterSupport ? StaticThemes['lightSolid'] : StaticThemes['lightSolidNb']
             }else{
-                newThemeObject = StaticThemes['darkSolid']
+                newThemeObject = bdFilterSupport ? StaticThemes['darkSolid'] : StaticThemes['darkSolidNb']
             }
         }else{
             if(currentThemeName.includes('light')){
-                newThemeObject = StaticThemes['light']
+                newThemeObject = bdFilterSupport? StaticThemes['light'] : StaticThemes['lightNb']
             }else{
-                newThemeObject = StaticThemes['dark']
+                newThemeObject = bdFilterSupport? StaticThemes['dark'] : StaticThemes['darkNb']
             }
         }
 
