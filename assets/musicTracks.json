@@ -18,12 +18,12 @@
       "imageSource": "https://unsplash.com/photos/6LFomHDAwGg"
     },
     {
-      "id":"clareDeLune",
+      "id":"clare-de-lune",
       "name":"Clare de Lune",
       "description" : "Dreamy and passionate piano",
-      "audioFile": "clareDeLune",
+      "audioFile": "clare-de-lune",
       "source": "https://www.youtube.com/watch?v=8PlX3quY-n4",
-      "image": "clareDeLune",
+      "image": "clare-de-lune",
       "imageSource": "https://unsplash.com/photos/pTgMXg2WrHY"
     }
 ]
