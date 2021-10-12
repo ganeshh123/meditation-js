@@ -1,14 +1,14 @@
 [
     {
-      "id":"rain_on_leaves",
+      "id":"rain-on-leaves",
       "name":"Rain on Leaves",
-      "videoFile":"rain_on_leaves",
-      "sfx":"rain_on_leaves",
+      "videoFile":"rain-on-leaves",
+      "sfx":"rain-on-leaves",
       "sfxSource":"https://www.youtube.com/watch?v=eHPvfDUX8Ds",
       "videoSource":"https://www.pexels.com/video/water-droplets-on-a-leaf-of-plant-2876754/",
       "description":"Light rain falling on leaves.",
-      "background":"rain_on_leaves",
-      "blur": "rain_on_leaves_blur"
+      "background":"rain-on-leaves",
+      "blur": "rain-on-leaves_blur"
     },
     {
       "id":"forest_1",

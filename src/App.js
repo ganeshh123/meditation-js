@@ -21,7 +21,6 @@ import Overlay from './overlay/Overlay'
 class App extends React.Component {
 
   appStyle = {
-    //backgroundImage: `url('./assets/img/rain_on_leaves.png')`,
     backgroundSize: 'cover'
   }
 
@@ -41,7 +40,7 @@ class App extends React.Component {
 
   state = {
     /* Variables */
-    currentScene: 'rain_on_leaves',
+    currentScene: 'rain-on-leaves',
     currentMusicTrack: 'still',
     currentTheme: CSS.supports('backdrop-filter', 'blur(2.6vh)') ? Theme.staticThemes['dark'] : Theme.staticThemes['darkNb'],
     sceneAudioVolume: 50,
@@ -88,6 +87,7 @@ class App extends React.Component {
   render = () => {
 
     let uiShow = this.state.uiShow
+    console.log(this.state)
 
     return(
       <div id="app" style={this.appStyle}>
