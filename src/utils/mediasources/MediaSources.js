@@ -37,6 +37,41 @@ class MediaSources {
         {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
     }).json())
 
+    static getSceneName = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['name']){
+            return this.scenes[sceneId]['name']
+        }
+    }
+
+    static getSceneVideo = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId]){
+            return `./assets/scenes/${sceneId}/${sceneId}.mp4`
+        }
+    }
+
+    static getSceneImage = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId]){
+            return `./assets/scenes/${sceneId}/${sceneId}.png`
+        }
+    }
+
+    static getSceneImageBlur = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId]){
+            return `./assets/scenes/${sceneId}/${sceneId}-blur.jpg`
+        }
+    }
+
+    static getSceneImageThumb = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId]){
+            return `./assets/scenes/${sceneId}/${sceneId}-thumb.jpg`
+        }
+    }
+
+    static getSceneSfx = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId]){
+            return `./assets/scenes/${sceneId}/${sceneId}.mp3`
+        }
+    }
 }
 
 export default MediaSources

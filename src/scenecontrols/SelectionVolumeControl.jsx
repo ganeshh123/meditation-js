@@ -2,6 +2,7 @@
 import React from 'react';
 
 /* Local Imports */
+import MediaSources from '../utils/mediasources/MediaSources';
 import './selectionVolumeControlStyle.scss'
 import './mediaSelectStyles.scss'
 
@@ -45,7 +46,7 @@ export default class SelectionVolumeControl extends React.Component{
 
         if(type == 'scene'){
             let currentScene = appState['currentScene']
-            return appState['mediaSources']['scenes'][currentScene]['name']
+            return MediaSources.getSceneName(currentScene)
         }
 
         if(type == 'musicTrack'){

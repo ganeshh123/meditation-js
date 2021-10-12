@@ -1,6 +1,7 @@
 /* Global Imports */
 import React from 'react';
 
+import MediaSources from '../utils/mediasources/MediaSources';
 import './mediaSelectStyles.scss'
 
 export default class MediaBox extends React.Component{
@@ -15,7 +16,7 @@ export default class MediaBox extends React.Component{
         let type = config['type']
 
         if(type == "scene"){
-            return './assets/img/thumb/' + media['background'] + '-thumb.png'
+            return MediaSources.getSceneImageThumb(media['id'])
         }
 
         if(type == 'musicTrack'){

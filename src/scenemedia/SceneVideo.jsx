@@ -2,6 +2,7 @@
 import React from 'react';
 
 /* Local Imports */
+import MediaSources from '../utils/mediasources/MediaSources';
 import './sceneVideoStyle.scss'
 
 
@@ -29,8 +30,8 @@ export default class SceneVideo extends React.Component{
     }
 
     render(){
-
         let appState = this.props.appState
+        let currentScene = appState['currentScene']
 
         let videoPath
 
@@ -39,8 +40,7 @@ export default class SceneVideo extends React.Component{
             return null
         }
         else{
-            let videoFileName= this.props.appState.mediaSources.scenes[this.props.appState.currentScene]['videoFile']
-            videoPath = './assets/video/' + videoFileName + '.mp4'
+            videoPath = MediaSources.getSceneVideo(currentScene)
         }
 
         return(

@@ -1,68 +1,44 @@
 [
     {
-      "id":"rain-on-leaves",
-      "name":"Rain on Leaves",
-      "videoFile":"rain-on-leaves",
-      "sfx":"rain-on-leaves",
-      "sfxSource":"https://www.youtube.com/watch?v=eHPvfDUX8Ds",
+      "id":"autumn-rain",
+      "name":"Autumn Rain",
       "videoSource":"https://www.pexels.com/video/water-droplets-on-a-leaf-of-plant-2876754/",
-      "description":"Light rain falling on leaves.",
-      "background":"rain-on-leaves",
-      "blur": "rain-on-leaves_blur"
+      "sfxSource":"https://www.youtube.com/watch?v=eHPvfDUX8Ds",
+      "description":"Light rain falling on autumn leaves."
     },
     {
-      "id":"forest_1",
+      "id":"calm-forest",
       "name":"Calm Forest",
-      "videoFile":"forest",
-      "sfx":"forest",
-      "sfxSource":"#",
       "videoSource":"https://www.pexels.com/video/plants-clinging-by-the-tree-branches-in-a-forest-2882118/",
-      "description":"A calm forest with a gentle breeze.",
-      "background":"forest1",
-      "blur": "forest1_blur"
+      "sfxSource":"#",
+      "description":"A calm forest with a gentle breeze."
     },
     {
-      "id":"campfire",
-      "name":"Morning Campfire",
-      "videoFile":"campfire",
-      "sfx":"campfire",
+      "id":"campfire-woods",
+      "name":"Campfire in the Woods",
+      "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
       "sfxSource":"https://www.youtube.com/watch?v=O_LJWYzdD4o",
-      "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
-      "description":"Waking up to a campfire in the woods.",
-      "background":"campfire",
-      "blur": "campfire_blur"
+      "description":"Resting by a cozy campfire, surrounded by the forest."
     },
     {
-      "id":"waterfall1",
+      "id":"waterfall",
       "name":"Waterfall",
-      "videoFile":"waterfall1",
-      "sfx":"waterfall1",
+      "videoSource":"#",
       "sfxSource":"https://www.youtube.com/watch?v=_iEfr0Zxw_M",
-      "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
-      "description":"Sitting by a waterfall.",
-      "background":"waterfall1",
-      "blur": "waterfall1_blur"
+      "description":"Sitting by a waterfall."
     },
     {
-      "id":"city1",
-      "name":"City",
-      "videoFile":"city1",
-      "sfx":"city1",
-      "sfxSource":"https://www.youtube.com/watch?v=_iEfr0Zxw_M",
-      "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
-      "description":"A busy day in the city",
-      "background":"city1",
-      "blur": "city1_blur"
+      "id":"flight-sunset",
+      "name":"Inflight Sunset",
+      "videoSource":"https://www.pexels.com/video/the-left-wing-of-an-airborne-airplane-5608053/",
+      "sfxSource":"https://www.youtube.com/watch?v=GldNIVa6Aa8",
+      "description":"Watching the sun set on a flight to somewhere exciting."
     },
     {
-      "id":"airplane1",
-      "name":"Airplane",
-      "videoFile":"airplane1",
-      "sfx":"airplane1",
-      "sfxSource":"https://www.youtube.com/watch?v=_iEfr0Zxw_M",
-      "videoSource":"https://www.pexels.com/video/bonfire-in-the-woods-2060826/",
-      "description":"Flying to somewhere exciting.",
-      "background":"airplane1",
-      "blur": "airplane1_blur"
+      "id":"the-big-apple",
+      "name":"The Big Apple",
+      "videoSource":"#",
+      "sfxSource":"#",
+      "description":"A stunning view observing life in NYC."
     }
   ]

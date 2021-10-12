@@ -2,6 +2,7 @@
 import React from 'react';
 
 import SettingsStore from '../utils/settings/settingsStore';
+import MediaSources from '../utils/mediasources/MediaSources';
 
 export default class AudioPlayer extends React.Component{
     constructor(props){
@@ -21,7 +22,7 @@ export default class AudioPlayer extends React.Component{
 
         if(type == 'sfx'){
             let currentScene = appState['currentScene']
-            audioPath = './assets/sfx/' + appState['mediaSources']['scenes'][currentScene]['sfx'] + '.mp3'
+            return MediaSources.getSceneSfx(currentScene)
         }else if(type == 'music'){
             let currentTrack = appState['currentMusicTrack']
             audioPath = './assets/music/' + appState['mediaSources']['musicTracks'][currentTrack]['audioFile'] + '.mp3'

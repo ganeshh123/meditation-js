@@ -3,7 +3,7 @@
       "id":"sleep",
       "name":"Sleep",
       "icon":"mini_sleep_icon.svg",
-      "sceneId": "rain-on-leaves",
+      "sceneId": "autumn-rain",
       "musicId": "still",
       "bigIcon": "sleep_icon_large.svg"
     },

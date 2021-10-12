@@ -3,6 +3,7 @@ import React from 'react';
 
 /* Local Imports */
 import './sceneImageStyle.scss'
+import MediaSources from '../utils/mediasources/MediaSources';
 
 
 export default class SceneImage extends React.Component{
@@ -23,11 +24,9 @@ export default class SceneImage extends React.Component{
         let appState = this.props.appState
         let currentScene = appState['currentScene']
         if(appState['videoLoaded'] == true){
-            let imagePath = './assets/img/' + appState.mediaSources.scenes[currentScene]['background'] + '.png'
-            return imagePath
+            return MediaSources.getSceneImage(currentScene)
         }else{
-            let blurImagePath = './assets/img/' + appState.mediaSources.scenes[currentScene].blur + '.jpg'
-            return blurImagePath
+            return MediaSources.getSceneImageBlur(currentScene)
         }
     }
 
