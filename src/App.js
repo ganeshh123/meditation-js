@@ -48,9 +48,6 @@ class App extends React.Component {
     alarmVolume: 70,
     /* Functions */
     setStateFunction: this.updateState,
-    getStateFunction: this.getCurrentState,
-    /* Static Data */
-    mediaSources: MediaSources,
     /* Flags */
     videoLoaded: false,
     musicMuted: false,

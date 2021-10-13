@@ -3,6 +3,7 @@ import React from 'react';
 
 import './presetsStyles.scss'
 import SettingsStore from '../utils/settings/settingsStore'
+import MediaSources from '../utils/mediasources/MediaSources'
 import PresetsController from '../utils/presets/PresetsController';
 
 export default class PresetsMenu extends React.Component{
@@ -40,7 +41,7 @@ export default class PresetsMenu extends React.Component{
         this.setColors()
 
         let appState = this.props.appState
-        let presetsArray = appState['mediaSources']['presetsArray']
+        let presetsArray = MediaSources.getPresetArray()
 
         return(
             <div id='presetsMenu' className='glassBlock' style={this.presetsMenuColors}>

@@ -11,15 +11,15 @@
       "id":"relax",
       "name":"Relax",
       "icon":"mini_relax_icon.svg",
-      "sceneId": "forest_1",
-      "musicId": "gymnopedie1",
+      "sceneId": "calm-forest",
+      "musicId": "relaxing-guitar",
       "bigIcon": "relax_icon_large.svg"
     },
     {
         "id":"focus",
         "name":"Focus",
         "icon":"mini_focus_icon.svg",
-        "sceneId": "waterfall1",
+        "sceneId": "waterfall",
         "musicId": "soothing-piano",
         "bigIcon": "focus_icon_large.svg"
     }

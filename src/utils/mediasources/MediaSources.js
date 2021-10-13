@@ -38,6 +38,13 @@ class MediaSources {
     }).json())
 
     /* Scene Functions */
+    static getScenesArray = () => {
+        return this.scenesArray
+    }
+
+    static getScenes = () => {
+        return this.scenes
+    }
 
     static getSceneName = (sceneId) => {
         if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['name']){
@@ -76,6 +83,14 @@ class MediaSources {
     }
 
     /* Music Track Functions */
+    static getMusicArray = () => {
+        return this.musicTracksArray
+    }
+
+    static getMusic= () => {
+        return this.musicTracks
+    }
+
     static getMusicName = (musicId) => {
         if(this.musicTracks && this.musicTracks[musicId] && this.musicTracks[musicId]['name']){
             return this.musicTracks[musicId]['name']
@@ -103,6 +118,21 @@ class MediaSources {
     static getMusicImageThumb = (musicId) => {
         if(this.musicTracks && this.musicTracks[musicId]){
             return `assets/music/${musicId}/${musicId}-thumb.jpg`
+        }
+    }
+
+    /* Presets Functions */
+    static getPresetArray = () => {
+        return this.presetsArray
+    }
+
+    static getPresets = () => {
+        return this.presets
+    }
+
+    static getPreset = (presetId) => {
+        if(this.presets && this.presets[presetId]){
+            return this.presets[presetId]
         }
     }
 }

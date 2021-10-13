@@ -39,8 +39,8 @@ export default class SceneControlPanel extends React.Component{
             <div id="sceneControlPanel" className="glassBlock" style={this.sceneControlColors}>
                 <div className="controlHolder">
                     <SelectionVolumeControl
-                        sourcesArray={appState.mediaSources.musicTracksArray}
-                        sources={appState.mediaSources.musicTracks}
+                        sourcesArray={MediaSources.getMusicArray()}
+                        sources={MediaSources.getMusic()}
                         selected={appState.currentMusicTrack}
                         sourceType='musicTrack'
                         appState={appState}
@@ -49,8 +49,8 @@ export default class SceneControlPanel extends React.Component{
                 <div id="divider" style={this.dividerColors}></div>
                 <div className="controlHolder">
                     <SelectionVolumeControl
-                        sourcesArray={appState.mediaSources.scenesArray} 
-                        sources={appState.mediaSources.scenes}
+                        sourcesArray={MediaSources.getScenesArray()} 
+                        sources={MediaSources.getScenes()}
                         selected={appState.currentScene}
                         sourceType='scene'
                         appState={appState}

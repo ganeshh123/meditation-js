@@ -2,6 +2,7 @@
 import React from 'react';
 
 import MediaBox from './MediaBox'
+import MediaSources from '../utils/mediasources/MediaSources'
 import './mediaSelectStyles.scss'
 
 export default class MediaSelect extends React.Component{
@@ -63,11 +64,11 @@ export default class MediaSelect extends React.Component{
         let type = this.props.appState.mediaSelectConfig['type']
 
         if(type == 'scene'){
-            return appState['mediaSources']['scenesArray']
+            return MediaSources.getScenesArray()
         }
 
         if(type == 'musicTrack'){
-            return appState['mediaSources']['musicTracksArray']
+            return MediaSources.getMusicArray()
         }
     }
 

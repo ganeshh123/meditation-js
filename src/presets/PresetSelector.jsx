@@ -1,6 +1,7 @@
 /* Global Imports */
 import React from 'react';
 
+import MediaSources from '../utils/mediasources/MediaSources'
 import PresetBox from './PresetBox'
 import './presetsStyles.scss'
 
@@ -19,7 +20,7 @@ export default class PresetSelector extends React.Component{
 
         this.setColors()
         let appState = this.props.appState
-        let presetsArray = appState['mediaSources']['presetsArray']
+        let presetsArray = MediaSources.getPresetArray()
 
         return(
             <div id='presetSelector' style={this.presetSelectorColors}>
