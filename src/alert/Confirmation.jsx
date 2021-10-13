@@ -1,7 +1,6 @@
-/* Global Imports */
 import React from 'react';
 
-import './alertStyles.scss'
+import './alert.scss'
 
 export default class Confirmation extends React.Component {
 
@@ -10,16 +9,11 @@ export default class Confirmation extends React.Component {
     }
 
     setColors = () => {
-        this.confirmationColors = {
-            //backgroundColor: this.props.appState.currentTheme.backgroundColor,
-            //border: this.props.appState.currentTheme.border,
-            //boxShadow: this.props.appState.currentTheme.boxShadow,
-            //backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            //WebKitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+        this.confirmationStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.confirmationButtonColors = {
+        this.confirmationButtonStyle = {
             backgroundColor: this.props.appState.currentTheme.buttonBackgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
@@ -29,28 +23,24 @@ export default class Confirmation extends React.Component {
         }
     }
 
-    render() {
-
+    render() { 
         this.setColors()
-
         let config = this.props.appState.confirmationConfig
 
         return (
-            <div className="confirmation" style={this.confirmationColors}>
+            <div className="confirmation" style={this.confirmationStyle}>
                 <div className="confirmationMessage">{config.message}</div>
                 <div className="confirmationChoiceContainer">
                     <div
                         className="confirmationChoice"
-                        style={this.confirmationButtonColors}
-                        id="confirmationNegativeChoice"
+                        style={this.confirmationButtonStyle}
                         onClick={config.negativeAction}
                     >
                         {config.negativeLabel}
                     </div>
                     <div
                         className="confirmationChoice"
-                        style={this.confirmationButtonColors}
-                        id="confirmationPositiveChoice"
+                        style={this.confirmationButtonStyle}
                         onClick={config.positiveAction}
                     >
                         {config.positiveLabel}

@@ -1,8 +1,8 @@
-/* Global Imports */
 import React from 'react';
 
 import PresetSelector from '../presets/PresetSelector';
-import './launchStyles.scss'
+
+import './launch.scss'
 
 export default class Launch extends React.Component{
 
@@ -11,20 +11,15 @@ export default class Launch extends React.Component{
     }
 
     setColors = () => {
-        this.launchColors = {
-            //backgroundColor: this.props.appState.currentTheme.backgroundColor,
-            //border: this.props.appState.currentTheme.border,
-            //boxShadow: this.props.appState.currentTheme.boxShadow,
-            //backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            //WebKitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+        this.launchStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.lauchIconColors = {
+        this.launchIconStyle = {
             filter: this.props.appState.currentTheme.iconColor
         }
 
-        this.launchButtonColors = {
+        this.launchButtonStyle = {
             backgroundColor: this.props.appState.currentTheme.buttonBackgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
@@ -51,11 +46,10 @@ export default class Launch extends React.Component{
     }
     
     render(){
-
         this.setColors()
 
         return(
-            <div id='launch' style={this.launchColors}>
+            <div id='launch' style={this.launchStyle}>
                 <div id="launchTitle">Calmeo</div>
                 {this.isFirstTime() && 
                     <div id="launchMessage">What do you want to do?</div>
@@ -69,7 +63,7 @@ export default class Launch extends React.Component{
                             <div id="returningMessage">
                                 Welcome Back
                             </div>
-                            <div id="returningButton" style={this.launchButtonColors} onClick={this.launchContinueButtonPressed}>
+                            <div id="returningButton" style={this.launchButtonStyle} onClick={this.launchContinueButtonPressed}>
                                 Continue
                             </div>
                         </div>
@@ -79,7 +73,7 @@ export default class Launch extends React.Component{
                     <div className="launchNotification">
                     <img 
                         src={'./assets/icons/about_icon.svg'}
-                        style={this.lauchIconColors}
+                        style={this.launchIconStyle}
                         className='launchNotificationIcon'
                     />
                     Headphones Recommended
