@@ -26,6 +26,19 @@ export default class SidePanel extends React.Component{
             filter: this.props.appState['currentTheme']['iconColor']
         }
 
+        this.loadingIconStyles = {
+            backgroundImage: "url('./assets/icons/loading.png')"
+        }
+
+    }
+
+    showLoading = () => {
+        let appState = this.props.appState
+
+        if(appState.videoDisabled == false && appState.videoLoaded == false){
+            return true
+        }
+        return false
     }
 
     presetsButtonPressed = () => {
@@ -165,6 +178,8 @@ export default class SidePanel extends React.Component{
                     style={this.sidePanelButtonColors}
                     onClick={buttons[1]['clickHandler']}
                 >
+                    {(this.showLoading() && type != "timerPresets") ?
+                        <i className="dot-spinner-64x64" style={this.loadingIconStyles}/> :
                     <img 
                         src={buttons[1]['icon']} 
                         style={{filter: this.props.appState['currentTheme']['iconColor']}}
@@ -172,6 +187,7 @@ export default class SidePanel extends React.Component{
                         title={buttons[1]['title']}
                         style={this.sidePanelIconColors}
                     />
+                    }
                 </div>
 
             </div>

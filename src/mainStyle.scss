@@ -156,6 +156,26 @@ svg {
 
 /**/
 
+/* Loading Spinners */
+.dot-spinner-64x64 {
+    animation: dot-spinner-64x64 1s steps(12) infinite;
+    display: block;
+    width: 64px;
+    height: 64px;
+}
+
+@keyframes dot-spinner-64x64 {
+    from {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: 0px -768px;
+    }
+}
+
+/* */
+
 @supports ((backdrop-filter: blur(2.3vh))) or (-webkit-backdrop-filter: blur(2.3vh)) {
     #appOverlay{
         backdrop-filter: blur(2.3vh);
