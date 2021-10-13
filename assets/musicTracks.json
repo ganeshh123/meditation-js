@@ -1,29 +1,23 @@
 [
     {
-      "id":"still",
+      "id":"soothing-piano",
       "name":"Soothing Piano",
       "description" : "Powerful piano for deep thought",
-      "audioFile" : "still",
       "source": "https://www.youtube.com/watch?v=962VmrIh9vQ",
-      "image": "still",
       "imageSource": "https://unsplash.com/photos/9mKz5H_1MPI"
     },
     {
-      "id":"gymnopedie1",
+      "id":"relaxing-guitar",
       "name":"Relaxing Guitar",
       "description" : "Delicate guitar for watching time go by.",
-      "audioFile": "gymnopedie1",
       "source": "https://musopen.org/music/8010-3-gymnopedies/",
-      "image": "gymnopedie1",
       "imageSource": "https://unsplash.com/photos/6LFomHDAwGg"
     },
     {
       "id":"clare-de-lune",
       "name":"Clare de Lune",
       "description" : "Dreamy and passionate piano",
-      "audioFile": "clare-de-lune",
       "source": "https://www.youtube.com/watch?v=8PlX3quY-n4",
-      "image": "clare-de-lune",
       "imageSource": "https://unsplash.com/photos/pTgMXg2WrHY"
     }
 ]

@@ -25,10 +25,8 @@ export default class AudioPlayer extends React.Component{
             return MediaSources.getSceneSfx(currentScene)
         }else if(type == 'music'){
             let currentTrack = appState['currentMusicTrack']
-            audioPath = './assets/music/' + appState['mediaSources']['musicTracks'][currentTrack]['audioFile'] + '.mp3'
+            return MediaSources.getMusicAudio(currentTrack)
         }
-
-        return audioPath
     }
 
     setAudioVolume = () => {

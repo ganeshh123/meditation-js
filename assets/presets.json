@@ -4,7 +4,7 @@
       "name":"Sleep",
       "icon":"mini_sleep_icon.svg",
       "sceneId": "autumn-rain",
-      "musicId": "still",
+      "musicId": "soothing-piano",
       "bigIcon": "sleep_icon_large.svg"
     },
     {
@@ -20,7 +20,7 @@
         "name":"Focus",
         "icon":"mini_focus_icon.svg",
         "sceneId": "waterfall1",
-        "musicId": "still",
+        "musicId": "soothing-piano",
         "bigIcon": "focus_icon_large.svg"
     }
 ]

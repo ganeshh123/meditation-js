@@ -41,7 +41,7 @@ class App extends React.Component {
   state = {
     /* Variables */
     currentScene: 'autumn-rain',
-    currentMusicTrack: 'still',
+    currentMusicTrack: 'soothing-piano',
     currentTheme: CSS.supports('backdrop-filter', 'blur(2.6vh)') ? Theme.staticThemes['dark'] : Theme.staticThemes['darkNb'],
     sceneAudioVolume: 50,
     musicAudioVolume: 20,

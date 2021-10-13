@@ -20,7 +20,7 @@ export default class MediaBox extends React.Component{
         }
 
         if(type == 'musicTrack'){
-            return './assets/img/thumb/' + media['image'] + '-thumb.jpg'
+            return MediaSources.getMusicImageThumb(media['id'])
         }
     }
 

@@ -37,6 +37,8 @@ class MediaSources {
         {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
     }).json())
 
+    /* Scene Functions */
+
     static getSceneName = (sceneId) => {
         if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['name']){
             return this.scenes[sceneId]['name']
@@ -70,6 +72,37 @@ class MediaSources {
     static getSceneSfx = (sceneId) => {
         if(this.scenes && this.scenes[sceneId]){
             return `./assets/scenes/${sceneId}/${sceneId}.mp3`
+        }
+    }
+
+    /* Music Track Functions */
+    static getMusicName = (musicId) => {
+        if(this.musicTracks && this.musicTracks[musicId] && this.musicTracks[musicId]['name']){
+            return this.musicTracks[musicId]['name']
+        }
+    }
+
+    static getMusicDescription = (musicId) => {
+        if(this.musicTracks && this.musicTracks[musicId] && this.musicTracks[musicId]['description']){
+            return this.musicTracks[musicId]['description']
+        }
+    }
+
+    static getMusicAudio = (musicId) => {
+        if(this.musicTracks && this.musicTracks[musicId]){
+            return `assets/music/${musicId}/${musicId}.mp3`
+        }
+    }
+
+    static getMusicImage = (musicId) => {
+        if(this.musicTracks && this.musicTracks[musicId]){
+            return `assets/music/${musicId}/${musicId}.jpg`
+        }
+    }
+
+    static getMusicImageThumb = (musicId) => {
+        if(this.musicTracks && this.musicTracks[musicId]){
+            return `assets/music/${musicId}/${musicId}-thumb.jpg`
         }
     }
 }

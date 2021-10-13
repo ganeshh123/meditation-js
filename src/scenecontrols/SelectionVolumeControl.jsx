@@ -51,7 +51,7 @@ export default class SelectionVolumeControl extends React.Component{
 
         if(type == 'musicTrack'){
             let currentMusicTrack = appState['currentMusicTrack']
-            return appState['mediaSources']['musicTracks'][currentMusicTrack]['name']
+            return MediaSources.getMusicName(currentMusicTrack)
         }
     }
 

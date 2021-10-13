@@ -5,7 +5,7 @@ export default class SettingsStore {
 
     static userSettings = {
         currentScene: 'autumn-rain',
-        currentMusicTrack: 'still',
+        currentMusicTrack: 'soothing-piano',
         currentTheme: CSS.supports('backdrop-filter') ? Theme.staticThemes['dark'] : Theme.staticThemes['darkNb'],
         sceneAudioVolume: 50,
         musicAudioVolume: 20,
