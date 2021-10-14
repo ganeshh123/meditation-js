@@ -1,14 +1,10 @@
-/* Global Imports */
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-/* Local Imports */
 import Theme from './utils/theme/Theme'
-import './mainStyle.scss'
-import MediaSources from './utils/mediasources/MediaSources'
 import SettingsStore from './utils/settings/settingsStore'
+import MediaSources from './utils/mediasources/MediaSources';
 import UIHide from './utils/uihide/UIHide';
-
 import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './scenecontrols/SceneControlPanel'
 import SceneVideo from './scenemedia/SceneVideo'
@@ -17,6 +13,8 @@ import AudioPlayer from './scenemedia/AudioPlayer'
 import Timer from './timer/Timer'
 import SidePanel from './sidepanel/SidePanel'
 import Overlay from './overlay/Overlay'
+
+import './mainStyle.scss'
 
 class App extends React.Component {
 
@@ -44,6 +42,7 @@ class App extends React.Component {
     /* Functions */
     setStateFunction: this.updateState,
     /* Flags */
+    mediaInfoFetched: false,
     videoLoaded: false,
     musicMuted: false,
     sfxMuted: false,
@@ -71,14 +70,13 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
+    MediaSources.fetchMediaInfo(this.state)
     SettingsStore.loadSettings(this.state)
     UIHide.setup(this.state)
   }
 
 
   render = () => {
-
-    let uiShow = this.state.uiShow
 
     return(
       <div id="app" style={this.appStyle}>

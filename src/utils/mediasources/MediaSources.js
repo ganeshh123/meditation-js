@@ -1,7 +1,24 @@
-let fetch = require('sync-fetch')
+let fetchSync = require('sync-fetch')
+
+import PresetsController from '../../presets/PresetsController'
 
 
 class MediaSources {
+
+    static presetsArray = []
+
+    static fetchMediaInfo = (appState) =>{
+
+        let fetchPresets = fetch('./assets/presets.json')
+                            .then(response => response.json())
+                            .then((data) => {
+                                PresetsController.setPresets(data)
+                            })
+        
+        Promise.all([fetchPresets]).then(() =>{
+            appState.setStateFunction({mediaInfoFetched: true})
+        })
+    }
 
     static buildSourcesObject = (sourcesArray) => {
         let sourcesObject = {}
@@ -13,21 +30,16 @@ class MediaSources {
         return sourcesObject
     }
 
-    static scenesArray = fetch('./assets/scenes.json', 
+    static scenesArray = fetchSync('./assets/scenes.json', 
         {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
     }).json()
 
-    static musicTracksArray = fetch('./assets/musicTracks.json', 
-        {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
-    }).json()
-
-    static presetsArray = fetch('./assets/presets.json', 
+    static musicTracksArray = fetchSync('./assets/musicTracks.json', 
         {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
     }).json()
 
     static scenes = this.buildSourcesObject(this.scenesArray)
     static musicTracks = this.buildSourcesObject(this.musicTracksArray)
-    static presets = this.buildSourcesObject(this.musicTracksArray)
 
     /* Scene Functions */
     static getScenesArray = () => {

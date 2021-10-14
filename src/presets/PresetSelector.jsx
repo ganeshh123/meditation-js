@@ -19,11 +19,10 @@ export default class PresetSelector extends React.Component{
     render(){
         this.setStyle()
         let appState = this.props.appState
-        let presetIds = PresetsController.getPresetIds()
 
         return(
             <div id='presetSelector' style={this.presetSelectorStyle}>
-                {presetIds.map((presetId, index) => {
+                {appState.mediaInfoFetched && PresetsController.getPresetIds().map((presetId, index) => {
                     return(
                         <PresetBox appState={appState} presetId={presetId} key={index} />
                     )

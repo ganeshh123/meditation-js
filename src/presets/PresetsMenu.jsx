@@ -27,11 +27,10 @@ export default class PresetsMenu extends React.Component{
     render(){
         this.setStyle()
         let appState = this.props.appState
-        let presetIds = PresetsController.getPresetIds()
 
         return(
             <div id='presetsMenu' className='glassBlock' style={this.presetsMenuStyle}>
-                {presetIds.map((presetId, index) => {
+                {appState.mediaInfoFetched && PresetsController.getPresetIds().map((presetId, index) => {
                     return(
                         <div className='presetsMenuButton' key={index}>
                             <img 

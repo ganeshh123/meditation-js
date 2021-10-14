@@ -2,7 +2,7 @@ import MediaSources from "../utils/mediasources/MediaSources"
 
 export default class PresetsController{
 
-    static presets = MediaSources.buildSourcesObject(MediaSources.getPresetArray())
+    static presets = []
 
     static getPresetIds = () => {
         return Object.keys(this.presets)
@@ -33,6 +33,10 @@ export default class PresetsController{
         if(preset['bigIcon']){
             return `./assets/icons/${preset['bigIcon']}.svg`
         }
+    }
+
+    static setPresets = (presets) => {
+        this.presets = presets
     }
 
     static setPreset = (appState, presetId) => {
