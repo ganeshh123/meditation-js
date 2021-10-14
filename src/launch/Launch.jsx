@@ -10,7 +10,7 @@ export default class Launch extends React.Component{
         super(props)
     }
 
-    setColors = () => {
+    setStyle = () => {
         this.launchStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
@@ -46,7 +46,7 @@ export default class Launch extends React.Component{
     }
     
     render(){
-        this.setColors()
+        this.setStyle()
 
         return(
             <div id='launch' style={this.launchStyle}>

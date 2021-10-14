@@ -1,6 +1,4 @@
-/* Global Imports */
 import React from 'react';
-import './overlayStyles.scss'
 
 import Settings from '../settings/Settings'
 import Launch from '../launch/Launch'
@@ -8,60 +6,49 @@ import TimerSetup from '../timer/TimerSetup'
 import MediaSelect from '../scenecontrols/MediaSelect'
 import Confirmation from '../alert/Confirmation'
 
+import './overlay.scss'
+
 export default class Overlay extends React.Component {
 
   constructor(props) {
     super(props)
   }
 
-  state = {
-    confirmationMessage: '',
-    confirmationPositiveLabel: '',
-    confirmationNegativeLabel:'',
-    confirmationPositiveAction: undefined,
-    confirmationNegativeAction: undefined
-  }
-
-  setColors = () => {
-    this.overlayColors = {
+  setStyle = () => {
+    this.overlayStyle = {
       backgroundColor: this.props.appState['currentTheme']['overlayColor']
     }
   }
 
   showOverlay = () => {
     let appState = this.props.appState
+    let overlayConditions = [
+      appState.timerSetupShowing,
+      appState.settingsShowing,
+      appState.launchShowing,
+      appState.mediaSelectShowing,
+      appState.confirmationShowing
+    ]
+    let shouldShowOverlay = false
 
-    if (appState.timerSetupShowing) {
-      return true
+    for(let condition of overlayConditions){
+      if(condition == true){
+        shouldShowOverlay = true
+        break
+      }
     }
 
-    if (appState.settingsShowing) {
-      return true
-    }
-
-    if (appState.launchShowing) {
-      return true
-    }
-
-    if(appState.mediaSelectShowing){
-      return true
-    }
-
-    if (appState.confirmationShowing) {
-      return true
-    }
-
-    return false
+    return shouldShowOverlay
   }
 
   render() {
 
     let appState = this.props.appState
-    this.setColors()
+    this.setStyle()
 
     return (
       this.showOverlay() &&
-      <div id='appOverlay' onKeyPress={this.handleKeyPress} style={this.overlayColors}>
+      <div id='appOverlay' onKeyPress={this.handleKeyPress} style={this.overlayStyle}>
         {appState.timerSetupShowing && <TimerSetup appState={appState} />}
         {appState.settingsShowing && <Settings appState={appState} />}
         {appState.launchShowing && <Launch appState={appState} />}

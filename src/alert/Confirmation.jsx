@@ -8,7 +8,7 @@ export default class Confirmation extends React.Component {
         super(props)
     }
 
-    setColors = () => {
+    setStyle = () => {
         this.confirmationStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
@@ -24,7 +24,7 @@ export default class Confirmation extends React.Component {
     }
 
     render() { 
-        this.setColors()
+        this.setStyle()
         let config = this.props.appState.confirmationConfig
 
         return (
