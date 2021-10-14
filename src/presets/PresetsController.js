@@ -4,10 +4,6 @@ export default class PresetsController{
 
     static presets = MediaSources.buildSourcesObject(MediaSources.getPresetArray())
 
-    static getPresetArray = () => {
-        return MediaSources.getPresetArray()
-    }
-
     static getPresetIds = () => {
         return Object.keys(this.presets)
     }

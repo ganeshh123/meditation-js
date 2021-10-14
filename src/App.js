@@ -33,11 +33,6 @@ class App extends React.Component {
     })
   }
 
-  getCurrentState = () => {
-    return this.state
-  }
-  
-
   state = {
     /* Variables */
     currentScene: 'autumn-rain',
