@@ -2,25 +2,25 @@
     {
       "id":"sleep",
       "name":"Sleep",
-      "icon":"mini_sleep_icon.svg",
+      "icon":"mini_sleep_icon",
       "sceneId": "autumn-rain",
       "musicId": "soothing-piano",
-      "bigIcon": "sleep_icon_large.svg"
+      "bigIcon": "sleep_icon_large"
     },
     {
       "id":"relax",
       "name":"Relax",
-      "icon":"mini_relax_icon.svg",
+      "icon":"mini_relax_icon",
       "sceneId": "calm-forest",
       "musicId": "relaxing-guitar",
-      "bigIcon": "relax_icon_large.svg"
+      "bigIcon": "relax_icon_large"
     },
     {
         "id":"focus",
         "name":"Focus",
-        "icon":"mini_focus_icon.svg",
+        "icon":"mini_focus_icon",
         "sceneId": "waterfall",
         "musicId": "soothing-piano",
-        "bigIcon": "focus_icon_large.svg"
+        "bigIcon": "focus_icon_large"
     }
 ]

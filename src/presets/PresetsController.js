@@ -1,0 +1,57 @@
+import MediaSources from "../utils/mediasources/MediaSources"
+
+export default class PresetsController{
+
+    static presets = MediaSources.buildSourcesObject(MediaSources.getPresetArray())
+
+    static getPresetArray = () => {
+        return MediaSources.getPresetArray()
+    }
+
+    static getPresetIds = () => {
+        return Object.keys(this.presets)
+    }
+
+    static getPreset = (presetId) => {
+        if(this.presets && this.presets[presetId]){
+            return this.presets[presetId]
+        }
+    }
+
+    static getPresetName = (presetId) => {
+        let preset = this.getPreset(presetId)
+        if(preset['name']){
+            return preset['name']
+        }
+    }
+
+    static getPresetIcon = (presetId) => {
+        let preset = this.getPreset(presetId)
+        if(preset['icon']){
+            return `./assets/icons/${preset['icon']}.svg`
+        }
+    }
+
+    static getPresetBigIcon = (presetId) => {
+        let preset = this.getPreset(presetId)
+        if(preset['bigIcon']){
+            return `./assets/icons/${preset['bigIcon']}.svg`
+        }
+    }
+
+    static setPreset = (appState, presetId) => {
+        let preset = this.getPreset(presetId)
+        let update = {
+            launchShowing: false,
+            firstTime: false,
+            currentScene: preset['sceneId'],
+            currentMusicTrack: preset['musicId']
+        }
+        
+        appState.setStateFunction(update, () => {
+            document.querySelector('#sfxAudio').play()
+            document.querySelector('#musicAudio').play()
+        })
+    }
+
+}

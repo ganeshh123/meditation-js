@@ -1,18 +1,16 @@
-/* Global Imports */
 import React from 'react';
 
-import './presetsStyles.scss'
-import SettingsStore from '../utils/settings/settingsStore'
-import MediaSources from '../utils/mediasources/MediaSources'
-import PresetsController from '../utils/presets/PresetsController';
+import PresetsController from './PresetsController'
+
+import './presets.scss'
 
 export default class PresetsMenu extends React.Component{
     constructor(props){
         super(props)
     }
 
-    setColors = () => {
-        this.presetsMenuColors = {
+    setStyle = () => {
+        this.presetsMenuStyle = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
@@ -21,72 +19,39 @@ export default class PresetsMenu extends React.Component{
             color: this.props.appState.currentTheme.accentColor
         }
 
-        if(this.props.launch && this.props.launch == true){
-            this.presetsMenuColors = {
-                background: 'none',
-                border: '0px',
-                boxShadow: '0px',
-                backdropFilter : 'none',
-                WebKitBackdropFilter : 'none',
-            }
-        }
-
-        this.presetsMenuIconColors = {
+        this.presetsMenuIconStyle = {
             filter: this.props.appState['currentTheme']['iconColor']
         }
     }
 
     render(){
-
-        this.setColors()
-
+        this.setStyle()
         let appState = this.props.appState
-        let presetsArray = MediaSources.getPresetArray()
+        let presetIds = PresetsController.getPresetIds()
 
         return(
-            <div id='presetsMenu' className='glassBlock' style={this.presetsMenuColors}>
-                
-                {presetsArray.map((preset, index) => {
+            <div id='presetsMenu' className='glassBlock' style={this.presetsMenuStyle}>
+                {presetIds.map((presetId, index) => {
                     return(
-                        <div className='presetsMenuButton' key={preset['id']}>
+                        <div className='presetsMenuButton' key={index}>
                             <img 
-                                src={'./assets/icons/' + preset['icon']}
-                                style={this.presetsMenuIconColors}
-                                id={preset['id'] + 'PresetMenuButtonIcon'}
+                                src={PresetsController.getPresetIcon(presetId)}
+                                style={this.presetsMenuIconStyle}
+                                id={presetId + 'PresetMenuButtonIcon'}
                                 className='presetsMenuButtonIcon'
-                                onClick={() => {PresetsController.setPreset(appState,preset['id'])}}
+                                onClick={() => PresetsController.setPreset(appState,presetId)}
                             />
                             <div 
-                                id={preset['id'] + 'PresetsMenuButtonText'}
+                                id={presetId['id'] + 'PresetsMenuButtonText'}
                                 className='presetsMenuButtonText'
                                 style={{color: 'inherit'}}
-                                onClick={() => {PresetsController.setPreset(appState,preset['id'])}}
+                                onClick={() => PresetsController.setPreset(appState,presetId)}
                             >
-                                {preset['name']}
+                                {PresetsController.getPresetName(presetId)}
                             </div>
                         </div>
                     )
                 } )}
-                {/* {this.props.launch && 
-                    <div className='presetsMenuButton' id="resumeOption" key={'resume'}>
-                            <img 
-                                src={'./assets/icons/play_icon.svg'}
-                                style={this.presetsMenuIconColors}
-                                id={'presetResumeIcon'}
-                                className='presetsMenuButtonIcon'
-                                onClick={() => {this.setPreset('resume')}}
-                            />
-                            <div 
-                                id={'presetResumtText'}
-                                className='presetsMenuButtonText'
-                                style={{color: 'inherit'}}
-                                onClick={() => {this.setPreset('resume')}}
-                            >
-                                Resume
-                            </div>
-                    </div>
-                }
- */}
             </div>
         )
     }

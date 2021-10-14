@@ -1,16 +1,17 @@
 let fetch = require('sync-fetch')
 
-let buildSourcesObject = (sourcesArray) => {
-    let sourcesObject = {}
-
-    sourcesArray.forEach((source) => {
-        sourcesObject[source['id']] = source
-    })
-
-    return sourcesObject
-}
 
 class MediaSources {
+
+    static buildSourcesObject = (sourcesArray) => {
+        let sourcesObject = {}
+    
+        sourcesArray.forEach((source) => {
+            sourcesObject[source['id']] = source
+        })
+    
+        return sourcesObject
+    }
 
     static scenesArray = fetch('./assets/scenes.json', 
         {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
@@ -24,18 +25,9 @@ class MediaSources {
         {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
     }).json()
 
-    static scenes = buildSourcesObject(fetch('./assets/scenes.json', 
-        {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
-    }).json())
-
-
-    static musicTracks = buildSourcesObject(fetch('./assets/musicTracks.json', 
-        {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
-    }).json())
-
-    static presets = buildSourcesObject(fetch('./assets/presets.json', 
-        {headers: {Accept: 'application/vnd.citationstyles.csl+json'}
-    }).json())
+    static scenes = this.buildSourcesObject(this.scenesArray)
+    static musicTracks = this.buildSourcesObject(this.musicTracksArray)
+    static presets = this.buildSourcesObject(this.musicTracksArray)
 
     /* Scene Functions */
     static getScenesArray = () => {
@@ -120,20 +112,9 @@ class MediaSources {
             return `assets/music/${musicId}/${musicId}-thumb.jpg`
         }
     }
-
-    /* Presets Functions */
+    
     static getPresetArray = () => {
         return this.presetsArray
-    }
-
-    static getPresets = () => {
-        return this.presets
-    }
-
-    static getPreset = (presetId) => {
-        if(this.presets && this.presets[presetId]){
-            return this.presets[presetId]
-        }
     }
 }
 

@@ -1,8 +1,8 @@
-/* Global Imports */
 import React from 'react';
 
-import PresetsController from '../utils/presets/PresetsController';
-import './presetsStyles.scss'
+import PresetsController from './PresetsController'
+
+import './presets.scss'
 
 export default class PresetBox extends React.Component{
 
@@ -10,45 +10,36 @@ export default class PresetBox extends React.Component{
         super(props)
     }
 
-    setColors = () => {
-        this.presetBoxColors = {
+    setStyle = () => {
+        this.presetBoxStyle = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
             boxShadow: this.props.appState.currentTheme.boxShadow,
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.presetBoxImageColors = {
+        this.presetBoxImageStyle = {
             filter: this.props.appState['currentTheme']['iconColor']
         }
     }
 
-    getPresetName = () => {
-        return this.props.preset['name']
-    }
-
-    getPresetPicture = () => {
-        return './assets/icons/' + this.props.preset['bigIcon']
-    }
-
     presetBoxClicked = () => {
-        PresetsController.setPreset(this.props.appState, this.props.preset['id'])
+        PresetsController.setPreset(this.props.appState, this.props.presetId)
     }
 
     render(){
-
-        this.setColors()
+        this.setStyle()
+        let presetId = this.props.presetId
 
         return(
-            <div className="presetBox" style={this.presetBoxColors} onClick={this.presetBoxClicked}>
+            <div className="presetBox" style={this.presetBoxStyle} onClick={this.presetBoxClicked}>
                 <img 
-                    src={this.getPresetPicture()}
-                    style={this.presetBoxImageColors}
-                    id={this.props.preset['id'] + 'PresetBoxPicture'}
+                    src={PresetsController.getPresetBigIcon(presetId)}
+                    style={this.presetBoxImageStyle}
                     className='presetBoxImage'
                     onClick={this.presetBoxClicked}
                 />
                 <div className='presetBoxTitle' onClick={this.presetBoxClicked}>
-                    {this.getPresetName()}
+                    {PresetsController.getPresetName(presetId)}
                 </div>
             </div>
         )
