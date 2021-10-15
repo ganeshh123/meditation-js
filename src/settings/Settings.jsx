@@ -1,8 +1,10 @@
-/* Global Imports */
 import React from 'react';
 
-import SettingsController from '../utils/settings/settingsController'
-import './settingsStyle.scss'
+import SettingsController from './SettingsController'
+import VolumeController from '../media/VolumeController'
+import ThemeController from '../theme/ThemeController';
+
+import './settings.scss'
 
 export default class Settings extends React.Component{
 
@@ -10,25 +12,12 @@ export default class Settings extends React.Component{
         super(props)
     }
 
-    settingsCloseButtonPressed = () =>{
-        let appState = this.props.appState
-
-        appState.setStateFunction({
-            settingsShowing: false
-        })
-    }
-
-    setColors = () => {
-        this.settingsColors = {
-            //backgroundColor: this.props.appState.currentTheme.backgroundColor,
-            //border: this.props.appState.currentTheme.border,
-            //boxShadow: this.props.appState.currentTheme.boxShadow,
-            //backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            //WebkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+    setStyle = () => {
+        this.settingsStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.buttonColors = {
+        this.settingsButtonStyle = {
             backgroundColor: this.props.appState.currentTheme.buttonBackgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
@@ -37,16 +26,21 @@ export default class Settings extends React.Component{
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.settingsIconColors = {
+        this.settingsIconStyle = {
             filter: this.props.appState.currentTheme.iconColor
         }
     }
 
+    settingsCloseButtonPressed = () =>{
+        this.props.appState.setStateFunction({
+            settingsShowing: false
+        })
+    }
+
     setupKeys = () => {
-        let appState = this.props.appState
         document.addEventListener('keydown', (event) => {
             if(event.key == 'Escape'){
-                appState.setStateFunction({
+                this.props.appState.setStateFunction({
                     settingsShowing: false
                 })
             }
@@ -54,12 +48,12 @@ export default class Settings extends React.Component{
     }
 
     render(){
-
-        this.setColors()
+        this.setStyle()
         this.setupKeys()
+        let appState = this.props.appState
 
         return(
-            <div id='settings' style={this.settingsColors}>
+            <div id='settings' style={this.settingsStyle}>
                 <div id='settingsTitle'>
                     Settings
                 </div>
@@ -68,7 +62,7 @@ export default class Settings extends React.Component{
                     className='iconButton'
                     src='./assets/icons/cross_icon.svg'
                     onClick={this.settingsCloseButtonPressed}
-                    style={this.settingsIconColors}
+                    style={this.settingsIconStyle}
                 />
                 <div id='settingsMenu'>
                     <div className='settingsMenuItem'>
@@ -76,7 +70,7 @@ export default class Settings extends React.Component{
                             <img 
                                 id='notificationIcon'
                                 src='./assets/icons/speaker_icon.svg'
-                                style={this.settingsIconColors}
+                                style={this.settingsIconStyle}
                             />
                             <div className='settingsMenuItemLabel'>
                                 Notification Volume
@@ -84,20 +78,23 @@ export default class Settings extends React.Component{
                         </div>
                         <div 
                             className='settingsToggleSwitch glassBlock'
-                            onClick = {() => {
-                                SettingsController.toggleAlarmVolume(this.props.appState)
-                            }}
-                            style={this.buttonColors}
+                            onClick = {() => VolumeController.toggleAlarmVolume(appState)}
+                            style={this.settingsButtonStyle}
                         >
-                            {SettingsController.getAlarmVolumeString(this.props.appState)}
+                            {VolumeController.getAlarmVolumeString(appState)}
                         </div>
                     </div>
+
+
+
+
+
                     <div className='settingsMenuItem'>
                         <div className='settingsMenuItemLeftSide'>
                             <img 
                                 id='solidGlassIcon'
                                 src='./assets/icons/solid_glass_icon.svg' 
-                                style={this.settingsIconColors}
+                                style={this.settingsIconStyle}
                             />
                             <div className='settingsMenuItemLabel'>
                                 Solid Windows
@@ -105,21 +102,22 @@ export default class Settings extends React.Component{
                         </div>
                         <div 
                             className='settingsToggleSwitch glassBlock'
-                            onClick={() => {
-                                SettingsController.toggleSolidBg(this.props.appState)
-                            }}
-                            style={this.buttonColors}
+                            onClick={() => ThemeController.toggleSolidBg(appState)}
+                            style={this.settingsButtonStyle}
                         >
-                            {SettingsController.getSolidBg(this.props.appState)}
+                            {ThemeController.getSolidBg(appState)}
                         </div>
                     </div>
+
+
+
                 </div>
                 <div 
                     id='settingsReset'
                     onClick={() => {
-                        SettingsController.resetAppSettings(this.props.appState)
+                        SettingsController.resetAppSettings(appState)
                     }}
-                    style={this.buttonColors}
+                    style={this.settingsButtonStyle}
                 >
                     Reset Settings
                 </div>

@@ -1,12 +1,9 @@
-/* Global Imports */
 import React from 'react';
 
+import SettingsController from '../settings/SettingsController'
 import UIHide from '../utils/uihide/UIHide'
-import './timerStyle.scss'
-import SettingsStore from '../utils/settings/settingsStore'
-import Settings from '../settings/Settings'
-import Confirmation from '../alert/Confirmation'
 
+import './timerStyle.scss'
 export default class Timer extends React.Component {
     constructor(props) {
         super(props)
@@ -90,7 +87,7 @@ export default class Timer extends React.Component {
     }
 
     writeTimerData = (currentState) => {
-        SettingsStore.storeData('timerState', {
+        SettingsController.storeData('timerState', {
             timerMode: currentState['timerMode'],
             timerSessionLength: currentState['timerSessionLength'],
             timerBreakLength: currentState['timerBreakLength'],
@@ -100,7 +97,7 @@ export default class Timer extends React.Component {
     }
 
     readTimerData = (appState) => {
-        let timerData = SettingsStore.readData('timerState')
+        let timerData = SettingsController.readData('timerState')
 
         if(!timerData){
             return
@@ -332,7 +329,7 @@ export default class Timer extends React.Component {
         appState.setStateFunction({
             timerPinned: !timerCurrentlyPinned
         }, (newAppState) => {
-            SettingsStore.updateSettings(newAppState)
+            SettingsController.updateSettings(newAppState)
             this.setTimerPin()
         })
     }
@@ -380,8 +377,8 @@ export default class Timer extends React.Component {
             timerComponent: this
         }
 
-        if(SettingsStore.readSetting('timerPinned') != undefined){
-            let timerPinSetting = SettingsStore.readSetting('timerPinned')
+        if(SettingsController.readSetting('timerPinned') != undefined){
+            let timerPinSetting = SettingsController.readSetting('timerPinned')
             UIHide.timerPinned = timerPinSetting
             updateState['timerPinned'] = timerPinSetting
         }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SettingsStore from '../utils/settings/settingsStore'
+import SettingsController from '../settings/SettingsController'
 import SceneController from './SceneController'
 import MusicController from './MusicController'
 
@@ -46,10 +46,10 @@ export default class AudioPlayer extends React.Component{
         let appState = this.props.appState
         let updateState ={}
 
-        if(SettingsStore.readSetting('sfxMuted')){
+        if(SettingsController.readSetting('sfxMuted')){
             updateState['sfxMuted'] = true
         }
-        if(SettingsStore.readSetting('musicMuted')){
+        if(SettingsController.readSetting('musicMuted')){
             updateState['musicMuted'] = true
         }
 

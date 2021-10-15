@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Theme from './utils/theme/Theme'
-import SettingsStore from './utils/settings/settingsStore'
-import MediaSources from './utils/mediasources/MediaSources';
+import MediaSources from './utils/mediasources/MediaSources'
+
+import SettingsController from './settings/settingsController'
+import ThemeController from './theme/ThemeController'
+
 import UIHide from './utils/uihide/UIHide';
 import TitleBar from './titlebar/TitleBar'
 import SceneControlPanel from './media/SceneControlPanel'
@@ -24,7 +26,7 @@ class App extends React.Component {
 
   updateState = (newState, cbFunc) => {
     this.setState(newState, () => {
-      SettingsStore.updateSettings(this.state)
+      SettingsController.updateSettings(this.state)
       if(cbFunc){
         cbFunc(this.state)
       }
@@ -35,7 +37,7 @@ class App extends React.Component {
     /* Variables */
     currentScene: 'autumn-rain',
     currentMusicTrack: 'soothing-piano',
-    currentTheme: CSS.supports('backdrop-filter', 'blur(2.6vh)') ? Theme.staticThemes['dark'] : Theme.staticThemes['darkNb'],
+    currentTheme: CSS.supports('backdrop-filter', 'blur(2.6vh)') ? ThemeController.staticThemes['dark'] : ThemeController.staticThemes['darkNb'],
     sceneAudioVolume: 50,
     musicAudioVolume: 20,
     alarmVolume: 70,
@@ -71,7 +73,7 @@ class App extends React.Component {
 
   componentDidMount = () => {
     MediaSources.fetchMediaInfo(this.state)
-    SettingsStore.loadSettings(this.state)
+    SettingsController.loadSettings(this.state)
     UIHide.setup(this.state)
   }
 

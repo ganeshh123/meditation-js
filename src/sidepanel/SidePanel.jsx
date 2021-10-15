@@ -1,7 +1,7 @@
 /* Global Imports */
 import React from 'react';
 
-import Theme from '../utils/theme/Theme'
+import ThemeController from '../theme/ThemeController'
 import PresetsMenu from '../presets/PresetsMenu'
 
 import './sidePanelStyle.scss'
@@ -66,7 +66,7 @@ export default class SidePanel extends React.Component{
         let appState = this.props.appState
 
         if(type === 'toggles'){
-            Theme.switchTheme(appState)
+            ThemeController.switchTheme(appState)
         }
 
     }

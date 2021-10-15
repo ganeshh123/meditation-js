@@ -1,12 +1,11 @@
-/* Local Imports */
-import Theme from '../theme/Theme'
+import ThemeController from '../theme/ThemeController'
 
-export default class SettingsStore {
+export default class SettingsController{
 
     static userSettings = {
         currentScene: 'autumn-rain',
         currentMusicTrack: 'soothing-piano',
-        currentTheme: CSS.supports('backdrop-filter') ? Theme.staticThemes['dark'] : Theme.staticThemes['darkNb'],
+        currentTheme: CSS.supports('backdrop-filter') ? ThemeController.staticThemes['dark'] : ThemeController.staticThemes['darkNb'],
         sceneAudioVolume: 50,
         musicAudioVolume: 20,
         alarmVolume: 70,
@@ -16,7 +15,6 @@ export default class SettingsStore {
         timerPinned: false,
         timerEnabled: false,
         firstTime: true
-        //launchShowing: true
     }
 
     static fetchSettings = () => {
@@ -73,6 +71,13 @@ export default class SettingsStore {
 
     static deleteData = (dataKey) => {
         window.localStorage.removeItem(dataKey)
+    }
+
+    static resetAppSettings = (appState) => {
+        appState.setStateFunction({
+            currentTheme: ThemeController.staticThemes['dark'],
+            alarmVolume: 70
+        })
     }
 
 }

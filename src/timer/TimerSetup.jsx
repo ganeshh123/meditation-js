@@ -4,7 +4,7 @@ import React from 'react';
 import './timerSetupStyle.scss'
 
 import TimerLengthAdjuster from './TimerLengthAdjuster'
-import SettingsStore from '../utils/settings/settingsStore'
+import SettingsController from '../settings/SettingsController'
 
 export default class TimerSetup extends React.Component{
     constructor(props){
@@ -97,7 +97,7 @@ export default class TimerSetup extends React.Component{
             timerSetupShowing: false,
             timerEnabled: true
         }, (newAppState) => {
-            SettingsStore.updateSettings(newAppState)
+            SettingsController.updateSettings(newAppState)
             this.startNewTimer()
         })
     }
