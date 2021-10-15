@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import MediaSources from './utils/mediasources/MediaSources'
 
-import SettingsController from './settings/settingsController'
+import SettingsController from './settings/SettingsController'
 import ThemeController from './theme/ThemeController'
 
 import UIHide from './utils/uihide/UIHide';
