@@ -11,9 +11,8 @@ export default class SidePanel extends React.Component{
         super(props)
     }
 
-    setColors = () => {
-
-        this.sidePanelButtonColors = {
+    setStyle = () => {
+        this.sidePanelButtonStyle = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
@@ -22,11 +21,11 @@ export default class SidePanel extends React.Component{
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.sidePanelIconColors = {
+        this.sidePanelIconStyle = {
             filter: this.props.appState['currentTheme']['iconColor']
         }
 
-        this.loadingIconStyles = {
+        this.loadingIconStyle = {
             backgroundImage: "url('./assets/icons/loading.png')"
         }
 
@@ -142,7 +141,7 @@ export default class SidePanel extends React.Component{
 
     render(){
 
-        this.setColors()
+        this.setStyle()
 
         let appState = this.props.appState
         let type = this.props.type
@@ -154,7 +153,7 @@ export default class SidePanel extends React.Component{
 
                 <div 
                     className='sidePanelIcon glassBlock' 
-                    style={this.sidePanelButtonColors}
+                    style={this.sidePanelButtonStyle}
                     onClick={buttons[0]['clickHandler']}
                     id={(type === 'timerPresets' && presetsMenuCurrentlyExpanded) && 'sidePanelBlockExpanded'}
                 >
@@ -167,25 +166,26 @@ export default class SidePanel extends React.Component{
                             buttons[0]['name'] + 'Button'
                         }
                         title={buttons[0]['title']}
-                        style={this.sidePanelIconColors}
+                        style={this.sidePanelIconStyle}
                     />
                 </div>
 
                 {type === 'timerPresets' && appState['presetsMenuExpanded'] == true && <PresetsMenu appState={appState} />}
 
                 <div 
-                    className='sidePanelIcon glassBlock' 
-                    style={this.sidePanelButtonColors}
+                    className='sidePanelIcon glassBlock'
+                    id={type == 'timerPresets' ? '' : 'videoLoading'}
+                    style={this.sidePanelButtonStyle}
                     onClick={buttons[1]['clickHandler']}
                 >
                     {(this.showLoading() && type != "timerPresets") ?
-                        <i className="dot-spinner-64x64" style={this.loadingIconStyles}/> :
+                        <i className="dot-spinner-64x64" style={this.loadingIconStyle}/> :
                     <img 
                         src={buttons[1]['icon']} 
                         style={{filter: this.props.appState['currentTheme']['iconColor']}}
                         id={buttons[1]['name'] + 'Button'}
                         title={buttons[1]['title']}
-                        style={this.sidePanelIconColors}
+                        style={this.sidePanelIconStyle}
                     />
                     }
                 </div>

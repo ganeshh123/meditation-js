@@ -42,6 +42,10 @@ export default class UIHide{
             document.querySelector(selector).style.opacity = '0'
         })
 
+        if(appState.videoDisabled == false && appState.videoLoaded == false){
+            document.querySelector('#videoLoading').style.opacity = '1'
+        }
+
         appState.setStateFunction({
             uiShow: false
         })

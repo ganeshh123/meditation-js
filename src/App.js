@@ -15,6 +15,7 @@ import AudioPlayer from './media/AudioPlayer'
 import Timer from './timer/Timer'
 import SidePanel from './sidepanel/SidePanel'
 import Overlay from './overlay/Overlay'
+import Loading from './alert/Loading';
 
 import './mainStyle.scss'
 
@@ -83,6 +84,7 @@ class App extends React.Component {
     return(
       <div id="app" style={this.appStyle}>
 
+        <Loading appState={this.state} />
         <SceneImage scene={this.state.currentScene} videoLoaded={this.state.videoLoaded} />
         <AudioPlayer appState={this.state} type='sfx' />
         <AudioPlayer appState={this.state} type='music' />

@@ -10,7 +10,7 @@ export default class SceneImage extends React.Component{
     }
 
     getImagePath = () => {
-        let currentScene = this.props.currentScene
+        let currentScene = this.props.scene
         if(this.props.videoLoaded == true){
             return SceneController.getSceneImage(currentScene)
         }else{

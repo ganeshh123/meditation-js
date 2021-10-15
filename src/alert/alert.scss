@@ -27,3 +27,11 @@
     margin-left: 25px;
     margin-right: 25px;
 }
+
+.loading{
+    z-index: 5;
+    height: 4.5vh;
+    position: fixed;
+    bottom: 10vh;
+    right: 50px;
+}
