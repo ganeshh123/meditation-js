@@ -18,6 +18,14 @@ export default class SceneVideo extends React.Component{
     render(){
         let currentScene = this.props.scene
 
+        {if(this.props.videoDisabled){
+            return(
+                <div style={{display: "none"}}>
+
+                </div>
+            )
+        }}
+
         return(
             <video 
                 id="sceneVideo"

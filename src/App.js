@@ -88,7 +88,7 @@ class App extends React.Component {
         <SceneImage scene={this.state.currentScene} videoLoaded={this.state.videoLoaded} />
         <AudioPlayer appState={this.state} type='sfx' />
         <AudioPlayer appState={this.state} type='music' />
-        <SceneVideo scene={this.state.currentScene} videoLoaded={this.state.videoLoaded} update={this.updateState}/>
+        <SceneVideo scene={this.state.currentScene} videoDisabled={this.state.videoDisabled} videoLoaded={this.state.videoLoaded} update={this.updateState}/>
 
         <div id="appTop">
            <TitleBar appTitleText="Calmeo" appState={this.state} />
