@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './titleBarStyle.scss'
+import './titleBar.scss'
 
 export default class TitleBar extends React.Component {
 
@@ -8,8 +8,8 @@ export default class TitleBar extends React.Component {
         super(props)
     }
 
-    setColors = () => {
-        this.titleBarColors = {
+    setStyle = () => {
+        this.titleBarStyle = {
           backgroundColor: this.props.appState.currentTheme.backgroundColor,
           border: this.props.appState.currentTheme.border,
           boxShadow: this.props.appState.currentTheme.boxShadow,
@@ -18,7 +18,7 @@ export default class TitleBar extends React.Component {
           color: this.props.appState.currentTheme.accentColor
         }
 
-        this.titleBarIconColors = {
+        this.titleBarIconStyle = {
             filter: this.props.appState.currentTheme.iconColor
         }
     }
@@ -41,16 +41,15 @@ export default class TitleBar extends React.Component {
     }
   
     render = () => {
-
-      this.setColors()
+      this.setStyle()
 
       return(
-        <div id="titleBar" className="glassBlock" style={this.titleBarColors}>
+        <div id="titleBar" className="glassBlock" style={this.titleBarStyle}>
           <h1 id="appTitleText" onClick={this.appTitlePressed}>{this.props.appTitleText}</h1>
           <div id="buttonsHolder">
                 <img 
                   src={"./assets/icons/about_icon.svg"} 
-                  style={this.titleBarIconColors}
+                  style={this.titleBarIconStyle}
                   id="aboutButton"
                   className="iconButton"
                   title="About"
@@ -59,7 +58,7 @@ export default class TitleBar extends React.Component {
                 />
                 <img 
                   src={"./assets/icons/settings_icon.svg"} 
-                  style={this.titleBarIconColors}
+                  style={this.titleBarIconStyle}
                   id="settingsButton"
                   className="iconButton"
                   title="Settings"
