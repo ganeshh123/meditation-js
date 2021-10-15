@@ -43,7 +43,9 @@ export default class PresetsController{
             launchShowing: false,
             firstTime: false,
             currentScene: preset['sceneId'],
-            currentMusicTrack: preset['musicId']
+            currentMusicTrack: preset['musicId'],
+            videoLoaded: false,
+            imageLoaded: false
         }
         
         appState.setStateFunction(update, () => {
