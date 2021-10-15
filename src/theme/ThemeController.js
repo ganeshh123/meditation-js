@@ -11,22 +11,22 @@ class ThemeController {
 
         if(currentThemeName === 'dark'){
             newThemeObject = {
-                currentTheme: this.bdFilterSupport ? staticThemes['light'] : staticThemes['lightNb']
+                currentTheme: this.bdFilterSupport ? this.staticThemes['light'] : this.staticThemes['lightNb']
             }
         }
         else if(currentThemeName === 'light'){
             newThemeObject = {
-                currentTheme: this.bdFilterSupport ? staticThemes['dark'] : staticThemes['darkNb']
+                currentTheme: this.bdFilterSupport ? this.staticThemes['dark'] : this.staticThemes['darkNb']
             }
         }
         else if(currentThemeName === 'darkSolid'){
             newThemeObject = {
-                currentTheme: staticThemes['lightSolid']
+                currentTheme: this.staticThemes['lightSolid']
             }
         }
         else if(currentThemeName === 'lightSolid'){
             newThemeObject = {
-                currentTheme: staticThemes['darkSolid']
+                currentTheme: this.staticThemes['darkSolid']
             }
         }
 
@@ -40,15 +40,15 @@ class ThemeController {
 
         if(solidBg == 'Off'){
             if(currentThemeName.includes('light')){
-                newThemeObject = StaticThemes['lightSolid']
+                newThemeObject = this.staticThemes['lightSolid']
             }else{
-                newThemeObject = StaticThemes['darkSolid']
+                newThemeObject = this.staticThemes['darkSolid']
             }
         }else{
             if(currentThemeName.includes('light')){
-                newThemeObject = this.bdFilterSupport? StaticThemes['light'] : StaticThemes['lightNb']
+                newThemeObject = this.bdFilterSupport? this.staticThemes['light'] : this.staticThemes['lightNb']
             }else{
-                newThemeObject = this.bdFilterSupport? StaticThemes['dark'] : StaticThemes['darkNb']
+                newThemeObject = this.bdFilterSupport? this.staticThemes['dark'] : this.staticThemes['darkNb']
             }
         }
 
