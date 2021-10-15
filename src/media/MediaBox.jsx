@@ -3,7 +3,7 @@ import React from 'react'
 import SceneController from './SceneController'
 import MusicController from './MusicController'
 
-import './mediaSelectStyle.scss'
+import './mediaSelect.scss'
 
 export default class MediaBox extends React.Component{
 

@@ -4,7 +4,7 @@ import SelectionVolumeControl from './SelectionVolumeControl'
 import SceneController from './SceneController'
 import MusicController from './MusicController'
 
-import './mediaSelectStyle.scss'
+import './mediaSelect.scss'
 
 export default class SceneControlPanel extends React.Component{
     constructor(props){
