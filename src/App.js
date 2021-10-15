@@ -6,10 +6,10 @@ import SettingsStore from './utils/settings/settingsStore'
 import MediaSources from './utils/mediasources/MediaSources';
 import UIHide from './utils/uihide/UIHide';
 import TitleBar from './titlebar/TitleBar'
-import SceneControlPanel from './scenecontrols/SceneControlPanel'
-import SceneVideo from './scenemedia/SceneVideo'
-import SceneImage from './scenemedia/SceneImage'
-import AudioPlayer from './scenemedia/AudioPlayer'
+import SceneControlPanel from './media/SceneControlPanel'
+import SceneVideo from './media/SceneVideo'
+import SceneImage from './media/SceneImage'
+import AudioPlayer from './media/AudioPlayer'
 import Timer from './timer/Timer'
 import SidePanel from './sidepanel/SidePanel'
 import Overlay from './overlay/Overlay'
@@ -81,10 +81,10 @@ class App extends React.Component {
     return(
       <div id="app" style={this.appStyle}>
 
-        <SceneImage appState={this.state} />
+        <SceneImage scene={this.state.currentScene} videoLoaded={this.state.videoLoaded} />
         <AudioPlayer appState={this.state} type='sfx' />
         <AudioPlayer appState={this.state} type='music' />
-        <SceneVideo appState={this.state} />
+        <SceneVideo scene={this.state.currentScene} videoLoaded={this.state.videoLoaded} update={this.updateState}/>
 
         <div id="appTop">
            <TitleBar appTitleText="Calmeo" appState={this.state} />

@@ -1,21 +1,18 @@
-/* Global Imports */
 import React from 'react';
 
-/* Local Imports */
-import Theme from '../utils/theme/Theme'
-import './sceneControlPanelStyle.scss'
-
 import SelectionVolumeControl from './SelectionVolumeControl'
-import MediaSources from '../utils/mediasources/MediaSources'
+import SceneController from './SceneController'
+import MusicController from './MusicController'
 
+import './mediaSelectStyle.scss'
 
 export default class SceneControlPanel extends React.Component{
     constructor(props){
         super(props)
     }
 
-    setColors = () => {
-        this.sceneControlColors = {
+    setStyle = () => {
+        this.sceneControlStyle = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
@@ -24,34 +21,30 @@ export default class SceneControlPanel extends React.Component{
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.dividerColors = {
+        this.sceneControlDividerStyle = {
             backgroundColor: this.props.appState.currentTheme.accentColor
         }
     }
 
     render(){
-
-        this.setColors()
-
+        this.setStyle()
         let appState = this.props.appState
 
         return(
-            <div id="sceneControlPanel" className="glassBlock" style={this.sceneControlColors}>
+            <div id="sceneControlPanel" className="glassBlock" style={this.sceneControlStyle}>
                 <div className="controlHolder">
                     <SelectionVolumeControl
-                        sourcesArray={MediaSources.getMusicArray()}
-                        sources={MediaSources.getMusic()}
-                        selected={appState.currentMusicTrack}
+                        sourceIds={MusicController.getMusicIds()}
+                        selectedId={appState.currentMusicTrack}
                         sourceType='musicTrack'
                         appState={appState}
                     />
                 </div>
-                <div id="divider" style={this.dividerColors}></div>
+                <div id="divider" style={this.sceneControlDividerStyle}></div>
                 <div className="controlHolder">
                     <SelectionVolumeControl
-                        sourcesArray={MediaSources.getScenesArray()} 
-                        sources={MediaSources.getScenes()}
-                        selected={appState.currentScene}
+                        sourceIds={SceneController.getSceneIds()}
+                        selectedId={appState.currentScene}
                         sourceType='scene'
                         appState={appState}
                     />

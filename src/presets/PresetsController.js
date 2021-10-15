@@ -1,5 +1,3 @@
-import MediaSources from "../utils/mediasources/MediaSources"
-
 export default class PresetsController{
 
     static presets = []

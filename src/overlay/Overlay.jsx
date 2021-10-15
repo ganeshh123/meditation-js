@@ -3,7 +3,7 @@ import React from 'react';
 import Settings from '../settings/Settings'
 import Launch from '../launch/Launch'
 import TimerSetup from '../timer/TimerSetup'
-import MediaSelect from '../scenecontrols/MediaSelect'
+import MediaSelect from '../media/MediaSelect'
 import Confirmation from '../alert/Confirmation'
 
 import './overlay.scss'

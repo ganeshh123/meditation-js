@@ -5,11 +5,8 @@ class Theme {
     static staticThemes = staticThemes
 
     static switchTheme = (appState) => {
-
         let currentThemeName = appState['currentTheme']['name']
-
         let bdFilterSupport = CSS.supports('backdrop-filter', 'blur(2.6vh)')
-
         let newThemeObject = {}
 
         if(currentThemeName === 'dark'){

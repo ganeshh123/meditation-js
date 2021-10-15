@@ -1,23 +1,21 @@
-/* Global Imports */
 import React from 'react';
 
-/* Local Imports */
-import MediaSources from '../utils/mediasources/MediaSources';
-import './selectionVolumeControlStyle.scss'
-import './mediaSelectStyles.scss'
+import SceneController from './SceneController'
+import MusicController from './MusicController'
 
+import './mediaSelectStyle.scss'
 
 export default class SelectionVolumeControl extends React.Component{
     constructor(props){
         super(props) 
     }
 
-    setColors = () => {
-        this.selectionVolumeControlColors = {
+    setStyle = () => {
+        this.selectionVolumeControlStyle = {
             color: this.props.appState['currentTheme']['accentColor']
         }
 
-        this.iconColors = {
+        this.selectionVolumeControlIconStyle = {
             filter: this.props.appState.currentTheme.iconColor
         }
 
@@ -28,30 +26,25 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     getMediaSelectOpenButtonIcon = () => {
-        let appState = this.props.appState
         let type = this.props.sourceType
 
         if(type == 'scene'){
             return './assets/icons/video_on_icon.svg'
         }
-
         if(type == 'musicTrack'){
             return './assets/icons/note_icon.svg'
         }
     }
 
     getMediaSelectOpenButtonText = () => {
-        let appState = this.props.appState
+        let sourceId = this.props.selectedId
         let type = this.props.sourceType
 
         if(type == 'scene'){
-            let currentScene = appState['currentScene']
-            return MediaSources.getSceneName(currentScene)
+            return SceneController.getSceneName(sourceId)
         }
-
         if(type == 'musicTrack'){
-            let currentMusicTrack = appState['currentMusicTrack']
-            return MediaSources.getMusicName(currentMusicTrack)
+            return MusicController.getMusicName(sourceId)
         }
     }
 
@@ -62,13 +55,9 @@ export default class SelectionVolumeControl extends React.Component{
         let updateState = {
             mediaSelectShowing: true,
             mediaSelectConfig: {type: type}
-        }
-        
+        } 
         appState.setStateFunction(updateState)
     }
-
-
-    /* Volume Controls */
     
     getVolumeIcon = () => {
         let appState = this.props.appState
@@ -183,10 +172,10 @@ export default class SelectionVolumeControl extends React.Component{
     }
 
     render(){
-        this.setColors();
+        this.setStyle();
 
         return(
-            <div className="selectionVolumeControl" style={this.selectionVolumeControlColors}>
+            <div className="selectionVolumeControl" style={this.selectionVolumeControlStyle}>
                 <div 
                     className="mediaSelectOpenButton"
                     style={this.mediaSelectOpenButtonStyle}
@@ -195,7 +184,7 @@ export default class SelectionVolumeControl extends React.Component{
                     <img 
                         className='mediaSelectOpenButtonIcon iconButton' 
                         src={this.getMediaSelectOpenButtonIcon()} 
-                        style={this.iconColors}
+                        style={this.selectionVolumeControlIconStyle}
                         onClick={this.mediaSelectOpenButtonPressed}
                     />
                     <div
@@ -209,7 +198,7 @@ export default class SelectionVolumeControl extends React.Component{
                     <img 
                         className='volumeIcon iconButton' 
                         src={this.getVolumeIcon()} 
-                        style={this.iconColors}
+                        style={this.selectionVolumeControlIconStyle}
                         onClick={this.volumeIconPressed}
                     />
                     <input 

@@ -1,8 +1,9 @@
-/* Global Imports */
-import React from 'react';
+import React from 'react'
 
-import MediaSources from '../utils/mediasources/MediaSources';
-import './mediaSelectStyles.scss'
+import SceneController from './SceneController'
+import MusicController from './MusicController'
+
+import './mediaSelectStyle.scss'
 
 export default class MediaBox extends React.Component{
 
@@ -11,81 +12,75 @@ export default class MediaBox extends React.Component{
     }
 
     getMediaImage = () =>{
-        let media = this.props.media
-        let config = this.props.appState.mediaSelectConfig
-        let type = config['type']
+        let mediaId = this.props.mediaId
+        let type = this.props.appState.mediaSelectConfig['type']
 
         if(type == "scene"){
-            return MediaSources.getSceneImageThumb(media['id'])
+            return SceneController.getSceneImageThumb(mediaId)
         }
-
         if(type == 'musicTrack'){
-            return MediaSources.getMusicImageThumb(media['id'])
+            return MusicController.getMusicImageThumb(mediaId)
         }
     }
 
-    setStyles = () => {
-        this.mediaBoxColors = {
+    setStyle = () => {
+        this.mediaBoxStyle = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
             boxShadow: this.props.appState.currentTheme.boxShadow,
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.mediaBoxImageStyles = {
+        this.mediaBoxImageStyle = {
             backgroundImage: 'url(' + this.getMediaImage() + ')'
         }
 
-        this.mediaBoxDescriptionStyles = {
+        this.mediaBoxDescriptionStyle = {
             backgroundColor: this.props.appState.currentTheme.overlayColor
         }
     }
 
     mediaBoxClicked = (event) => {
         let appState = this.props.appState
-        let config = this.props.appState.mediaSelectConfig
-        let type = config['type']
-        let sourceId = this.props.media['id']
+        let type = this.props.appState.mediaSelectConfig['type']
+        let mediaId = this.props.mediaId
 
         let updateState = {
             mediaSelectShowing: false
         }
-
         if(type == 'scene'){
-            updateState['currentScene'] = sourceId
+            updateState['currentScene'] = mediaId
             updateState['videoLoaded'] = false
         }
-
         if(type == 'musicTrack'){
-            updateState['currentMusicTrack'] = sourceId
+            updateState['currentMusicTrack'] = mediaId
         }
 
         appState.setStateFunction(updateState)
     }
 
     render(){
+        let type = this.props.appState.mediaSelectConfig['type']
+        let mediaId = this.props.mediaId
 
-        let appState = this.props.appState
-        let media = this.props.media
-
-        this.setStyles()
+        this.setStyle()
 
         return(
-            <div className="mediaBox" style={this.mediaBoxColors}>
+            <div className="mediaBox" style={this.mediaBoxStyle}>
                 <div
                     className="mediaBoxDescription"
-                    style={this.mediaBoxDescriptionStyles}
+                    style={this.mediaBoxDescriptionStyle}
                     onClick={this.mediaBoxClicked}
                 >
-                    {media['description']}
+                    {type == "scene" ? SceneController.getSceneDescription(mediaId) : MusicController.getMusicDescription(mediaId)}
                 </div>
                 <div 
                     className="mediaBoxImage"
-                    style={this.mediaBoxImageStyles}
+                    style={this.mediaBoxImageStyle}
                 ></div>
                 <div
                     className="mediaBoxTitle"
                 >
-                    {media['name']}
+                    {type == "scene" ? SceneController.getSceneName(mediaId) : MusicController.getMusicName(mediaId)}
                 </div>
             </div>
         )

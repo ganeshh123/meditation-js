@@ -1,38 +1,30 @@
-/* Global Imports */
 import React from 'react';
 
-import SettingsStore from '../utils/settings/settingsStore';
-import MediaSources from '../utils/mediasources/MediaSources';
+import SettingsStore from '../utils/settings/settingsStore'
+import SceneController from './SceneController'
+import MusicController from './MusicController'
 
 export default class AudioPlayer extends React.Component{
     constructor(props){
         super(props)
-
-    }
-
-    state = {
-
     }
 
     getAudioPath = () => {
         let appState = this.props.appState
         let type = this.props.type
 
-        let audioPath
-
         if(type == 'sfx'){
             let currentScene = appState['currentScene']
-            return MediaSources.getSceneSfx(currentScene)
+            return SceneController.getSceneSfx(currentScene)
         }else if(type == 'music'){
             let currentTrack = appState['currentMusicTrack']
-            return MediaSources.getMusicAudio(currentTrack)
+            return MusicController.getMusicAudio(currentTrack)
         }
     }
 
-    setAudioVolume = () => {
+    applyAudioVolume = () => {
         let appState = this.props.appState
         let type = this.props.type
-
         let volumePercentage = 50
 
         if(type == 'sfx'){
@@ -40,7 +32,6 @@ export default class AudioPlayer extends React.Component{
         }else if(type == 'music'){
             volumePercentage = appState['musicAudioVolume']
         }
-
         let volumeValue = volumePercentage / 100
 
         if(type == 'sfx'){
@@ -53,17 +44,12 @@ export default class AudioPlayer extends React.Component{
 
     componentDidMount = () => {
         let appState = this.props.appState
-        
         let updateState ={}
 
-        let sfxMuted = SettingsStore.readSetting('sfxMuted')
-        let musicMuted = SettingsStore.readSetting('musicMuted')
-
-        if(sfxMuted){
+        if(SettingsStore.readSetting('sfxMuted')){
             updateState['sfxMuted'] = true
         }
-
-        if(musicMuted){
+        if(SettingsStore.readSetting('musicMuted')){
             updateState['musicMuted'] = true
         }
 
@@ -74,7 +60,7 @@ export default class AudioPlayer extends React.Component{
     }
 
     componentDidUpdate = () => {
-        this.setAudioVolume()
+        this.applyAudioVolume()
     }
 
     render(){

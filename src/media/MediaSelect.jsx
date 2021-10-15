@@ -2,8 +2,10 @@
 import React from 'react';
 
 import MediaBox from './MediaBox'
-import MediaSources from '../utils/mediasources/MediaSources'
-import './mediaSelectStyles.scss'
+import SceneController from './SceneController'
+import MusicController from './MusicController'
+
+import './mediaSelectStyle.scss'
 
 export default class MediaSelect extends React.Component{
 
@@ -11,17 +13,12 @@ export default class MediaSelect extends React.Component{
         super(props)
     }
 
-    setColors = () => {
-        this.mediaSelectColors = {
-            //backgroundColor: this.props.appState.currentTheme.backgroundColor,
-            //border: this.props.appState.currentTheme.border,
-            //boxShadow: this.props.appState.currentTheme.boxShadow,
-            //backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            //WebkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+    setStyle = () => {
+        this.mediaSelectStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.buttonColors = {
+        this.mediaSelectButtonStyle = {
             backgroundColor: this.props.appState.currentTheme.buttonBackgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
@@ -30,7 +27,7 @@ export default class MediaSelect extends React.Component{
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.mediaSelectIconColors = {
+        this.mediaSelectIconStyle = {
             filter: this.props.appState.currentTheme.iconColor
         }
     }
@@ -53,22 +50,19 @@ export default class MediaSelect extends React.Component{
         if(type == 'scene'){
             return 'Locations'
         }
-
         if(type == 'musicTrack'){
             return 'Soundtracks'
         }
     }
 
-    getMediaChoices = () => {
-        let appState = this.props.appState
+    getMediaIds = () => {
         let type = this.props.appState.mediaSelectConfig['type']
 
         if(type == 'scene'){
-            return MediaSources.getScenesArray()
+            return SceneController.getSceneIds()
         }
-
         if(type == 'musicTrack'){
-            return MediaSources.getMusicArray()
+            return MusicController.getMusicIds()
         }
     }
 
@@ -81,15 +75,12 @@ export default class MediaSelect extends React.Component{
     }
 
     render(){
-
-        this.setColors()
+        this.setStyle()
         this.setupKeys()
-
         let appState = this.props.appState
-        let mediaArray = this.getMediaChoices()
 
         return(
-            <div className='mediaSelect' style={this.mediaSelectColors} onClick={this.mediaSelectCloseButtonPressed}>
+            <div className='mediaSelect' style={this.mediaSelectStyle} onClick={this.mediaSelectCloseButtonPressed}>
                 <div className='mediaSelectTitle'>
                     {this.getMediaSelectTitle()}
                 </div>
@@ -97,14 +88,14 @@ export default class MediaSelect extends React.Component{
                     className='mediaSelectCloseButton iconButton'
                     src='./assets/icons/cross_icon.svg'
                     onClick={this.mediaSelectCloseButtonPressed}
-                    style={this.mediaSelectIconColors}
+                    style={this.mediaSelectIconStyle}
                 />
                 <div className="mediaSelectMenuContainer">
                 <div className='mediaSelectMenu'>
 
-                    {mediaArray.map((media, index) => {
+                    {appState.mediaInfoFetched && this.getMediaIds().map((mediaId, index) => {
                         return(
-                            <MediaBox appState={appState} media={media} key={index} />
+                            <MediaBox appState={appState} mediaId={mediaId} key={index} />
                         )
                     } )}
 
