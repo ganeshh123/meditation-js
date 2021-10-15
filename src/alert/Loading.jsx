@@ -12,6 +12,7 @@ export default class Loading extends React.Component {
         let appState = this.props.appState
         let loadingConditions = [
             appState.mediaInfoFetched == false,
+            appState.imageLoaded = false,
             appState.videoDisabled == false && appState.videoLoaded == false
         ]
         let shouldShowLoading = false

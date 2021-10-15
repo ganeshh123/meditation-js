@@ -23,6 +23,11 @@ export default class SceneImage extends React.Component{
             <img
                 id="sceneImage"
                 src={this.getImagePath()}
+                onLoad={() => {
+                    this.props.update({
+                        imageLoaded: true
+                    })
+                }}
             />
         )
     }

@@ -50,6 +50,7 @@ export default class MediaBox extends React.Component{
         if(type == 'scene'){
             updateState['currentScene'] = mediaId
             updateState['videoLoaded'] = false
+            updateState['imageLoaded'] = false
         }
         if(type == 'musicTrack'){
             updateState['currentMusicTrack'] = mediaId
