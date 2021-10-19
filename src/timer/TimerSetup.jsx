@@ -1,10 +1,9 @@
-/* Global Imports */
 import React from 'react';
-
-import './timerSetupStyle.scss'
 
 import TimerLengthAdjuster from './TimerLengthAdjuster'
 import SettingsController from '../settings/SettingsController'
+
+import './timer.scss'
 
 export default class TimerSetup extends React.Component{
     constructor(props){
@@ -23,7 +22,6 @@ export default class TimerSetup extends React.Component{
     }
 
     setSelectedLength = (type, newValue) => {
-
         let newState = {}
         
         if(type === 'session'){
@@ -34,7 +32,6 @@ export default class TimerSetup extends React.Component{
                 newState['selectedSessionLengthInvalid'] = false
             }
         }
-
         if(type === 'break'){
             newState['selectedBreakLength'] = newValue
             if(this.valueInvalid(newValue)){
@@ -57,25 +54,20 @@ export default class TimerSetup extends React.Component{
         selectedBreakLengthInvalid: false
     }
 
-    setColors = () => {
-        this.timerSetupColors = {
-            //backgroundColor: this.props.appState.currentTheme.backgroundColor,
-            //border: this.props.appState.currentTheme.border,
-            //boxShadow: this.props.appState.currentTheme.boxShadow,
-            //backdropFilter : this.props.appState.currentTheme.backdropFilter,
-            //webkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
+    setStyle = () => {
+        this.timerSetupStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.timerSetupIconColors = {
+        this.timerSetupIconStyle = {
             filter: this.props.appState.currentTheme.iconColor
         }
 
-        this.timerSetupTextColors = {
+        this.timerSetupTextStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.timerSetupButtonColours = {
+        this.timerSetupButtonStyle = {
             backgroundColor: this.props.appState.currentTheme.buttonBackgroundColor,
             border: this.props.appState.currentTheme.border,
             boxShadow: this.props.appState.currentTheme.boxShadow,
@@ -86,9 +78,7 @@ export default class TimerSetup extends React.Component{
     }
 
     beginButtonPressed = () => {
-
         let appState = this.props.appState
-
         if(this.state['selectedSessionLengthInvalid'] || this.state['selectedBreakLengthInvalid']){
             return
         }
@@ -104,7 +94,6 @@ export default class TimerSetup extends React.Component{
 
     startNewTimer = () => {
         let appState = this.props.appState
-
         clearInterval(appState['timerInterval'])
 
         appState.setStateFunction({
@@ -145,18 +134,17 @@ export default class TimerSetup extends React.Component{
     }
 
     render(){
-
-        this.setColors()
+        this.setStyle()
         this.setupKeys()
 
         return(
-            <div id='timerSetup' style={this.timerSetupColors}>
-                <div id='timerSetupTitle' style={this.timerSetupTextColors}>
+            <div id='timerSetup' style={this.timerSetupStyle}>
+                <div id='timerSetupTitle' style={this.timerSetupTextStyle}>
                     Setup Timer
                 </div>
                 <img 
                         src={'./assets/icons/cross_icon.svg'} 
-                        style={this.timerSetupIconColors}
+                        style={this.timerSetupIconStyle}
                         id='timerSetupCloseButton'
                         onClick={this.closeButtonPressed}
                 />
@@ -179,15 +167,15 @@ export default class TimerSetup extends React.Component{
                         id='timerSetupBeginButton'
                         className='glassBlock'
                         onClick={this.beginButtonPressed}
-                        style={this.timerSetupButtonColours}
+                        style={this.timerSetupButtonStyle}
                     >
                         Begin
                     </button>
                 </div>
-                <div id='timerSetupWarning' style={this.timerSetupTextColors}>
+                <div id='timerSetupWarning' style={this.timerSetupTextStyle}>
                     <img 
                         src={'./assets/icons/about_icon.svg'} 
-                        style={this.timerSetupIconColors}
+                        style={this.timerSetupIconStyle}
                         id='timerSetupWarningIcon'
                     />
                     Your current timer will be reset

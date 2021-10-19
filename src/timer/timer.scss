@@ -143,3 +143,154 @@
     justify-content: space-between;
     align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.timerLengthAdjuster{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 15px 0px 15px;
+}
+
+.timerLengthAdjusterValues{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timerLengthAdjusterContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.timerLengthAdjusterType{
+    text-transform: capitalize;
+    font-size: 20pt;
+    margin-top: 10px;
+}
+
+.timerLengthAdjusterInput{
+    font-size: 3vw;
+    max-width: 50px;
+    margin: 0px 10px 0px 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+input:focus{
+   outline: 2px solid #72ce35;
+}
+
+.timerLengthAdjusterUnit{
+    font-size: 15pt;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#timerSetup {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    padding: 2vh;
+    border-radius: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#timerSetupCloseButton{
+    height: 4.5vh;
+    position: fixed;
+    top: 2.5vh;
+    right: 50px;
+    cursor: pointer;
+}
+
+#timerSetupTitle {
+    margin-left: 1vh;
+    font-size: 5vh;
+    text-align: center;
+}
+
+#timerSetupMain{
+    flex: 1;
+    max-width: 600px;
+    width: auto;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerSetupMiddle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#timerSetupWarning {
+    display: flex;
+    font-size: 3vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+}
+
+#timerSetupWarningIcon {
+    margin-right: 2vh;
+    height: 4vh;
+    width: auto;
+}
+
+#timerSetupBeginButton {
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 5vh;
+    padding: 0.2vh 1vh 0.5vh 1vh;
+    cursor: pointer;
+    border-radius: 1.5vh;
+    margin-bottom: 5vh;
+}

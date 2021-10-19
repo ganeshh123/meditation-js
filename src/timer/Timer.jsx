@@ -3,13 +3,14 @@ import React from 'react';
 import SettingsController from '../settings/SettingsController'
 import UIHide from '../utils/uihide/UIHide'
 
-import './timerStyle.scss'
+import './timer.scss'
+
 export default class Timer extends React.Component {
     constructor(props) {
         super(props)
     }
 
-    setColors = () => {
+    setStyle = () => {
         this.timerStyle = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor,
             border: this.props.appState.currentTheme.border,
@@ -20,32 +21,27 @@ export default class Timer extends React.Component {
             visibility: this.props.appState.timerEnabled ? 'visible' : 'hidden'
         }
 
-        this.timerTextColors = {
+        this.timerTextStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.timerIconColors = {
+        this.timerIconStyle = {
             filter: this.props.appState.currentTheme.iconColor
         }
 
-        this.accentColor = {
+        this.timerProgressBarBackgroundStyle = {
             backgroundColor: this.props.appState.currentTheme.accentColor
         }
 
-        this.timerProgressBarColors = {
+        this.timerProgressBarStyle = {
             backgroundColor: this.props.appState.currentTheme.backgroundColor
         }
-    }
-
-    state = {
-        refresh: 0
     }
 
     setProgressBar = () => {        
         let appState = this.props.appState
         let timerDuration = appState['timerDuration']
         let timerMode = appState['timerMode']
-
         let timeElapsed = timerDuration
         let progressBarWidth = 0
 
@@ -54,13 +50,11 @@ export default class Timer extends React.Component {
             timeElapsed = timerSessionLength - timerDuration
             progressBarWidth = timeElapsed / timerSessionLength
         }
-
         if (timerMode === 'Break') {
             let timerBreakLength = appState['timerBreakLength'] * 60
             timeElapsed = timerBreakLength - timerDuration
             progressBarWidth = timeElapsed / timerBreakLength
         }
-
         let progressBarWidthPercentage = parseInt(progressBarWidth * 100)
 
         this.progressBarStyle = {
@@ -102,7 +96,6 @@ export default class Timer extends React.Component {
         if(!timerData){
             return
         }
-
         if(timerData['timerStatus'] == 'running'){
             timerData['timerStatus'] = 'paused'
         }
@@ -113,13 +106,11 @@ export default class Timer extends React.Component {
     updateTimer = () => {
         let appState = this.props.appState
         let currentTimerDuration = appState['timerDuration']
-
         let updatedAppState = {}
 
         if (currentTimerDuration > 0) {
             updatedAppState['timerDuration'] = currentTimerDuration - 1
         }
-
         if (currentTimerDuration == 0) {
             document.getElementById("alarm-audio").play();
             this.nextPhase()
@@ -139,11 +130,9 @@ export default class Timer extends React.Component {
         if (currentTimerMode === 'Session') {
             this.startBreak()
         }
-
         if (currentTimerMode === 'Break') {
             this.startSession()
         }
-
     }
 
     startSession = () => {
@@ -232,24 +221,20 @@ export default class Timer extends React.Component {
     }
 
     getTimerPlayPauseButtonIcon = () => {
-
         let appState = this.props.appState
         let timerStatus = appState['timerStatus']
 
         if (['paused', 'stopped'].includes(timerStatus)) {
             return './assets/icons/play_icon.svg'
         }
-
         if (timerStatus === 'running') {
             return './assets/icons/pause_icon.svg'
         }
-
     }
 
     /* Button Listeners */
 
     timerPlayButtonPressed = (event) => {
-
         let appState = this.props.appState
         let timerStatus = appState['timerStatus']
         let timerMode = appState['timerMode']
@@ -258,7 +243,6 @@ export default class Timer extends React.Component {
             if (timerMode === 'Session') {
                 this.startSession()
             }
-
             if (timerMode === 'Break') {
                 this.startBreak()
             }
@@ -267,7 +251,6 @@ export default class Timer extends React.Component {
         if (timerStatus === 'paused') {
             this.startTimer()
         }
-
         if (timerStatus === 'running') {
             clearInterval(appState['timerInterval'])
             appState.setStateFunction({
@@ -278,14 +261,7 @@ export default class Timer extends React.Component {
         }
     }
 
-    /*
-    timerStopButtonPressed = (event) => {
-
-    }
-    */
-
     timerBackButtonPressed = (event) => {
-
         let appState = this.props.appState
         let timerMode = appState['timerMode']
 
@@ -294,11 +270,9 @@ export default class Timer extends React.Component {
         if (timerMode === 'Session') {
             this.startSession()
         }
-
         if (timerMode === 'Break') {
             this.startBreak()
         }
-
     }
 
     timerSkipButtonPressed = (event) => {
@@ -307,23 +281,21 @@ export default class Timer extends React.Component {
 
     setTimerPin = () => {
         let timerCurrentlyPinned = UIHide.timerPinned
-
         let timerPinButton = document.querySelector('#timerPinButton')
 
         if (timerCurrentlyPinned == false) {
             timerPinButton.classList.remove('pin-normal')
             timerPinButton.classList.add('pin-rotated')
-        } else {
+        }
+        else {
             timerPinButton.classList.remove('pin-rotated')
             timerPinButton.classList.add('pin-normal')
         }
-
     }
 
     timerPinButtonPressed = () => {
         let appState = this.props.appState
         let timerCurrentlyPinned = appState['timerPinned']
-
         UIHide.timerPinned = !timerCurrentlyPinned
         
         appState.setStateFunction({
@@ -335,7 +307,6 @@ export default class Timer extends React.Component {
     }
 
     timerCloseButtonPressed = () => {
-
         let appState = this.props.appState
 
         let confirmationConfig = {
@@ -395,10 +366,8 @@ export default class Timer extends React.Component {
     }
 
     render() {
-
-        this.setColors()
+        this.setStyle()
         this.setProgressBar()
-        let uiShow = this.props.appState['uiShow']
 
         return (
             <div id='timer' className='glassBlock' style={this.timerStyle}>
@@ -407,29 +376,29 @@ export default class Timer extends React.Component {
                     <div id='timerPinHolder' onClick={this.timerPinButtonPressed}>
                         <img
                             src={'./assets/icons/pin_icon.svg'}
-                            style={this.timerIconColors}
+                            style={this.timerIconStyle}
                             id='timerPinButton'
                             title='Pin/Unpin Window'
                         />
                     </div>
                     <img 
                         src={'./assets/icons/cross_icon.svg'} 
-                        style={this.timerIconColors}
+                        style={this.timerIconStyle}
                         onClick={this.timerCloseButtonPressed}
                         id='timerCloseButton'
                         className='iconButton'
                         title='Close Timer'
                     />
                 </div>
-                <div id='timerTimeDisplay' style={this.timerTextColors}>
+                <div id='timerTimeDisplay' style={this.timerTextStyle}>
                     {this.getMinutes() + ':' + this.getSeconds()}
                 </div>
-                <div id='timerCurrentPhaseDisplay' style={this.timerTextColors}>
+                <div id='timerCurrentPhaseDisplay' style={this.timerTextStyle}>
                     {this.getCurrentPhase()}
                 </div>
                 <div id='timerProgressBarContainer'>
                     <div id='timerProgressBarRange'>
-                        <div id="timerProgressBarBack" style={this.accentColor}></div>
+                        <div id="timerProgressBarBack" style={this.timerProgressBarBackgroundStyle}></div>
                         <div id='timerProgressBar' style={this.progressBarStyle}></div>
                     </div>
                 </div>
@@ -437,7 +406,7 @@ export default class Timer extends React.Component {
                     <div id='timerControls'>
                         <img 
                             src={'./assets/icons/back_icon.svg'} 
-                            style={this.timerIconColors}
+                            style={this.timerIconStyle}
                             id='timerBackButton'
                             title={
                                 'Restart ' + this.props.appState['timerMode']
@@ -447,7 +416,7 @@ export default class Timer extends React.Component {
                         />
                         <img 
                             src={this.getTimerPlayPauseButtonIcon()}
-                            style={this.timerIconColors}
+                            style={this.timerIconStyle}
                             id='timerPlayButton'
                             title={
                                 this.props.appState['timerStatus'] === 'running' ?
@@ -459,7 +428,7 @@ export default class Timer extends React.Component {
                         />
                         <img 
                             src={'./assets/icons/skip_icon.svg'} 
-                            style={this.timerIconColors}
+                            style={this.timerIconStyle}
                             id='timerSkipButton'
                             className='timerViewIcon iconButton'
                             title={
