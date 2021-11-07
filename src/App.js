@@ -92,7 +92,7 @@ class App extends React.Component {
         <SceneVideo scene={this.state.currentScene} videoDisabled={this.state.videoDisabled} videoLoaded={this.state.videoLoaded} update={this.updateState}/>
 
         <div id="appTop">
-           <TitleBar appTitleText="Calmeo" appState={this.state} />
+           <TitleBar appTitleText="Calmeo" updateApp={this.updateState} currentTheme={this.state.currentTheme} />
         </div>
 
         <Overlay appState={this.state} />

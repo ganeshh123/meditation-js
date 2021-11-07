@@ -11,36 +11,33 @@ export default class TitleBar extends React.Component {
   }
 
   setStyle = () => {
+    const currentTheme = this.props.currentTheme
+
     this.titleBarStyle = {
-      backgroundColor: this.props.appState.currentTheme.backgroundColor,
-      border: this.props.appState.currentTheme.border,
-      boxShadow: this.props.appState.currentTheme.boxShadow,
-      backdropFilter: this.props.appState.currentTheme.backdropFilter,
-      WebKitBackdropFilter: this.props.appState.currentTheme.webkitBackdropFilter,
-      color: this.props.appState.currentTheme.accentColor
+      backgroundColor: currentTheme.backgroundColor,
+      border: currentTheme.border,
+      boxShadow: currentTheme.boxShadow,
+      backdropFilter: currentTheme.backdropFilter,
+      WebKitBackdropFilter: currentTheme.webkitBackdropFilter,
+      color: currentTheme.accentColor
     }
 
     this.titleBarIconStyle = {
-      color: this.props.appState.currentTheme.accentColor
+      color: currentTheme.accentColor
     }
   }
 
-  settingsButtonPressed = () => {
-    let appState = this.props.appState
-
-    appState.setStateFunction({
+  settingsButtonPressed = () => (
+    this.props.updateApp({
       settingsShowing: true
-    })
-  }
+    }))
 
-  appTitlePressed = () => {
-    let appState = this.props.appState
-
-    appState.setStateFunction({
+  appTitlePressed = () => (
+    this.props.updateApp({
       firstTime: true,
       launchShowing: true
     })
-  }
+  )
 
   render = () => {
     this.setStyle()
@@ -48,13 +45,12 @@ export default class TitleBar extends React.Component {
     return (
       <div id="titleBar" className="glassBlock" style={this.titleBarStyle}>
         <h1 id="appTitleText" onClick={this.appTitlePressed}>{this.props.appTitleText}</h1>
-        <div id="buttonsHolder">
-          <AboutIcon 
+        <div id="titleBarButtonContainer">
+          <AboutIcon
             style={this.titleBarIconStyle}
             id="aboutButton"
             className="iconButton titleBarIcon"
             title="About"
-            tabIndex="0"
             accessKey="i"
           />
           <SettingsIcon
@@ -62,7 +58,6 @@ export default class TitleBar extends React.Component {
             id="settingsButton"
             className="iconButton titleBarIcon"
             title="Settings"
-            tabIndex="0"
             accessKey="s"
             onClick={this.settingsButtonPressed}
           />
