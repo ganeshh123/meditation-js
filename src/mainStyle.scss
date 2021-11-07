@@ -51,10 +51,12 @@ svg {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #appTop {
