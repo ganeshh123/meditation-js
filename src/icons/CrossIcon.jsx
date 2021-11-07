@@ -6,7 +6,6 @@ function SvgCrossIcon({ title, titleId, ...props }) {
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
       height="1em"
-      viewBox="0 0 22.828 22.828"
       aria-labelledby={titleId}
       {...props}
     >
@@ -15,10 +14,9 @@ function SvgCrossIcon({ title, titleId, ...props }) {
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
-        strokeWidth={2}
+        strokeWidth={3}
       >
-        <path data-name="Line 55" d="M1.414 1.414l20 20" />
-        <path data-name="Line 56" d="M21.414 1.414l-20 20" />
+        <path d="M1 1l40 40M41 1L1 41" />
       </g>
     </svg>
   );

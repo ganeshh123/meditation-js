@@ -2,6 +2,7 @@ import React from 'react';
 
 import TimerLengthAdjuster from './TimerLengthAdjuster'
 import SettingsController from '../settings/SettingsController'
+import {CrossIcon} from '../icons'
 
 import './timer.scss'
 
@@ -57,10 +58,6 @@ export default class TimerSetup extends React.Component{
     setStyle = () => {
         this.timerSetupStyle = {
             color: this.props.appState.currentTheme.accentColor
-        }
-
-        this.timerSetupIconStyle = {
-            filter: this.props.appState.currentTheme.iconColor
         }
 
         this.timerSetupTextStyle = {
@@ -142,11 +139,10 @@ export default class TimerSetup extends React.Component{
                 <div id='timerSetupTitle' style={this.timerSetupTextStyle}>
                     Setup Timer
                 </div>
-                <img 
-                        src={'./assets/icons/cross_icon.svg'} 
-                        style={this.timerSetupIconStyle}
-                        id='timerSetupCloseButton'
-                        onClick={this.closeButtonPressed}
+                <CrossIcon 
+                    className='overlayCloseButton iconButton'
+                    onClick={this.closeButtonPressed}
+                    style={this.timerSetupStyle}
                 />
                 <div id="timerSetupMain">
                     <div id='timerSetupMiddle'>

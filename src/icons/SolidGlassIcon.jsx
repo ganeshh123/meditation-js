@@ -14,7 +14,7 @@ function SvgSolidGlassIcon({ title, titleId, ...props }) {
       <g data-name="Layer 2">
         <g
           data-name="Layer 1"
-          stroke="#1d1d1b"
+          stroke="currentColor"
           strokeLinecap="round"
           strokeWidth={2}
         >
@@ -34,7 +34,6 @@ function SvgSolidGlassIcon({ title, titleId, ...props }) {
           />
           <path
             data-name="Line 169"
-            fill="#1d1d1b"
             strokeLinejoin="round"
             d="M11.132 7.906H6.561"
           />
@@ -46,13 +45,11 @@ function SvgSolidGlassIcon({ title, titleId, ...props }) {
           />
           <path
             data-name="Line 170"
-            fill="#1d1d1b"
             strokeLinejoin="round"
             d="M1.065 18.191v4.547"
           />
           <path
             data-name="Line 171"
-            fill="#1d1d1b"
             strokeLinejoin="round"
             d="M1.065 27.31v4.547"
           />
@@ -64,19 +61,16 @@ function SvgSolidGlassIcon({ title, titleId, ...props }) {
           />
           <path
             data-name="Line 172"
-            fill="#1d1d1b"
             strokeLinejoin="round"
             d="M6.61 42.094h4.547"
           />
           <path
             data-name="Line 173"
-            fill="#1d1d1b"
             strokeLinejoin="round"
             d="M15.704 42.094h2.432"
           />
           <path
             data-name="Line 174"
-            fill="#1d1d1b"
             strokeLinejoin="round"
             d="M15.704 7.906h2.432"
           />

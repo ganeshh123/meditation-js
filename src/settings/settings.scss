@@ -16,13 +16,6 @@
     text-align: center;
 }
 
-#settingsCloseButton {
-    height: 4.5vh;
-    position: fixed;
-    top: 2.5vh;
-    right: 50px;
-}
-
 #settingsMenu {
     flex: 1;
     max-width: 600px;
@@ -60,12 +53,14 @@
     min-width: 90%;
 }
 
-#notificationIcon {
-    height: 5.32vh;
+#notificationVolumeIcon {
+    width: auto;
+    height: 4vw;
 }
 
 #solidGlassIcon {
-    height: 8.6vh;
+    width: auto;
+    height: 4vw;
 }
 
 .settingsMenuItemLabel {

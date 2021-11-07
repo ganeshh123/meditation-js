@@ -24,11 +24,6 @@ body {
     font-size: 62.5%;
 }
 
-svg {
-    stroke-width: 10;
-    stroke-opacity: 50%;
-}
-
 ::selection {
     background: #72ce35;
 }
@@ -103,6 +98,14 @@ svg {
     &:hover {
         opacity: 1;
     }
+}
+
+.overlayCloseButton{
+    height: 4.5vh;
+    width: 4.5vh;
+    position: fixed;
+    top: 2.5vh;
+    right: 50px;
 }
 
 .glassBlock {

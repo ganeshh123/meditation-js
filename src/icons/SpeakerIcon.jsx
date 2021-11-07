@@ -13,7 +13,7 @@ function SvgSpeakerIcon({ title, titleId, ...props }) {
       {title ? <title id={titleId}>{title}</title> : null}
       <g
         fill="none"
-        stroke="#1d1d1b"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeMiterlimit={10}
         strokeWidth={2}

@@ -4,7 +4,7 @@ import React from 'react';
 import MediaBox from './MediaBox'
 import SceneController from './SceneController'
 import MusicController from './MusicController'
-
+import {CrossIcon} from '../icons'
 import './mediaSelect.scss'
 
 export default class MediaSelect extends React.Component{
@@ -25,10 +25,6 @@ export default class MediaSelect extends React.Component{
             backdropFilter : this.props.appState.currentTheme.backdropFilter,
             WebkitBackdropFilter : this.props.appState.currentTheme.webkitBackdropFilter,
             color: this.props.appState.currentTheme.accentColor
-        }
-
-        this.mediaSelectIconStyle = {
-            filter: this.props.appState.currentTheme.iconColor
         }
     }
 
@@ -84,11 +80,10 @@ export default class MediaSelect extends React.Component{
                 <div className='mediaSelectTitle'>
                     {this.getMediaSelectTitle()}
                 </div>
-                <img 
-                    className='mediaSelectCloseButton iconButton'
-                    src='./assets/icons/cross_icon.svg'
+                <CrossIcon 
+                    className='overlayCloseButton iconButton'
                     onClick={this.mediaSelectCloseButtonPressed}
-                    style={this.mediaSelectIconStyle}
+                    style={this.mediaSelectStyle}
                 />
                 <div className="mediaSelectMenuContainer">
                 <div className='mediaSelectMenu'>

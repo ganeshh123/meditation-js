@@ -1,9 +1,8 @@
-import React from 'react';
-
+import React from 'react'
 import SettingsController from './SettingsController'
 import VolumeController from '../media/VolumeController'
-import ThemeController from '../theme/ThemeController';
-
+import ThemeController from '../theme/ThemeController'
+import {CrossIcon, SpeakerIcon, SolidGlassIcon} from '../icons'
 import './settings.scss'
 
 export default class Settings extends React.Component{
@@ -57,20 +56,18 @@ export default class Settings extends React.Component{
                 <div id='settingsTitle'>
                     Settings
                 </div>
-                <img 
+                <CrossIcon 
                     id='settingsCloseButton'
-                    className='iconButton'
-                    src='./assets/icons/cross_icon.svg'
+                    className='overlayCloseButton iconButton'
                     onClick={this.settingsCloseButtonPressed}
-                    style={this.settingsIconStyle}
+                    style={this.settingsStyle}
                 />
                 <div id='settingsMenu'>
                     <div className='settingsMenuItem'>
                         <div className='settingsMenuItemLeftSide'>
-                            <img 
-                                id='notificationIcon'
-                                src='./assets/icons/speaker_icon.svg'
-                                style={this.settingsIconStyle}
+                            <SpeakerIcon
+                                id='notificationVolumeIcon'
+                                style={this.settingsStyle}
                             />
                             <div className='settingsMenuItemLabel'>
                                 Notification Volume
@@ -91,10 +88,9 @@ export default class Settings extends React.Component{
 
                     <div className='settingsMenuItem'>
                         <div className='settingsMenuItemLeftSide'>
-                            <img 
+                            <SolidGlassIcon 
                                 id='solidGlassIcon'
-                                src='./assets/icons/solid_glass_icon.svg' 
-                                style={this.settingsIconStyle}
+                                style={this.settingsStyle}
                             />
                             <div className='settingsMenuItemLabel'>
                                 Solid Windows

@@ -1,7 +1,6 @@
 import React from 'react';
-
 import PresetSelector from '../presets/PresetSelector';
-
+import { AboutIcon } from '../icons'
 import './launch.scss'
 
 export default class Launch extends React.Component{
@@ -16,7 +15,7 @@ export default class Launch extends React.Component{
         }
 
         this.launchIconStyle = {
-            filter: this.props.appState.currentTheme.iconColor
+            color: this.props.appState.currentTheme.iconColor
         }
 
         this.launchButtonStyle = {
@@ -71,8 +70,7 @@ export default class Launch extends React.Component{
                 </div>
                 {this.isFirstTime() &&
                     <div className="launchNotification">
-                    <img 
-                        src={'./assets/icons/about_icon.svg'}
+                    <AboutIcon
                         style={this.launchIconStyle}
                         className='launchNotificationIcon'
                     />
