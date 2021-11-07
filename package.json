@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --progress --config ./src/webpack-web.config.js --mode development",
     "build-web": "webpack --config ./src/webpack-web.config.js -o ./dist/web/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "svgr": "svgr -d src/icons assets/icons --icon --replace-attr-values '#000=currentColor' --title-prop --ext 'jsx'"
   },
   "repository": {
     "type": "git",
@@ -35,12 +36,14 @@
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
+    "@svgr/cli": "^5.5.0",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^6.0.0",
     "react-hot-loader": "^4.13.0",
+    "rimraf": "^3.0.2",
     "sass-loader": "^11.1.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.37.1",
