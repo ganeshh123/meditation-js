@@ -2,7 +2,7 @@ import React from 'react';
 
 import TimerLengthAdjuster from './TimerLengthAdjuster'
 import SettingsController from '../settings/SettingsController'
-import {CrossIcon} from '../icons'
+import {CrossIcon, AboutIcon} from '../icons'
 
 import './timer.scss'
 
@@ -169,9 +169,8 @@ export default class TimerSetup extends React.Component{
                     </button>
                 </div>
                 <div id='timerSetupWarning' style={this.timerSetupTextStyle}>
-                    <img 
-                        src={'./assets/icons/about_icon.svg'} 
-                        style={this.timerSetupIconStyle}
+                    <AboutIcon
+                        style={this.timerSetupStyle}
                         id='timerSetupWarningIcon'
                     />
                     Your current timer will be reset

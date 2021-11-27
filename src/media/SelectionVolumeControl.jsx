@@ -2,6 +2,7 @@ import React from 'react';
 
 import SceneController from './SceneController'
 import MusicController from './MusicController'
+import {NoteIcon, VideoOnIcon, NoteOffIcon, SpeakerIcon, SpeakerOffIcon} from '../icons'
 
 import './mediaSelect.scss'
 
@@ -29,10 +30,18 @@ export default class SelectionVolumeControl extends React.Component{
         let type = this.props.sourceType
 
         if(type == 'scene'){
-            return './assets/icons/video_on_icon.svg'
+            return (<VideoOnIcon 
+                        className='mediaSelectOpenButtonIcon iconButton'
+                        style={this.selectionVolumeControlStyle}
+                        onClick={this.mediaSelectOpenButtonPressed}
+                    />)
         }
         if(type == 'musicTrack'){
-            return './assets/icons/note_icon.svg'
+            return (<NoteIcon 
+                        className='mediaSelectOpenButtonIcon iconButton'
+                        style={this.selectionVolumeControlStyle}
+                        onClick={this.mediaSelectOpenButtonPressed}
+                    />)
         }
     }
 
@@ -62,25 +71,46 @@ export default class SelectionVolumeControl extends React.Component{
     getVolumeIcon = () => {
         let appState = this.props.appState
 
-        let iconPath = './assets/icons/'
         if(this.props.sourceType == 'musicTrack'){
 
             if(appState['musicMuted'] == false){
-                iconPath = iconPath + 'note_icon.svg'
+                return(
+                    <NoteIcon 
+                        className='volumeIcon iconButton' 
+                        style={this.selectionVolumeControlStyle}
+                        onClick={this.volumeIconPressed}
+                    />
+                )
             }else{
-                iconPath = iconPath + 'note_off_icon.svg'
+                return(
+                    <NoteOffIcon 
+                        className='volumeIcon iconButton' 
+                        style={this.selectionVolumeControlStyle}
+                        onClick={this.volumeIconPressed}
+                    />
+                )
             }
 
         }else if(this.props.sourceType == 'scene'){
 
             if(appState['sfxMuted'] == false){
-                iconPath = iconPath +'speaker_icon.svg'
+                return(
+                    <SpeakerIcon 
+                        className='volumeIcon iconButton' 
+                        style={this.selectionVolumeControlStyle}
+                        onClick={this.volumeIconPressed}
+                    />
+                )
             }else{
-                iconPath = iconPath +'speaker_off_icon.svg'
+                return(
+                    <SpeakerOffIcon 
+                        className='volumeIcon iconButton' 
+                        style={this.selectionVolumeControlStyle}
+                        onClick={this.volumeIconPressed}
+                    />
+                )
             }            
         }
-
-        return iconPath
     }
 
     getVolume = () => {
@@ -181,12 +211,7 @@ export default class SelectionVolumeControl extends React.Component{
                     style={this.mediaSelectOpenButtonStyle}
                     onClick={this.mediaSelectOpenButtonPressed}
                 >
-                    <img 
-                        className='mediaSelectOpenButtonIcon iconButton' 
-                        src={this.getMediaSelectOpenButtonIcon()} 
-                        style={this.selectionVolumeControlIconStyle}
-                        onClick={this.mediaSelectOpenButtonPressed}
-                    />
+                    {this.getMediaSelectOpenButtonIcon()}
                     <div
                         className="mediaSelectOpenButtonText"
                         onClick={this.mediaSelectOpenButtonPressed}
@@ -195,12 +220,7 @@ export default class SelectionVolumeControl extends React.Component{
                     </div>
                 </div>
                 <div className='volumeSliderContainer'>
-                    <img 
-                        className='volumeIcon iconButton' 
-                        src={this.getVolumeIcon()} 
-                        style={this.selectionVolumeControlIconStyle}
-                        onClick={this.volumeIconPressed}
-                    />
+                    {this.getVolumeIcon()}
                     <input 
                         className='volumeSlider'
                         id={this.props.sourceType + 'VolumeSlider'}

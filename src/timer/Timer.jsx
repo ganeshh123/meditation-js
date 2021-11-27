@@ -2,7 +2,7 @@ import React from 'react';
 
 import SettingsController from '../settings/SettingsController'
 import UIHide from '../utils/uihide/UIHide'
-
+import {PinIcon, CrossIcon, BackIcon, SkipIcon} from '../icons'
 import './timer.scss'
 
 export default class Timer extends React.Component {
@@ -21,12 +21,12 @@ export default class Timer extends React.Component {
             visibility: this.props.appState.timerEnabled ? 'visible' : 'hidden'
         }
 
-        this.timerTextStyle = {
+        this.timerIconStyle = {
             color: this.props.appState.currentTheme.accentColor
         }
 
-        this.timerIconStyle = {
-            filter: this.props.appState.currentTheme.iconColor
+        this.timerTextStyle = {
+            color: this.props.appState.currentTheme.accentColor
         }
 
         this.timerProgressBarBackgroundStyle = {
@@ -96,7 +96,7 @@ export default class Timer extends React.Component {
         if(!timerData){
             return
         }
-        if(timerData['timerStatus'] == 'running'){
+        if(timerData['timerStatus'] === 'running'){
             timerData['timerStatus'] = 'paused'
         }
 
@@ -111,7 +111,7 @@ export default class Timer extends React.Component {
         if (currentTimerDuration > 0) {
             updatedAppState['timerDuration'] = currentTimerDuration - 1
         }
-        if (currentTimerDuration == 0) {
+        if (currentTimerDuration === 0) {
             document.getElementById("alarm-audio").play();
             this.nextPhase()
         }
@@ -283,7 +283,7 @@ export default class Timer extends React.Component {
         let timerCurrentlyPinned = UIHide.timerPinned
         let timerPinButton = document.querySelector('#timerPinButton')
 
-        if (timerCurrentlyPinned == false) {
+        if (timerCurrentlyPinned === false) {
             timerPinButton.classList.remove('pin-normal')
             timerPinButton.classList.add('pin-rotated')
         }
@@ -348,7 +348,7 @@ export default class Timer extends React.Component {
             timerComponent: this
         }
 
-        if(SettingsController.readSetting('timerPinned') != undefined){
+        if(SettingsController.readSetting('timerPinned') !== undefined){
             let timerPinSetting = SettingsController.readSetting('timerPinned')
             UIHide.timerPinned = timerPinSetting
             updateState['timerPinned'] = timerPinSetting
@@ -374,15 +374,13 @@ export default class Timer extends React.Component {
                 <audio src="./assets/sfx/alarm.mp3" id="alarm-audio" />
                 <div id='timerViewControls'>
                     <div id='timerPinHolder' onClick={this.timerPinButtonPressed}>
-                        <img
-                            src={'./assets/icons/pin_icon.svg'}
+                        <PinIcon
                             style={this.timerIconStyle}
                             id='timerPinButton'
                             title='Pin/Unpin Window'
                         />
                     </div>
-                    <img 
-                        src={'./assets/icons/cross_icon.svg'} 
+                    <CrossIcon
                         style={this.timerIconStyle}
                         onClick={this.timerCloseButtonPressed}
                         id='timerCloseButton'
@@ -404,14 +402,14 @@ export default class Timer extends React.Component {
                 </div>
                 <div id='timerBottomBar'>
                     <div id='timerControls'>
-                        <img 
+                        <BackIcon
                             src={'./assets/icons/back_icon.svg'} 
                             style={this.timerIconStyle}
                             id='timerBackButton'
                             title={
                                 'Restart ' + this.props.appState['timerMode']
                             }
-                            className='timerViewIcon iconButton'
+                            className='timerControlIcon iconButton'
                             onClick={this.timerBackButtonPressed}
                         />
                         <img 
@@ -426,11 +424,10 @@ export default class Timer extends React.Component {
                             className='timerViewIcon iconButton'
                             onClick={this.timerPlayButtonPressed}
                         />
-                        <img 
-                            src={'./assets/icons/skip_icon.svg'} 
+                        <SkipIcon
                             style={this.timerIconStyle}
                             id='timerSkipButton'
-                            className='timerViewIcon iconButton'
+                            className='timerControlIcon iconButton'
                             title={
                                 'Skip to ' + (this.props.appState['timerMode'] === 'Break' ?
                                 'Session' :
