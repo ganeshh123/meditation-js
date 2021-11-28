@@ -2,7 +2,7 @@ import React from 'react';
 
 import SettingsController from '../settings/SettingsController'
 import UIHide from '../utils/uihide/UIHide'
-import {PinIcon, CrossIcon, BackIcon, SkipIcon} from '../icons'
+import {PinIcon, CrossIcon, BackIcon, SkipIcon, PlayIcon, PauseIcon} from '../icons'
 import './timer.scss'
 
 export default class Timer extends React.Component {
@@ -221,14 +221,25 @@ export default class Timer extends React.Component {
     }
 
     getTimerPlayPauseButtonIcon = () => {
-        let appState = this.props.appState
-        let timerStatus = appState['timerStatus']
+        let timerStatus = this.props.appState['timerStatus']
 
         if (['paused', 'stopped'].includes(timerStatus)) {
-            return './assets/icons/play_icon.svg'
+            return <PlayIcon 
+                    style={this.timerIconStyle}
+                    id='timerPlayButton'
+                    title='Play'
+                    className='timerControlIcon iconButton'
+                    onClick={this.timerPlayButtonPressed}
+                    />
         }
         if (timerStatus === 'running') {
-            return './assets/icons/pause_icon.svg'
+            return <PauseIcon 
+                    style={this.timerIconStyle}
+                    id='timerPlayButton'
+                    title='Pause'
+                    className='timerControlIcon iconButton'
+                    onClick={this.timerPlayButtonPressed}
+                    />
         }
     }
 
@@ -412,18 +423,7 @@ export default class Timer extends React.Component {
                             className='timerControlIcon iconButton'
                             onClick={this.timerBackButtonPressed}
                         />
-                        <img 
-                            src={this.getTimerPlayPauseButtonIcon()}
-                            style={this.timerIconStyle}
-                            id='timerPlayButton'
-                            title={
-                                this.props.appState['timerStatus'] === 'running' ?
-                                'Pause' :
-                                'Play'
-                            }
-                            className='timerViewIcon iconButton'
-                            onClick={this.timerPlayButtonPressed}
-                        />
+                        {this.getTimerPlayPauseButtonIcon()}
                         <SkipIcon
                             style={this.timerIconStyle}
                             id='timerSkipButton'
