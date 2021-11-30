@@ -9,33 +9,27 @@ export default class SceneVideo extends React.Component{
         super(props)
     }
 
-    videoFinishedLoading = (event) => {
-        this.props.update({
-            videoLoaded: true
-        })
-    }
-
     render(){
-        let currentScene = this.props.scene
 
-        {if(this.props.videoDisabled){
-            return(
-                <div style={{display: "none"}}>
-
-                </div>
-            )
-        }}
+        const {scene, update, videoDisabled, videoLoaded} = this.props
 
         return(
-            <video 
-                id="sceneVideo"
-                style={(this.props.videoLoaded === false) ?  {visibility: 'hidden'} : {visibility: 'visible'} } 
-                src={SceneController.getSceneVideo(currentScene)}
-                autoPlay={true}
-                loop={true}
-                muted={true}
-                onPlaying={this.videoFinishedLoading}
-            />
+            <>
+                {videoDisabled &&
+                    <></>
+                }
+                {videoDisabled === false &&
+                    <video
+                        id="sceneVideo"
+                        className={videoLoaded ? "sceneVideo showing visible" : "sceneVideo hidden invisible"}
+                        src={SceneController.getSceneVideo(scene)}
+                        autoPlay={true}
+                        loop={true}
+                        muted={true}
+                        onPlaying={() => update({videoLoaded: true})}
+                    />
+                }
+            </>
         )
     }
 }
