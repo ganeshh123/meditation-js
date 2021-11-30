@@ -9,26 +9,27 @@ export default class SceneImage extends React.Component{
         super(props)
     }
 
-    getImagePath = () => {
-        let currentScene = this.props.scene
-        if(this.props.videoLoaded == true){
-            return SceneController.getSceneImage(currentScene)
-        }else{
-            return SceneController.getSceneImageBlur(currentScene)
-        }
-    }
+    getBlurImagePath = (scene) => SceneController.getSceneImageBlur(scene)
+
+    getImagePath = (scene) => SceneController.getSceneImage(scene)
 
     render(){
+
+        const {update, imageLoaded, blurImageLoaded, scene} = this.props
+
         return(
-            <img
-                id="sceneImage"
-                src={this.getImagePath()}
-                onLoad={() => {
-                    this.props.update({
-                        imageLoaded: true
-                    })
-                }}
-            />
+            <>
+                <img
+                    className={blurImageLoaded ? "sceneImage showing visible" : "sceneImage hidden invisible"}
+                    src={this.getBlurImagePath(scene)}
+                    onLoad={() => update({blurImageLoaded: true})}
+                />
+                <img
+                    className={imageLoaded ? "sceneImage showing visible" : "sceneImage hidden invisible"}
+                    src={this.getImagePath(scene)}
+                    onLoad={() => update({imageLoaded: true})}
+                />
+            </>
         )
     }
 }

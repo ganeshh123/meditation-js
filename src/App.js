@@ -47,6 +47,7 @@ class App extends React.Component {
     /* Flags */
     mediaInfoFetched: false,
     videoLoaded: false,
+    blurImageLoaded: false,
     imageLoaded: false,
     musicMuted: false,
     sfxMuted: false,
@@ -86,7 +87,7 @@ class App extends React.Component {
       <div id="app" style={this.appStyle}>
 
         <Loading appState={this.state} />
-        <SceneImage scene={this.state.currentScene} videoLoaded={this.state.videoLoaded} update={this.updateState} />
+        <SceneImage scene={this.state.currentScene} update={this.updateState} imageLoaded={this.state.imageLoaded} blurImageLoaded={this.state.blurImageLoaded}/>
         <AudioPlayer appState={this.state} type='sfx' />
         <AudioPlayer appState={this.state} type='music' />
         <SceneVideo scene={this.state.currentScene} videoDisabled={this.state.videoDisabled} videoLoaded={this.state.videoLoaded} update={this.updateState}/>
