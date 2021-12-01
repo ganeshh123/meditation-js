@@ -1,0 +1,2 @@
+export const DEFAULT_SESSION_LENGTH = 25
+export const DEFAULT_BREAK_LENGTH = 5

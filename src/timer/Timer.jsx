@@ -5,6 +5,8 @@ import UIHide from '../utils/uihide/UIHide'
 import {PinIcon, CrossIcon, BackIcon, SkipIcon, PlayIcon, PauseIcon} from '../icons'
 import './timer.scss'
 
+import {DEFAULT_SESSION_LENGTH, DEFAULT_BREAK_LENGTH} from './TimerConstants'
+
 export default class Timer extends React.Component {
     constructor(props) {
         super(props)
@@ -335,8 +337,8 @@ export default class Timer extends React.Component {
                 appState.setStateFunction({
                     timerEnabled: false,
                     timerMode: 'Session',
-                    timerSessionLength: 1,
-                    timerBreakLength: 2,
+                    timerSessionLength: DEFAULT_SESSION_LENGTH,
+                    timerBreakLength: DEFAULT_BREAK_LENGTH,
                     timerStatus: 'stopped',
                     timerDuration: 60,
                     timerInterval: undefined,

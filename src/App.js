@@ -17,6 +17,8 @@ import SidePanel from './sidepanel/SidePanel'
 import Overlay from './overlay/Overlay'
 import Loading from './alert/Loading';
 
+import {DEFAULT_SESSION_LENGTH, DEFAULT_BREAK_LENGTH} from './timer/TimerConstants'
+
 import './mainStyle.scss'
 
 class App extends React.Component {
@@ -66,8 +68,8 @@ class App extends React.Component {
     /* Timer State */
     timerEnabled: false,
     timerMode: 'Session',
-    timerSessionLength: 1,
-    timerBreakLength: 2,
+    timerSessionLength: DEFAULT_SESSION_LENGTH,
+    timerBreakLength: DEFAULT_BREAK_LENGTH,
     timerStatus: 'stopped',
     timerDuration: 60,
     timerInterval: undefined,
