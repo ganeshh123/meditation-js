@@ -41,6 +41,7 @@ export default class PresetsController{
         let preset = this.getPreset(presetId)
         let update = {
             launchShowing: false,
+            presetsOverlayShowing: false,
             firstTime: false,
             currentScene: preset['sceneId'],
             currentMusicTrack: preset['musicId'],
