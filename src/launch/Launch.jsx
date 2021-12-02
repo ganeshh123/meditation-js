@@ -1,7 +1,6 @@
 import React from 'react';
 import PresetSelector from '../presets/PresetSelector';
 import { AboutIcon } from '../icons'
-import './launch.scss'
 
 export default class Launch extends React.Component{
 
@@ -48,31 +47,40 @@ export default class Launch extends React.Component{
         this.setStyle()
 
         return(
-            <div id='launch' style={this.launchStyle}>
-                <div id="launchTitle">Calmeo</div>
+            <div
+                id='launch'
+                className='overlayContent'
+                style={this.launchStyle}
+            >
+                <div id="launchTitle" className='text-6xl md:text-7xl mt-2 mb-4 md:mt-4 md:mb-10'>Calmeo</div>
                 {this.isFirstTime() && 
-                    <div id="launchMessage">What do you want to do?</div>
+                    <div id="launchMessage" className='text-3xl md:text-4xl mb-4'>What do you want to do?</div>
                 }
-                <div id="launchContent">
+                <div id="launchContent" className='flex-1 w-full flex items-stretch overflow-y-hidden md:overflow-x-hidden'>
                     {this.isFirstTime() &&
                         <PresetSelector appState={this.props.appState} />
                     }
                     {!this.isFirstTime() &&
-                        <div id="returningContainer">
-                            <div id="returningMessage">
+                        <div className='w-full flex flex-col justify-center items-center mb-32 md:mb-28'>
+                            <div id="returningMessage" className='text-4xl mb-5 md:text-5xl md:mb-10'>
                                 Welcome Back
                             </div>
-                            <div id="returningButton" style={this.launchButtonStyle} onClick={this.launchContinueButtonPressed}>
+                            <div
+                                id="returningButton"
+                                style={this.launchButtonStyle}
+                                onClick={this.launchContinueButtonPressed}
+                                className='cursor-pointer p-2 rounded-xl text-2xl md:text-3xl md:p-4'
+                            >
                                 Continue
                             </div>
                         </div>
                     }
                 </div>
                 {this.isFirstTime() &&
-                    <div className="launchNotification">
+                    <div className="launchNotification" className='flex justify-center items-center my-2 text-xl md:my-6 md:text-2xl'>
                     <AboutIcon
                         style={this.launchIconStyle}
-                        className='launchNotificationIcon'
+                        className='h-6 w-6 mr-3 md:h-8 md:w-8 md:mr-4'
                     />
                     Headphones Recommended
                     </div>

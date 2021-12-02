@@ -105,7 +105,11 @@ body {
 }
 
 .overlayCloseButton{
-    @apply absolute h-10 w-10 top-4 right-4;
+    @apply absolute h-10 w-10 top-4 right-4 md:right-8;
+}
+
+.overlayContent{
+    @apply flex-1 w-full p-2 flex flex-col items-center overflow-y-hidden;
 }
 
 .glassBlock {

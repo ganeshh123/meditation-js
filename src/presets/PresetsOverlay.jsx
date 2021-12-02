@@ -20,7 +20,7 @@ class PresetsOverlay extends React.Component {
         this.setStyles()
 
         return (
-            <div className='md:flex-1 w-full p-2 flex flex-col items-center overflow-y-hidden'>
+            <div className='overlayContent'>
                 <div className='lg:text-6xl text-5xl' style={this.presetsOverlayStyle}>
                     Presets
                 </div>
