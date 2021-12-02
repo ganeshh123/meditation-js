@@ -105,11 +105,7 @@ body {
 }
 
 .overlayCloseButton{
-    height: 4.5vh;
-    width: 4.5vh;
-    position: fixed;
-    top: 2.5vh;
-    right: 50px;
+    @apply absolute h-10 w-10 top-4 right-4;
 }
 
 .glassBlock {

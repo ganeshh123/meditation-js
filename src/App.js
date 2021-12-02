@@ -55,6 +55,7 @@ class App extends React.Component {
     sfxMuted: false,
     videoDisabled: false,
     presetsMenuExpanded: false,
+    presetsOverlayShowing: false,
     timerSetupShowing: false,
     settingsShowing: false,
     launchShowing: true,

@@ -7,6 +7,7 @@ import MediaSelect from '../media/MediaSelect'
 import Confirmation from '../alert/Confirmation'
 
 import './overlay.scss'
+import PresetsOverlay from "../presets/PresetsOverlay";
 
 export default class Overlay extends React.Component {
 
@@ -27,7 +28,8 @@ export default class Overlay extends React.Component {
       appState.settingsShowing,
       appState.launchShowing,
       appState.mediaSelectShowing,
-      appState.confirmationShowing
+      appState.confirmationShowing,
+      appState.presetsOverlayShowing
     ]
     let shouldShowOverlay = false
 
@@ -54,6 +56,7 @@ export default class Overlay extends React.Component {
         {appState.launchShowing && <Launch appState={appState} />}
         {appState.mediaSelectShowing && <MediaSelect appState={appState} />}
         {appState.confirmationShowing && <Confirmation appState={appState} />}
+        {appState.presetsOverlayShowing && <PresetsOverlay appState={appState}/>}
       </div>
     )
   }

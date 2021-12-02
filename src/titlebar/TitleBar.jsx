@@ -34,8 +34,7 @@ export default class TitleBar extends React.Component {
 
   appTitlePressed = () => (
     this.props.updateApp({
-      firstTime: true,
-      launchShowing: true
+      presetsOverlayShowing: true
     })
   )
 
