@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *, *:before, :after {
     box-sizing: border-box;
     padding: 0;
