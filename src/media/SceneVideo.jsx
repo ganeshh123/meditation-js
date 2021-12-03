@@ -4,32 +4,54 @@ import SceneController from './SceneController'
 
 import './media.scss'
 
-export default class SceneVideo extends React.Component{
-    constructor(props){
-        super(props)
+export const SceneVideo = (props) => {
+
+    const {videoDisabled, videoLoaded, scene, update} = props
+    const videoContainer = React.useRef(null)
+    const videoUrl = SceneController.getSceneVideo(scene)
+
+    const videoFinishedLoading = (readyVideo) => {
+        readyVideo.play()
+        update({videoLoaded: true})
     }
 
-    render(){
+    React.useEffect(() => {
 
-        const {scene, update, videoDisabled, videoLoaded} = this.props
+        const dangerousVideo = videoContainer.current.children[0]
 
-        return(
-            <>
-                {videoDisabled &&
-                    <></>
-                }
-                {videoDisabled === false &&
+        if(videoDisabled){
+            if(dangerousVideo && videoLoaded){
+                update({videoLoaded: false})
+            }
+            return
+        }
+
+        if(dangerousVideo){
+            dangerousVideo.src = videoUrl
+            dangerousVideo.oncanplaythrough = () => videoFinishedLoading(dangerousVideo)
+        }
+    }, [videoUrl, videoDisabled])
+
+    return(
+        <div
+            className={`absolute top-0 w-full h-full object-cover ${videoLoaded ? "sceneVideo showing visible" : "sceneVideo hidden invisible"}`}
+            ref={videoContainer}
+            dangerouslySetInnerHTML={{
+                __html: `
                     <video
-                        id="sceneVideo"
-                        className={videoLoaded ? "sceneVideo showing visible" : "sceneVideo hidden invisible"}
-                        src={SceneController.getSceneVideo(scene)}
-                        autoPlay={true}
-                        loop={true}
-                        muted={true}
-                        onPlaying={() => update({videoLoaded: true})}
+                        loop
+                        muted
+                        id='sceneVideo'
+                        class='sceneVideo'
+                        preload
+                        playsinline
+                        type='video/mp4'
                     />
-                }
-            </>
-        )
-    }
+                `
+            }}
+        />
+    )
 }
+
+export default SceneVideo
+
