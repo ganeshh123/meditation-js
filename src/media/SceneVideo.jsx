@@ -45,7 +45,6 @@ export const SceneVideo = (props) => {
                         class='sceneVideo'
                         preload
                         playsinline
-                        type='video/mp4'
                     />
                 `
             }}
