@@ -49,7 +49,7 @@ export default class Launch extends React.Component{
         return(
             <div
                 id='launch'
-                className='overlayContent'
+                className='overlayContainer'
                 style={this.launchStyle}
             >
                 <div id="launchTitle" className='text-6xl md:text-7xl mt-2 mb-4 md:mt-4 md:mb-10'>Calmeo</div>
@@ -77,7 +77,7 @@ export default class Launch extends React.Component{
                     }
                 </div>
                 {this.isFirstTime() &&
-                    <div className="launchNotification" className='flex justify-center items-center my-2 text-xl md:my-6 md:text-2xl'>
+                    <div className='launchNotification flex justify-center items-center my-2 text-xl md:my-6 md:text-2xl'>
                     <AboutIcon
                         style={this.launchIconStyle}
                         className='h-6 w-6 mr-3 md:h-8 md:w-8 md:mr-4'

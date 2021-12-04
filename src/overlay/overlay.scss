@@ -13,3 +13,31 @@
     max-height: 100vh;
     max-width: 100vw !important;
 }
+
+.overlayCloseButton{
+    @apply absolute h-10 w-10 top-4 right-4 md:right-8;
+}
+
+.overlayContainer{
+    @apply flex-1 w-full p-2 flex flex-col items-center overflow-y-hidden;
+    @apply 2xl:max-w-screen-2xl;
+}
+
+.overlayTitle{
+    @apply text-5xl pr-10;
+    @apply sm:pr-0;
+    @apply lg:text-6xl;
+}
+
+.overlayContent{
+    @apply flex-1 mt-5 w-full flex flex-col justify-start items-center overflow-y-hidden;
+    @apply sm:justify-center mb-12;
+    @apply lg:mb-20;
+}
+
+@supports ((backdrop-filter: blur(2.3vh))) or (-webkit-backdrop-filter: blur(2.3vh)) {
+    #appOverlay{
+        backdrop-filter: blur(2.3vh);
+        -webkit-backdrop-filter: blur(2.3vh);
+    }
+}

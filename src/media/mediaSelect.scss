@@ -76,53 +76,6 @@
     overflow: hidden;
 }
 
-.mediaSelect {
-    flex: 1 1 1px;
-    min-height: 0;
-    width: 100%;
-    position: relative;
-    padding: 2vh;
-    border-radius: 2vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.mediaSelectTitle {
-    margin-left: 1vh;
-    font-size: 5vh;
-    text-align: center;
-}
-
-.mediaSelectCloseButton {
-    height: 4.5vh;
-    position: fixed;
-    top: 2.5vh;
-    right: 50px;
-}
-
-.mediaSelectMenuContainer{
-    flex: 1 1 1px;
-    overflow-y: auto;
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%
-}
-
-.mediaSelectMenu {
-    max-width: 1000px;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
 .mediaSelectOpenButton{
     margin-bottom: 25px;
     display: flex;
@@ -149,19 +102,33 @@
     font-size: 2.25vh;
 }
 
+/* Media Select */
+
+.mediaSelectMenu {
+    @apply w-full flex flex-col justify-start items-center;
+    @apply sm:flex-row sm:justify-center sm:items-start sm:flex-wrap;
+    @apply overflow-y-auto;
+}
+
+
 /* Media Box */
 
 .mediaBox{
     @apply rounded-xl cursor-pointer relative;
-    @apply w-64 h-48 p-0 mb-10;
-    @apply  md:mx-10;
+    @apply w-64 h-48 p-0 mb-10 mx-2;
+    @apply sm:mx-5;
+    @apply md:mx-10;
     @apply lg:mx-12 lg:w-72 lg:h-52;
 }
 
 .mediaBoxDescription{
-    @apply z-10 absolute w-full h-full rounded-t-xl  opacity-0 hover:opacity-100;
+    @apply z-10 absolute w-full h-full rounded-t-xl  opacity-0;
     @apply p-5 text-lg;
     @apply lg:text-xl;
+}
+
+.mediaBox:hover .mediaBoxDescription{
+    opacity: 100%;
 }
 
 .mediaBoxImage{

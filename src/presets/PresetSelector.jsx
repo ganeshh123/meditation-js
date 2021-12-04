@@ -22,7 +22,7 @@ export default class PresetSelector extends React.Component{
 
         return(
             <div id='presetSelector'
-                 className='w-full lg:p-15 my-5 flex md:flex-row flex-col md:justify-center justify-start items-center md:overflow-x-hidden overflow-y-auto'
+                 className='w-full lg:p-15 mb-5 flex md:flex-row flex-col md:justify-center justify-start items-center md:overflow-x-hidden overflow-y-auto'
                  style={this.presetSelectorStyle}
             >
                 {appState.mediaInfoFetched && PresetsController.getPresetIds().map((presetId, index) => {

@@ -20,8 +20,8 @@ class PresetsOverlay extends React.Component {
         this.setStyles()
 
         return (
-            <div className='overlayContent'>
-                <div className='lg:text-6xl text-5xl' style={this.presetsOverlayStyle}>
+            <div className='overlayContainer'>
+                <div className='overlayTitle' style={this.presetsOverlayStyle}>
                     Presets
                 </div>
                 <CrossIcon
@@ -29,7 +29,7 @@ class PresetsOverlay extends React.Component {
                     onClick={() => appState.setStateFunction({presetsOverlayShowing: false})}
                     style={this.presetsOverlayStyle}
                 />
-                <div className='flex-1 md:mt-5 mt-2 w-full flex flex-col md:justify-center justify-start items-center overflow-y-hidden'>
+                <div className='overlayContent'>
                     <PresetSelector appState={appState}/>
                 </div>
             </div>
