@@ -53,7 +53,7 @@ class App extends React.Component {
     imageLoaded: false,
     musicMuted: false,
     sfxMuted: false,
-    videoDisabled: false,
+    videoDisabled: true,
     presetsMenuExpanded: false,
     presetsOverlayShowing: false,
     timerSetupShowing: false,

@@ -1,8 +1,8 @@
 #presetsMenu {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items: left;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 1vh 0 1.2vh 0;
     margin-bottom: 2vh;
     border-radius: 0 2vh 2vh 2vh;
@@ -41,26 +41,23 @@
     margin-top: 25px;
 }
 
+/* Preset Box */
+
 .presetBox{
-    margin: 15px 30px;
-    background-color: black;
-    min-width: 250px;
-    min-height: 350px;
-    border-radius: 25px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    @apply flex flex-col justify-center items-center h-auto cursor-pointer rounded-lg opacity-80;
+    @apply w-60 mt-2 mb-5 mx-5 p-5;
+    @apply md:mx-2 md:p-4;
+    @apply lg:w-auto lg:mx-5 lg:p-7 lg:mb-0;
+    @apply hover:opacity-100;
 }
 
 .presetBoxImage{
-    height: 300px;
-    width: 180px;
+    @apply h-40 w-40;
+    @apply md:h-48 md:w-48;
+    @apply lg:w-60 lg:h-60;
 }
 
 .presetBoxTitle{
-    font-size: 28px;
-    text-align: center;
+    @apply text-3xl mt-3;
+    @apply lg:text-4xl lg:mt-6;
 }

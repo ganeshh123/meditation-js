@@ -85,10 +85,12 @@
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+    opacity: 0.8;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 .mediaSelectOpenButton:hover{
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .mediaSelectOpenButtonIcon{
