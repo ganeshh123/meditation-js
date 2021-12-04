@@ -30,11 +30,7 @@
 }
 
 #timerCloseButton {
-    padding-right: 1vh;
-    padding-top: 0.1vh;
-    height: 2.7vh;
-    width: 2.7vh;
-    cursor: pointer;
+    @apply h-10 w-10 cursor-pointer;
 }
 
 #timerPinHolder {
@@ -146,19 +142,6 @@
     align-items: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .timerLengthAdjuster{
     display: flex;
     flex-direction: row;
@@ -213,20 +196,6 @@ input:focus{
 .timerLengthAdjusterUnit{
     font-size: 15pt;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #timerSetup {
     flex: 1;
