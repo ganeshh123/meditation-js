@@ -1,89 +1,59 @@
 import React from 'react'
-
 import SceneController from './SceneController'
 import MusicController from './MusicController'
-
 import './mediaSelect.scss'
 
-export default class MediaBox extends React.Component{
+export const MediaBox = (props) => {
 
-    constructor(props){
-        super(props)
-    }
+    const {appState, mediaId} = props
+    const type = appState.mediaSelectConfig['type']
+    const currentTheme = appState.currentTheme
 
-    getMediaImage = () =>{
-        let mediaId = this.props.mediaId
-        let type = this.props.appState.mediaSelectConfig['type']
-
-        if(type == "scene"){
-            return SceneController.getSceneImageThumb(mediaId)
-        }
-        if(type == 'musicTrack'){
-            return MusicController.getMusicImageThumb(mediaId)
-        }
-    }
-
-    setStyle = () => {
-        this.mediaBoxStyle = {
-            backgroundColor: this.props.appState.currentTheme.backgroundColor,
-            boxShadow: this.props.appState.currentTheme.boxShadow,
-            color: this.props.appState.currentTheme.accentColor
-        }
-
-        this.mediaBoxImageStyle = {
-            backgroundImage: 'url(' + this.getMediaImage() + ')'
-        }
-
-        this.mediaBoxDescriptionStyle = {
-            backgroundColor: this.props.appState.currentTheme.overlayColor
-        }
-    }
-
-    mediaBoxClicked = (event) => {
-        let appState = this.props.appState
-        let type = this.props.appState.mediaSelectConfig['type']
-        let mediaId = this.props.mediaId
-
+    const mediaBoxClicked = () => {
         let updateState = {
             mediaSelectShowing: false
         }
-        if(type == 'scene'){
+
+        if(type === 'scene'){
             updateState['currentScene'] = mediaId
             updateState['videoLoaded'] = false
             updateState['imageLoaded'] = false
         }
-        if(type == 'musicTrack'){
+        if(type === 'musicTrack'){
             updateState['currentMusicTrack'] = mediaId
         }
 
         appState.setStateFunction(updateState)
     }
 
-    render(){
-        let type = this.props.appState.mediaSelectConfig['type']
-        let mediaId = this.props.mediaId
-
-        this.setStyle()
-
-        return(
-            <div className="mediaBox" style={this.mediaBoxStyle}>
-                <div
-                    className="mediaBoxDescription"
-                    style={this.mediaBoxDescriptionStyle}
-                    onClick={this.mediaBoxClicked}
-                >
-                    {type == "scene" ? SceneController.getSceneDescription(mediaId) : MusicController.getMusicDescription(mediaId)}
-                </div>
-                <div 
-                    className="mediaBoxImage"
-                    style={this.mediaBoxImageStyle}
-                ></div>
-                <div
-                    className="mediaBoxTitle"
-                >
-                    {type == "scene" ? SceneController.getSceneName(mediaId) : MusicController.getMusicName(mediaId)}
-                </div>
-            </div>
-        )
+    const mediaBoxStyle = {
+        backgroundColor: currentTheme.backgroundColor,
+        boxShadow: currentTheme.boxShadow,
+        color: currentTheme.accentColor
     }
+
+    return(
+        <div className={`mediaBox`} style={mediaBoxStyle}>
+           <div className={`relative`}>
+               <div
+                   className={`mediaBoxDescription`}
+                   style={{backgroundColor: currentTheme.overlayColor}}
+                   onClick={mediaBoxClicked}
+               >
+                   {type === "scene" ? SceneController.getSceneDescription(mediaId) : MusicController.getMusicDescription(mediaId)}
+               </div>
+               <div
+                className={`mediaBoxImage`}
+                style={{backgroundImage: `url('${type === 'scene' ? 
+                        SceneController.getSceneImageThumb(mediaId) : 
+                        MusicController.getMusicImageThumb(mediaId)}')`}}
+                />
+           </div>
+            <div className={`mediaBoxTitle`} >
+                {type === "scene" ? SceneController.getSceneName(mediaId) : MusicController.getMusicName(mediaId)}
+            </div>
+        </div>
+    )
 }
+
+export default MediaBox

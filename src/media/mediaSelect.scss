@@ -26,10 +26,6 @@
     z-index: 2;
 }
 
-
-
-
-
 .selectionVolumeControl {
     display: flex;
     flex-direction: column;
@@ -80,11 +76,6 @@
     overflow: hidden;
 }
 
-
-
-
-
-
 .mediaSelect {
     flex: 1 1 1px;
     min-height: 0;
@@ -132,46 +123,6 @@
     flex-wrap: wrap;
 }
 
-.mediaBox{
-    width: 250px;
-    height: 180px;
-    margin: 15px 25px 25px 30px;
-    padding: 0px;
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-}
-
-.mediaBoxImage{
-    width: 100%;
-    height: 140px;
-    background-position: center;
-    background-size: cover;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
-.mediaBoxTitle{
-    padding-top: 5px;
-    font-size: 2.5vh;
-    padding-left: 20px;
-}
-
-.mediaBoxDescription{
-    z-index: 5;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    font-size: 2vh;
-    padding: 15px;
-    opacity: 0;
-}
-
-.mediaBoxDescription:hover{
-    opacity: 1;
-}
-
 .mediaSelectOpenButton{
     margin-bottom: 25px;
     display: flex;
@@ -196,4 +147,30 @@
 .mediaSelectOpenButtonText{
     flex: 1;
     font-size: 2.25vh;
+}
+
+/* Media Box */
+
+.mediaBox{
+    @apply rounded-xl cursor-pointer relative;
+    @apply w-64 h-48 p-0 mb-10;
+    @apply  md:mx-10;
+    @apply lg:mx-12 lg:w-72 lg:h-52;
+}
+
+.mediaBoxDescription{
+    @apply z-10 absolute w-full h-full rounded-t-xl  opacity-0 hover:opacity-100;
+    @apply p-5 text-lg;
+    @apply lg:text-xl;
+}
+
+.mediaBoxImage{
+    @apply w-full bg-center bg-cover rounded-t-xl;
+    @apply h-36;
+    @apply lg:h-40;
+}
+
+.mediaBoxTitle{
+    @apply py-2 px-2 text-xl;
+    @apply lg:py-3 lg:px-3 lg:text-2xl;
 }
