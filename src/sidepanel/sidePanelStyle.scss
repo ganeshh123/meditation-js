@@ -1,29 +1,4 @@
-#presetsButton {
-    margin-top: 1.2vh;
-}
-
-#newTimerButton {
-    margin-top: 1.2vh;
-    margin-left: 0.7vh;
-}
-
-#lightDarkButton {
-    margin-top: 1.3vh
-}
-
-#videoToggleButton {
-    margin-top: 1.1vh;
-    margin-left: -0.2vh;
-}
-
-#sidePanelBlockExpanded {
-    padding-top: 1.2vh;
-    margin-bottom: -1vh;
-    border-radius: 2vh 2vh 0 0;
-    clip-path: inset(-10% -10% 0.5vh -10%);
-}
-
-#leftPanel {   
+#leftPanel {
     left: 3.4vh;
 }
 
@@ -43,22 +18,13 @@
 .sidePanelIcon { 
     width: 10vh;
     height: 10vh;
-    margin-bottom: 2vh;
-    display: flex;
-    justify-content: center;
+    padding: 1vh;
     border-radius: 2vh;
     cursor: pointer;
-
-    img {
-        opacity: 0.7;
-
-        &:hover {
-            opacity: 1;
-        }
-    }
+    opacity: 0.9;
+    margin-top: 2vh;
 }
 
-.sidePanel img {
-    width: 7vh;
-    height: 7vh;
+.sidePanelIcon:hover{
+    opacity: 1;
 }
