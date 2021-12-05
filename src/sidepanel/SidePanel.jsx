@@ -56,7 +56,7 @@ export const SidePanel = (props) => {
                 <VideoOffIcon
                     {...sharedButtonProps}
                     onClick={() => {
-                        update({videoDisabled: !videoCurrentlyDisabled})
+                        update({videoDisabled: false, videoLoaded: false})
                         videoElement && videoElement.play()
                     }}
                     id={videoButtonId}
