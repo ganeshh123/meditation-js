@@ -49,13 +49,15 @@ export const SidePanel = (props) => {
     const VideoToggleButton = () => {
         const videoCurrentlyDisabled = appState.videoDisabled
         const videoButtonId = 'videoToggleButton'
+        const videoElement = document?.querySelector('#sceneVideo')
 
         if(videoCurrentlyDisabled){
             return(
                 <VideoOffIcon
                     {...sharedButtonProps}
                     onClick={() => {
-                        update({videoDisabled: !videoCurrentlyDisabled})
+                        update({videoDisabled: false, videoLoaded: false})
+                        videoElement && videoElement.play()
                     }}
                     id={videoButtonId}
                 />
@@ -68,6 +70,7 @@ export const SidePanel = (props) => {
                     {...sharedButtonProps}
                     onClick={() => {
                         update({videoDisabled: !videoCurrentlyDisabled})
+                        videoElement && videoElement.pause()
                     }}
                     id={videoButtonId}
                 />
