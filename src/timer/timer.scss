@@ -142,105 +142,17 @@
     align-items: center;
 }
 
-.timerLengthAdjuster{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 15px 0px 15px;
-}
 
-.timerLengthAdjusterValues{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.timerLengthAdjusterContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.timerLengthAdjusterType{
-    text-transform: capitalize;
-    font-size: 20pt;
-    margin-top: 10px;
-}
-
-.timerLengthAdjusterInput{
-    font-size: 3vw;
-    max-width: 50px;
-    margin: 0px 10px 0px 10px;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
-
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
-}
-
-input:focus{
-   outline: 2px solid #72ce35;
-}
-
-.timerLengthAdjusterUnit{
-    font-size: 15pt;
-}
-
-#timerSetup {
-    flex: 1;
-    width: 100%;
-    position: relative;
-    padding: 2vh;
-    border-radius: 2vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-#timerSetupTitle {
-    margin-left: 1vh;
-    font-size: 5vh;
-    text-align: center;
-}
-
-#timerSetupMain{
-    flex: 1;
-    max-width: 600px;
-    width: auto;
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* Timer Setup */
 
 #timerSetupMiddle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
+    @apply flex flex-col justify-center items-center mt-10;
+    @apply sm:flex-row gap-y-0 gap-x-10;
 }
 
 #timerSetupWarning {
-    display: flex;
-    font-size: 3vh;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2vh;
-    margin-bottom: 5vh;
+    @apply flex justify-center items-center mt-10 mb-10 text-xl;
+    @apply md:text-2xl mt-16 mb-12;
 }
 
 #timerSetupWarningIcon {
@@ -251,9 +163,49 @@ input:focus{
 
 #timerSetupBeginButton {
     font-family: 'Bubbler One', sans-serif;
-    font-size: 5vh;
-    padding: 0.2vh 1vh 0.5vh 1vh;
-    cursor: pointer;
-    border-radius: 1.5vh;
-    margin-bottom: 5vh;
+    @apply cursor-pointer p-2 rounded-xl text-2xl md:text-3xl md:p-4;
+}
+
+/* Timer Length Adjuster */
+
+.timerLengthAdjuster{
+    @apply flex flex-col justify-center items-center;
+    @apply mx-2 my-5;
+}
+
+.timerLengthAdjusterInputContainer{
+    @apply flex flex-row justify-center items-center;
+    @apply mb-2;
+}
+
+.timerLengthAdjusterInput{
+    max-width: 100px;
+    @apply rounded-xl;
+    @apply text-xl py-2 px-5 mx-2 my-2;
+    @apply md:text-2xl;
+}
+
+.timerLengthAdjusterUnit{
+    @apply text-xl;
+    @apply md:text-2xl;
+}
+
+.timerLengthAdjusterType{
+    @apply capitalize;
+    @apply text-3xl;
+    @apply md:text-4xl;
+}
+
+.timerLengthAdjusterInput::-webkit-outer-spin-button,
+.timerLengthAdjusterInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.timerLengthAdjusterInput {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.timerLengthAdjusterInput:focus{
+    outline: 2px solid #72ce35;
 }

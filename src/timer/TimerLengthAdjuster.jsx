@@ -1,97 +1,57 @@
 import React from 'react';
 
-import './timer.scss'
+export const TimerLengthAdjuster = (props) => {
 
-export default class TimerLengthAdjuster extends React.Component{
-    constructor(props){
-        super(props)
-    }
+    const {theme, value, setValue, id, invalid, label} = props
 
-    state = {
-        width: 3
-    }
+    const [width, setWidth] = React.useState(3)
 
-    getInputValue = () => { 
-        let type = this.props.type
-        let timerSetupState = this.props.timerSetupState
+    const inputChanged = (event) =>{
+        const newValue = event.target.value
 
-        if(type === 'session'){
-            return timerSetupState['selectedSessionLength']
-        }
-        if(type === 'break'){
-            return timerSetupState['selectedBreakLength']
-        }
-    }
-
-    setStyle = () => {
-        this.timerLengthAdjusterStyle = {
-        }
-
-        this.timerLengthAdjusterIconStyle = {
-            filter: this.props.appState.currentTheme.iconColor
-        }
-
-        this.timerLengthAdjusterTextStyle = {
-            color: this.props.appState.currentTheme.accentColor
-        }
-
-        this.timerLengthAdjusterInputStyle = {
-            borderWidth: this.props.currentValueInvalid? '2px': '0px',
-            borderColor: 'red',
-            outlineColor: this.props.currentValueInvalid? 'red': '#72ce35',
-            borderStyle: 'solid',
-            backgroundColor: this.props.appState.currentTheme.backgroundColor,
-            color: this.props.appState.currentTheme.accentColor,
-            minWidth: this.state.width + 'ch'
-        }
-    }
-
-    lengthInputChanged = (event) => {
-        let timerSetupState = this.props.timerSetupState
-        let type = this.props.type
-        let newValue = event.target.value
         let newWidth = event.target.value.length + 1
-
         if(newWidth < 3){
             newWidth = 3
         }
+        setWidth(newWidth)
 
-        this.setState({
-            width: event.target.value.length + 1
-        }, () => {
-            this.setStyle()
-            timerSetupState.setSelectedLength(type, newValue)
-        })
+        setValue(newValue)
     }
 
-    render(){
-        this.setStyle()
+    const timerLengthAdjusterStyle ={
+        color: theme.accentColor
+    }
 
-        return(
-            <div className='timerLengthAdjuster' style={this.timerLengthAdjusterStyle}>
-                <div className='timerLengthAdjusterIncreaseDecrease'>
+    const timerLengthAdjusterInputStyle = {
+        borderWidth: invalid? '2px': '0px',
+        borderColor: 'red',
+        outlineColor: invalid? 'red': '#72ce35',
+        borderStyle: 'solid',
+        backgroundColor: theme.backgroundColor,
+        color: theme.accentColor,
+        minWidth: width + 'ch'
+    }
 
-                </div>
-                <div className='timerLengthAdjusterValues'>
-                    <div className='timerLengthAdjusterContainer'>
-                        <input 
-                            className="timerLengthAdjusterInput"
-                            id={this.props.type + 'TimerLengthAdjusterInput'}
-                            style={this.timerLengthAdjusterInputStyle}
-                            type="number"
-                            name={this.props.type + 'TimerLengthInput'}
-                            value={this.getInputValue()}
-                            onChange={this.lengthInputChanged}
-                        />
-                        <div className='timerLengthAdjusterUnit' style={this.timerLengthAdjusterTextStyle}>
-                            mins
-                        </div>
-                    </div>
-                    <div className='timerLengthAdjusterType' style={this.timerLengthAdjusterTextStyle}>
-                        {this.props.type}
-                </div>
+    return(
+        <div className='timerLengthAdjuster' style={timerLengthAdjusterStyle}>
+            <div className={'timerLengthAdjusterInputContainer'}>
+                <input
+                    className="timerLengthAdjusterInput"
+                    id={id}
+                    style={timerLengthAdjusterInputStyle}
+                    type="number"
+                    value={value}
+                    onChange={inputChanged}
+                />
+                <div className='timerLengthAdjusterUnit' style={timerLengthAdjusterStyle}>
+                    mins
                 </div>
             </div>
-        )
-    }
+            <div className='timerLengthAdjusterType' style={timerLengthAdjusterStyle}>
+                    {label}
+            </div>
+        </div>
+    )
 }
+
+export default TimerLengthAdjuster

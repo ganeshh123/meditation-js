@@ -26,7 +26,7 @@ export const SceneVideo = (props) => {
             return
         }
 
-        if(dangerousVideo){
+        if(dangerousVideo && videoUrl){
             dangerousVideo.src = videoUrl
             dangerousVideo.oncanplaythrough = () => videoFinishedLoading(dangerousVideo)
         }
@@ -34,7 +34,7 @@ export const SceneVideo = (props) => {
 
     return(
         <div
-            className={`absolute top-0 w-full h-full object-cover ${videoLoaded ? "sceneVideo showing visible" : "sceneVideo hidden invisible"}`}
+            className={`${videoLoaded ? "sceneVideo showing visible" : "sceneVideo hidden invisible"}`}
             ref={videoContainer}
             dangerouslySetInnerHTML={{
                 __html: `
