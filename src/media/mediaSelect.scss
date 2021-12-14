@@ -146,3 +146,16 @@
 
 /* Volume Control */
 
+.alarmVolumeControl{
+    @apply flex flex-row justify-center items-center;
+    @apply my-7;
+}
+
+.alarmVolumeSlider{
+    @apply mx-2 w-40 h-5;
+}
+
+.alarmMuteButton{
+    @apply h-8 w-8;
+}
+

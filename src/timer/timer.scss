@@ -152,7 +152,7 @@
 
 #timerSetupWarning {
     @apply flex justify-center items-center mt-10 mb-10 text-xl;
-    @apply md:text-2xl mt-16 mb-12;
+    @apply md:text-2xl mt-8;
 }
 
 #timerSetupWarningIcon {
@@ -163,7 +163,8 @@
 
 #timerSetupBeginButton {
     font-family: 'Bubbler One', sans-serif;
-    @apply cursor-pointer p-2 rounded-xl text-2xl md:text-3xl md:p-4;
+    @apply cursor-pointer p-2 rounded-xl text-2xl mt-14;
+    @apply md:text-3xl md:p-4;
 }
 
 /* Timer Length Adjuster */

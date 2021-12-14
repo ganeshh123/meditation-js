@@ -2,6 +2,7 @@ import React from 'react';
 import TimerLengthAdjuster from './TimerLengthAdjuster'
 import SettingsController from '../settings/SettingsController'
 import {CrossIcon, AboutIcon} from '../icons'
+import {VolumeControl}  from '../media/VolumeControl'
 import './timer.scss'
 
 const valueInvalid = (currentValue) => {
@@ -105,6 +106,11 @@ export const TimerSetup = (props) => {
                         label={`Break`}
                     />
                 </div>
+                <VolumeControl
+                    volume={appState['alarmVolume']}
+                    id={`timerSetupAlarmVolumeSlider`}
+                    updateApp={updateApp}
+                />
                <button
                     id='timerSetupBeginButton'
                     className='glassBlock'
