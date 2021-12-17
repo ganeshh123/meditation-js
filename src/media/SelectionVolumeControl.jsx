@@ -31,14 +31,14 @@ export default class SelectionVolumeControl extends React.Component{
 
         if(type == 'scene'){
             return (<VideoOnIcon 
-                        className='mediaSelectOpenButtonIcon iconButton'
+                        className='mediaSelectOpenButtonIcon'
                         style={this.selectionVolumeControlStyle}
                         onClick={this.mediaSelectOpenButtonPressed}
                     />)
         }
         if(type == 'musicTrack'){
             return (<NoteIcon 
-                        className='mediaSelectOpenButtonIcon iconButton'
+                        className='mediaSelectOpenButtonIcon'
                         style={this.selectionVolumeControlStyle}
                         onClick={this.mediaSelectOpenButtonPressed}
                     />)
