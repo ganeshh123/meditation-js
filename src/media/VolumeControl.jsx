@@ -9,12 +9,14 @@ export const VolumeControl = (props) => {
 
     const {volume, id, updateApp} = props
 
+    const [localAlarmVolume, setLocalAlarmVolume] = React.useState(0)
+
     const MuteButton = (volume) => {
         if(parseInt(volume) === 0){
             return(
                 <BellOffIcon
                     {...MuteButtonProps}
-                    onClick={() => updateApp({alarmVolume: 50})}
+                    onClick={() => updateApp({alarmVolume: localAlarmVolume})}
                 />
             )
         }
@@ -38,8 +40,10 @@ export const VolumeControl = (props) => {
                 max='100'
                 value={volume}
                 onChange={(e) => {
+                    const newVolume = e.target.value
+                    setLocalAlarmVolume(newVolume)
                     updateApp({
-                        alarmVolume: e.target.value
+                        alarmVolume: newVolume
                     })
                 }}
             />
