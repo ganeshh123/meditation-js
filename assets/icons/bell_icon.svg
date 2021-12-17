@@ -1,12 +1,12 @@
 <svg id="Group_178" data-name="Group 178" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
   <defs>
     <clipPath id="clip-path">
-      <rect id="Rectangle_90" data-name="Rectangle 90" width="32" height="32" fill="none" stroke="#707070" stroke-width="2"/>
+      <rect id="Rectangle_90" data-name="Rectangle 90" width="32" height="32" fill="none" stroke="#000" stroke-width="2"/>
     </clipPath>
   </defs>
   <g id="Group_177" data-name="Group 177" clip-path="url(#clip-path)">
-    <path id="Path_280" data-name="Path 280" d="M22.773,16.2v-3.6c0-5.841-3.729-9.707-9.3-9.707a8.874,8.874,0,0,0-9.308,9.306v4.02a2.687,2.687,0,0,1-.635,1.8,5.582,5.582,0,0,0-.938,1.509,1.809,1.809,0,0,0,1.053,2.426c4.964,1.817,14.628,1.672,19.652-.036a1.749,1.749,0,0,0,1.067-2.356,5.635,5.635,0,0,0-.946-1.537A2.715,2.715,0,0,1,22.773,16.2Z" transform="translate(2.398 2.839)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path id="Path_281" data-name="Path 281" d="M7.111,2.64a1.764,1.764,0,0,1,3.528,0" transform="translate(6.993 0.862)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path id="Path_282" data-name="Path 282" d="M6.673,14.279a2.9,2.9,0,0,0,5.262,0" transform="translate(6.562 14.042)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_280" data-name="Path 280" d="M22.773,16.2v-3.6c0-5.841-3.729-9.707-9.3-9.707a8.874,8.874,0,0,0-9.308,9.306v4.02a2.687,2.687,0,0,1-.635,1.8,5.582,5.582,0,0,0-.938,1.509,1.809,1.809,0,0,0,1.053,2.426c4.964,1.817,14.628,1.672,19.652-.036a1.749,1.749,0,0,0,1.067-2.356,5.635,5.635,0,0,0-.946-1.537A2.715,2.715,0,0,1,22.773,16.2Z" transform="translate(2.398 2.839)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_281" data-name="Path 281" d="M7.111,2.64a1.764,1.764,0,0,1,3.528,0" transform="translate(6.993 0.862)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_282" data-name="Path 282" d="M6.673,14.279a2.9,2.9,0,0,0,5.262,0" transform="translate(6.562 14.042)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
   </g>
 </svg>

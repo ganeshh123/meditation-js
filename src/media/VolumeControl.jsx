@@ -1,5 +1,5 @@
 import React from 'react'
-import {SpeakerIcon, SpeakerOffIcon} from '../icons'
+import {BellIcon, BellOffIcon} from '../icons'
 
 const MuteButtonProps = {
     className: 'alarmMuteButton'
@@ -12,7 +12,7 @@ export const VolumeControl = (props) => {
     const MuteButton = (volume) => {
         if(parseInt(volume) === 0){
             return(
-                <SpeakerOffIcon
+                <BellOffIcon
                     {...MuteButtonProps}
                     onClick={() => updateApp({alarmVolume: 50})}
                 />
@@ -20,7 +20,7 @@ export const VolumeControl = (props) => {
         }
 
         return(
-            <SpeakerIcon
+            <BellIcon
                 {...MuteButtonProps}
                 onClick={() => updateApp({alarmVolume: 0})}
             />

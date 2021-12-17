@@ -156,6 +156,7 @@
 }
 
 .alarmMuteButton{
+    @apply cursor-pointer;
     @apply h-8 w-8;
 }
 
