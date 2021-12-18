@@ -32,7 +32,6 @@ export default class PresetBox extends React.Component{
                 <SleepIconLarge
                     className={`presetBoxImage`}
                     onClick={this.presetBoxClicked}
-                    styleName={this.presetBoxStyle}
                 />
             )
         }
@@ -42,7 +41,6 @@ export default class PresetBox extends React.Component{
                 <RelaxIconLarge
                     className={`presetBoxImage`}
                     onClick={this.presetBoxClicked}
-                    styleName={this.presetBoxStyle}
                 />
             )
         }
@@ -52,7 +50,6 @@ export default class PresetBox extends React.Component{
                 <FocusIconLarge
                     className={`presetBoxImage`}
                     onClick={this.presetBoxClicked}
-                    styleName={this.presetBoxStyle}
                 />
             )
         }
