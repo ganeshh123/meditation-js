@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React from 'react'
+import {LoadingIcon} from '../icons'
 import './alert.scss'
 
 export default class Loading extends React.Component {
@@ -8,7 +8,7 @@ export default class Loading extends React.Component {
         super(props)
     }
 
-    showLoading = () => {
+    isLoading = () => {
         let appState = this.props.appState
         let loadingConditions = [
             appState.mediaInfoFetched === false,
@@ -16,24 +16,20 @@ export default class Loading extends React.Component {
             appState.imageLoaded === false,
             appState.videoDisabled === false && appState.videoLoaded === false
         ]
-        let shouldShowLoading = false
 
         for (let condition of loadingConditions) {
             if (condition === true) {
-                shouldShowLoading = true
-                break
+                return true
             }
         }
 
-        return shouldShowLoading
+        return false
     }
 
     setStyle = () => {
         this.loadingStyle = {
-            visibility: this.showLoading() ? 'visible' : 'hidden'
-        }
-        this.loadingIconStyle = {
-            backgroundImage: "url('./assets/icons/loading.png')"
+            color: this.props.appState.currentTheme.accentColor,
+            visibility: this.isLoading() ? 'visible' : 'hidden'
         }
     }
 
@@ -41,9 +37,7 @@ export default class Loading extends React.Component {
         this.setStyle()
 
         return (
-            <div className="loading" style={this.loadingStyle}>
-                <i className="dot-spinner-64x64" style={this.loadingIconStyle} />
-            </div>
+                <LoadingIcon className='loading' style={this.loadingStyle}/>
         )
     }
 }

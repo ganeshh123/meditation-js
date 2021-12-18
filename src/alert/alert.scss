@@ -30,7 +30,7 @@
 
 .loading{
     z-index: 2;
-    height: 4.5vh;
+    @apply h-20 w-20;
     position: fixed;
     bottom: 10vh;
     right: 50px;

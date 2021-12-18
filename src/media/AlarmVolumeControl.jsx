@@ -5,7 +5,7 @@ const MuteButtonProps = {
     className: 'alarmMuteButton'
 }
 
-export const VolumeControl = (props) => {
+export const AlarmVolumeControl = (props) => {
 
     const {volume, id, updateApp} = props
 
@@ -51,4 +51,4 @@ export const VolumeControl = (props) => {
     )
 }
 
-export default VolumeControl
+export default AlarmVolumeControl
