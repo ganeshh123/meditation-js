@@ -79,7 +79,7 @@ export const TimerSetup = (props) => {
     return(
         <div id='timerSetup' className='overlayContainer' style={timerSetupStyle}>
             <div id='timerSetupTitle' className='overlayTitle'>
-                Setup Timer
+                New Timer
             </div>
             <CrossIcon
                 className='overlayCloseButton iconButton'
