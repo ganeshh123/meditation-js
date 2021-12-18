@@ -33,12 +33,11 @@ export const MediaBox = (props) => {
     }
 
     return(
-        <div className={`mediaBox`} style={mediaBoxStyle}>
+        <div className={`mediaBox`} style={mediaBoxStyle} onClick={mediaBoxClicked}>
            <div className={`relative`}>
                <div
                    className={`mediaBoxDescription`}
                    style={{backgroundColor: currentTheme.overlayColor}}
-                   onClick={mediaBoxClicked}
                >
                    {type === "scene" ? SceneController.getSceneDescription(mediaId) : MusicController.getMusicDescription(mediaId)}
                </div>
