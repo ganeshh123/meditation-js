@@ -8,7 +8,8 @@ export default class UIHide{
         '#titleBar',
         '#leftPanel',
         '#rightPanel',
-        '#sceneControlPanel',
+        //'#sceneControlPanel',
+        '.mediaPanel',
         '#timerBottomBar',
         '#timerViewControls'
     ]

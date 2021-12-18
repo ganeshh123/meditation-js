@@ -8,7 +8,7 @@ import ThemeController from './theme/ThemeController'
 
 import UIHide from './utils/uihide/UIHide';
 import TitleBar from './titlebar/TitleBar'
-import SceneControlPanel from './media/SceneControlPanel'
+import MediaPanel from './media/MediaPanel'
 import SceneVideo from './media/SceneVideo'
 import SceneImage from './media/SceneImage'
 import AudioPlayer from './media/AudioPlayer'
@@ -37,10 +37,12 @@ class App extends React.Component {
   }
 
   state = {
-    /* Variables */
+    /* Chosen Media */
     currentScene: 'autumn-rain',
     currentMusicTrack: 'soothing-piano',
+    /* Theme */
     currentTheme: CSS.supports('backdrop-filter', 'blur(2.6vh)') ? ThemeController.staticThemes['dark'] : ThemeController.staticThemes['darkNb'],
+    /* Volumes */
     sceneAudioVolume: 50,
     musicAudioVolume: 20,
     alarmVolume: 70,
@@ -51,8 +53,6 @@ class App extends React.Component {
     videoLoaded: false,
     blurImageLoaded: false,
     imageLoaded: false,
-    musicMuted: false,
-    sfxMuted: false,
     videoDisabled: true,
     presetsMenuExpanded: false,
     presetsOverlayShowing: false,
@@ -113,9 +113,14 @@ class App extends React.Component {
         </div>
 
         <div id="appBottom">
-          <SceneControlPanel 
-            appState={this.state}
-          />
+            <MediaPanel
+                updateApp={this.updateState}
+                currentTheme={this.state.currentTheme}
+                currentScene={this.state.currentScene}
+                currentMusicTrack={this.state.currentMusicTrack}
+                sceneAudioVolume={this.state.sceneAudioVolume}
+                musicAudioVolume={this.state.musicAudioVolume}
+            />
         </div>
       </div>
     );
