@@ -15,16 +15,19 @@
     align-items: flex-start;
 }
 
-.sidePanelIcon { 
-    width: 10vh;
-    height: 10vh;
+.sidePanelButton{
     padding: 1vh;
     border-radius: 2vh;
     cursor: pointer;
-    opacity: 0.9;
     margin-top: 2vh;
 }
 
-.sidePanelIcon:hover{
+.sidePanelIcon { 
+    width: 10vh;
+    height: 10vh;
+    opacity: 0.7;
+}
+
+.sidePanelButton:hover .sidePanelIcon{
     opacity: 1;
 }

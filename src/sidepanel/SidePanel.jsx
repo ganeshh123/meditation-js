@@ -10,40 +10,58 @@ export const SidePanel = (props) => {
     const theme = appState.currentTheme
     const update = appState.setStateFunction
 
-    const sharedButtonProps = {
-        className: 'sidePanelIcon glassBlock',
+    const buttonContainerProps = {
+        className: 'glassBlock sidePanelButton',
         style: {
             backgroundColor: theme.backgroundColor,
             border: theme.border,
             boxShadow: theme.boxShadow,
             backdropFilter : theme.backdropFilter,
             WebKitBackdropFilter : theme.webkitBackdropFilter,
+        }
+    }
+
+    const sharedButtonProps = {
+        className: 'sidePanelIcon',
+        style: {
             color: theme.accentColor
         }
     }
 
     const PresetsButton = () => (
-        <PresetsIcon
-            {...sharedButtonProps}
+        <div
+            {...buttonContainerProps}
             onClick={() => update({presetsMenuExpanded: !appState.presetsMenuExpanded})}
-            id={'presetsButton'}
-        />
+        >
+            <PresetsIcon
+                {...sharedButtonProps}
+                id={'presetsButton'}
+            />
+        </div>
     )
 
     const NewTimerButton = () => (
-        <NewTimerIcon
-            {...sharedButtonProps}
+        <div
+            {...buttonContainerProps}
             onClick={() => update({timerSetupShowing: !appState.timerSetupShowing})}
-            id={'timerSetupButton'}
-        />
+        >
+            <NewTimerIcon
+                {...sharedButtonProps}
+                id={'timerSetupButton'}
+            />
+        </div>
     )
 
     const LightDarkButton = () => (
-        <LightDarkIcon
-            {...sharedButtonProps}
+        <div
+            {...buttonContainerProps}
             onClick={() => ThemeController.switchTheme(appState)}
-            id={'lightDarkButton'}
-        />
+        >
+            <LightDarkIcon
+                {...sharedButtonProps}
+                id={'lightDarkButton'}
+            />
+        </div>
     )
 
     const VideoToggleButton = () => {
@@ -53,27 +71,35 @@ export const SidePanel = (props) => {
 
         if(videoCurrentlyDisabled){
             return(
-                <VideoOffIcon
-                    {...sharedButtonProps}
+                <div
+                    {...buttonContainerProps}
                     onClick={() => {
                         update({videoDisabled: false, videoLoaded: false})
                         videoElement && videoElement.play()
                     }}
-                    id={videoButtonId}
-                />
+                >
+                    <VideoOffIcon
+                        {...sharedButtonProps}
+                        id={videoButtonId}
+                    />
+                </div>
             )
         }
 
         if(!videoCurrentlyDisabled){
             return(
-                <VideoOnIcon
-                    {...sharedButtonProps}
+                <div
+                    {...buttonContainerProps}
                     onClick={() => {
                         update({videoDisabled: !videoCurrentlyDisabled})
                         videoElement && videoElement.pause()
                     }}
-                    id={videoButtonId}
-                />
+                >
+                    <VideoOnIcon
+                        {...sharedButtonProps}
+                        id={videoButtonId}
+                    />
+                </div>
             )
         }
     }
