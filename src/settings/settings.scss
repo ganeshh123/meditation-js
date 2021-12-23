@@ -1,80 +1,38 @@
-#settings {
-    flex: 1;
-    width: 100%;
-    position: relative;
-    padding: 2vh;
-    border-radius: 2vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+#settingsMenu{
+  @apply flex flex-col justify-start items-center;
+  @apply mt-10;
 }
 
-#settingsTitle {
-    margin-left: 1vh;
-    font-size: 5vh;
-    text-align: center;
+.settingItem{
+  @apply flex flex-row justify-start items-center w-full h-full max-w-4xl;
+  @apply p-2;
+  @apply md:my-2;
 }
 
-#settingsMenu {
-    flex: 1;
-    max-width: 600px;
-    width: auto;
-    margin-top: 10vh;
+.settingItemIcon{
+  @apply h-12 w-12 mr-4;
+  @apply lg:h-16 lg:w-16 lg:mr-8;
 }
 
-#settingsReset {
-    position: absolute;
-    bottom: 2vh;
-    padding: 1.5vh;
-    text-align: center;
-    font-size: 2.5vh;
-    cursor: pointer;
-    border-radius: 1.5vh;
-    margin-bottom: 5vh;
+.settingItemLabel{
+  @apply text-3xl;
+  @apply lg:text-4xl;
 }
 
-.settingsMenuItem {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 2vh;
-    padding-right: 2vh;
-    padding-top: 0.7vh;
-    padding-bottom: 0.5vh;
+.settingContainer{
+  @apply flex-1 flex justify-end items-center ml-3;
 }
 
-.settingsMenuItemLeftSide {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    min-width: 90%;
+.settingItemSwitch{
+  @apply cursor-pointer text-center rounded-xl;
+  @apply text-2xl p-2;
+  @apply lg:text-3xl;
+  min-width: 80px !important;
 }
 
-#notificationVolumeIcon {
-    width: auto;
-    height: 4vw;
-}
-
-#solidGlassIcon {
-    width: auto;
-    height: 4vw;
-}
-
-.settingsMenuItemLabel {
-    font-size: 3.4vh;
-    margin-left: 3vh;
-}
-
-.settingsToggleSwitch {
-    min-width: 10vw;
-    min-height: 2vh;
-    text-align: center;
-    padding: 0.5vh;
-    font-size: 2.5vh;
-    border-radius: 1vh;
-    cursor: pointer;
-    text-transform: capitalize;
+.settingItemSlider{
+  @apply cursor-pointer;
+  @apply w-full;
+  @apply md:max-w-xs;
+  min-width: 80px !important;
 }
