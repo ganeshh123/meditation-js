@@ -63,7 +63,7 @@ module.exports = {
     output: {
         // Output to dist/web folder
         path: path.resolve(__dirname, '../dist/web'),
-        filename: 'webapp.js',
+        filename: 'calmeo.js',
         assetModuleFilename: "assets/fonts/[name][ext][query]"
     },
     plugins: [

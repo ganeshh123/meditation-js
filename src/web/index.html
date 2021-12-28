@@ -2,14 +2,36 @@
 <html>
   <head>
     <title>Calmeo - Relax & Focus</title>
-    <script defer src="./webapp.js"></script>
     <link rel="stylesheet" href="./main.css">
     <link rel='shortcut icon' type='image/x-icon' href='./assets/icons/favicon.ico' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .fallback{
+        position: absolute;
+        top: 0px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        z-index: -3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(16, 16, 16, 1);
+        color: #ffffff;
+        text-align: center;
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+    </style>
   </head>
   <body>
-    <div id="calmeo">
+    <div class="fallback">
+      Calmeo is loading...
+    </div>
+    <div id="app">
       
     </div>
   </body>
+  <script defer src="./calmeo.js"></script>
 </html>
