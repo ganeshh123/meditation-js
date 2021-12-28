@@ -43,7 +43,7 @@ export default class SceneController{
 
     static getSceneImage = (sceneId) => {
         if(this.scenes && this.scenes[sceneId]){
-            return `./assets/scenes/${sceneId}/${sceneId}.png`
+            return `./assets/scenes/${sceneId}/${sceneId}.jpg`
         }
     }
 

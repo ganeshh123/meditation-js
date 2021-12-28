@@ -87,7 +87,7 @@ class App extends React.Component {
   render = () => {
 
     return(
-      <div id="app" style={this.appStyle}>
+      <div id="calmeo" style={this.appStyle}>
 
         <Loading appState={this.state} />
         <SceneImage scene={this.state.currentScene} update={this.updateState} imageLoaded={this.state.imageLoaded} blurImageLoaded={this.state.blurImageLoaded}/>
@@ -129,7 +129,7 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.querySelector('#calmeo')
+  document.querySelector('#app')
 );
 
 module.hot.accept()

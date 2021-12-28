@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Bubbler One';
+    src: url('../assets/fonts/BubblerOne-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../assets/fonts/Quicksand_Light.woff2') format('woff2');
+}
 
 *, *:before, :after {
     box-sizing: border-box;
@@ -36,7 +44,7 @@ body {
     background: #000000;
 }
 
-#calmeo{
+#app{
     height: 100%;
     width: 100%;
     margin: 0;
@@ -44,7 +52,7 @@ body {
     max-height: 100vh;
 }
 
-#app {
+#calmeo {
     padding: 2vh 1vw;
     display: flex;
     flex-direction: column;
