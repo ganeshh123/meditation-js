@@ -17,11 +17,23 @@ module.exports = {
                 use: ['babel-loader']
             },
             {
+                test: /\.(ttf|otf)/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][ext][query]'
+                }
+            },
+            {
                 // Instructions to process SASS and CSS
                 test: /\.(scss|css)$/,
                 use: [
                     // Extract CSS from JS into Stylesheet
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: ''
+                        }
+                    },
                     // Load CSS
                     'css-loader',
                     // Use PostCSS to load Tailwind Classes
@@ -51,7 +63,8 @@ module.exports = {
     output: {
         // Output to dist/web folder
         path: path.resolve(__dirname, '../dist/web'),
-        filename: 'webapp.js'
+        filename: 'webapp.js',
+        assetModuleFilename: "assets/fonts/[name][ext][query]"
     },
     plugins: [
         // Extract CSS from JS

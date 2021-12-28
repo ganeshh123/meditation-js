@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Bubbler One';
+    src: url('../assets/fonts/BubblerOne-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../assets/fonts/Quicksand_Light.woff2') format('woff2');
+}
 
 *, *:before, :after {
     box-sizing: border-box;
