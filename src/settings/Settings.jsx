@@ -42,6 +42,7 @@ export const Settings = (props) => {
                     label={'Alarm Volume'}
                     value={appState.alarmVolume}
                     handleChange={(newVolume) => updateApp({alarmVolume: newVolume})}
+                    theme={theme}
                 />
 
             </div>
