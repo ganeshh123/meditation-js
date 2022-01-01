@@ -1,3 +1,5 @@
+import SettingsController from '../settings/SettingsController'
+
 export default class UIHide{
 
     static clockInterval
@@ -8,17 +10,18 @@ export default class UIHide{
         '#titleBar',
         '#leftPanel',
         '#rightPanel',
-        //'#sceneControlPanel',
-        '.mediaPanel',
+        '#mediaPanel',
         '#timerBottomBar',
         '#timerViewControls'
     ]
 
     static updateClock = (appState) => {
 
+        const uiAutoHideTimer = parseInt(SettingsController.readSetting('uiAutoHideTimer'))
+
         let newClockValue
 
-        if(this.clockValue == 5){
+        if(this.clockValue === uiAutoHideTimer){
             this.hideUI(appState)
             newClockValue = 1
         }else{
@@ -31,45 +34,41 @@ export default class UIHide{
   
     static hideUI = (appState) => {
 
-        if(this.timerPinned == false){
-            document.querySelector('#timer').classList.remove('showing')
-            document.querySelector('#timer').classList.add('hidden')
+        const uiAutoHide = SettingsController.readSetting('uiAutoHide')
+        if(uiAutoHide === false){
+            return
+        }
+
+        if(this.timerPinned === false){
+            document.querySelector('#timer').classList.remove('playFadeIn')
+            document.querySelector('#timer').classList.add('playFadeOut')
             document.querySelector('#timer').style.opacity = '0'
         }
 
         this.affectSelectors.forEach((selector) => {
-            document.querySelector(selector).classList.remove('showing')
-            document.querySelector(selector).classList.add('hidden')
+            document.querySelector(selector).classList.remove('playFadeIn')
+            document.querySelector(selector).classList.add('playFadeOut')
             document.querySelector(selector).style.opacity = '0'
         })
 
-        if(appState.videoDisabled == false && appState.videoLoaded == false){
+        if(appState.videoDisabled === false && appState.videoLoaded === false){
             document.querySelector('#videoLoading').style.opacity = '1'
         }
-
-        appState.setStateFunction({
-            uiShow: false
-        })
     }
 
     static showUI = (appState) => {
 
         this.affectSelectors.forEach((selector) => {
-            document.querySelector(selector).classList.remove('hidden')
-            document.querySelector(selector).classList.add('showing')
+            document.querySelector(selector).classList.remove('playFadeOut')
+            document.querySelector(selector).classList.add('playFadeIn')
             document.querySelector(selector).style.opacity = '1'
         })
 
-        if(this.timerPinned == false){
-            document.querySelector('#timer').classList.remove('hidden')
-            document.querySelector('#timer').classList.add('showing')
+        if(this.timerPinned === false){
+            document.querySelector('#timer').classList.remove('playFadeOut')
+            document.querySelector('#timer').classList.add('playFadeIn')
         }
         document.querySelector('#timer').style.opacity = '1'
-        
-
-        appState.setStateFunction({
-            uiShow: true
-        })
     }
 
     static setClockInterval = (appState) => {

@@ -5,7 +5,7 @@ import SettingValueDisplay from './SettingValueDisplay'
 
 export const SliderSetting = (props) => {
 
-    const {label, icon, value, handleChange, theme, min, max, step} = props
+    const {label, icon, value, handleChange, theme, min, max, step, prefix, suffix} = props
     const [showValue, setShowValue] = React.useState(false)
 
     const hideValue = () => setShowValue(false)
@@ -13,7 +13,7 @@ export const SliderSetting = (props) => {
     return(
         <>
             <div className={'settingItem sliderSetting'}>
-                <IconLoader iconName={icon} iconProps={ICON_PROPS} />
+                {icon ? <IconLoader iconName={icon} iconProps={ICON_PROPS} /> : <div {...ICON_PROPS} />}
                 <div className={'settingItemLabel'}>{label}</div>
                 <div className={'settingContainer'}>
                     <input
@@ -38,6 +38,8 @@ export const SliderSetting = (props) => {
             {showValue &&
                 <SettingValueDisplay
                     value={value}
+                    prefix={prefix ?? undefined}
+                    suffix={suffix ?? undefined}
                     theme={theme}
                 />
             }

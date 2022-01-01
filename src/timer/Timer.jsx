@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SettingsController from '../settings/SettingsController'
-import UIHide from '../utils/uihide/UIHide'
+import UIHide from '../utils/UIHide'
 import {PinIcon, CrossIcon, BackIcon, SkipIcon, PlayIcon, PauseIcon} from '../icons'
 import './timer.scss'
 

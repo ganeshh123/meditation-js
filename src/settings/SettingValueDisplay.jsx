@@ -11,9 +11,11 @@ export const SettingValueDisplay = (props) => {
     return(
         <>
             <div className={'settingValueDisplay glassBlock'} style={settingValueDisplayStyle}>
-                <span>{prefix ?? ''}</span>
-                <span>{value ?? ''}</span>
-                <span>{suffix ?? ''}</span>
+                <>
+                    <span>{prefix ?? ''}</span>
+                    <span>{value ?? ''}</span>
+                    <span>{suffix ?? ''}</span>
+                </>
             </div>
         </>
     )

@@ -17,7 +17,7 @@ export const MediaPanel = (props) => {
     }
 
     return(
-        <div className={'mediaPanel glassBlock'} style={mediaPanelStyle}>
+        <div className={'mediaPanel glassBlock'} id={'mediaPanel'} style={mediaPanelStyle}>
             <div className={'mediaPanelSection'}>
                 <MediaSelectOpenButton
                     type={'musicTrack'}

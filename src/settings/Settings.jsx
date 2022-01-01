@@ -15,6 +15,8 @@ export const Settings = (props) => {
         color: theme.accentColor
     }
 
+    console.log(appState.uiAutoHide)
+
     return (
         <div id='settings' className='overlayContainer' style={settingsStyle}>
             <div id='settingsTitle' className='overlayTitle'>
@@ -37,6 +39,7 @@ export const Settings = (props) => {
                     theme={theme}
                 />
 
+                {/* Notification Volume */}
                 <SliderSetting
                     icon={parseInt(appState.alarmVolume) === 0 ? 'BellOffIcon' : 'BellIcon'}
                     label={'Alarm Volume'}
@@ -44,6 +47,31 @@ export const Settings = (props) => {
                     handleChange={(newVolume) => updateApp({alarmVolume: newVolume})}
                     theme={theme}
                 />
+
+                {/* Automatically Hide UI */}
+                <SwitchSetting
+                    icon={'PinIcon'}
+                    label={'Auto Hide UI'}
+                    buttonText={appState.uiAutoHide === true ? 'Yes' : 'No'}
+                    handleSwitch={() => updateApp({uiAutoHide: !appState.uiAutoHide})}
+                    theme={theme}
+                />
+
+
+                {/* Time to Automatically Hide UI*/}
+                {appState.uiAutoHide === true &&
+                    <SliderSetting
+                        icon={'NewTimerIcon'}
+                        label={'UI Hide Time'}
+                        value={appState.uiAutoHideTimer}
+                        handleChange={(newValue) => updateApp({uiAutoHideTimer: newValue})}
+                        theme={theme}
+                        min={5}
+                        max={60}
+                        step={5}
+                        suffix={' seconds'}
+                    />
+                }
 
             </div>
 
