@@ -19,8 +19,8 @@
         "id":"focus",
         "name":"Focus",
         "icon":"mini_focus_icon",
-        "sceneId": "waterfall",
-        "musicId": "soothing-piano",
+        "sceneId": "campfire-woods",
+        "musicId": "retro-dreamscape",
         "bigIcon": "focus_icon_large"
     }
 ]
