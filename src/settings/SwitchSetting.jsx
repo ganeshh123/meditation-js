@@ -17,7 +17,7 @@ export const SwitchSetting = (props) => {
 
     return(
         <div className={'settingItem switchSetting'}>
-            <IconLoader iconName={icon} iconProps={ICON_PROPS} />
+            {icon ? <IconLoader iconName={icon} iconProps={ICON_PROPS} /> : <div {...ICON_PROPS} />}
             <div className={'settingItemLabel'}>{label}</div>
            <div className={'settingContainer'}>
                <div

@@ -9,6 +9,8 @@ export default class SettingsController{
         sceneAudioVolume: 50,
         musicAudioVolume: 20,
         alarmVolume: 70,
+        uiAutoHide: true,
+        uiAutoHideTimer: 5,
         videoDisabled: false,
         timerPinned: false,
         timerEnabled: false,
