@@ -20,7 +20,7 @@
 #timerViewControls {
     width: 100%;
     display: flex;
-    padding-left: 1vh;
+    padding-left: 2vh;
     padding-right: 1vh;
     padding-top: 0.8vh;
     flex-direction: row;
@@ -28,7 +28,10 @@
 }
 
 #timerCloseButton {
-    @apply h-10 w-10;
+    width: 3vh;    
+    height: 3vh;
+    margin-right: 1.5vh;
+    position: relative;
 }
 
 #timerPinHolder {
