@@ -16,18 +16,29 @@
 }
 
 .sidePanelButton{
-    padding: 1vh;
-    border-radius: 2vh;
-    cursor: pointer;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 2vh;  
     margin-top: 2vh;
+    cursor: pointer;
 }
 
 .sidePanelIcon { 
-    width: 10vh;
-    height: 10vh;
+    width: 7vh;
+    height: 7vh;
     opacity: 0.7;
+    margin-top: 1.25vh;
+    margin-left: 1.25vh;
 }
 
 .sidePanelButton:hover .sidePanelIcon{
     opacity: 1;
+}
+
+#timerSetupButton {
+    margin-left: 1.6vh;
+}
+
+#videoToggleButton {
+    margin-left: 1.1vh;
 }

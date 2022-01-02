@@ -25,19 +25,19 @@ export const MediaPanel = (props) => {
                     updateApp={updateApp}
                     sourceId={currentMusicTrack}
                 />
-                <MediaSelectOpenButton
-                    type={'scene'}
-                    currentTheme={currentTheme}
-                    updateApp={updateApp}
-                    sourceId={currentScene}
-                />
-            </div>
-            <div className={'mediaPanelSection'}>
                 <VolumeControl
                     type={'musicTrack'}
                     volume={musicAudioVolume}
                     updateApp={updateApp}
                     currentTheme={currentTheme}
+                />
+            </div>
+            <div className={'mediaPanelSection'}>
+                <MediaSelectOpenButton
+                    type={'scene'}
+                    currentTheme={currentTheme}
+                    updateApp={updateApp}
+                    sourceId={currentScene}
                 />
                 <VolumeControl
                     type={'scene'}

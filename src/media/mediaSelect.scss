@@ -16,8 +16,7 @@
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin-left: 4vh;
-    margin-right: 4vh;
+    margin-left: 2.5vh;
 }
 
 .volumeSlider {
@@ -34,38 +33,37 @@
 }
 
 /* Media Panel */
-.mediaPanel {
+#mediaPanel {
     width: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 4.5vh 0;
-    border-radius: 3vh;
-    padding: 4vh 2vh;
-}
-
-.mediaPanelSection {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    border-radius: 3vh;  
+    padding: 3vh 0;
+}
+
+.mediaPanelSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 46%;
+    margin-left: 2vh;
 }
 
 /* Media Select Open Button */
 
-.mediaSelectOpenButton{ 
-    width: 50%;
-    margin-left: 3vh;
-    margin-right: 3vh;
+.mediaSelectOpenButton { 
+    width: 39.8vh;
+    height: 6.8vh;
     margin-bottom: 3vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 2vh;
-    border-radius: 3vh;
+    border-radius: 2vh;
     opacity: 0.8;
     box-shadow: 0 1.5vh 3vh rgba(0,0,0,0.2);
     cursor: pointer;
@@ -78,7 +76,8 @@
 .mediaSelectOpenButtonIcon {
     height: 2.5vh;
     width: auto;
-    margin-right: 4vh;
+    margin-left: 0.5vh;
+    margin-right: 2vh;
     opacity: 0.8;
 }
 
