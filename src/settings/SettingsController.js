@@ -3,8 +3,8 @@ import ThemeController from '../theme/ThemeController'
 export default class SettingsController{
 
     static userSettings = {
-        currentScene: 'autumn-rain',
-        currentMusicTrack: 'soothing-piano',
+        currentScene: 'campfire-woods',
+        currentMusicTrack: 'retro-dreamscape',
         currentTheme: CSS.supports('backdrop-filter') ? ThemeController.staticThemes['dark'] : ThemeController.staticThemes['darkNb'],
         sceneAudioVolume: 50,
         musicAudioVolume: 20,

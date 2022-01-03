@@ -38,8 +38,8 @@ class App extends React.Component {
 
     state = {
         /* Chosen Media */
-        currentScene: 'autumn-rain',
-        currentMusicTrack: 'soothing-piano',
+        currentScene: 'campfire-woods',
+        currentMusicTrack: 'retro-dreamscape',
         /* Theme */
         currentTheme: CSS.supports('backdrop-filter', 'blur(2.6vh)') ? ThemeController.staticThemes['dark'] : ThemeController.staticThemes['darkNb'],
         /* Volumes */
