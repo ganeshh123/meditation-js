@@ -32,10 +32,12 @@ export const SidePanel = (props) => {
         <div
             {...buttonContainerProps}
             onClick={() => update({presetsMenuExpanded: !appState.presetsMenuExpanded})}
+            id={appState['presetsMenuExpanded'] ? 'presetsButtonContainerPressed' : 'presetsButtonContainer'}
         >
             <PresetsIcon
                 {...sharedButtonProps}
-                id={'presetsButton'}
+                id= {'presetsButton'}
+                
             />
         </div>
     )
