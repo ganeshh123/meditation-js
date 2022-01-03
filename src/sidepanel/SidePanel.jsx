@@ -33,6 +33,7 @@ export const SidePanel = (props) => {
             {...buttonContainerProps}
             onClick={() => update({presetsMenuExpanded: !appState.presetsMenuExpanded})}
             id={appState['presetsMenuExpanded'] ? 'presetsButtonContainerPressed' : 'presetsButtonContainer'}
+            title={'Presets'}
         >
             <PresetsIcon
                 {...sharedButtonProps}
@@ -46,6 +47,7 @@ export const SidePanel = (props) => {
         <div
             {...buttonContainerProps}
             onClick={() => update({timerSetupShowing: !appState.timerSetupShowing})}
+            title={'Timer'}
         >
             <NewTimerIcon
                 {...sharedButtonProps}
@@ -58,6 +60,7 @@ export const SidePanel = (props) => {
         <div
             {...buttonContainerProps}
             onClick={() => ThemeController.switchTheme(appState)}
+            title={theme.name === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
         >
             <LightDarkIcon
                 {...sharedButtonProps}
@@ -79,6 +82,7 @@ export const SidePanel = (props) => {
                         update({videoDisabled: false, videoLoaded: false})
                         videoElement && videoElement.play()
                     }}
+                    title={'Enable Video'}
                 >
                     <VideoOffIcon
                         {...sharedButtonProps}
@@ -96,6 +100,7 @@ export const SidePanel = (props) => {
                         update({videoDisabled: !videoCurrentlyDisabled})
                         videoElement && videoElement.pause()
                     }}
+                    title={'Disable Video'}
                 >
                     <VideoOnIcon
                         {...sharedButtonProps}

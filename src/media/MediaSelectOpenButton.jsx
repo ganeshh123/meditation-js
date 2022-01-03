@@ -34,7 +34,7 @@ const getButtonIcon = (type, color) => {
 
 export const MediaSelectOpenButton = (props) => {
 
-    const {type, currentTheme, updateApp, sourceId} = props
+    const {type, currentTheme, updateApp, sourceId, title} = props
 
     const mediaSelectOpenButtonStyle = {
         backgroundColor: currentTheme['backgroundColor'],
@@ -49,6 +49,7 @@ export const MediaSelectOpenButton = (props) => {
                 mediaSelectShowing: true,
                 mediaSelectConfig: {type: type}
             })}
+            title={title}
         >
             {getButtonIcon(type, currentTheme['accentColor'])}
             <div

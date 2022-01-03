@@ -5,7 +5,7 @@ import SettingValueDisplay from './SettingValueDisplay'
 
 export const SliderSetting = (props) => {
 
-    const {label, icon, value, handleChange, theme, min, max, step, prefix, suffix} = props
+    const {label, icon, value, handleChange, theme, min, max, step, prefix, suffix, title} = props
     const [showValue, setShowValue] = React.useState(false)
 
     const hideValue = () => setShowValue(false)
@@ -32,6 +32,7 @@ export const SliderSetting = (props) => {
                         onMouseUp={hideValue}
                         onTouchEnd={hideValue}
                         onKeyUp={hideValue}
+                        title={title}
                     />
                 </div>
             </div>

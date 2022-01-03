@@ -46,6 +46,7 @@ export const AlarmVolumeControl = (props) => {
                         alarmVolume: newVolume
                     })
                 }}
+                title={'Change Alarm Volume'}
             />
         </div>
     )

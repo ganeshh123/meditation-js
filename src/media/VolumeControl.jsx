@@ -1,11 +1,15 @@
 import React from 'react'
 import {SpeakerIcon, SpeakerOffIcon} from '../icons'
+import SettingValueDisplay from '../settings/SettingValueDisplay'
 
 export const VolumeControl = (props) => {
 
-    const {type, volume, updateApp, currentTheme} = props
+    const {type, volume, updateApp, currentTheme, title} = props
     const [localVolume, setLocalVolume] = React.useState(50)
     const updateKey = (type === 'scene') ? 'sceneAudioVolume' : ((type === 'musicTrack') ? 'musicAudioVolume' : '')
+
+    const [showValue, setShowValue] = React.useState(false)
+    const hideValue = () => setShowValue(false)
 
     const MuteButton = () => {
         const muteButtonProps = {
@@ -18,6 +22,7 @@ export const VolumeControl = (props) => {
                 <SpeakerOffIcon
                     {...muteButtonProps}
                     onClick={() => updateApp({[updateKey]: localVolume})}
+                    title={(type === 'scene') ? 'Unmute Sound Effect' : 'Unmute Music'}
                 />
             )
         }
@@ -25,6 +30,7 @@ export const VolumeControl = (props) => {
             <SpeakerIcon
                 {...muteButtonProps}
                 onClick={() => updateApp({[updateKey]: 0})}
+                title={(type === 'scene') ? 'Mute Sound Effect' : 'Mute Music'}
             />
         )
     }
@@ -46,7 +52,22 @@ export const VolumeControl = (props) => {
                         [updateKey]: newVolume
                     })
                 }}
+                title={title}
+                onInput={() => {
+                    setShowValue(true)
+                }}
+                onMouseUp={hideValue}
+                onTouchEnd={hideValue}
+                onKeyUp={hideValue}
             />
+            {showValue &&
+                <SettingValueDisplay
+                    value={volume}
+                    prefix={undefined}
+                    suffix={undefined}
+                    theme={currentTheme}
+                />
+            }
         </div>
     )
 }

@@ -117,6 +117,7 @@ export const TimerSetup = (props) => {
                     onClick={beginButtonPressed}
                     disabled={sessionInvalid || breakInvalid}
                     style={timerSetupButtonStyle}
+                    title={'Begin Timer'}
                 >
                     Begin
                 </button>
@@ -134,57 +135,3 @@ export const TimerSetup = (props) => {
 }
 
 export default TimerSetup
-
-//     setupKeys = () => {
-//         let appState = this.props.appState
-//         document.addEventListener('keydown', (event) => {
-//             if(event.key == 'Escape'){
-//                 appState.setStateFunction({
-//                     timerSetupShowing: false
-//                 })
-//             }
-//         })
-//     }
-//
-//     render(){
-//         this.setStyle()
-//         this.setupKeys()
-//
-//         return(
-//             <div id='timerSetup' style={this.timerSetupStyle}>
-//
-//                 <div id="timerSetupMain">
-//                     <div id='timerSetupMiddle'>
-//                         <TimerLengthAdjuster
-//                             appState={this.props.appState}
-//                             timerSetupState={this.state}
-//                             type='session'
-//                             currentValueInvalid={this.state['selectedSessionLengthInvalid']}
-//                         />
-//                         <TimerLengthAdjuster
-//                             appState={this.props.appState}
-//                             timerSetupState={this.state}
-//                             type='break'
-//                             currentValueInvalid={this.state['selectedBreakLengthInvalid']}
-//                         />
-//                     </div>
-//                     <button
-//                         id='timerSetupBeginButton'
-//                         className='glassBlock'
-//                         onClick={this.beginButtonPressed}
-//                         style={this.timerSetupButtonStyle}
-//                     >
-//                         Begin
-//                     </button>
-//                 </div>
-//                 <div id='timerSetupWarning' style={this.timerSetupTextStyle}>
-//                     <AboutIcon
-//                         style={this.timerSetupStyle}
-//                         id='timerSetupWarningIcon'
-//                     />
-//                     Your current timer will be reset
-//                 </div>
-//             </div>
-//         )
-//     }
-// }

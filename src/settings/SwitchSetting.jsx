@@ -4,7 +4,7 @@ import {ICON_PROPS} from './SettingsConstants'
 
 export const SwitchSetting = (props) => {
 
-    const {label, icon, buttonText, handleSwitch, theme} = props
+    const {label, icon, buttonText, handleSwitch, theme, title} = props
 
     const buttonStyle = {
         backgroundColor: theme.buttonBackgroundColor,
@@ -24,6 +24,7 @@ export const SwitchSetting = (props) => {
                    className={'settingItemSwitch glassBlock'}
                    onClick={handleSwitch}
                    style={buttonStyle}
+                   title={title}
                >
                    {buttonText}
                </div>

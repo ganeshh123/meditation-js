@@ -24,12 +24,14 @@ export const MediaPanel = (props) => {
                     currentTheme={currentTheme}
                     updateApp={updateApp}
                     sourceId={currentMusicTrack}
+                    title={'Change Music Track'}
                 />
                 <VolumeControl
                     type={'musicTrack'}
                     volume={musicAudioVolume}
                     updateApp={updateApp}
                     currentTheme={currentTheme}
+                    title={'Change Music Volume'}
                 />
             </div>
             <div className={'mediaPanelSection'}>
@@ -38,12 +40,14 @@ export const MediaPanel = (props) => {
                     currentTheme={currentTheme}
                     updateApp={updateApp}
                     sourceId={currentScene}
+                    title={'Change Scene'}
                 />
                 <VolumeControl
                     type={'scene'}
                     volume={sceneAudioVolume}
                     updateApp={updateApp}
                     currentTheme={currentTheme}
+                    title={'Change Sound Effect Volume'}
                 />
             </div>
         </div>
