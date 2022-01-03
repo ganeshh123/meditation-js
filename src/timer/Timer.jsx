@@ -308,6 +308,9 @@ export default class Timer extends React.Component {
 
     timerPinButtonPressed = () => {
         let appState = this.props.appState
+        if(appState.uiAutoHide === false){
+            return
+        }
         let timerCurrentlyPinned = appState['timerPinned']
         UIHide.timerPinned = !timerCurrentlyPinned
         
@@ -386,7 +389,7 @@ export default class Timer extends React.Component {
             <div id='timer' className='glassBlock' style={this.timerStyle}>
                 <audio src="./assets/sfx/alarm.mp3" id="alarm-audio" />
                 <div id='timerViewControls'>
-                    <div id='timerPinHolder' onClick={this.timerPinButtonPressed}>
+                    <div id='timerPinHolder' className={this.props.appState.uiAutoHide ? 'cursor-pointer' : 'opacity-0'} onClick={this.timerPinButtonPressed}>
                         <PinIcon
                             style={this.timerIconStyle}
                             id='timerPinButton'
