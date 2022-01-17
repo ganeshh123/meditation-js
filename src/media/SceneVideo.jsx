@@ -34,7 +34,7 @@ export const SceneVideo = (props) => {
 
     return(
         <div
-            className={`${videoLoaded ? "sceneVideo showing visible" : "sceneVideo hidden invisible"}`}
+            className={`${videoLoaded ? "sceneVideoContainer showing visible" : "sceneVideo hidden invisible"}`}
             ref={videoContainer}
             dangerouslySetInnerHTML={{
                 __html: `
@@ -42,7 +42,6 @@ export const SceneVideo = (props) => {
                         loop
                         muted
                         id='sceneVideo'
-                        class='sceneVideo'
                         preload
                         playsinline
                     />

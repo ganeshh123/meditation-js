@@ -23,10 +23,6 @@ import './mainStyle.scss'
 
 class App extends React.Component {
 
-    appStyle = {
-        backgroundSize: 'cover'
-    }
-
     updateState = (newState, cbFunc) => {
         this.setState(newState, () => {
             SettingsController.updateSettings(this.state)
@@ -89,45 +85,48 @@ class App extends React.Component {
     render = () => {
 
         return (
-            <div id="calmeo" style={this.appStyle}>
+            <>
+                <div id="calmeo" style={this.appStyle}>
 
-                <Loading appState={this.state}/>
-                <SceneImage scene={this.state.currentScene} update={this.updateState}
-                            imageLoaded={this.state.imageLoaded} blurImageLoaded={this.state.blurImageLoaded}/>
-                <AudioPlayer appState={this.state} type='sfx'/>
-                <AudioPlayer appState={this.state} type='music'/>
-                <SceneVideo scene={this.state.currentScene} videoDisabled={this.state.videoDisabled}
-                            videoLoaded={this.state.videoLoaded} update={this.updateState}/>
+                    <SceneImage scene={this.state.currentScene} update={this.updateState}
+                                imageLoaded={this.state.imageLoaded} blurImageLoaded={this.state.blurImageLoaded}/>
+                    <AudioPlayer appState={this.state} type='sfx'/>
+                    <AudioPlayer appState={this.state} type='music'/>
+                    <SceneVideo scene={this.state.currentScene} videoDisabled={this.state.videoDisabled}
+                                videoLoaded={this.state.videoLoaded} update={this.updateState}/>
 
-                <div id="appTop">
-                    <TitleBar appTitleText="Calmeo" updateApp={this.updateState}
-                              currentTheme={this.state.currentTheme}/>
-                </div>
+                    <Loading appState={this.state}/>
 
-                <Overlay appState={this.state}/>
+                    <div id="appTop">
+                        <TitleBar appTitleText="Calmeo" updateApp={this.updateState}
+                                  currentTheme={this.state.currentTheme}/>
+                    </div>
 
-                <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
+                    <Overlay appState={this.state}/>
 
-                <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
+                    <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
 
+                    <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
 
-                <div id="appMiddle">
-                    <div id="appCenter">
-                        <Timer appState={this.state}/>
+                    <div id="appMiddle">
+                        <div id="appCenter">
+                            <Timer appState={this.state}/>
+                        </div>
+                    </div>
+
+                    <div id="appBottom">
+                        <MediaPanel
+                            updateApp={this.updateState}
+                            currentTheme={this.state.currentTheme}
+                            currentScene={this.state.currentScene}
+                            currentMusicTrack={this.state.currentMusicTrack}
+                            sceneAudioVolume={this.state.sceneAudioVolume}
+                            musicAudioVolume={this.state.musicAudioVolume}
+                        />
                     </div>
                 </div>
+            </>
 
-                <div id="appBottom">
-                    <MediaPanel
-                        updateApp={this.updateState}
-                        currentTheme={this.state.currentTheme}
-                        currentScene={this.state.currentScene}
-                        currentMusicTrack={this.state.currentMusicTrack}
-                        sceneAudioVolume={this.state.sceneAudioVolume}
-                        musicAudioVolume={this.state.musicAudioVolume}
-                    />
-                </div>
-            </div>
         );
     }
 }

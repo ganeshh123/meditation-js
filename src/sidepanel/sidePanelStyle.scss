@@ -7,13 +7,9 @@
 }
 
 .sidePanel {
+    @apply absolute flex flex-col justify-start items-start;
     top: 15vh;
     margin-top: -2vh;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
 }
 
 .sidePanelButton {

@@ -11,16 +11,12 @@
 /* Volume Control */
 
 .volumeSliderContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin-left: 2.5vh;
+    @apply flex flex-row justify-center items-center w-full;
+    max-width: 500px;
 }
 
 .volumeSlider {
-    width: 100%;
+    width: 80%;
     height: 1vh;
     margin-top: auto;
     margin-bottom: auto;
@@ -34,29 +30,23 @@
 
 /* Media Panel */
 #mediaPanel {
-    width: 90vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3vh;  
-    padding: 3vh 0;
+    width: 100%;
+    border-radius: 3vh;
+    @apply flex flex-col items-center m-2 p-2;
+    @apply md:flex-row md:justify-center md:items-center
 }
 
 .mediaPanelSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 46%;
-    margin-left: 2vh;
+    @apply flex flex-col justify-center items-center mx-2 my-4 w-full;
+    @apply md:items-center;
 }
 
 /* Media Select Open Button */
 
 .mediaSelectOpenButton { 
-    width: 39.8vh;
+    width: 100%;
     height: 6.8vh;
+    max-width: 500px;
     margin-bottom: 3vh;
     display: flex;
     flex-direction: row;

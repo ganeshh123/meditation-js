@@ -13,22 +13,15 @@
 }
 
 *, *:before, :after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    border: 0;
+    @apply box-border p-0 m-0 border-0;
 }
 
 html, body, #app {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    max-height: 100vh;  
+    @apply h-full w-full m-0 p-0 max-h-screen;
 }
 
 html {
-    overflow: hidden;
+    @apply overflow-hidden;
 }
 
 body {
@@ -37,11 +30,11 @@ body {
 }
 
 ::selection {
-    background: #000000;
+    @apply bg-black;
 }
 
 ::-moz-selection {
-    background: #000000;
+  @apply bg-black;
 }
 
 input[type="range"] {
@@ -132,70 +125,38 @@ input[type="range"] {
 }
 
 #app{
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    max-height: 100vh;
+  @apply h-full w-full m-0 p-0 max-h-screen flex justify-center items-center;
 }
 
 #calmeo {
-    padding: 2vh 1vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+    @apply flex flex-col justify-center items-center;
+    @apply h-full w-full overflow-hidden;
+    @apply bg-no-repeat bg-cover bg-center;
+    @apply p-1.5 sm:p-2 md:p-4 lg:p-5;
 }
 
 #appTop {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background: none;
+  @apply w-full flex flex-row justify-center items-center bg-none;
 }
 
 #appMiddle {
-    width: 100%;
-    height: 100%;
-    background: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  @apply h-full w-full flex flex-col justify-between items-center;
+  max-width: 1000px;
 }
 
 #appCenter {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  @apply h-full w-full sm:w-1/2 md:w-3/4 flex flex-col justify-center items-center;
 }
 
 #appBottom {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: none;
+  @apply w-full h-full flex flex-col justify-end items-center;
+  max-width: 1000px;
 }
 
 .iconButton {
-    opacity: 0.7;
-    cursor: pointer;
-    
+  @apply opacity-70 cursor-pointer;
     &:hover {
-        opacity: 1;
+        @apply opacity-100;
     }
 }
 

@@ -1,22 +1,16 @@
 .sceneImage{
     z-index: -2;
-    position: absolute;
-    top: 0px;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
     background-color: #3a3a3a;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    @apply absolute top-0 object-cover h-full w-full bg-no-repeat bg-center bg-cover;
 }
 
-.sceneVideo{
+.sceneVideoContainer{
     z-index: -1;
-    position: absolute;
-    top: 0px;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
     background-color: #3a3a3a;
+    @apply absolute top-0 h-screen w-screen overflow-hidden;
+}
+
+#sceneVideo{
+    z-index: -1;
+    @apply absolute top-0 block h-full w-full object-cover;
 }
