@@ -112,7 +112,7 @@ export const SidePanel = (props) => {
     }
 
     return(
-        <div className='sidePanel hidden sm:flex' id={id}>
+        <div className='mobileControls hidden sm:flex' id={id}>
             {type === 'timerPresets' &&
                 <>
                     {PresetsButton()}

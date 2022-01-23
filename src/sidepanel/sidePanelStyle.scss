@@ -6,7 +6,7 @@
     right: 3.4vh;
 }
 
-.sidePanel {
+.mobileControls {
     @apply absolute flex flex-col justify-start items-start;
     top: 15vh;
     margin-top: -2vh;
@@ -44,4 +44,16 @@
     height: 9.6vh;
     border-bottom-left-radius: 0.8vh;
     border-bottom-right-radius: 0.8vh;
+}
+
+#mobileControls {
+    @apply flex flex-row justify-center w-full;
+    @apply px-4 py-2 rounded-xl gap-x-12 mt-5 mb-2;
+    @apply sm:hidden;
+}
+
+.mobileControlIcon{
+    width: 5vh;
+    height: 5vh;
+    opacity: 0.7;
 }
