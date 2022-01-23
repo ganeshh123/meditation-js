@@ -82,6 +82,10 @@ export const MobileControls = (props) => {
         }
     }
 
+    const FullScreenButton = () => {
+
+    }
+
     return (
         <div className='glassBlock' id={'mobileControls'} style={mobileControlsStyle}>
             {PresetsButton()}
