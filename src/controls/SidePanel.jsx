@@ -1,7 +1,7 @@
 import React from 'react';
 import ThemeController from '../theme/ThemeController'
 import PresetsMenu from '../presets/PresetsMenu'
-import './sidePanelStyle.scss'
+import './controlsStyle.scss'
 import {PresetsIcon, NewTimerIcon, LightDarkIcon, VideoOffIcon, VideoOnIcon} from '../icons'
 
 export const SidePanel = (props) => {
@@ -112,7 +112,7 @@ export const SidePanel = (props) => {
     }
 
     return(
-        <div className='mobileControls hidden sm:flex' id={id}>
+        <div className='sidePanel' id={id}>
             {type === 'timerPresets' &&
                 <>
                     {PresetsButton()}

@@ -1,5 +1,4 @@
 #appOverlay{
-    z-index: 3;
     position: absolute;
     width: auto;
     height: auto;
@@ -12,6 +11,7 @@
     animation: fadeIn 0.5s;
     max-height: 100vh;
     max-width: 100vw !important;
+    @apply z-20;
 }
 
 .overlayCloseButton{

@@ -9,13 +9,13 @@
     min-width: 280px;
     padding-top: 1.2vh;
     padding-bottom: 1vh;
-    margin-top: -9vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     border-radius: 3vh;
+    @apply max-w-3xl;
 }
 
 #timerViewControls {

@@ -1,11 +1,8 @@
 #presetsMenu {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
     padding: 1vh 0 1.2vh 0;
-    margin-top: 0.5vh;
     border-radius: 0.8vh 2vh 2vh 2vh;
+    @apply flex flex-col justify-start items-start;
+    @apply mt-1 mb-2;
 }
 
 #sleepPresetMenuButtonIcon, #relaxPresetMenuButtonIcon, #focusPresetMenuButtonIcon {

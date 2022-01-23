@@ -139,12 +139,11 @@ input[type="range"] {
 }
 
 #appMiddle {
-  @apply h-full w-full flex flex-col justify-between items-center;
-  max-width: 1000px;
+  @apply h-full w-full flex flex-row justify-center items-start mt-5;
 }
 
 #appCenter {
-  @apply h-full w-full sm:w-1/2 md:w-3/4 flex flex-col justify-center items-center;
+  @apply h-full flex-1 flex flex-col justify-start items-center mx-2;
 }
 
 #appBottom {

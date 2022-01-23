@@ -13,8 +13,8 @@ import SceneVideo from './media/SceneVideo'
 import SceneImage from './media/SceneImage'
 import AudioPlayer from './media/AudioPlayer'
 import Timer from './timer/Timer'
-import SidePanel from './sidepanel/SidePanel'
-import MobileControls from './sidepanel/MobileControls'
+import SidePanel from './controls/SidePanel'
+import MobileControls from './controls/MobileControls'
 import Overlay from './overlay/Overlay'
 import Loading from './alert/Loading'
 
@@ -105,14 +105,13 @@ class App extends React.Component {
 
                     <Overlay appState={this.state}/>
 
-                    <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
-
-                    <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
 
                     <div id="appMiddle">
+                        <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
                         <div id="appCenter">
                             <Timer appState={this.state}/>
                         </div>
+                        <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
                     </div>
 
                     <div id="appBottom">
