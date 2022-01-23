@@ -12,7 +12,8 @@ export default class UIHide{
         '#rightPanel',
         '#mediaPanel',
         '#timerBottomBar',
-        '#timerViewControls'
+        '#timerViewControls',
+        '#mobileControls'
     ]
 
     static updateClock = (appState) => {

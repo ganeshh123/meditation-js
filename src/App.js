@@ -14,8 +14,9 @@ import SceneImage from './media/SceneImage'
 import AudioPlayer from './media/AudioPlayer'
 import Timer from './timer/Timer'
 import SidePanel from './sidepanel/SidePanel'
+import MobileControls from './sidepanel/MobileControls'
 import Overlay from './overlay/Overlay'
-import Loading from './alert/Loading';
+import Loading from './alert/Loading'
 
 import {DEFAULT_SESSION_LENGTH, DEFAULT_BREAK_LENGTH} from './timer/TimerConstants'
 
@@ -123,6 +124,7 @@ class App extends React.Component {
                             sceneAudioVolume={this.state.sceneAudioVolume}
                             musicAudioVolume={this.state.musicAudioVolume}
                         />
+                        <MobileControls appState={this.state}/>
                     </div>
                 </div>
             </>
