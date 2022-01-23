@@ -3,14 +3,18 @@
 }
 
 #appTitleText {
-    @apply ml-5 text-6xl cursor-pointer;
+    @apply ml-3 text-4xl cursor-pointer;
+    @apply sm:ml-4 sm:text-5xl;
+    @apply lg:text-6xl;
 }
 
 #titleBarButtonContainer {
     @apply h-full flex flex-row justify-center items-center;
 }
 
-.titleBarIcon { 
-    @apply h-12 w-12 mx-4;
+.titleBarIcon {
+    @apply h-8 w-8 mx-2;
+    @apply sm:h-10 sm:w-10 sm:mx-3;
+    @apply lg:h-12 lg:w-12 lg:mx-4;
 }
 
