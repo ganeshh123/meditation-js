@@ -15,8 +15,6 @@ export const Settings = (props) => {
         color: theme.accentColor
     }
 
-    console.log(appState.uiAutoHide)
-
     return (
         <div id='settings' className='overlayContainer' style={settingsStyle}>
             <div id='settingsTitle' className='overlayTitle'>
