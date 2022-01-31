@@ -259,7 +259,7 @@ export const Timer = (props) => {
         }, (newState) => {
             readTimerData(newState)
         })
-    })
+    }, [])
 
     React.useEffect(() => {
         setProgressBar()

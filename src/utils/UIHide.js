@@ -11,7 +11,7 @@ export default class UIHide{
         '#leftPanel',
         '#rightPanel',
         '#mediaPanel',
-        '#timerBottomBar',
+        '#timerControls',
         '#timerViewControls',
         '#mobileControls'
     ]
