@@ -253,13 +253,15 @@ export const Timer = (props) => {
         })
     }
 
-    React.useEffect(() => {
-        updateApp({
-            timerComponent: this
-        }, (newState) => {
-            readTimerData(newState)
-        })
-    }, [])
+    // React.useEffect(() => {
+    //     if(this.startSession){
+    //         updateApp({
+    //             timerComponent: this
+    //         }, (newState) => {
+    //             readTimerData(newState)
+    //         })
+    //     }
+    // }, [startSession])
 
     React.useEffect(() => {
         setProgressBar()
