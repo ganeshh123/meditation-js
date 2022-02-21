@@ -7,11 +7,11 @@ const isProduction = process.env.NODE_ENV === 'production'
 module.exports = {
     // Entry Location
     entry: path.resolve(__dirname, 'App.js'),
-
+    // Use Babel to Convert to backwards compatible JS
     module: {
         rules: [
             {
-                // Use Babel to Convert React to Vanilla JS
+                // Use Babel to Convet React to Vanilla JS
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']

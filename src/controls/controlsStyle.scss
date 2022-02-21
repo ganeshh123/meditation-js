@@ -20,13 +20,11 @@
 
 .sidePanelButton {
     @apply w-20 h-20 rounded-2xl cursor-pointer flex justify-center items-center mb-2;
-    @apply lg:w-24 lg:h-24 lg:mb-4;
 }
 
 .sidePanelIcon {
     opacity: 0.7;
     @apply h-14 w-14 m-1;
-    @apply lg:h-16 lg:w-16;
 }
 
 .sidePanelButton:hover .sidePanelIcon {

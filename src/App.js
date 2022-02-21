@@ -109,7 +109,7 @@ class App extends React.Component {
                     <div id="appMiddle">
                         <SidePanel id="leftPanel" appState={this.state} type="timerPresets"/>
                         <div id="appCenter">
-                            <Timer appState={this.state} updateApp={this.updateState}/>
+                            <Timer appState={this.state}/>
                         </div>
                         <SidePanel id="rightPanel" appState={this.state} type="toggles"/>
                     </div>
