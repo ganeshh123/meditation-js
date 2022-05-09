@@ -1,5 +1,7 @@
 import React from 'react'
-import {CrossIcon} from '../icons'
+import {CrossIcon, PlayIcon, AboutIcon} from '../icons'
+import './about.scss'
+import {AboutSectionHeader} from './AboutSectionHeader'
 
 export const About = (props) => {
 
@@ -22,7 +24,16 @@ export const About = (props) => {
                 style={aboutStyle}
             />
             <div id={'aboutMenu'} className={`overlayContent`}>
-
+                <AboutSectionHeader
+                    icon={<PlayIcon className={`about-section-header-icon`} />}
+                    text={`Now Playing`}
+                    theme={currentTheme}
+                />
+                <AboutSectionHeader
+                    icon={<AboutIcon className={`about-section-header-icon`} />}
+                    text={`Credits`}
+                    theme={currentTheme}
+                />
             </div>
         </div>
     )

@@ -1,0 +1,27 @@
+#aboutMenu{
+  @apply flex flex-col justify-start items-center;
+  @apply mt-10 max-w-4xl;
+}
+
+.about-section-header{
+  @apply flex flex-row justify-center items-center gap-x-2;
+  @apply w-full my-2;
+  @apply md:gap-x-4;
+}
+
+.about-section-header-icon{
+  @apply h-6 w-6;
+  @apply md:h-7 md:w-7;
+  @apply xl:h-8 lg:h-8;
+}
+
+.about-section-header-text{
+  @apply text-3xl whitespace-nowrap;
+  @apply md:text-4xl;
+  @apply xl:text-5xl;
+}
+
+.about-section-header-line{
+  @apply flex-1 h-0.5;
+  @apply md:h-1;
+}
