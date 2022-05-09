@@ -63,6 +63,7 @@ class App extends React.Component {
         mediaSelectConfig: {},
         confirmationShowing: false,
         confirmationConfig: {},
+        aboutShowing: false,
         timerPinned: false,
         firstTime: true,
         /* Timer State */
