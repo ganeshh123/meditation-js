@@ -9,7 +9,6 @@ export const AboutSectionHeader = (props) => {
                 className={`about-section-header-line`}
                 style={{
                     backgroundColor: theme.accentColor,
-                    // height: '0.5px'
                 }}
             >
             </div>

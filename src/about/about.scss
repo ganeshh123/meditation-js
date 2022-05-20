@@ -34,15 +34,15 @@
 
 .now-playing-item{
   @apply w-full flex flex-row items-center;
-  @apply gap-x-2;
+  @apply gap-x-2 mb-4;
   @apply md:gap-x-3;
   @apply xl:gap-x-4;
 }
 
 .now-playing-item-media-icon{
-  @apply h-5 w-5;
-  @apply md:h-6 md:w-6;
-  @apply xl:h-7 lg:h-7;
+  @apply h-6 w-6;
+  @apply md:h-7 md:w-7;
+  @apply xl:h-8 lg:h-8;
 }
 
 .now-playing-item-info{
@@ -57,7 +57,7 @@
 }
 
 .now-playing-item-media-source{
-  @apply w-full flex flex-row;
+  @apply w-full flex flex-row flex-wrap;
   @apply text-xl ml-2;
   @apply md:text-2xl ml-3;
   @apply xl:text-3xl ml-4;
@@ -68,12 +68,10 @@
 .pretty-link{
   @apply flex flex-row items-center;
   @apply gap-x-1;
-  @apply md:gap-x-2;
-  @apply xl:gap-x-3;
 }
 
 .pretty-link-text{
-  @apply underline;
+  @apply underline w-full;
 }
 
 .pretty-link-icon{

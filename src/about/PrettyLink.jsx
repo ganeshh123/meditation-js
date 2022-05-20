@@ -8,6 +8,10 @@ export const PrettyLink = (props) => {
         color: '#d3ddd5'
     }
 
+    if(text === undefined || text === ''){
+        return <></>
+    }
+
     return(
         <a
             className={'pretty-link'}
@@ -15,9 +19,9 @@ export const PrettyLink = (props) => {
             href={url}
             target={`_blank`}
         >
-            <div className={`pretty-link-text`}>
+            <span className={`pretty-link-text`}>
                 {text}
-            </div>
+            </span>
             <AboutIcon
                 className={`pretty-link-icon`}
             />

@@ -41,9 +41,9 @@ export const NowPlayingItem = (props) => {
                     {mediaName}
                 </div>
                 <div className={`now-playing-item-media-source`}>
-                    <PrettyLink text={sourceName} url={sourceUrl} />
-                    <span>&nbsp; by &nbsp;</span>
-                    <PrettyLink text={sourceArtist} url={sourceArtistUrl}/>
+                    {sourceName && <PrettyLink text={sourceName} url={sourceUrl} />}
+                    {(sourceName || sourceArtist) && <span>&nbsp; by &nbsp;</span>}
+                    {sourceArtist && <PrettyLink text={sourceArtist} url={sourceArtistUrl}/>}
                 </div>
             </div>
         </div>

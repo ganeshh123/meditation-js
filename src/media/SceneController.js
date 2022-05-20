@@ -65,9 +65,15 @@ export default class SceneController{
         }
     }
 
-    static getSceneSourceVideoURL = (sceneId) => {
+    static getSceneSourceVideoName = (sceneId) => {
         if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceVideoName']){
             return this.scenes[sceneId]['sourceVideoName']
+        }
+    }
+
+    static getSceneSourceVideoURL = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceVideoUrl']){
+            return this.scenes[sceneId]['sourceVideoUrl']
         }
     }
 
@@ -95,15 +101,15 @@ export default class SceneController{
         }
     }
 
-    static getSceneSourceSfxArtistURL = (sceneId) => {
+    static getSceneSourceSfxArtist = (sceneId) => {
         if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceSfxArtist']){
             return this.scenes[sceneId]['sourceSfxArtist']
         }
     }
 
-    static getSceneSourceSfxName = (sceneId) => {
-        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['ArtistURL']){
-            return this.scenes[sceneId]['ArtistURL']
+    static getSceneSourceSfxArtistURL = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceSfxArtistURL']){
+            return this.scenes[sceneId]['sourceSfxArtistURL']
         }
     }
 }
