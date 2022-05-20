@@ -25,3 +25,56 @@
   @apply flex-1 h-0.5;
   @apply md:h-1;
 }
+
+.about-section{
+  @apply w-full flex flex-col justify-center items-center;
+}
+
+/* Now Playing Item */
+
+.now-playing-item{
+  @apply w-full flex flex-row items-center;
+  @apply gap-x-2;
+  @apply md:gap-x-3;
+  @apply xl:gap-x-4;
+}
+
+.now-playing-item-media-icon{
+  @apply h-5 w-5;
+  @apply md:h-6 md:w-6;
+  @apply xl:h-7 lg:h-7;
+}
+
+.now-playing-item-info{
+  @apply w-full flex flex-col justify-start items-start;
+}
+
+.now-playing-item-media-name{
+  @apply w-full;
+  @apply text-xl;
+  @apply md:text-2xl;
+  @apply xl:text-3xl;
+}
+
+.now-playing-item-media-source{
+  @apply w-full flex flex-row;
+  @apply text-xl ml-2;
+  @apply md:text-2xl ml-3;
+  @apply xl:text-3xl ml-4;
+  @apply cursor-pointer;
+}
+
+/* Pretty Link */
+.pretty-link{
+  @apply flex flex-row items-center;
+  @apply gap-x-1;
+  @apply md:gap-x-2;
+  @apply xl:gap-x-3;
+}
+
+.pretty-link-text{
+  @apply underline;
+}
+
+.pretty-link-icon{
+}
