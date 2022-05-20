@@ -3,28 +3,40 @@
       "id":"soothing-piano",
       "name":"Soothing Piano",
       "description" : "Powerful piano for deep thought",
-      "source": "https://www.youtube.com/watch?v=962VmrIh9vQ",
-      "imageSource": "https://unsplash.com/photos/9mKz5H_1MPI"
+      "sourceURL": "https://www.youtube.com/watch?v=962VmrIh9vQ",
+      "imageSource": "https://unsplash.com/photos/9mKz5H_1MPI",
+      "sourceName": "Still",
+      "sourceArtist": "Ross Bugden",
+      "sourceArtistURL": "https://www.youtube.com/c/RossBugden/featured"
     },
     {
       "id":"relaxing-guitar",
       "name":"Relaxing Guitar",
       "description" : "Delicate guitar for watching time go by.",
-      "source": "https://musopen.org/music/8010-3-gymnopedies/",
-      "imageSource": "https://unsplash.com/photos/6LFomHDAwGg"
+      "sourceURL": "https://musopen.org/music/8010-3-gymnopedies/",
+      "imageSource": "https://unsplash.com/photos/6LFomHDAwGg",
+      "sourceName": "Satie Gymnopédies",
+      "sourceArtist": "Erik Satie (provided by MUSOPEN)",
+      "sourceArtistURL": "https://musopen.org/music/composer/erik-satie/"
     },
     {
       "id":"clare-de-lune",
       "name":"Clare de Lune",
       "description" : "Dreamy and passionate piano",
-      "source": "https://www.youtube.com/watch?v=8PlX3quY-n4",
-      "imageSource": "https://unsplash.com/photos/pTgMXg2WrHY"
+      "sourceURL": "https://www.youtube.com/watch?v=8PlX3quY-n4",
+      "imageSource": "https://unsplash.com/photos/pTgMXg2WrHY",
+      "sourceName": "Clair de Lune",
+      "sourceArtist": "Claude Debussy (provided by ANNICTIVE PUBLIC DOMAIN)",
+      "sourceArtistURL": "https://www.youtube.com/channel/UCWRoslBmGCo-qOHAhCwaQqQ/featured"
     },
     {
       "id":"retro-dreamscape",
       "name":"Retro Dreamscape",
       "description" : "Ambient, atmospheric music to be lost in your thoughts.",
-      "source": "http://www.twinmusicom.org/song/283/retro-dreamscape",
-      "imageSource": "https://unsplash.com/photos/BUj0b6pfqY4"
+      "sourceURL": "http://www.twinmusicom.org/song/283/retro-dreamscape",
+      "imageSource": "https://unsplash.com/photos/BUj0b6pfqY4",
+      "sourceName": "Retro Dreamscape",
+      "sourceArtist": "Twin Musicom",
+      "sourceArtistURL": "http://www.twinmusicom.org/"
     }
 ]

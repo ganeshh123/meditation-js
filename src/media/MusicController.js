@@ -39,4 +39,28 @@ export default class SceneController{
             return `assets/music/${musicId}/${musicId}-thumb.jpg`
         }
     }
+
+    static getMusicSourceName =(musicId) => {
+        if(this.music && this.music[musicId]){
+            return this.music[musicId]['sourceName']
+        }
+    }
+
+    static getMusicSourceURL =(musicId) => {
+        if(this.music && this.music[musicId]){
+            return this.music[musicId]['sourceURL']
+        }
+    }
+
+    static getMusicSourceArtist =(musicId) => {
+        if(this.music && this.music[musicId]){
+            return this.music[musicId]['sourceArtist']
+        }
+    }
+
+    static getMusicSourceArtistURL =(musicId) => {
+        if(this.music && this.music[musicId]){
+            return this.music[musicId]['sourceArtistURL']
+        }
+    }
 }

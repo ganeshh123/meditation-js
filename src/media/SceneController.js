@@ -64,4 +64,46 @@ export default class SceneController{
             return `./assets/scenes/${sceneId}/${sceneId}.mp3`
         }
     }
+
+    static getSceneSourceVideoURL = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceVideoName']){
+            return this.scenes[sceneId]['sourceVideoName']
+        }
+    }
+
+    static getSceneSourceVideoArtist = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceVideoArtist']){
+            return this.scenes[sceneId]['sourceVideoArtist']
+        }
+    }
+
+    static getSceneSourceVideoArtistURL = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceVideoArtistURL']){
+            return this.scenes[sceneId]['sourceVideoArtistURL']
+        }
+    }
+
+    static getSceneSourceSfxName = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceSfxName']){
+            return this.scenes[sceneId]['sourceSfxName']
+        }
+    }
+
+    static getSceneSourceSfxURL = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceSfxURL']){
+            return this.scenes[sceneId]['sourceSfxURL']
+        }
+    }
+
+    static getSceneSourceSfxArtistURL = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceSfxArtist']){
+            return this.scenes[sceneId]['sourceSfxArtist']
+        }
+    }
+
+    static getSceneSourceSfxName = (sceneId) => {
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['ArtistURL']){
+            return this.scenes[sceneId]['ArtistURL']
+        }
+    }
 }
