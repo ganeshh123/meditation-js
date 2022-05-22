@@ -60,7 +60,7 @@ export const About = (props) => {
                 </div>
                 <AboutSectionHeader
                     icon={<AboutIcon className={`about-section-header-icon`} />}
-                    text={`Credits`}
+                    text={`Code & Design`}
                     theme={currentTheme}
                 />
             </div>

@@ -61,13 +61,13 @@
   @apply text-xl ml-2;
   @apply md:text-2xl ml-3;
   @apply xl:text-3xl ml-4;
-  @apply cursor-pointer;
 }
 
 /* Pretty Link */
 .pretty-link{
   @apply flex flex-row items-center;
   @apply gap-x-1;
+  @apply cursor-pointer;
 }
 
 .pretty-link-text{

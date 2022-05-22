@@ -1,4 +1,4 @@
-import {AboutIcon} from '../icons'
+import {HyperlinkIcon} from '../icons'
 
 export const PrettyLink = (props) => {
     const {text, url} = props
@@ -22,7 +22,7 @@ export const PrettyLink = (props) => {
             <span className={`pretty-link-text`}>
                 {text}
             </span>
-            <AboutIcon
+            <HyperlinkIcon
                 className={`pretty-link-icon`}
             />
         </a>
