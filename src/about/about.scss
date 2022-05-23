@@ -12,13 +12,13 @@
 .about-section-header-icon{
   @apply h-6 w-6;
   @apply md:h-7 md:w-7;
-  @apply xl:h-8 lg:h-8;
+  @apply 2xl:h-8 lg:h-8;
 }
 
 .about-section-header-text{
   @apply text-3xl whitespace-nowrap;
   @apply md:text-4xl;
-  @apply xl:text-5xl;
+  @apply 2xl:text-5xl;
 }
 
 .about-section-header-line{
@@ -27,7 +27,28 @@
 }
 
 .about-section{
-  @apply w-full flex flex-col justify-center items-center;
+  @apply w-full flex flex-col justify-center items-center mb-2 md:mb-4 xl:mb-10;
+}
+
+.about-horizontal-display{
+  @apply flex flex-row justify-center items-center flex-wrap w-full;
+  @apply gap-2 p-2;
+  @apply md:gap-4;
+  @apply 2xl:gap-5;
+}
+
+.about-open-source{
+  @apply flex flex-col items-center flex-wrap w-full;
+  @apply text-xl gap-y-3 mb-5;
+  @apply md:flex-row md:justify-around md:text-2xl;
+  @apply 2xl:text-3xl;
+}
+
+.about-version{
+  @apply w-full text-center;
+  @apply mb-2 text-xl;
+  @apply md:text-2xl;
+  @apply 2xl:text-3xl;
 }
 
 /* Now Playing Item */
@@ -36,13 +57,13 @@
   @apply w-full flex flex-row items-center;
   @apply gap-x-2 mb-4;
   @apply md:gap-x-3;
-  @apply xl:gap-x-4;
+  @apply 2xl:gap-x-4;
 }
 
 .now-playing-item-media-icon{
   @apply h-6 w-6;
   @apply md:h-7 md:w-7;
-  @apply xl:h-8 lg:h-8;
+  @apply 2xl:h-8 lg:h-8;
 }
 
 .now-playing-item-info{
@@ -53,14 +74,14 @@
   @apply w-full;
   @apply text-xl;
   @apply md:text-2xl;
-  @apply xl:text-3xl;
+  @apply 2xl:text-3xl;
 }
 
 .now-playing-item-media-source{
   @apply w-full flex flex-row flex-wrap;
   @apply text-xl ml-2;
-  @apply md:text-2xl ml-3;
-  @apply xl:text-3xl ml-4;
+  @apply md:text-2xl md:ml-3;
+  @apply 2xl:text-3xl 2xl:ml-4;
 }
 
 /* Pretty Link */
@@ -71,8 +92,24 @@
 }
 
 .pretty-link-text{
-  @apply underline w-full;
+  @apply underline;
 }
 
 .pretty-link-icon{
+}
+
+/* Dev Card */
+.dev-card{
+  @apply flex flex-row items-center rounded-xl;
+  @apply p-2 gap-x-1 text-lg;
+  @apply md:p-4 md:gap-x-2 md:text-xl;
+  @apply 2xl:p-6  2xl:gap-x-4 2xl:text-2xl;
+}
+
+.dev-card-image{
+  @apply h-10 w-10 rounded-full;
+}
+
+.dev-card-text{
+  @apply flex flex-col h-full;
 }
