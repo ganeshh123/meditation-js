@@ -19,23 +19,32 @@
 }
 
 .sidePanelButton {
-    @apply w-20 h-20 rounded-2xl cursor-pointer flex justify-center items-center mb-2;
+    @apply w-[4.5rem] h-[4.5rem] rounded-2xl cursor-pointer flex justify-center items-center mb-3;
 }
 
 .sidePanelIcon {
     opacity: 0.7;
-    @apply h-14 w-14 m-1;
+    @apply h-12 w-12 m-1;
 }
 
 .sidePanelButton:hover .sidePanelIcon {
     opacity: 1;
 }
 
+#timerSetupButton {
+    padding-left: 0.35em;
+}
+
+#presetsButton {
+    padding: 0.2em;
+}
+
 #presetsButtonContainerPressed {
-    @apply mb-0;
+    @apply h-[4.2rem] mb-0 pt-[0.35rem];
     border-bottom-left-radius: 0.8vh;
     border-bottom-right-radius: 0.8vh;
 }
+
 
 /* Mobile Controls */
 

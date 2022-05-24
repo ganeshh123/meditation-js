@@ -8,7 +8,7 @@ let darkTheme = {
     'webkitBackdropFilter' : 'blur(1.9vh) saturate(1.3)',
     'accentColor' : '#ffffff',
     'iconColor': 'invert(100%)',
-    'overlayColor': 'rgba(0, 0, 0, 0.74)'
+    'overlayColor': 'rgba(0, 0, 0, 0.44)'
 }
 
 let lightTheme = {
@@ -20,7 +20,7 @@ let lightTheme = {
     'backdropFilter' : 'blur(2.6vh) saturate(1.1)',
     'webkitBackdropFilter' : 'blur(2.6h) saturate(1.1)',
     'accentColor':'#000000',
-    'overlayColor': 'rgba(253, 253, 253, 0.74)'
+    'overlayColor': 'rgba(253, 253, 253, 0.48)'
 }
 
 let darkThemeNoBlur = {
