@@ -217,6 +217,13 @@ input[type="range"] {
   cursor: pointer;
 }
 
+// Hide on Mobile Devices surfaces can be dragged
+@media screen and (max-width: 640px){
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+}
+
 /**/
 
 /* Loading Spinners */

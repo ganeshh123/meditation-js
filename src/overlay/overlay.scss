@@ -24,6 +24,8 @@
 }
 
 .overlayTitle{
+    font-family: 'Quicksand', sans-serif;
+    @apply font-extralight;
     @apply text-5xl pr-10;
     @apply sm:pr-0;
     @apply lg:text-6xl;

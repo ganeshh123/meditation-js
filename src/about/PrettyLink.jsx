@@ -3,11 +3,6 @@ import {HyperlinkIcon} from '../icons'
 export const PrettyLink = (props) => {
     const {text, url} = props
 
-    // TODO: Replace with Theme as appropriate
-    const prettyLinkStyle = {
-        color: '#d3ddd5'
-    }
-
     if(text === undefined || text === ''){
         return <></>
     }
@@ -15,7 +10,6 @@ export const PrettyLink = (props) => {
     return(
         <a
             className={'pretty-link'}
-            style={prettyLinkStyle}
             href={url}
             target={`_blank`}
         >
