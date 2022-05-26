@@ -58,12 +58,12 @@ class App extends React.Component {
         presetsOverlayShowing: false,
         timerSetupShowing: false,
         settingsShowing: false,
-        launchShowing: false,
+        launchShowing: true,
         mediaSelectShowing: false,
         mediaSelectConfig: {},
         confirmationShowing: false,
         confirmationConfig: {},
-        aboutShowing: true,
+        aboutShowing: false,
         timerPinned: false,
         firstTime: true,
         /* Timer State */
@@ -81,6 +81,21 @@ class App extends React.Component {
         MediaSources.fetchMediaInfo(this.state)
         SettingsController.loadSettings(this.state)
         UIHide.setup(this.state)
+    }
+
+    appStyle = {
+        '@global': {
+            '*::-webkit-scrollbar': {
+                width: '0.4em'
+            },
+            '*::-webkit-scrollbar-track': {
+                '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
+            },
+            '*::-webkit-scrollbar-thumb': {
+                backgroundColor: this.state.currentTheme.accentColor,
+                outline: '1px solid slategrey'
+            }
+        }
     }
 
 

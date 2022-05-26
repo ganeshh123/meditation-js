@@ -29,8 +29,8 @@ export const About = (props) => {
                 style={aboutStyle}
             />
             <div id={'aboutMenu'} className={`overlayContent`}>
-                <div className={`flex-1 overflow-y-auto overflow-x-hidden`}>
-                    <div className={`flex-1`}>
+                <div className={`flex-1 flex flex-col justify-between items-center overflow-y-auto overflow-x-hidden`}>
+                    <div className={`h-full`}>
                         <AboutSectionHeader
                             icon={<PlayIcon className={`about-section-header-icon`}/>}
                             text={`Now Playing`}
@@ -85,7 +85,8 @@ export const About = (props) => {
                         </div>
                     </div>
                     <div
-                        className={`about-open-source`}>
+                        className={`about-open-source`}
+                    >
                         <PrettyLink
                             url={`https://github.com/ganeshh123/meditation-js`}
                             text={'Help'}
@@ -98,8 +99,8 @@ export const About = (props) => {
                             url={`https://github.com/ganeshh123/meditation-js`}
                             text={'GitHub'}
                         />
+                        <div className={`about-version`}>Build 1.0.0</div>
                     </div>
-                    <div className={`about-version`}>Build 1.0.0</div>
                 </div>
             </div>
         </div>

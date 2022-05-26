@@ -15,10 +15,10 @@ export const PrettyLink = (props) => {
         >
             <span className={`pretty-link-text`}>
                 {text}
+                <HyperlinkIcon
+                    className={`pretty-link-icon`}
+                />
             </span>
-            <HyperlinkIcon
-                className={`pretty-link-icon`}
-            />
         </a>
     )
 }

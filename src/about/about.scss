@@ -16,7 +16,7 @@
 }
 
 .about-section-header-text{
-  @apply text-2xl whitespace-nowrap;
+  @apply text-2xl whitespace-nowrap font-semibold;
   @apply md:text-3xl;
   @apply 2xl:text-4xl;
   font-family: 'Quicksand', sans-serif;
@@ -76,6 +76,7 @@
   @apply md:text-2xl;
   @apply 2xl:text-3xl;
   font-family: 'Quicksand', sans-serif;
+  font-weight: 550;
 }
 
 .now-playing-item-media-source{
@@ -88,7 +89,6 @@
 /* Pretty Link */
 .pretty-link{
   @apply flex flex-row items-center opacity-80;
-  @apply gap-x-1;
   @apply cursor-pointer;
 }
 
@@ -97,6 +97,7 @@
 }
 
 .pretty-link-icon{
+  @apply ml-1 inline;
 }
 
 /* Dev Card */
@@ -112,5 +113,5 @@
 }
 
 .dev-card-text{
-  @apply flex flex-col h-full;
+  @apply flex flex-col h-full font-medium;
 }

@@ -139,11 +139,12 @@ input[type="range"] {
 }
 
 #appMiddle {
-  @apply h-full w-full flex flex-row justify-center items-start mt-3 px-3;
+  @apply h-full w-full flex flex-row justify-between items-start mt-3 sm:px-3;
 }
 
 #appCenter {
-  @apply h-full flex-1 flex flex-col justify-start items-center mx-2;
+  @apply h-full flex-1 flex flex-col justify-start items-center sm:mx-2;
+  max-width: 700px;
 }
 
 #appBottom {
@@ -224,12 +225,13 @@ input[type="range"] {
 
 ::-webkit-scrollbar-thumb:window-inactive,
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5);
+  //background: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   cursor: pointer;
 
   &:hover {
-    background: rgb(255, 255, 255);
+    //background: rgb(255, 255, 255);
+    opacity: 70;
   }
 }
 
