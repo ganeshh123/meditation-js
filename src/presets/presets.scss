@@ -1,13 +1,13 @@
 #presetsMenu {
-    padding: 1vh 0 1.2vh 0;
-    border-radius: 0.8vh 2vh 2vh 2vh;
+    padding: 0.5rem 0 0.6rem 0;
+    border-radius: 0.4rem 1rem 1rem 1rem;
     @apply flex flex-col justify-start items-start;
-    @apply mt-1.5 mb-3;
+    @apply mt-[0.19rem] mb-[0.85rem];
 }
 
 #sleepPresetMenuButtonIcon, #relaxPresetMenuButtonIcon, #focusPresetMenuButtonIcon {
-    height: 9vh;
-    width: 9vh;
+    height: 4.5rem;
+    width: 4.5rem;
 }
 
 .presetsMenuButton {
@@ -15,7 +15,8 @@
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    padding-right: 5vh;
+    padding-right: 2.5rem;
+    padding-left: 0.5rem;
     opacity: 0.7;
 }
 
@@ -25,12 +26,13 @@
 }
 
 .presetsMenuButtonIcon {
-    padding-right: 1.2vh;
-    padding-left: 1.8vh;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 .presetsMenuButtonText {
-    font-size: 4vh;
+    padding-top: 0.3rem;
+    font-size: 1.7rem;
 }
 
 #resumeOption{
@@ -40,7 +42,7 @@
 /* Preset Box */
 
 .presetBox{
-    @apply flex flex-col justify-center items-center h-auto cursor-pointer rounded-lg opacity-80;
+    @apply flex flex-col justify-center items-center h-auto cursor-pointer rounded-2xl opacity-80;
     @apply w-60 mt-2 mb-5 mx-5 p-5;
     @apply md:mx-2 md:p-4;
     @apply lg:w-auto lg:mx-5 lg:p-7 lg:mb-0;

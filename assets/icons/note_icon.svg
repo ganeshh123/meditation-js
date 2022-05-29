@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="23.478" height="32.887" viewBox="0 0 23.478 32.887">
-  <g id="note_icon" transform="translate(-73.171 -450.808)">
-    <circle id="Ellipse_17" data-name="Ellipse 17" cx="6.187" cy="6.187" r="6.187" transform="translate(74.171 470.32)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-    <line id="Line_129" data-name="Line 129" y2="24.5" transform="translate(86.546 452.197)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-    <line id="Line_130" data-name="Line 130" x2="8.714" y2="5.949" transform="translate(86.546 452.197)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="note_icon" transform="translate(-66.928 -448.415)">
+    <rect id="Rectangle_116" data-name="Rectangle 116" width="30" height="30" transform="translate(66.928 448.415)" fill="none"/>
+    <circle id="Ellipse_17" data-name="Ellipse 17" cx="4.552" cy="4.552" r="4.552" transform="translate(74.171 465.53)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_129" data-name="Line 129" y2="16.704" transform="translate(83.275 452.197)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_130" data-name="Line 130" x2="6.41" y2="4.376" transform="translate(83.275 452.197)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
   </g>
 </svg>

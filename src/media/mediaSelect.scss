@@ -19,19 +19,19 @@
 /* Media Panel */
 #mediaPanel {
     @apply rounded-3xl w-full;
-    @apply flex flex-col items-center m-2 p-2;
+    @apply flex flex-col items-center mx-2 mt-2 px-2 pt-2 pb-1;
     @apply md:flex-row md:justify-center md:items-center;
 }
 
 .mediaPanelSection {
-    @apply flex flex-col justify-center items-center mx-2 my-4 w-full;
+    @apply flex flex-col mx-2 mt-[0.52rem] mb-4 w-full;
     @apply md:items-center;
 }
 
 /* Media Select Open Button */
 
 .mediaSelectOpenButton { 
-    @apply w-full h-14 mb-3 p-4 rounded-2xl;
+    @apply w-full h-14 mb-4 p-4 rounded-2xl;
     max-width: 500px;
     display: flex;
     flex-direction: row;
@@ -58,7 +58,7 @@
 }
 
 .mediaSelectOpenButtonText {
-    @apply text-xl font-semibold;
+    @apply text-[1.1rem] font-semibold;
     flex: 1;
     opacity: 0.8;
     font-family: 'Quicksand', sans-serif;
@@ -71,7 +71,6 @@
     @apply sm:flex-row sm:justify-center sm:items-start sm:flex-wrap;
     @apply overflow-y-auto;
 }
-
 
 /* Media Box */
 

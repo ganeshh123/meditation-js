@@ -15,7 +15,7 @@
 }
 
 .overlayCloseButton{
-    @apply absolute h-10 w-10 top-4 right-4 md:right-8;
+    @apply absolute h-9 w-9 top-10 right-10;
 }
 
 .overlayContainer{
@@ -26,7 +26,7 @@
 .overlayTitle{
     font-family: 'Quicksand', sans-serif;
     @apply font-medium;
-    @apply text-5xl pr-10;
+    @apply text-5xl pr-10 pt-5;
     @apply sm:pr-0;
     @apply lg:text-6xl;
 }
