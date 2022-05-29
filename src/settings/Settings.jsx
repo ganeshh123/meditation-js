@@ -39,7 +39,7 @@ export const Settings = (props) => {
 
                 {/* Notification Volume */}
                 <SliderSetting
-                    icon={parseInt(appState.alarmVolume) === 0 ? 'BellOffIcon' : 'BellIcon'}
+                    icon={parseInt(appState.alarmVolume) === 0 ? 'BellOffIcon' : 'LargeBellIcon'}
                     label={'Alarm Volume'}
                     value={appState.alarmVolume}
                     handleChange={(newVolume) => updateApp({alarmVolume: newVolume})}
@@ -48,7 +48,7 @@ export const Settings = (props) => {
 
                 {/* Automatically Hide UI */}
                 <SwitchSetting
-                    icon={'PinIcon'}
+                    icon={'EyeIcon'}
                     label={'Auto Hide UI'}
                     buttonText={appState.uiAutoHide === true ? 'Yes' : 'No'}
                     handleSwitch={() => updateApp({uiAutoHide: !appState.uiAutoHide})}
@@ -59,7 +59,7 @@ export const Settings = (props) => {
                 {/* Time to Automatically Hide UI*/}
                 {appState.uiAutoHide === true &&
                     <SliderSetting
-                        icon={'NewTimerIcon'}
+                        icon={'HideTimeIcon'}
                         label={'UI Hide Time'}
                         value={appState.uiAutoHideTimer}
                         handleChange={(newValue) => updateApp({uiAutoHideTimer: newValue})}
