@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="38.749" height="24.142" viewBox="0 0 38.749 24.142">
-  <g id="skip_icon" transform="translate(-726.8 -451.796)">
-    <path id="Path_95" data-name="Path 95" d="M97.71,444.438l-15.232-8.8a2.243,2.243,0,0,0-3.364,1.943v17.589a2.243,2.243,0,0,0,3.364,1.943l15.232-8.8A2.241,2.241,0,0,0,97.71,444.438Z" transform="translate(665.717 17.487)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
-    <path id="Path_96" data-name="Path 96" d="M83.479,441.959l-10.94-6.316a2.243,2.243,0,0,0-3.364,1.943v17.589a2.243,2.243,0,0,0,3.364,1.943l10.94-6.316" transform="translate(658.625 17.487)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="39.392" height="24.06" viewBox="0 0 39.392 24.06">
+  <g id="skip_icon" transform="translate(-5040.792 349.53)">
+    <path id="Path_303" data-name="Path 303" d="M28.967,9.564,13.79.8a2.234,2.234,0,0,0-3.351,1.934V20.262A2.234,2.234,0,0,0,13.79,22.2l15.176-8.762A2.234,2.234,0,0,0,28.967,9.564Z" transform="translate(5049.1 -349)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_304" data-name="Path 304" d="M14.751,7.1,3.851.8A2.234,2.234,0,0,0,.5,2.737V20.262A2.234,2.234,0,0,0,3.851,22.2l10.9-6.291" transform="translate(5041.292 -349)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
   </g>
 </svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_90" data-name="Rectangle 90" width="54.658" height="54.658" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="large_bell_icon" transform="translate(-5005 160)">
+    <rect id="Rectangle_112" data-name="Rectangle 112" width="60" height="60" transform="translate(5005 -160)" fill="none"/>
+    <rect id="Rectangle_113" data-name="Rectangle 113" width="60" height="60" transform="translate(5005 -160)" fill="none"/>
+    <g id="large_bell_icon-2" data-name="large_bell_icon" transform="translate(5007.836 -156.758)">
+      <g id="Group_177" data-name="Group 177" clip-path="url(#clip-path)">
+        <path id="Path_280" data-name="Path 280" d="M36.99,25.5V19.381c0-9.925-6.336-16.494-15.809-16.494S5.365,9.455,5.365,18.7v6.831A4.566,4.566,0,0,1,4.286,28.6a9.485,9.485,0,0,0-1.594,2.565,3.074,3.074,0,0,0,1.79,4.122c8.436,3.087,24.855,2.841,33.392-.061a2.972,2.972,0,0,0,1.813-4,9.574,9.574,0,0,0-1.608-2.612A4.613,4.613,0,0,1,36.99,25.5Z" transform="translate(6.065 6.843)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="Path_281" data-name="Path 281" d="M7.111,3.873a3,3,0,0,1,6,0" transform="translate(17.138 2.079)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="Path_282" data-name="Path 282" d="M6.673,14.279a4.935,4.935,0,0,0,8.941,0" transform="translate(16.1 33.844)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>
