@@ -73,8 +73,8 @@ export default class SceneController{
 
     static getSceneSourceVideoURL = (sceneId) => {
         console.log()
-        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceVideoUrl']){
-            return this.scenes[sceneId]['sourceVideoUrl']
+        if(this.scenes && this.scenes[sceneId] && this.scenes[sceneId]['sourceVideoURL']){
+            return this.scenes[sceneId]['sourceVideoURL']
         }
     }
 
