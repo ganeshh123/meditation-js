@@ -1,36 +1,46 @@
 import * as React from "react";
 
-function SvgNoteIcon({ title, titleId, ...props }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      viewBox="0 0 23.478 32.887"
-      aria-labelledby={titleId}
-      {...props}
-    >
-      {title ? <title id={titleId}>{title}</title> : null}
-      <g
-        transform="translate(-73.171 -450.808)"
-        fill="none"
+const SvgNoteIcon = ({ title, titleId, ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 30 30"
+    aria-labelledby={titleId}
+    {...props}
+  >
+    {title ? <title id={titleId}>{title}</title> : null}
+    <g transform="translate(-66.928 -448.415)" fill="none">
+      <path data-name="Rectangle 116" d="M66.928 448.415h30v30h-30z" />
+      <circle
+        data-name="Ellipse 17"
+        cx={4.552}
+        cy={4.552}
+        r={4.552}
+        transform="translate(74.171 465.53)"
         stroke="currentColor"
         strokeLinecap="round"
         strokeMiterlimit={10}
         strokeWidth={2}
-      >
-        <circle
-          data-name="Ellipse 17"
-          cx={6.187}
-          cy={6.187}
-          r={6.187}
-          transform="translate(74.171 470.32)"
-        />
-        <path data-name="Line 129" d="M86.546 452.197v24.5" />
-        <path data-name="Line 130" d="M86.546 452.197l8.714 5.949" />
-      </g>
-    </svg>
-  );
-}
+      />
+      <path
+        data-name="Line 129"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeMiterlimit={10}
+        strokeWidth={2}
+        d="M83.275 452.197v16.704"
+      />
+      <path
+        data-name="Line 130"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeMiterlimit={10}
+        strokeWidth={2}
+        d="m83.275 452.197 6.41 4.376"
+      />
+    </g>
+  </svg>
+);
 
 export default SvgNoteIcon;
