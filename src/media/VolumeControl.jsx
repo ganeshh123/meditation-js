@@ -22,7 +22,7 @@ export const VolumeControl = (props) => {
                 <SpeakerOffIcon
                     {...muteButtonProps}
                     onClick={() => updateApp({[updateKey]: localVolume})}
-                    title={(type === 'scene') ? 'Unmute Sound Effect' : 'Unmute Music'}
+                    title={(type === 'scene') ? 'Unmute Sound Effects' : 'Unmute Music'}
                 />
             )
         }
@@ -30,7 +30,7 @@ export const VolumeControl = (props) => {
             <SpeakerIcon
                 {...muteButtonProps}
                 onClick={() => updateApp({[updateKey]: 0})}
-                title={(type === 'scene') ? 'Mute Sound Effect' : 'Mute Music'}
+                title={(type === 'scene') ? 'Mute Sound Effects' : 'Mute Music'}
             />
         )
     }

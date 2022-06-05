@@ -1,5 +1,5 @@
 import {PrettyLink} from './PrettyLink'
-import {NoteIcon, VideoOnIcon, SpeakerIcon} from '../icons'
+import {NoteIcon, MiniVideoIcon, SpeakerIcon} from '../icons'
 
 export const NowPlayingItem = (props) => {
     const {
@@ -18,7 +18,7 @@ export const NowPlayingItem = (props) => {
 
         if(mediaType === 'video'){
             return(
-                <VideoOnIcon {...mediaIconCommonProps} />
+                <MiniVideoIcon {...mediaIconCommonProps} />
             )
         }
         if(mediaType === 'music'){
