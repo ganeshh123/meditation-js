@@ -112,7 +112,7 @@ class App extends React.Component {
                     <SceneVideo scene={this.state.currentScene} videoDisabled={this.state.videoDisabled}
                                 videoLoaded={this.state.videoLoaded} update={this.updateState}/>
 
-                    <Loading appState={this.state}/>
+                    {/*<Loading appState={this.state}/>*/}
 
                     <div id="appTop">
                         <TitleBar appTitleText="Calmeo" updateApp={this.updateState}
