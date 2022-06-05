@@ -1,7 +1,7 @@
 import React from 'react'
 import SceneController from './SceneController'
 import MusicController from './MusicController'
-import {VideoOnIcon, NoteIcon} from'../icons'
+import {MiniVideoIcon, NoteIcon} from'../icons'
 
 const getButtonText = (sourceId, type) => {
     if(type === 'scene'){
@@ -16,7 +16,7 @@ const getButtonText = (sourceId, type) => {
 const getButtonIcon = (type, color) => {
     if(type === 'scene'){
         return(
-            <VideoOnIcon
+            <MiniVideoIcon
                 className='mediaSelectOpenButtonIcon'
                 style={{color: color}}
             />
