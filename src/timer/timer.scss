@@ -92,6 +92,7 @@
     font-size: 4.5rem;
     font-family: 'Quicksand', sans-serif;
     font-weight: lighter;
+    @apply flex justify-center;
 }
 
 #timerCurrentPhaseDisplay {

@@ -405,7 +405,9 @@ export default class Timer extends React.Component {
                     />
                 </div>
                 <div id='timerTimeDisplay' style={this.timerTextStyle}>
-                    {this.getMinutes() + ':' + this.getSeconds()}
+                    <span className={`w-full text-right`}>{this.getMinutes()}</span>
+                    <span>{`:`}</span>
+                    <span className={`w-full text-left`}>{this.getSeconds()}</span>
                 </div>
                 <div id='timerCurrentPhaseDisplay' style={this.timerTextStyle}>
                     {this.getCurrentPhase()}
