@@ -7,6 +7,7 @@ import SettingsController from './settings/SettingsController'
 import ThemeController from './theme/ThemeController'
 
 import UIHide from './utils/UIHide';
+import Logging from './utils/Logging'
 import TitleBar from './titlebar/TitleBar'
 import MediaPanel from './media/MediaPanel'
 import SceneVideo from './media/SceneVideo'
@@ -154,3 +155,4 @@ ReactDOM.render(
 );
 
 module.hot.accept()
+Logging.logMessage()
