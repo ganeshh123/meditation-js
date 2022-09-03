@@ -51,8 +51,7 @@
     &:hover {
         //Sleep Icon
         #moon {
-            transform: translate(1.7rem, -5rem);
-            transform: rotate(-9deg);
+            transform: translate(0.5rem, -0.8rem) rotate(-9deg);
         }
 
         #star-1 {
@@ -92,7 +91,6 @@
 
         //Focus
         #focus-pin {
-            transform: translate(-40rem, 3rem);
             transform: rotate(-80deg);
         }
 
