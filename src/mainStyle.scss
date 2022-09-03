@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: 'Quicksand';
+  font-family: 'Quicksand', sans-serif;
   src: url('../assets/fonts/Quicksand_Light.woff2') format('woff2');
 }
 
@@ -147,6 +147,10 @@ input[type="range"] {
 #appBottom {
   @apply w-full h-full flex flex-col justify-end items-center;
   max-width: 700px;
+}
+
+#launchMessage {
+  font-family: 'Quicksand', sans-serif;
 }
 
 .iconButton {

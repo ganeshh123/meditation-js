@@ -54,7 +54,7 @@ export default class Launch extends React.Component{
             >
                 <div id="launchTitle" className='text-6xl md:text-7xl mt-2 mb-4 md:mt-4 md:mb-10'>Calmeo</div>
                 {this.isFirstTime() && 
-                    <div id="launchMessage" className='text-3xl md:text-4xl mb-4'>What do you want to do?</div>
+                    <div id="launchMessage" className='text-3xl md:text-4xl mb-4'>What would you like to do?</div>
                 }
                 <div id="launchContent" className='flex-1 w-full flex items-stretch overflow-y-hidden md:overflow-x-hidden'>
                     {this.isFirstTime() &&
