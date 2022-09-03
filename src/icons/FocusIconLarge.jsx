@@ -69,7 +69,7 @@ function SvgFocusIconLarge({ title, titleId, ...props }) {
             d="M73.004 240.117a11.531 11.531 0 01-11.277-5.7"
           />
         </g>
-        <g strokeLinejoin="round">
+        <g id="pencil" strokeLinejoin="round">
           <path data-name="Line 3" d="M161.7 38.874l-45.013 91.452" />
           <path data-name="Line 4" d="M116.687 130.326l-3.263 33.768" />
           <path data-name="Line 5" d="M138.196 140.938l-24.772 23.156" />
@@ -113,48 +113,50 @@ function SvgFocusIconLarge({ title, titleId, ...props }) {
             strokeWidth={3.99996}
           />
         </g>
-        <g transform="translate(-3215.176 400.227)">
-          <path
-            data-name="Line 9"
-            strokeLinejoin="round"
-            d="M3225.966-343.297l6.842-14.223"
-          />
-          <ellipse
-            data-name="Ellipse 1"
-            cx={7.508}
-            cy={13.368}
-            rx={7.508}
-            ry={13.368}
-            transform="rotate(-62.96 1317.002 -2806.355)"
-            strokeMiterlimit={10}
-          />
-          <path
-            data-name="Path 16"
-            d="M3236.26-377.002c-2.977-2.727-4.308-5.927-3.168-8.236 1.647-3.168 7.7-3.484 13.495-.539s9.155 7.983 7.476 11.245c-1.2 2.281-4.593 3.168-8.521 2.281"
-            strokeMiterlimit={10}
-          />
-          <path
-            data-name="Path 17"
-            d="M3238.953-382.26c.729-1.457 3.421-1.552 5.987-.253s4.055 3.548 3.326 5.005"
-            strokeMiterlimit={10}
-          />
-          <path
-            data-name="Line 10"
-            strokeMiterlimit={10}
-            d="M3238.953-382.26l-7.571 14.793"
-          />
-          <path
-            data-name="Line 11"
-            strokeMiterlimit={10}
-            d="M3248.267-377.509l-7.571 14.793"
-          />
-          <path
-            data-name="Line 12"
-            strokeMiterlimit={10}
-            d="M3238.953-382.26l-7.571 14.793"
-          />
+        <g id="focus-pin">
+          <g transform="translate(-3215.176 400.227)">
+            <path
+              data-name="Line 9"
+              strokeLinejoin="round"
+              d="M3225.966-343.297l6.842-14.223"
+            />
+            <ellipse
+              data-name="Ellipse 1"
+              cx={7.508}
+              cy={13.368}
+              rx={7.508}
+              ry={13.368}
+              transform="rotate(-62.96 1317.002 -2806.355)"
+              strokeMiterlimit={10}
+            />
+            <path
+              data-name="Path 16"
+              d="M3236.26-377.002c-2.977-2.727-4.308-5.927-3.168-8.236 1.647-3.168 7.7-3.484 13.495-.539s9.155 7.983 7.476 11.245c-1.2 2.281-4.593 3.168-8.521 2.281"
+              strokeMiterlimit={10}
+            />
+            <path
+              data-name="Path 17"
+              d="M3238.953-382.26c.729-1.457 3.421-1.552 5.987-.253s4.055 3.548 3.326 5.005"
+              strokeMiterlimit={10}
+            />
+            <path
+              data-name="Line 10"
+              strokeMiterlimit={10}
+              d="M3238.953-382.26l-7.571 14.793"
+            />
+            <path
+              data-name="Line 11"
+              strokeMiterlimit={10}
+              d="M3248.267-377.509l-7.571 14.793"
+            />
+            <path
+              data-name="Line 12"
+              strokeMiterlimit={10}
+              d="M3238.953-382.26l-7.571 14.793"
+            />
+          </g>
         </g>
-        <g strokeMiterlimit={10}>
+        <g id="paperclip" strokeMiterlimit={10}>
           <path data-name="Line 13" d="M154.256 158.836l23.726 17.803" />
           <path data-name="Line 14" d="M150.961 173.756l18.658 14.001" />
           <path data-name="Line 15" d="M156.853 166.565l23.695 17.803" />

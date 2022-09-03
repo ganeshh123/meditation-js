@@ -18,26 +18,27 @@ function SvgSleepIconLarge({ title, titleId, ...props }) {
         strokeWidth={4}
       >
         <path
+          id="moon"
           d="M149.716 74.921A45.932 45.932 0 01112.495 2a45.964 45.964 0 1045.679 72.1 46.691 46.691 0 01-8.458.821z"
           strokeLinejoin="round"
         />
-        <g data-name="Star 2" strokeMiterlimit={10}>
+        <g id="star-2" data-name="Star 2" strokeMiterlimit={10}>
           <path data-name="Line 40" d="M191.149 19.137l4.72 4.72" />
           <path data-name="Line 41" d="M191.149 23.857l4.72-4.72" />
         </g>
-        <g data-name="Star 4" strokeMiterlimit={10}>
+        <g id="star-4" data-name="Star 4" strokeMiterlimit={10}>
           <path data-name="Line 42" d="M216.206 61.173h6.652" />
           <path data-name="Line 43" d="M219.532 64.499v-6.652" />
         </g>
-        <g data-name="Star 5" strokeMiterlimit={10}>
+        <g id="star-5" data-name="Star 5" strokeMiterlimit={10}>
           <path data-name="Line 44" d="M58.485 93.135h6.684" />
           <path data-name="Line 45" d="M61.811 96.493v-6.684" />
         </g>
-        <g data-name="Star 1" strokeMiterlimit={10}>
+        <g id="star-1" data-name="Star 1" strokeMiterlimit={10}>
           <path data-name="Line 46" d="M38.497 6.023h6.684" />
           <path data-name="Line 47" d="M41.823 9.381V2.697" />
         </g>
-        <g data-name="Star 3" strokeMiterlimit={10}>
+        <g id="star-3" data-name="Star 3" strokeMiterlimit={10}>
           <path data-name="Line 48" d="M2.828 54.901l4.72-4.72" />
           <path data-name="Line 49" d="M7.548 54.901l-4.72-4.72" />
         </g>
