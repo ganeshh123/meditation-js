@@ -35,27 +35,101 @@
     font-size: 1.7rem;
 }
 
-#resumeOption{
+#resumeOption {
     margin-top: 25px;
 }
 
 /* Preset Box */
+.presetBox {
+    @apply flex flex-col justify-center items-center h-auto cursor-pointer rounded-[2.5rem] opacity-80;
+    @apply w-80 h-[32rem] mt-2 mb-5 mx-5 p-5;
+    @apply mx-3 md:p-4;
+    @apply lg:lg:mx-6 lg:p-7 lg:mb-0;
+    @apply opacity-100;
 
-.presetBox{
-    @apply flex flex-col justify-center items-center h-auto cursor-pointer rounded-2xl opacity-80;
-    @apply w-60 mt-2 mb-5 mx-5 p-5;
-    @apply md:mx-2 md:p-4;
-    @apply lg:w-auto lg:mx-5 lg:p-7 lg:mb-0;
-    @apply hover:opacity-100;
+    &:hover {
+
+        /* Sleep Icon */
+        #moon {
+            transform: translate(0.5rem, -0.8rem) rotate(-9deg);
+        }
+
+        #star-1 {
+            transform: translate(-1.7rem, -1.8rem);
+        }
+
+        #star-2 {
+            transform: translate(2rem, -2.6rem);
+        }
+
+        #star-3 {
+            transform: translate(-1.3rem, -1.9rem);
+        }
+
+        #star-4 {
+            transform: translate(2rem, -1.6rem);
+        }
+
+        #star-5 {
+            transform: translate(-1.5rem, -1.4rem);
+        }
+
+        /*  Relax */
+        #sun {
+            position: relative;
+            transform: translate(0, -4rem);
+        }
+
+        #rocks {
+            position: relative;
+            transform: translate(3rem, 0);
+        }
+
+        #plant {
+            transform: scale(1.1) translate(-8px, -22px);
+        }
+
+        /* Focus */
+        #focus-pin {
+            transform: rotate(-80deg);
+        }
+
+        #pencil {
+            transform: translate(0.5rem, -1rem);
+        }
+
+        #paperclip {
+            transform: rotate(10deg);
+        }
+    }
 }
 
-.presetBoxImage{
-    @apply h-40 w-40;
-    @apply md:h-48 md:w-48;
-    @apply lg:w-60 lg:h-60;
+.presetBoxImage {
+    @apply md:w-48;
+    @apply lg:w-72 lg:h-64;
+    @apply my-16;
+    overflow: visible;
 }
 
-.presetBoxTitle{
-    @apply text-3xl mt-3;
-    @apply lg:text-4xl lg:mt-6;
+.presetBoxTitle {
+    @apply text-3xl pb-3;
+    @apply lg:text-5xl;
+    margin-top: auto;
+}
+
+#sleepImage {
+    @apply w-[42rem];
+}
+
+#relaxImage {
+    @apply w-80;
+    position: relative;
+}
+
+#focusImage {
+    @apply w-44;
+}
+
+#moon, #star-1, #star-2, #star-3, #star-4, #star-5, #sun, #rocks, #plant, #focus-pin, #pencil, #paperclip {
+    transition: all 0.5s;
 }

@@ -56,6 +56,7 @@ function SvgPinIcon({ title, titleId, ...props }) {
         strokeWidth={2}
       />
       <path
+        id="pin-point"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"

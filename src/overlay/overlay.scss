@@ -1,4 +1,4 @@
-#appOverlay{
+#appOverlay {
     position: absolute;
     width: auto;
     height: auto;
@@ -14,16 +14,16 @@
     @apply z-20;
 }
 
-.overlayCloseButton{
+.overlayCloseButton {
     @apply absolute h-9 w-9 top-10 right-10;
 }
 
-.overlayContainer{
-    @apply flex-1 w-full pt-2 px-2 flex flex-col items-center overflow-y-hidden;
+.overlayContainer {
+    @apply flex-1 w-full pt-2 flex flex-col items-center overflow-y-hidden;
     @apply 2xl:max-w-screen-2xl;
 }
 
-.overlayTitle{
+.overlayTitle {
     font-family: 'Quicksand', sans-serif;
     @apply font-medium;
     @apply text-5xl pr-10 pt-5;
@@ -31,7 +31,7 @@
     @apply lg:text-6xl;
 }
 
-.overlayContent{
+.overlayContent {
     @apply flex-1 mt-5 w-full flex flex-col justify-start items-center overflow-x-hidden;
     @apply sm:justify-center;
 }

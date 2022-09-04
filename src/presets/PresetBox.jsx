@@ -30,6 +30,7 @@ export default class PresetBox extends React.Component{
         if(presetId === 'sleep'){
             return(
                 <SleepIconLarge
+                    id={'sleepImage'}
                     className={`presetBoxImage`}
                     onClick={this.presetBoxClicked}
                 />
@@ -39,6 +40,7 @@ export default class PresetBox extends React.Component{
         if(presetId === 'relax'){
             return(
                 <RelaxIconLarge
+                    id={'relaxImage'}
                     className={`presetBoxImage`}
                     onClick={this.presetBoxClicked}
                 />
@@ -48,6 +50,7 @@ export default class PresetBox extends React.Component{
         if(presetId === 'focus'){
             return(
                 <FocusIconLarge
+                    id={'focusImage'}
                     className={`presetBoxImage`}
                     onClick={this.presetBoxClicked}
                 />
