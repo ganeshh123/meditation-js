@@ -76,6 +76,10 @@ module.exports = {
                 {
                     from: path.resolve(__dirname, './web/index.html'),
                     to: path.resolve(__dirname, '../dist/web/index.html')
+                },
+                {
+                    from: path.resolve(__dirname, '../third-party-licenses.txt'),
+                    to: path.resolve(__dirname, '../dist/web/third-party-licenses.txt')
                 }
             ],
         })

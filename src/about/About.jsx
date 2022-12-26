@@ -92,7 +92,7 @@ export const About = (props) => {
                             text={'Help'}
                         />
                         <PrettyLink
-                            url={`#`}
+                            url={`/third-party-licenses.txt`}
                             text={'Open Source Licenses'}
                         />
                         <PrettyLink
